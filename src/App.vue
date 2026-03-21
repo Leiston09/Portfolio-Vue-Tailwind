@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <h1 class="bg-amber-200 ">Welcome to Your App</h1>
-  </div>
+  <OptionsBar/>
+  
+  <Home />
 </template>
 
-<script setup>
-
+<script setup lang="ts">
+import OptionsBar from "./components/OptionsBar.vue";
+import Home from "./views/Home.vue";
 </script>
-
-<style lang="scss" scoped>
-
-</style>
