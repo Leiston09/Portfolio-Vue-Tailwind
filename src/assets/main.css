@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+.crema {
+    color: #F8F3C6;
+}
+
+.marron {
+    color: #442A18;
+}
+
+.amarillo {
+    color: #EB9D23;
+}
+
+.bg-crema {
+    background-color: #F8F3C6;
+}
+
+.bg-marron {
+    background-color: #442A18;
+}
+
+.bg-amarillo {
+    background-color: #EB9D23;
+}
