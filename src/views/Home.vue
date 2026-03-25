@@ -1,31 +1,42 @@
 <template>
   <OptionsBar />
   <div class="flex p-4 min-h-screen bg-[#F8F3C6] py-20">
-    <div class="w-auto">
+    
+    <div class="md:w-64 ">
       <ViewSelectionHome />
     </div>
-    <div class="flex-1 place-content-center place-items-center">
-      <div class="flex gap-4 md:flex-row flex-col">
-        <div class="flex-1">
-          <MainViewHome />
+
+    <div class="flex-1 flex justify-center">
+      <div class="max-w-7xl w-full">
+        
+        <div class="flex gap-4 md:flex-row flex-col">
+          <div class="flex-1">
+            <MainViewHome />
+          </div>
+          <div class="md:w-64 lg:w-80">
+            <PersonalInformationHome />
+          </div>
         </div>
-        <div class="md:w-64 lg:w-80">
-          <PersonalInformationHome />
+
+        <div class="mt-4">
+          <Projects />
         </div>
-      </div>
-      <div class="mt-4">
-        <Projects />
-      </div>
-      <div class="mt-4">
-        <Contact />
-      </div>
-      <div class="mt-4">
-        <Certifications />
-      </div>
-      <div class="fixed right-4 bottom-4 ">
-        <ChatBot />
+
+        <div class="mt-4">
+          <Contact />
+        </div>
+
+        <div class="mt-4">
+          <Certifications />
+        </div>
+
       </div>
     </div>
+
+    <div class="fixed bottom-16 right-10 md:right-4 md:bottom-4">
+      <ChatBot />
+    </div>
+
   </div>
 </template>
 

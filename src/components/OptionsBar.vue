@@ -1,12 +1,13 @@
 <template>
   <div
-    class="fixed top-0 left-0 right-0 flex justify-between items-center px-3 py-2 bg-[#F8F3C6] shadow-sm z-50"
+    class="fixed top-0 left-0 right-0 flex justify-between items-center px-3 py-2 bg-[#F8F3C6]/90 backdrop-blur-md shadow-sm z-50"
   >
+    
     <div class="flex items-center gap-2">
       <div class="w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-full">
         <img
           src="../assets/img/imgPrueba.png"
-          alt="User profile"
+          alt="Foto de perfil del usuario"
           class="w-full h-full object-cover"
         />
       </div>
@@ -16,22 +17,26 @@
       </h1>
     </div>
 
-    <div class="flex items-center gap-1 md:gap-3">
+    <div class="flex items-center gap-2 md:gap-4">
+      
       <select
-        class="px-1 sm:px-2 md:px-3 hover:bg-[#EB9D23]/20 rounded-full border border-[#442A18] text-xs md:text-sm font-semibold"
+        class="px-1 sm:px-2 md:px-3 bg-transparent outline-none cursor-pointer hover:bg-[#EB9D23]/20 rounded-full border border-[#442A18] text-xs md:text-sm font-semibold"
       >
         <option value="">Es</option>
         <option value="">En</option>
       </select>
 
-      <button class="p-1 md:p-2 hover:bg-[#EB9D23]/20 rounded-full">🔔</button>
+      <button class="p-1 md:p-2 hover:bg-[#EB9D23]/20 rounded-full transition-all duration-200 hover:scale-110">
+        🔔
+      </button>
 
       <button
         v-if="!isLoggedIn"
-        class="bg-[#EB9D23] text-[#442A18] px-2 py-1 rounded-lg border border-[#442A18] text-xs md:text-sm font-semibold"
+        class="bg-[#EB9D23] text-[#442A18] px-2 py-1 rounded-lg border border-[#442A18] text-xs md:text-sm font-semibold md:px-6 transition-all duration-200 hover:scale-105 shadow-sm hover:shadow-md"
       >
         Login
       </button>
+
     </div>
   </div>
 </template>
