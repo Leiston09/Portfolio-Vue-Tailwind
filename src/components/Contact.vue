@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-[#442A18]/5 my-1 rounded-2xl p-3 flex flex-col justify-center items-center"
+    class="bg-[#442A18]/5 my-1 rounded-2xl p-3 flex flex-col justify-center items-center mt-2"
   >
     <h1 class="font-bold text-3xl text-[#442A18] ">Contacto</h1>
     <p class="text-[#442A18]/80 text-center mt-2">

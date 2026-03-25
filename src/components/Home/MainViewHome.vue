@@ -1,7 +1,7 @@
 <template>
   <div class="flex-1 bg-[#442A18]/5 p-3 rounded-xl">
     
-    <h1 class="font-mono text-xs m-2 border-2 border-[#EB9D23] text-[#442A18] w-fit px-2 rounded-2xl">
+    <h1 class="font-mono text-xs m-2 border-2 border-[#EB9D23] text-[#442A18] w-fit px-2 rounded-2xl ">
       Portafolio Profesional:
     </h1>
 
@@ -57,7 +57,10 @@ const lenguajes = [
   { id: 3, nombre: "JavaScript", icono: "devicon-javascript-plain colored" },
   { id: 4, nombre: "Vue.js", icono: "devicon-vuejs-plain colored" },
   { id: 5, nombre: "Node.js", icono: "devicon-nodejs-plain colored" },
-  { id: 6, nombre: "Python", icono: "devicon-python-plain colored" },
+  { id: 6, nombre: "Tailwind CSS", icono: "devicon-tailwindcss-plain colored" },
+  { id: 7, nombre: "Git", icono: "devicon-git-plain colored" },
+  { id: 8, nombre: "GitHub", icono: "devicon-github-original colored" },
+  { id: 10, nombre: "TypeScript", icono: "devicon-typescript-plain colored" },
 ];
 </script>
 

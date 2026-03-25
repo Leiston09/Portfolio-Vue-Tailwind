@@ -14,7 +14,7 @@
         Leiston Holguin Aguirre
       </h1>
 
-      <ul class="flex flex-wrap gap-2 text-xs font-semibold">
+      <ul class="flex flex-wrap gap-2 text-xs">
         <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">Desarrollador Web</li>
         <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">Estudiante de Ingeniería</li>
         <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">Estudiante de Ciberseguridad</li>

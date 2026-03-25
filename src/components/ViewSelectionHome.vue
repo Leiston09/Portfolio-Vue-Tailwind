@@ -5,23 +5,19 @@
       <ul class="flex flex-col gap-2">
         <li class="flex items-center gap-3 p-2 text-[#442A18] hover:text-[#EB9D23] hover:bg-[#442A18]/5 rounded-lg transition-all duration-200 hover:translate-x-1 cursor-pointer">
           <i class="fas fa-home text-lg"></i>
-          <span>Home</span>
+          <RouterLink :to="{name: 'Home'}">Home</RouterLink>
         </li>
         <li class="flex items-center gap-3 p-2 text-[#442A18] hover:text-[#EB9D23] hover:bg-[#442A18]/5 rounded-lg transition-all duration-200 hover:translate-x-1 cursor-pointer">
           <i class="fas fa-briefcase text-lg"></i>
-          <span>Proyectos</span>
+          <RouterLink :to="{name: 'Projects'}">Proyectos</RouterLink>
         </li>
         <li class="flex items-center gap-3 p-2 text-[#442A18] hover:text-[#EB9D23] hover:bg-[#442A18]/5 rounded-lg transition-all duration-200 hover:translate-x-1 cursor-pointer">
           <i class="fas fa-code text-lg"></i>
-          <span>Habilidades</span>
-        </li>
-        <li class="flex items-center gap-3 p-2 text-[#442A18] hover:text-[#EB9D23] hover:bg-[#442A18]/5 rounded-lg transition-all duration-200 hover:translate-x-1 cursor-pointer">
-          <i class="fas fa-envelope text-lg"></i>
-          <span>Contacto</span>
+          <RouterLink :to="{name:'Skills'}" >Habilidades</RouterLink>
         </li>
         <li class="flex items-center gap-3 p-2 text-[#442A18] hover:text-[#EB9D23] hover:bg-[#442A18]/5 rounded-lg transition-all duration-200 hover:translate-x-1 cursor-pointer">
           <i class="fas fa-graduation-cap text-lg"></i>
-          <span>Certificaciones</span>
+          <RouterLink :to="{name: 'Certifications'}">Certificaciones</RouterLink>
         </li>
       </ul>
     </div>
@@ -32,29 +28,26 @@
     <ul class="flex justify-around p-2">
       <li class="flex flex-col items-center gap-1 text-[#442A18] hover:text-[#EB9D23] transition-colors">
         <i class="fas fa-home text-lg"></i>
-        <span class="text-xs">Home</span>
+          <RouterLink :to="{name: 'Home'}"  class="text-xs">Home</RouterLink>
       </li>
       <li class="flex flex-col items-center gap-1 text-[#442A18] hover:text-[#EB9D23] transition-colors">
         <i class="fas fa-briefcase text-lg"></i>
-        <span class="text-xs">Proyectos</span>
+          <RouterLink :to="{name: 'Projects'}" class="text-xs">Proyectos</RouterLink>
       </li>
       <li class="flex flex-col items-center gap-1 text-[#442A18] hover:text-[#EB9D23] transition-colors">
         <i class="fas fa-code text-lg"></i>
-        <span class="text-xs">Habilidades</span>
-      </li>
-      <li class="flex flex-col items-center gap-1 text-[#442A18] hover:text-[#EB9D23] transition-colors">
-        <i class="fas fa-envelope text-lg"></i>
-        <span class="text-xs">Contacto</span>
+        <RouterLink :to="{name:'Skills'}"  class="text-xs">  Habilidades</RouterLink>
       </li>
       <li class="flex flex-col items-center gap-1 text-[#442A18] hover:text-[#EB9D23] transition-colors">
         <i class="fas fa-graduation-cap text-lg"></i>
-        <span class="text-xs">Certificaciones</span>
+          <RouterLink :to="{name: 'Certifications'}" class="text-xs">Certificaciones</RouterLink>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup>
+
 
 </script>
 
