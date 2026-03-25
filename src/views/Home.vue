@@ -2,7 +2,7 @@
   <OptionsBar />
   <div class="flex p-4 min-h-screen bg-[#F8F3C6] py-20">
     
-    <div class="md:w-64 ">
+    <div >
       <ViewSelectionHome />
     </div>
 
