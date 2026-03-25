@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-[#442A18]/5 rounded-2xl">
-    <div class="hidden md:flex">
+  <div class="bg-[#442A18]/5 rounded-2xl h-screen ">
+    <div class="hidden md:flex ">
       <ul class="flex flex-col gap-2 p-2">
         <li
           class="flex items-center gap-3 p-2 text-[#442A18] hover:text-[#EB9D23] hover:bg-[#442A18]/5 rounded-lg transition-colors"

@@ -5,8 +5,8 @@
     >
       Portafolio Profesional:
     </h1>
-    <h1 class="font-mono font-bold text-4xl m-2 text-[#442A18]">
-      Leiston Holguin Aguirre
+    <h1 class="font-mono font-bold text-2xl m-2 text-[#442A18] md:text-4xl text-center">
+      Leiston Alexander Holguin Aguirre
     </h1>
     <p class="m-2 text-justify text-[#442A18]/80">
       MSJ de prueba. Mi objetivo es convertirme en desarrollador full stack,
@@ -32,15 +32,15 @@
     <div
       class="m-2 bg-[#442A18]/5 p-3 rounded-lg flex flex-col justify-center items-center gap-5"
     >
-      <h1 class="font-bold text-3xl text-[#442A18]">Habilidades:</h1>
-      <div class="grid grid-cols-2 place-content-center place-items-center md:grid-cols-2 lg:grid-cols-5 gap-4 w-full">
+      <h1 class="font-bold text-3xl text-[#442A18]">Habilidades</h1>
+      <div class="grid  place-content-center place-items-center gap-4 w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         <div
           v-for="lenguaje in lenguajes"
           :key="lenguaje.id"
-          class="rounded-lg justify-center items-center flex flex-col gap-2 p-3 w-30 bg-[#442A18]/10 sm:w-full md:w-full hover:bg-[#EB9D23]/20 transition-colors  "
+          class="rounded-lg justify-center items-center flex flex-col gap-1 p-2 w-full  bg-[#442A18]/10 sm:w-full hover:bg-[#EB9D23]/20 transition-colors  "
         >
-          <i :class="lenguaje.icono" class="text-6xl"></i>
-          <h2 class="flex justify-center items-center md:text-sm text-xs text-[#442A18] lg:text-xl">
+          <i :class="lenguaje.icono" class="text-3xl md:text-6xl"></i>
+          <h2 class="flex justify-center items-center md:text-sm text-xs text-[#442A18] lg:text-xl font-bold">
             {{ lenguaje.nombre }}
           </h2>
         </div>
