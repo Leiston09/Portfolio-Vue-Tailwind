@@ -33,14 +33,14 @@
       class="m-2 bg-[#442A18]/5 p-3 rounded-lg flex flex-col justify-center items-center gap-5"
     >
       <h1 class="font-bold text-3xl text-[#442A18]">Habilidades:</h1>
-      <div class="flex flex-wrap justify-center gap-4">
+      <div class="grid grid-cols-2 place-content-center place-items-center md:grid-cols-2 lg:grid-cols-5 gap-4 w-full">
         <div
           v-for="lenguaje in lenguajes"
           :key="lenguaje.id"
-          class="rounded-lg justify-center items-center flex flex-col gap-2 p-3 w-20 bg-[#442A18]/10"
+          class="rounded-lg justify-center items-center flex flex-col gap-2 p-3 w-30 bg-[#442A18]/10 sm:w-full md:w-full hover:bg-[#EB9D23]/20 transition-colors  "
         >
           <i :class="lenguaje.icono" class="text-6xl"></i>
-          <h2 class="flex justify-center items-center">
+          <h2 class="flex justify-center items-center md:text-sm text-xs text-[#442A18] lg:text-xl">
             {{ lenguaje.nombre }}
           </h2>
         </div>
