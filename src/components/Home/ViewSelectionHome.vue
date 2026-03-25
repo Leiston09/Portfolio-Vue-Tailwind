@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#442A18]/5 rounded-2xl h-screen ">
+  <div class="bg-[#442A18]/5 rounded-2xl mr-4 ">
     <div class="hidden md:flex ">
       <ul class="flex flex-col gap-2 p-2">
         <li
