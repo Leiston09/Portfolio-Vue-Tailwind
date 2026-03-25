@@ -1,6 +1,6 @@
 <template>
   <OptionsBar />
-  <div class="flex gap-4 p-4 min-h-screen bg-[#F8F3C6] pt-20">
+  <div class="flex gap-4 p-4 min-h-screen bg-[#F8F3C6] py-20">
     <div class="w-auto">
       <ViewSelectionHome />
     </div>
