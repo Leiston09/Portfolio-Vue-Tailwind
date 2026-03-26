@@ -5,7 +5,7 @@
     <div class="flex items-center gap-2">
       <div class="w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-full">
         <img
-          :src="usuario"
+          :src="usuarioPerfil"
           alt="Foto de perfil usuario"
           class="w-full h-full object-cover"
         />
@@ -44,7 +44,8 @@
 <script setup>
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
-import usuario from '@/assets/IMG/imgPrueba.png'
+import usuarioPerfil from '@/assets/IMG/usuarioPerfil.jpg'
+
 const { t } = useI18n();
 const isLoggedIn = ref(false);
 </script>

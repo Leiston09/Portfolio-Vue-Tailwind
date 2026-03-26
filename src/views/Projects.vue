@@ -16,7 +16,7 @@
         :key="project.id"
       >
         <img
-          src="../assets/img/imgPrueba.png"
+          :src="fotoPrubea"
           alt="Imagen del proyecto"
           class="rounded-xl w-full h-48 object-cover"
         />
@@ -66,6 +66,7 @@
 <script setup>
 import { getProjects } from '@/service/api';
 import { onMounted, ref } from 'vue';
+import fotoPrubea from '@/assets/IMG/usuarioPerfil.jpg'
 
 const projects = ref([])
 
