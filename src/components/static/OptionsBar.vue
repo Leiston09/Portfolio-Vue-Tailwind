@@ -44,7 +44,7 @@
 <script setup>
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
-import usuarioPerfil from '@/assets/IMG/usuarioPerfil.jpg'
+import usuarioPerfil from '@/assets/img/usuarioPerfil.jpg'
 
 const { t } = useI18n();
 const isLoggedIn = ref(false);

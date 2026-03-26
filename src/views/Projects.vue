@@ -66,7 +66,7 @@
 <script setup>
 import { getProjects } from '@/service/api';
 import { onMounted, ref } from 'vue';
-import fotoPrubea from '@/assets/IMG/usuarioPerfil.jpg'
+import fotoPrubea from '@/assets/img/usuarioPerfil.jpg'
 
 const projects = ref([])
 
