@@ -11,10 +11,14 @@
       </div>
     </div>
   </div>
+  <div class="fixed bottom-0 right-5 h-25 md:right-6 md:h-20">
+    <ChatBot/>
+  </div>
 </template>
 
 <script setup>
 import { RouterView } from "vue-router";
-import OptionsBar from "./components/OptionsBar.vue";
-import ViewSelectionHome from "./components/ViewSelectionHome.vue";
+import OptionsBar from "./components/static/OptionsBar.vue";
+import ViewSelectionHome from "./components/static/ViewSelectionHome.vue";
+import ChatBot from "./components/static/ChatBot.vue";
 </script>

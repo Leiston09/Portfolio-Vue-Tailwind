@@ -3,7 +3,7 @@
     
     <div class="w-full h-40 md:h-48 bg-[#442A18]/10 overflow-hidden rounded-xl">
       <img
-        src="../../assets/img/imgPrueba.png"
+        :src="fotoPerfil"
         alt="Foto de Leiston Holguin Aguirre"
         class="w-full h-full object-cover"
       />
@@ -15,16 +15,14 @@
       </h1>
 
       <ul class="flex flex-wrap gap-2 text-xs">
-        <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">Desarrollador Web</li>
-        <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">Estudiante de Ingeniería</li>
-        <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">Estudiante de Ciberseguridad</li>
-        <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">Estudiante de Redes</li>
+        <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">{{ t("home.specialization.webDeveloper") }}</li>
+        <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">{{ t("home.specialization.softwareEngineeringStudent") }}</li>
+        <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">{{ t("home.specialization.networkKnowledge") }}</li>
+        <li class="bg-[#442A18]/20 px-2 py-1 rounded-2xl text-[#442A18]">{{ t("home.specialization.databaseKnowledge") }}</li>
       </ul>
 
       <p class="text-justify md:text-left text-[#442A18]/80">
-        MSJ DE PRUEBA... soy un desarrollador web en formación con conocimientos
-        en tecnologías modernas y con una pasión por crear experiencias
-        digitales innovadoras.
+        {{ t("home.personalMessage") }}
       </p>
 
       <button class="bg-[#EB9D23]/20 rounded-2xl font-bold text-[#442A18] hover:bg-[#442A18] hover:text-[#F8F3C6] px-4 py-2 transition-all duration-200 hover:scale-105 shadow-sm hover:shadow-md">
@@ -34,3 +32,14 @@
 
   </div>
 </template>
+
+<script setup>
+import { useI18n } from 'vue-i18n';
+import fotoPerfil from '@/assets/IMG/FotoPerfil.jpg'
+const {t} = useI18n()
+
+</script>
+
+<style lang="scss" scoped>
+
+</style>

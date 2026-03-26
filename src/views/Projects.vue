@@ -12,8 +12,8 @@
       <div
         class="bg-[#442A18]/10 rounded-lg p-3 flex flex-col h-full
                transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-        v-for="proyect in proyects"
-        :key="proyect.id"
+        v-for="project in projects"
+        :key="project.id"
       >
         <img
           src="../assets/img/imgPrueba.png"
@@ -22,22 +22,22 @@
         />
 
         <h2 class="font-bold text-[#442A18] mt-2">
-          {{ proyect.name }}
+          {{ project.title }}
         </h2>
 
         <ul class="flex flex-wrap gap-2 mt-1">
           <li
-            v-for="stack in proyect.stack"
-            :key="stack"
+            v-for="technologies in project.technologies"
+            :key="technologies"
             class="bg-[#442A18]/20 px-2 py-1 rounded-lg text-xs text-[#442A18]
                    hover:bg-[#EB9D23]/20 transition-colors"
           >
-            {{ stack }}
+            {{ technologies }}
           </li>
         </ul>
 
         <p class="text-[#442A18]/80 line-clamp-3 mt-2">
-          {{ proyect.description }}
+          {{ project.description }}
         </p>
 
         <!-- BOTONES -->
@@ -64,34 +64,14 @@
 </template>
 
 <script setup>
-const proyects = [
-  {
-    id: 1,
-    name: "Proyecto 1",
-    description:
-      "Descripción del proyecto 1. Stack: Vue.js, Node.js, MongoDB md de prueba asdfdsdfvsd cvscdddddddddddddddd dddddddddd ddddddddd ddddddddd.",
-    stack: ["Vue.js", "Node.js", "MongoDB"],
-  },
-  {
-    id: 2,
-    name: "Proyecto 2",
-    description: "Descripción del proyecto 2. Stack: React, Express, MySQL.",
-    stack: ["React", "Express", "MySQL"],
-  },
-  {
-    id: 3,
-    name: "Proyecto 3",
-    description:
-      "Descripción del proyecto 3. Stack: Angular, Django, PostgreSQL.",
-    stack: ["Angular", "Django", "PostgreSQL"],
-  },
-  {
-    id: 4,
-    name: "Proyecto 4",
-    description: "Descripción del proyecto 4. Stack: React, Node.js, MongoDB.",
-    stack: ["React", "Node.js", "MongoDB"],
-  },
-];
+import { getProjects } from '@/service/api';
+import { onMounted, ref } from 'vue';
+
+const projects = ref([])
+
+onMounted(async () => {
+  projects.value = await getProjects()
+})
 </script>
 
 <style lang="scss" scoped></style>

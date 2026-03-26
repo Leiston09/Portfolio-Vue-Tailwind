@@ -16,9 +16,8 @@
 </template>
 
 <script setup>
-import Contact from "@/components/Contact.vue";
+import Contact from "@/components/Home/Contact.vue";
 import MainViewHome from "@/components/Home/MainViewHome.vue";
 import PersonalInformationHome from "@/components/Home/PersonalInformationHome.vue";
 </script>
 
-<style lang="scss" scoped></style>
