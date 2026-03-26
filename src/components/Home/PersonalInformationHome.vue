@@ -35,7 +35,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n';
-import fotoPerfil from '@/assets/IMG/FotoPerfil.jpg'
+import fotoPerfil from '@/assets/img/FotoPerfil.jpg'
 const {t} = useI18n()
 
 </script>
