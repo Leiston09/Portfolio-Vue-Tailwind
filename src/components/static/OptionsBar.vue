@@ -6,7 +6,7 @@
       <div class="w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-full">
         <img
           :src="usuario"
-          alt="Foto de perfil del usuario"
+          alt="Foto de perfil usuario"
           class="w-full h-full object-cover"
         />
       </div>
