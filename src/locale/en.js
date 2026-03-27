@@ -1,53 +1,76 @@
 export default {
-  menu: {
-    home: "Home",
-    projects: "Projects",
-    skills: "Skills",
-    certifications: "Certifications",
-    contact: "Contact",
+  globalOptions: {
+    ViewAll: "View all →",
   },
+
   navbar: {
     login: "Login",
     guest: "Guest",
+    account: "Session closed",
     spanish: "Spanish",
     english: "English",
+    menu: {
+      home: "Home",
+      AboutMe: "About me",
+      projects: "Projects",
+      skills: "Skills",
+      certifications: "Certifications",
+      contact: "Contact",
+    },
   },
   home: {
     portfolioTitle: "Personal Portfolio",
-    welcomeMessage: "Welcome to my professional portfolio",
-    proprojects: "Projects",
-    age: "Age",
-    experience: "Professional Experience",
+    welcomeMessage:
+      "Full-stack web developer specializing in the creation of modern web applications with Vue 3, Node.js and databases, with additional knowledge of cybersecurity and networks.",
+    ViewProjects: "Projects",
+    ViewCV: "View Curriculum",
+    ViewContact: "View Contact",
+    DownloadCV: "Download CV",
     specialization: {
       webDeveloper: "Web Developer",
-      softwareEngineeringStudent: "Information Systems Engineering Student",
-      networkKnowledge: "Networking Knowledge",
-      databaseKnowledge: "Relational and NoSQL Databases",
+      softwareEngineeringStudent: "Systems Engineering Student",
+      databaseKnowledge: "Databases",
+      Cybersecurityknowledge: "Cybersecurity",
+      networksKnowledge: "Networking",
     },
     personalMessage:
-      "Here you can find my projects, skills and certifications.",
+      "Experience in frontend development with Vue 3, Tailwind CSS, JavaScript and backend with Node.js. I also have knowledge of cybersecurity and networking fundamentals.",
   },
   projects: {
+    title: "Featured projects",
     projectIntro: "Here are some of my recent projects.",
-    tiendaAlex: {
-      title: "TiendaAlex E-commerce",
-      description:
-        "Modular e-commerce with AI chatbot integration (Gemini API) and Vue 3.",
-    },
-    portfolio: {
-      title: "Portfolio Website",
-      description:
-        "Professional portfolio developed with Vue 3 and Tailwind CSS.",
+    items: {
+      portfolio: {
+        title: "Personal Portfolio",
+        description:
+          "Modern personal portfolio developed to showcase skills and projects.",
+        descriptionimg: "Portfolio web built with Vue 3 and Tailwind CSS.",
+      },
+      ecommerce: {
+        title: "E-commerce Web Application",
+        description:
+          "E-commerce platform with shopping cart and product management.",
+        descriptionimg: "E-commerce interface with dynamic UI.",
+      },
+      vacio: {
+        title: "E-commerce Web Application",
+        description:
+          "E-commerce platform with shopping cart and product management.",
+        descriptionimg: "E-commerce interface with dynamic UI.",
+      },
     },
   },
   skills: {
+
     title: "Technical Skills",
     frontend: "Frontend Development",
     backend: "Backend Development",
     databases: "Databases",
     tools: "Tools",
   },
+
   certifications: {
+    title:"Certifications obtained",
     intro: "These are some of my certifications and courses.",
     items: {
       comptia: {

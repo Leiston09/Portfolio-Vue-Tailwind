@@ -1,44 +1,65 @@
 export default {
-  menu: {
-    home: "Inicio",
-    projects: "Proyectos",
-    skills: "Habilidades",
-    certifications: "Certificaciones",
-    contact: "Contacto",
+  globalOptions: {
+    ViewAll: "Ver todos →",
   },
+
   navbar: {
     login: "Iniciar Sesión",
     guest: "Invitado",
+    account: "Sesión cerrada",
     spanish: "Español",
     english: "Inglés",
+    menu: {
+      home: "Inicio",
+      AboutMe: "Sobre mí",
+      projects: "Proyectos",
+      skills: "Habilidades",
+      certifications: "Certificaciones",
+      contact: "Contacto",
+    },
   },
   home: {
     portfolioTitle: "Portafolio Personal",
-    welcomeMessage: "Bienvenido a mi portafolio profesional",
-    proprojects: "Proyectos",
-    age: "Edad",
-    experience: "Experiencia Profesional",
+    welcomeMessage:
+      "Desarrollador web full-stack especializado en la creación de aplicaciones web modernas con Vue 3, Node.js y bases de datos, con conocimientos adicionales de ciberseguridad y redes.",
+    ViewProjects: "Proyectos",
+    ViewCV: "Ver Curriculum",
+    ViewContact: "Ver Contacto",
+    DownloadCV: "Descargar CV",
     specialization: {
       webDeveloper: "Desarrollador Web",
-      softwareEngineeringStudent:
-        "Estudiante de Ingeniería en Sistemas de Información",
-      networkKnowledge: "Conocimientos en Redes",
-      databaseKnowledge: "Bases de Datos Relacionales y NoSQL",
+      softwareEngineeringStudent: "Estudiante de Ingeniería en Sistemas",
+      databaseKnowledge: "Bases de Datos",
+      Cybersecurityknowledge: "Ciberseguridad ",
+      networksKnowledge: "Redes ",
     },
     personalMessage:
-      "Aquí encontrarás mis proyectos, habilidades y certificaciones.",
+      "Experiencia en frontend con Vue 3, Tailwind CSS, JavaScript y backend con Node.js, También tengo conocimientos de ciberseguridad y fundamentos de redes.",
   },
+
   projects: {
+    title: "Proyectos Destacados",
     projectIntro: "Estos son algunos de mis proyectos recientes.",
-    tiendaAlex: {
-      title: "TiendaAlex E-commerce",
-      description:
-        "E-commerce modular con integración de chatbot IA (Gemini API) y Vue 3.",
-    },
-    portfolio: {
-      title: "Sitio Web Portafolio",
-      description:
-        "Portafolio profesional desarrollado con Vue 3 y Tailwind CSS.",
+    items: {
+      portfolio: {
+        title: "Portafolio Personal",
+        description:
+          "Portafolio personal moderno desarrollado para mostrar habilidades y proyectos.",
+        descriptionimg:
+          "Web de portafolio construida con Vue 3 y Tailwind CSS.",
+      },
+      ecommerce: {
+        title: "Aplicación Web de Comercio Electrónico",
+        description:
+          "Plataforma de comercio electrónico con carrito de compras y gestión de productos.",
+        descriptionimg: "Interfaz de comercio electrónico con IU dinámica.",
+      },
+      vacio: {
+        title: "Aplicación Web de Comercio Electrónico",
+        description:
+          "Plataforma de comercio electrónico con carrito de compras y gestión de productos.",
+        descriptionimg: "Interfaz de comercio electrónico con IU dinámica.",
+      },
     },
   },
   skills: {
@@ -49,6 +70,7 @@ export default {
     tools: "Herramientas",
   },
   certifications: {
+    title: "Certificaciones obtenidas",
     intro: "Estas son algunas de mis certificaciones y cursos.",
     items: {
       comptia: {

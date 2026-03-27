@@ -1,0 +1,63 @@
+<template>
+  <div class="flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-white">{{ t("skills.title") }}</h1>
+
+    <button class="text-[#38BDF8] hover:underline">
+      {{ $t("globalOptions.ViewAll") }}
+    </button>
+  </div>
+
+  <div class="overflow-hidden relative w-full py-6">
+    <div class="flex gap-12 animate-scroll whitespace-nowrap">
+      <div
+        v-for="skill in skills"
+        :key="'scroll1-' + skill.id"
+        class="flex items-center gap-2 text-gray-300"
+      >
+        <i :class="skill.icono" class="text-4xl"></i>
+        <span class="text-sm">{{ skill.nombre }}</span>
+      </div>
+
+      <div
+        v-for="skill in skills"
+        :key="'scroll2-' + skill.id"
+        class="flex items-center gap-2 text-gray-300"
+      >
+        <i :class="skill.icono" class="text-4xl"></i>
+        <span class="text-sm">{{ skill.nombre }}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { getSkills } from "@/service/api";
+import { onMounted, ref } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+const skills = ref([]);
+
+onMounted(async () => {
+  skills.value = await getSkills();
+});
+</script>
+
+<style scoped>
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+  width: max-content;
+}
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+</style>

@@ -1,8 +1,9 @@
 export const Certifications = [
   {
     id: 1,
+    key: "comptia",
     name: "CompTIA Security+",
-    issuer: "Udemy",
+    institution: "Udemy",
     image: "/certificados/UnemyComTIASecurity+.jpg",
     pdf: "/PDF/UnemyComTIASecurity+.pdf",
     description:
@@ -10,8 +11,9 @@ export const Certifications = [
   },
   {
     id: 2,
+    key: "googleCyber",
     name: "Google Cybersecurity Professional",
-    issuer: "Google",
+    institution: "Google",
     image: "/certificados/CertificadoGOOGLE_CYBERSEGURIDAD.jpg",
     pdf: "/PDF/CertificadoGOOGLE_CYBERSEGURIDAD.pdf",
     description:
@@ -19,8 +21,9 @@ export const Certifications = [
   },
   {
     id: 3,
+    key: "pythonSteps",
     name: "Primeros Pasos con Python",
-    issuer: "Google",
+    institution: "Google",
     image: "/certificados/PrimerosPasosPYTHON.jpg",
     pdf: "/PDF/PrimerosPasosPYTHON.pdf",
     description:
@@ -29,7 +32,7 @@ export const Certifications = [
   {
     id: 4,
     name: "Estudiante de Ingeniería en Sistemas",
-    issuer: "Universidad de Guayaquil",
+    institution: "Universidad de Guayaquil",
     image: "/certificados/UG.jpg",
     pdf: "",
     description:
@@ -38,7 +41,7 @@ export const Certifications = [
   {
     id: 5,
     name: "Detection and Response",
-    issuer: "Google",
+    institution: "Google",
     image: "/certificados/DettectionAndResponse.jpg",
     pdf: "/PDF/DettectionAndResponse.pdf",
     description:
@@ -47,7 +50,7 @@ export const Certifications = [
   {
     id: 6,
     name: "Foundations of Cybersecurity",
-    issuer: "Google",
+    institution: "Google",
     image: "/certificados/FoundationsOfCybersecurity.jpg",
     pdf: "/PDF/FoundationsOfCybersecurity.pdf",
     description:
@@ -56,7 +59,7 @@ export const Certifications = [
   {
     id: 7,
     name: "Manage Security Risks",
-    issuer: "Google",
+    institution: "Google",
     image: "/certificados/ManageSecurityRisks.jpg",
     pdf: "/PDF/ManageSecurityRisks.pdf",
     description:
@@ -65,7 +68,7 @@ export const Certifications = [
   {
     id: 8,
     name: "Networks and Network Security",
-    issuer: "Google",
+    institution: "Google",
     image: "/certificados/NetworksAndNetwork.jpg",
     pdf: "/PDF/NetworksAndNetwork.pdf",
     description:
@@ -74,7 +77,7 @@ export const Certifications = [
   {
     id: 9,
     name: "Prepare for Cybersecurity Jobs",
-    issuer: "Google",
+    institution: "Google",
     image: "/certificados/PreparateForCybersecurityJobs.jpg",
     pdf: "/PDF/PreparateForCybersecurityJobs.pdf",
     description:
@@ -83,7 +86,7 @@ export const Certifications = [
   {
     id: 10,
     name: "Threats, Vulnerabilities, and Risks",
-    issuer: "Google",
+    institution: "Google",
     image: "/certificados/TheatsAndVulnerabilities.jpg",
     pdf: "/PDF/TheatsAndVulnerabilities.pdf",
     description:
@@ -92,7 +95,7 @@ export const Certifications = [
   {
     id: 11,
     name: "Automate Cybersecurity Tasks with Python",
-    issuer: "Google",
+    institution: "Google",
     image: "/certificados/AutimateCibersecurityPython.jpg",
     pdf: "/PDF/AutimateCibersecurityPython.pdf",
     description:

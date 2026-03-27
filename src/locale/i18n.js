@@ -3,12 +3,11 @@ import en from "./en";
 import es from "./es";
 
 const i18n = createI18n({
-    legacy: false,
-    locale: 'es',
-    messages: {
-        en,
-        es
-    }
-})
+  locale: "es",
+  messages: {
+    es,
+    en,
+  },
+});
 
-export default i18n
+export default i18n;
