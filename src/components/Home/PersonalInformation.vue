@@ -23,10 +23,10 @@
           {{ $t("home.specialization.Cybersecurityknowledge") }}
         </li>
         <li class="bg-[#1E293B] px-2 py-1 rounded-lg text-gray-300">
-          {{ $t("home.specialization.softwareEngineeringStudent") }}
+          {{ $t("home.specialization.networksKnowledge") }}
         </li>
         <li class="bg-[#1E293B] px-2 py-1 rounded-lg text-gray-300">
-          {{ $t("home.specialization.networksKnowledge") }}
+          {{ $t("home.specialization.softwareEngineeringStudent") }}
         </li>
       </ul>
 
@@ -46,5 +46,4 @@
 
 <script setup>
 import fotoPerfil from "@/assets/img/FotoPerfil.jpg";
-
 </script>

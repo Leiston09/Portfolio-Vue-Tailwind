@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-white">{{ t("skills.title") }}</h1>
+    <h1 class="text-lg md:text-2xl font-bold text-white">{{ t("skills.title") }}</h1>
 
     <button class="text-[#38BDF8] hover:underline">
       {{ $t("globalOptions.ViewAll") }}

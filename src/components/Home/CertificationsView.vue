@@ -2,17 +2,19 @@
   <!-- Título -->
   <div class="flex justify-between items-center">
     <div>
-      <h1 class="text-2xl font-bold text-white">
+      <h1 class="text-lg md:text-2xl font-bold text-white">
         {{ $t("certifications.title") }}
       </h1>
-      <p class="text-gray-400 text-sm">
-        {{ $t("certifications.intro") }}
-      </p>
     </div>
 
-    <button class="text-[#38BDF8] hover:underline">
+    <RouterLink  class="text-[#38BDF8] hover:underline" :to="{name: 'Certifications'}">
       {{ $t("globalOptions.ViewAll") }}
-    </button>
+    </RouterLink>
+  </div>
+  <div>
+    <p class="text-gray-400 text-sm">
+      {{ $t("certifications.intro") }}
+    </p>
   </div>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-5">
     <div

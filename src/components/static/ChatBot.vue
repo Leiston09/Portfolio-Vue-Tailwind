@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import ChatBot from '@/assets/img/ChatBot.png'
+import ChatBot from '@/assets/img/ChatBotWhile.png'
 
 </script>
 

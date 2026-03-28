@@ -7,7 +7,7 @@
         {{ $t("home.portfolioTitle") }}
       </span>
 
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight text-center md:text-left  ">
         Leiston Alexander <br />
         <span class="text-[#38BDF8]">Holguin Aguirre</span>
       </h1>
@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <div class="flex-1 flex justify-center">
+    <div class="hidden md:flex flex-1 justify-center">
       <div class="relative">
         <div
           class="absolute inset-0 bg-[#38BDF8] blur-3xl opacity-20 rounded-full"

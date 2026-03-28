@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#442A18]/5 my-1 rounded-2xl p-3">
+  <div class="bg-[#020617] rounded-2xl p-3">
     
     <div class="flex flex-col justify-center items-center">
       <h1 class="font-bold text-3xl text-[#442A18]">Proyectos:</h1>

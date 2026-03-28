@@ -44,15 +44,16 @@ export default {
       portfolio: {
         title: "Portafolio Personal",
         description:
-          "Portafolio personal moderno desarrollado para mostrar habilidades y proyectos.",
+          "Portafolio web moderno diseñado para presentar mi perfil, proyectos y habilidades de desarrollo.",
         descriptionimg:
-          "Web de portafolio construida con Vue 3 y Tailwind CSS.",
+          "Incluye secciones de información personal, habilidades, proyectos, certificaciones y contacto con diseño responsive y navegación dinámica.",
       },
-      ecommerce: {
-        title: "Aplicación Web de Comercio Electrónico",
+      pageAlex: {
+        title: "Aplicación con conexión a backend",
         description:
-          "Plataforma de comercio electrónico con carrito de compras y gestión de productos.",
-        descriptionimg: "Interfaz de comercio electrónico con IU dinámica.",
+          "Aplicación web con integración a backend, validación de datos y tienda en línea implementada.",
+        descriptionimg:
+          "Interfaz donde el usuario puede registrarse, iniciar sesión y validar sus datos. El sistema permite guardar la información en la base de datos y visualizar los productos disponibles en la tienda.",
       },
       vacio: {
         title: "Aplicación Web de Comercio Electrónico",
@@ -72,6 +73,11 @@ export default {
   certifications: {
     title: "Certificaciones obtenidas",
     intro: "Estas son algunas de mis certificaciones y cursos.",
+    description: "Certificaciones en ciberseguridad, programación y fundamentos de redes.",
+    filter: "Filtrar por:",
+    search: "Buscar certificaciones...",
+    institution: "Institución",
+    all: "Todos",
     items: {
       comptia: {
         name: "CompTIA Security+",

@@ -15,23 +15,21 @@
       </div>
     </div>
 
-    <!-- MENÚ PC -->
     <div class="hidden md:block">
       <ul class="flex gap-6 text-sm font-semibold text-gray-200">
-        <li><RouterLink :to="{ path: '/', hash: '#home' }">Home</RouterLink></li>
-        <li><RouterLink :to="{ path: '/', hash: '#about' }">About</RouterLink></li>
-        <li><RouterLink :to="{ path: '/', hash: '#projects' }">Projects</RouterLink></li>
-        <li><RouterLink :to="{ path: '/', hash: '#skills' }">Skills</RouterLink></li>
-        <li><RouterLink :to="{ path: '/', hash: '#certifications' }">Certifications</RouterLink></li>
-        <li><RouterLink :to="{ path: '/', hash: '#contact' }">Contact</RouterLink></li>
+        <li><RouterLink :to="{ path: '/', hash: '#home' }">{{ $t("navbar.menu.home") }}</RouterLink></li>
+        <li class="lg:hidden"><RouterLink :to="{ path: '/', hash: '#about' }">{{ $t("navbar.menu.AboutMe") }}</RouterLink></li> 
+        <li><RouterLink :to="{ path: '/', hash: '#projects' }">{{ $t("navbar.menu.projects") }}</RouterLink></li>
+        <li><RouterLink :to="{ path: '/', hash: '#skills' }">{{ $t("navbar.menu.skills") }}</RouterLink></li>
+        <li><RouterLink :to="{ path: '/', hash: '#certifications' }">{{ $t("navbar.menu.certifications") }}</RouterLink></li>
+        <li><RouterLink :to="{ path: '/', hash: '#contact' }">{{ $t("navbar.menu.contact") }}</RouterLink></li>
       </ul>
     </div>
 
-    <!-- DERECHA -->
     <div class="flex items-center gap-2 md:gap-4">
       <select v-model="$i18n.locale" class="px-2 py-1 bg-[#1E293B] border border-gray-500 text-white rounded-full text-xs">
-        <option value="es">ES</option>
-        <option value="en">EN</option>
+        <option value="es">{{ $t("navbar.spanish") }}</option>
+        <option value="en">{{ $t("navbar.english") }}</option>
       </select>
 
       <button v-if="!isLoggedIn" class="bg-[#38BDF8] text-[#0F172A] px-2 py-1 rounded-lg text-xs">
@@ -40,42 +38,41 @@
     </div>
   </div>
 
-  <!-- 🔥 MENÚ MÓVIL (SEPARADO) -->
   <div class="md:hidden fixed bottom-0 left-0 right-0 bg-[#0F172A]/95 backdrop-blur-md border-t border-gray-800 z-50">
     <ul class="flex justify-around py-2 text-xs text-gray-300">
 
       <li>
         <RouterLink :to="{ path: '/', hash: '#home' }" class="flex flex-col items-center hover:text-[#38BDF8]">
           <i class="fas fa-home"></i>
-          <span>Home</span>
+          <span>{{ $t("navbar.menu.home") }}</span>
         </RouterLink>
       </li>
 
       <li>
         <RouterLink :to="{ path: '/', hash: '#about' }" class="flex flex-col items-center hover:text-[#38BDF8]">
           <i class="fas fa-user"></i>
-          <span>About</span>
+          <span>{{ $t("navbar.menu.AboutMe") }}</span>
         </RouterLink>
       </li>
 
       <li>
         <RouterLink :to="{ path: '/', hash: '#projects' }" class="flex flex-col items-center hover:text-[#38BDF8]">
           <i class="fas fa-code"></i>
-          <span>Projects</span>
+          <span>{{ $t("navbar.menu.projects") }}</span>
         </RouterLink>
       </li>
 
       <li>
         <RouterLink :to="{ path: '/', hash: '#skills' }" class="flex flex-col items-center hover:text-[#38BDF8]">
           <i class="fas fa-brain"></i>
-          <span>Skills</span>
+          <span>{{ $t("navbar.menu.skills") }}</span>
         </RouterLink>
       </li>
 
       <li>
         <RouterLink :to="{ path: '/', hash: '#contact' }" class="flex flex-col items-center hover:text-[#38BDF8]">
           <i class="fas fa-envelope"></i>
-          <span>Contact</span>
+          <span>{{ $t("navbar.menu.contact") }}</span>
         </RouterLink>
       </li>
 

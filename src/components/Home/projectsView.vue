@@ -1,8 +1,12 @@
 <template>
   <div class="flex justify-between items-center py-5">
-    <h1 class="text-2xl font-bold text-white">{{ $t("projects.title") }}</h1>
+    <h1 class="text-lg md:text-2xl font-bold text-white">
+      {{ $t("projects.title") }}
+    </h1>
 
-    <button class="text-[#38BDF8] hover:underline">{{ $t("globalOptions.ViewAll") }}</button>
+    <button class="text-[#38BDF8] hover:underline">
+      {{ $t("globalOptions.ViewAll") }}
+    </button>
   </div>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -42,7 +46,9 @@
         </div>
 
         <div>
-          <p class="text-white"> {{ $t(`projects.items.${project.key}.description`) }}</p>
+          <p class="text-white">
+            {{ $t(`projects.items.${project.key}.description`) }}
+          </p>
         </div>
 
         <div class="flex gap-2 mt-2">
@@ -68,16 +74,13 @@
 </template>
 
 <script setup>
+import { getProjects } from "@/service/api";
+import { onMounted, ref } from "vue";
+import projectImage from "@/assets/img/gif/projectOne.gif";
 
-import { getProjects } from '@/service/api';
-import { onMounted, ref } from 'vue';
-import fotoPrubea from '@/assets/img/usuarioPerfil.jpg'
-
-const projects = ref([])
+const projects = ref([]);
 
 onMounted(async () => {
-  projects.value = await getProjects()
-})
-
-
+  projects.value = await getProjects();
+});
 </script>
