@@ -27,9 +27,16 @@
     </div>
 
     <div class="flex items-center gap-2 md:gap-4">
-      <select v-model="$i18n.locale" class="px-2 py-1 bg-[#1E293B] border border-gray-500 text-white rounded-full text-xs">
-        <option value="es">{{ $t("navbar.spanish") }}</option>
-        <option value="en">{{ $t("navbar.english") }}</option>
+      
+      <select v-model="$i18n.locale" class="hidden md:flex px-2 py-1 bg-[#1E293B] border border-gray-500 text-white rounded-full text-xs">       
+        <option class="hidden md:flex" value="es">{{ $t("navbar.spanish") }}</option>
+        <option class="hidden md:flex" value="en">{{ $t("navbar.english") }}</option>        
+      </select>
+
+      <select v-model="$i18n.locale" class="md:hidden px-2 py-1 bg-[#1E293B] border border-gray-500 text-white rounded-full text-xs">
+        <option class="md:hidden" value="es">ES</option>
+        <option class="md:hidden" value="en">EN</option>              
+
       </select>
 
       <button v-if="!isLoggedIn" class="bg-[#38BDF8] text-[#0F172A] px-2 py-1 rounded-lg text-xs">
