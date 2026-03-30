@@ -38,7 +38,7 @@
 
       <div class="p-4 flex flex-col gap-2">
         <h2 class="font-bold text-white text-sm md:text-lg">
-          {{ certification.name }}
+          {{ $t(`certifications.items.${certification.key}.name`) }}
         </h2>
 
         <p class="text-gray-400 text-xs">
@@ -46,7 +46,7 @@
         </p>
 
         <p class="text-gray-300 text-xs md:text-sm text-justify">
-          {{ certification.description }}
+          {{ $t(`certifications.items.${certification.key}.description`) }}
         </p>
 
         <div class="lg:hidden flex justify-between items-center mt-2 gap-5"> 

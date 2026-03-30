@@ -44,8 +44,10 @@ export default {
     items: {
       portfolio: {
         title: "Personal Portfolio",
-        description: "Modern personal portfolio developed to showcase skills and projects.",
-        descriptionimg: "Includes sections for personal information, skills, projects, certifications and contact with responsive design and dynamic navigation.",
+        description:
+          "Modern personal portfolio developed to showcase skills and projects.",
+        descriptionimg:
+          "Includes sections for personal information, skills, projects, certifications and contact with responsive design and dynamic navigation.",
       },
       pageAlex: {
         title: "Web Application with Backend Connection",
@@ -74,39 +76,93 @@ export default {
   certifications: {
     title: "Certifications",
     intro: "These are some of my certifications and courses.",
-    description: "Certifications in cybersecurity, programming and networking fundamentals.",
+    description:
+      "Certifications in cybersecurity, programming and networking fundamentals.",
     search: "Search certifications...",
     all: "All",
     noResults: "No certifications found.",
     buttons: {
       view: "View Certification",
       download: "Download Certification",
-      back: "Back to Certifications"
+      back: "Back to Certifications",
     },
     items: {
-      comptia: {
+      unemyComTIASecurity: {
         name: "CompTIA Security+",
         description:
           "Certification in computer security, attacks and vulnerabilities.",
         descriptionDetail:
-          "The CompTIA Security+ certification validates foundational skills in cybersecurity, covering topics such as network security, threats and vulnerabilities, access control, identity management, cryptography and risk management. It is designed for IT professionals seeking to demonstrate their knowledge and skills in securing computer systems and networks against cyber threats.",
+          "Certification in computer security, attacks and vulnerabilities. This certification validates knowledge in areas such as threats, vulnerabilities, risk management, cryptography, and network security, providing a solid foundation for cybersecurity professionals.",
       },
       googleCyber: {
         name: "Google Cybersecurity Professional",
         description:
           "Professional program covering SQL, Python, networking and incident management.",
         descriptionDetail:
-          "The Google Cybersecurity Professional Certificate is a comprehensive program designed to equip learners with the essential skills and knowledge needed to pursue a career in cybersecurity. The program covers a wide range of topics, including cybersecurity fundamentals, network security, cryptography, risk management, incident response, and ethical hacking. Through hands-on labs and real-world projects, participants gain practical experience in identifying and mitigating cyber threats, securing networks and systems, and responding to security incidents effectively. This certificate is ideal for individuals looking to enter the cybersecurity field or enhance their existing skills in this rapidly evolving industry.",
+          "Professional program covering SQL, Python, networking and incident management. This program offers comprehensive training in cybersecurity, addressing topics such as data protection, threat detection, incident response, and implementation of effective security measures.",
       },
-      pythonSteps: {
-        name: "Getting Started with Python",
-        description: 
+      primerosPasosPYTHON: {
+        name: "First Steps with Python",
+        description:
           "Basic programming concepts in Python applied to cybersecurity.",
-          descriptionDetail:
-          "The 'Getting Started with Python' course provides an introduction to programming concepts using the Python language, with a focus on applications in cybersecurity. Participants will learn fundamental programming skills such as variables, data types, control structures, functions, and libraries, while also exploring how these concepts can be applied to solve cybersecurity challenges. The course includes hands-on exercises and projects that allow learners to practice writing Python code to analyze data, automate tasks, and develop simple security tools. This course is ideal for beginners who want to gain a solid foundation in programming and understand how Python can be used in the field of cybersecurity.",
+        descriptionDetail:
+          "Basic programming concepts in Python applied to cybersecurity. This course introduces students to the fundamentals of Python programming, focusing on its application in the cybersecurity field, including task automation, data analysis, and development of security tools.",
+      },
+      ingenieriaSistemas: {
+        name: "Systems Engineering Student",
+        description: "Professional academic training in Systems Engineering.",
+        descriptionDetail:
+          "Professional academic training in Systems Engineering at the Faculty of Industrial Engineering. The program covers software development, database management, computer networks, operating systems, and fundamental principles of information security.",
+      },
+      detectionAndResponse: {
+        name: "Detection and Response",
+        description: "Intrusion detection strategies and incident response.",
+        descriptionDetail:
+          "Intrusion detection strategies and incident response. This course covers continuous monitoring techniques, log analysis, security event management (SIEM), incident response procedures, basic forensic analysis, and post-incident recovery.",
+      },
+      foundationsOfCybersecurity: {
+        name: "Foundations of Cybersecurity",
+        description:
+          "Fundamental principles of information security and ethics.",
+        descriptionDetail:
+          "Fundamental principles of information security and ethics. This introductory course covers core cybersecurity concepts, including identification of common threats, importance of information security, principles of confidentiality, integrity and availability (CIA), and best practices for protecting digital assets.",
+      },
+      manageSecurityRisks: {
+        name: "Manage Security Risks",
+        description: "Enterprise risk management and compliance frameworks.",
+        descriptionDetail:
+          "Enterprise risk management and compliance frameworks. This course specializes in identifying, assessing, and mitigating security risks. Covers risk management frameworks, business impact analysis, risk response strategies, and implementation of effective security controls to protect organizational infrastructure.",
+      },
+      networksAndNetwork: {
+        name: "Networks and Network Security",
+        description:
+          "Network protocols, network architecture security and defense.",
+        descriptionDetail:
+          "Network protocols, network architecture security and defense. This course covers essential computer networking concepts, including protocols, network architecture, network devices, and perimeter security. Addresses topics such as firewalls, intrusion detection systems, VPNs, and best practices for securing network infrastructure against external and internal threats.",
+      },
+      prepareForCybersecurityJobs: {
+        name: "Prepare for Cybersecurity Jobs",
+        description:
+          "Professional preparation and ethics for the cybersecurity job market.",
+        descriptionDetail:
+          "Professional preparation and ethics for the cybersecurity job market. This course focuses on preparing to enter the cybersecurity field. Covers building a professional portfolio, preparing for technical interviews, relevant industry certifications, soft skills development, and key responsibilities of roles such as security analyst, security engineer, and incident response specialist.",
+      },
+      threatsAndVulnerabilities: {
+        name: "Threats, Vulnerabilities, and Risks",
+        description:
+          "Threat identification and vulnerability analysis in systems.",
+        descriptionDetail:
+          "Threat identification and vulnerability analysis in systems. This course focuses on identifying, classifying, and analyzing threats and vulnerabilities in computer systems. Covers types of malware, attack vectors, vulnerability assessments, penetration testing, and strategies for prioritizing and remediating security risks.",
+      },
+      automateCibersecurity: {
+        name: "Automate Cybersecurity Tasks with Python",
+        description:
+          "Using Python to automate security processes and file manipulation.",
+        descriptionDetail:
+          "Using Python to automate security processes and file manipulation. This course focuses on using Python to automate cybersecurity tasks, including log analysis, threat detection, automated incident response, and custom script development to improve efficiency in security operations.",
       },
     },
-   }, 
+  },
   contact: {
     title: "Contact",
     contactIntro:

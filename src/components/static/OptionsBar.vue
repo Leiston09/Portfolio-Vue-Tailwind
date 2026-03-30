@@ -64,6 +64,7 @@
       </select>
 
       <button
+        @click="login"
         v-if="!isLoggedIn"
         class="shrink-0 bg-[#38BDF8] text-[#0F172A] px-2 py-1 rounded-lg text-xs"
       >
@@ -132,6 +133,17 @@
 <script setup>
 import { ref } from "vue";
 import usuarioPerfil from "/public/img/usuarioPerfil.jpg";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const isLoggedIn = ref(false);
+
+const login = () => {
+  router.push({
+    name: 'Login'
+  });
+};
+
+
 </script>

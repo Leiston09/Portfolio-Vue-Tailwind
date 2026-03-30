@@ -1,7 +1,8 @@
 import ViewCertificate from "@/components/Certifications/ViewCertificate.vue";
 import NotFuntions from "@/components/NotFuntions.vue";
 import Certifications from "@/views/Certifications.vue";
-import Home from "@/views/Home.vue";
+import Login from "@/views/Login.vue";
+import Main from "@/views/Main.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -11,7 +12,7 @@ const routes = [
   },
   {
     path: "/",
-    component: Home,
+    component: Main,
     name: "Home",
   },
   {
@@ -29,6 +30,11 @@ const routes = [
     ]
 
   },
+  {
+    path: "/Login",
+    component: Login,
+    name: "Login",
+  }
 ];
 
 

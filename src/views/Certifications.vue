@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-col items-center">
+  <header>
+    <OptionsBar />
+  </header>
+  <div class="flex flex-col items-center mb-5 mt-20">
     <SearchCertifications
       :certifications="certifications"
       @searchCertifications="certificationsSearch"
@@ -11,10 +14,13 @@
       @validateCertificated="validateCertificated"
     />
 
-      <RouterView
-        :certificated="certificated"
-        @notCertificated="notNewCertificated"
-      />
+    <RouterView
+      :certificated="certificated"
+      @notCertificated="notNewCertificated"
+    />
+  </div>
+  <div class="fixed bottom-10 right-5 lg:bottom-5 lg:right-10">
+    <ChatBot />
   </div>
 </template>
 
@@ -25,6 +31,8 @@ import { computed, onMounted, ref, watch } from "vue";
 import SearchCertifications from "@/components/Certifications/SearchCertifications.vue";
 import CardCertifications from "@/components/Certifications/CardCertifications.vue";
 import { useRoute } from "vue-router";
+import OptionsBar from "@/components/static/OptionsBar.vue";
+import ChatBot from "@/components/static/ChatBot.vue";
 const route = useRoute();
 const router = useRouter();
 
@@ -33,8 +41,6 @@ const searchCertifications = ref("");
 const selectedInstitution = ref("");
 const certificated = ref(null);
 const notCertificated = ref(null);
-
-
 
 function certificationsSearch(search) {
   searchCertifications.value = search;
@@ -45,7 +51,6 @@ function filterByInstitution(institution) {
 function notNewCertificated(id) {
   notCertificated.value = id;
 }
-
 
 const filterCertificationsUser = computed(() => {
   let filterCertifications = certifications.value;
@@ -64,8 +69,6 @@ const filterCertificationsUser = computed(() => {
 });
 
 function validateCertificated(ids) {
-
-
   let validate = {
     id: ids,
     user: true,
@@ -79,23 +82,19 @@ function validateCertificated(ids) {
     name: "CertificationDetail",
     params: { id: ids },
   });
-
 }
-
 
 onMounted(async () => {
   certifications.value = await getCertifications();
 });
 
-
 watch([certifications, notCertificated], () => {
   if (!certifications.value.length || !notCertificated.value) return;
 
   certificated.value = certifications.value.find(
-    (c) => c.id === notCertificated.value
+    (c) => c.id === notCertificated.value,
   );
 });
-
 </script>
 
 <style lang="scss" scoped></style>
