@@ -1,13 +1,12 @@
 <template>
   <div
-    class="bg-[#020617] my-10 rounded-2xl p-6 flex flex-col items-center border border-gray-800"
-  >
+    class="my-10 rounded-2xl p-6 flex flex-col items-center border border-gray-800">
     <h1 class="text-3xl font-bold  text-white">
-      {{ t("contact.title") }}
+      {{ $t("contact.title") }}
     </h1>
 
     <p class="text-gray-400 text-center mt-2 max-w-xl">
-      {{ t("contact.contactIntro") }}
+      {{ $t("contact.contactIntro") }}
     </p>
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8 w-full"
@@ -38,9 +37,7 @@
 <script setup>
 import { getProfile } from "@/service/api";
 import { onMounted, ref } from "vue";
-import { useI18n } from "vue-i18n";
 
-const { t } = useI18n();
 const contacts = ref([]);
 
 onMounted(async () => {

@@ -7,14 +7,14 @@
           class="flex items-center gap-3 p-2 text-[#442A18] hover:text-[#EB9D23] hover:bg-[#442A18]/5 rounded-lg transition-all duration-200 hover:translate-x-1 cursor-pointer"
         >
           <i class="fas fa-home text-lg"></i>
-          <RouterLink :to="{ name: 'Home' }">{{ t("menu.home") }}</RouterLink>
+          <RouterLink :to="{ name: 'Home' }">{{ $t("menu.home") }}</RouterLink>
         </li>
         <li
           class="flex items-center gap-3 p-2 text-[#442A18] hover:text-[#EB9D23] hover:bg-[#442A18]/5 rounded-lg transition-all duration-200 hover:translate-x-1 cursor-pointer"
         >
           <i class="fas fa-briefcase text-lg"></i>
           <RouterLink :to="{ name: 'Projects' }">{{
-            t("menu.projects")
+            $t("menu.projects")
           }}</RouterLink>
         </li>
         <li
@@ -22,7 +22,7 @@
         >
           <i class="fas fa-code text-lg"></i>
           <RouterLink :to="{ name: 'Skills' }">{{
-            t("menu.skills")
+            $t("menu.skills")
           }}</RouterLink>
         </li>
         <li
@@ -30,7 +30,7 @@
         >
           <i class="fas fa-graduation-cap text-lg"></i>
           <RouterLink :to="{ name: 'Certifications' }">{{
-            t("menu.certifications")
+            $t("menu.certifications")
           }}</RouterLink>
         </li>
       </ul>
@@ -47,7 +47,7 @@
       >
         <i class="fas fa-home text-lg"></i>
         <RouterLink :to="{ name: 'Home' }" class="text-xs">{{
-          t("menu.home")
+          $t("menu.home")
         }}</RouterLink>
       </li>
       <li
@@ -55,7 +55,7 @@
       >
         <i class="fas fa-briefcase text-lg"></i>
         <RouterLink :to="{ name: 'Projects' }" class="text-xs">{{
-          t("menu.projects")
+          $t("menu.projects")
         }}</RouterLink>
       </li>
       <li
@@ -63,7 +63,7 @@
       >
         <i class="fas fa-code text-lg"></i>
         <RouterLink :to="{ name: 'Skills' }" class="text-xs">
-          {{ t("menu.skills") }}</RouterLink
+          {{ $t("menu.skills") }}</RouterLink
         >
       </li>
       <li
@@ -71,7 +71,7 @@
       >
         <i class="fas fa-graduation-cap text-lg"></i>
         <RouterLink :to="{ name: 'Certifications' }" class="text-xs">{{
-          t("menu.certifications")
+          $t("menu.certifications")
         }}</RouterLink>
       </li>
 
@@ -80,8 +80,7 @@
 </template>
 
 <script setup>
-import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+
 </script>
 
 <style lang="scss" scoped></style>

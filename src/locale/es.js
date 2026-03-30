@@ -1,6 +1,6 @@
 export default {
   globalOptions: {
-    ViewAll: "Ver todos →",
+    ViewAll: "Ver todas →",
   },
 
   navbar: {
@@ -18,6 +18,7 @@ export default {
       contact: "Contacto",
     },
   },
+
   home: {
     portfolioTitle: "Portafolio Personal",
     welcomeMessage:
@@ -63,6 +64,7 @@ export default {
       },
     },
   },
+
   skills: {
     title: "Habilidades Técnicas",
     frontend: "Desarrollo Frontend",
@@ -70,62 +72,45 @@ export default {
     databases: "Bases de Datos",
     tools: "Herramientas",
   },
+
   certifications: {
-    title: "Certificaciones obtenidas",
+    title: "Certificaciones",
     intro: "Estas son algunas de mis certificaciones y cursos.",
-    description: "Certificaciones en ciberseguridad, programación y fundamentos de redes.",
-    filter: "Filtrar por:",
+    description:
+      "Certificaciones en ciberseguridad, programación y fundamentos de redes.",
     search: "Buscar certificaciones...",
-    institution: "Institución",
     all: "Todos",
+    noResults: "No se encontraron certificaciones.",
+    buttons: {
+      view: "Ver Certificación",
+      download: "Descargar Certificación",
+      back: "Volver a Certificaciones",
+    },
     items: {
       comptia: {
         name: "CompTIA Security+",
-        description: "Seguridad informática, ataques y vulnerabilidades.",
+        description:
+          "Certificación en seguridad informática, ataques y vulnerabilidades.",
+        descriptionDetail:
+          "Certificación en seguridad informática, ataques y vulnerabilidades. Esta certificación valida conocimientos en áreas como amenazas, vulnerabilidades, gestión de riesgos, criptografía y seguridad de redes, proporcionando una base sólida para profesionales de la ciberseguridad.",
       },
       googleCyber: {
         name: "Google Cybersecurity Professional",
-        description: "SQL, Python, redes y gestión de incidentes.",
+        description:
+          "Programa profesional que cubre SQL, Python, redes y gestión de incidentes.",
+        descriptionDetail:
+          "Programa profesional que cubre SQL, Python, redes y gestión de incidentes. Este programa ofrece una formación integral en ciberseguridad, abordando temas como la protección de datos, la detección de amenazas, la respuesta a incidentes y la implementación de medidas de seguridad efectivas.",
       },
       pythonSteps: {
         name: "Primeros Pasos con Python",
-        description: "Programación básica en Python para seguridad.",
-      },
-      pythonAuto: {
-        name: "Automate Cybersecurity with Python",
-        description: "Automatización de procesos de seguridad con scripts.",
-      },
-      detection: {
-        name: "Detection and Response",
-        description: "Estrategias de detección y respuesta ante incidentes.",
-      },
-      foundations: {
-        name: "Foundations of Cybersecurity",
-        description: "Principios fundamentales y ética en seguridad.",
-      },
-      risks: {
-        name: "Manage Security Risks",
-        description: "Gestión de riesgos y marcos de cumplimiento.",
-      },
-      networks: {
-        name: "Networks and Network Security",
-        description: "Protocolos y seguridad en infraestructura de red.",
-      },
-      jobs: {
-        name: "Prepare for Cybersecurity Jobs",
-        description: "Preparación profesional para el mercado laboral.",
-      },
-      threats: {
-        name: "Threats, Vulnerabilities, and Risks",
-        description: "Análisis de amenazas en sistemas informáticos.",
-      },
-      ug: {
-        name: "Estudiante de Ingeniería",
         description:
-          "Facultad de Ingeniería Industrial - Universidad de Guayaquil.",
+          "Conceptos básicos de programación en Python aplicados a la ciberseguridad.",
+        descriptionDetail:
+          "Conceptos básicos de programación en Python aplicados a la ciberseguridad. Este curso introduce a los estudiantes a los fundamentos de la programación en Python, enfocándose en su aplicación en el campo de la ciberseguridad, incluyendo la automatización de tareas, análisis de datos y desarrollo de herramientas de seguridad.",
       },
     },
   },
+
   contact: {
     title: "Contacto",
     contactIntro: "Si deseas contactarme, no dudes en enviarme un mensaje.",

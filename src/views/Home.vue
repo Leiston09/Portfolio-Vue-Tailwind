@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-5" >  
-    <div class="flex flex-col items-center lg:flex-row gap-10">
+    <div class="flex flex-col items-center md:flex-row gap-10">
       <div class="flex-1" id="home">
         <HomeView />
       </div>

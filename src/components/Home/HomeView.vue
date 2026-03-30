@@ -7,44 +7,38 @@
         {{ $t("home.portfolioTitle") }}
       </span>
 
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight text-center md:text-left  ">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight text-center md:text-left  ">
         Leiston Alexander <br />
         <span class="text-[#38BDF8]">Holguin Aguirre</span>
       </h1>
 
-      <p class="text-gray-300 max-w-xl">
+      <p class="text-gray-300 text-justify max-w-lg ">
         {{ $t("home.welcomeMessage") }}
       </p>
 
-      <div class="flex flex-wrap gap-3">
+      <div class="flex flex-wrap justify-center gap-3">
         <button
-          class="bg-[#38BDF8] text-[#020617] px-5 py-2 rounded-lg font-semibold hover:scale-105 transition"
-        >
+          class="bg-[#38BDF8] text-black px-5 py-2 rounded-lg font-semibold hover:scale-105 transition-all">
           {{ $t("home.ViewProjects") }}
         </button>
 
         <button
-          class="border border-gray-500 text-white px-5 py-2 rounded-lg hover:bg-[#1E293B] transition"
+          class="border border-gray-500 text-white px-5 py-2 rounded-lg hover:bg-[#1E293B] hover:scale-105 transition-all"
         >
           {{ $t("home.ViewCV") }}
         </button>
 
         <button
-          class="border border-gray-500 text-white px-5 py-2 rounded-lg hover:bg-[#1E293B] transition"
+          class="border border-gray-500 text-white px-5 py-2 rounded-lg hover:bg-[#1E293B] hover:scale-105 transition-all"
         >
           {{ $t("home.ViewContact") }}
         </button>
       </div>
     </div>
 
-    <div class="hidden md:flex flex-1 justify-center">
-      <div class="relative">
+    <div class="hidden lg:flex flex-1 justify-center items-center">
         <div
-          class="absolute inset-0 bg-[#38BDF8] blur-3xl opacity-20 rounded-full"
-        ></div>
-
-        <div
-          class=" w-56 h-56 md:w-100 md:h-100 overflow-hidden shadow-xl relative mask-radial-[50%_50%] mask-radial-from-80%"
+          class=" w-56 h-56 md:w-100 md:h-100 overflow-hidden rounded-full border border-azul-oscuro mask-radial-[50%_50%] mask-radial-from-0%"
         >
           <img
             :src="PerfilError"
@@ -54,9 +48,8 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup>
-import PerfilError from "@/assets/img/GIF/PerfilError.gif";
+import PerfilError from "/public/img/gif/PerfilError.gif";
 </script>

@@ -1,14 +1,20 @@
-<template>
-  <div class="min-h-screen bg-[#020617] flex flex-col">
-    <OptionsBar />
+<template id="layoutpro">
+  <div class="min-h-screen bg-azul-oscuro flex flex-col">
+    <header>
+      <OptionsBar />
+    </header>
 
-    <main class="pt-20 pb-5 md:pb-0 px-4 flex-1">
+    <main class="pt-20 mb-10 lg:mb-0 px-4 flex-1">
       <div class="max-w-7xl mx-auto">
         <RouterView />
       </div>
     </main>
 
-    <div class="fixed bottom-10 right-4 md:bottom-2 md:right-5 z-50">
+    <footer class="text-center text-gray-500 text-xs pb-4">
+      © 2026 Leiston - Portfolio
+    </footer>
+
+    <div class="fixed bottom-10 right-5 lg:bottom-5 lg:right-10">
       <ChatBot />
     </div>
   </div>

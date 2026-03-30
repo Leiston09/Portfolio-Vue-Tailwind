@@ -1,10 +1,10 @@
 <template>
   <div class="flex justify-between items-center py-5">
-    <h1 class="text-lg md:text-2xl font-bold text-white">
+    <h1 class="text-lg md:text-3xl font-bold text-white  ">
       {{ $t("projects.title") }}
     </h1>
 
-    <button class="text-[#38BDF8] hover:underline">
+    <button class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500" v-if="projects.length > 0">
       {{ $t("globalOptions.ViewAll") }}
     </button>
   </div>
@@ -13,7 +13,7 @@
     <div
       v-for="project in projects"
       :key="project.id"
-      class="bg-[#111827] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-800 group"
+      class="bg-[#111827] rounded-2xl overflow-hidden transition-all duration-300 border border-gray-800 group"
     >
       <div class="relative w-full h-48 overflow-hidden">
         <img
@@ -55,16 +55,14 @@
           <a
             :href="project.github"
             target="_blank"
-            class="flex-1 text-center border border-gray-600 text-white rounded-lg py-1 hover:bg-[#1E293B] transition"
-          >
+            class="flex-1 text-center border border-gray-600 text-white rounded-lg py-1 hover:bg-[#1E293B] transition">
             GitHub
           </a>
 
           <a
             :href="project.demo"
             target="_blank"
-            class="flex-1 text-center bg-[#38BDF8] text-[#020617] font-semibold rounded-lg py-1 hover:scale-105 transition"
-          >
+            class="flex-1 text-center bg-[#38BDF8]  font-semibold rounded-lg py-1 hover:scale-105 transition">
             Demo
           </a>
         </div>
