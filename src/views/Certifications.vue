@@ -1,8 +1,6 @@
 <template>
-  <header>
-    <OptionsBar />
-  </header>
-  <div class="flex flex-col items-center mb-5 mt-20">
+
+  <div class="flex flex-col items-center mb-5 ">
     <SearchCertifications
       :certifications="certifications"
       @searchCertifications="certificationsSearch"
@@ -19,9 +17,6 @@
       @notCertificated="notNewCertificated"
     />
   </div>
-  <div class="fixed bottom-10 right-5 lg:bottom-5 lg:right-10">
-    <ChatBot />
-  </div>
 </template>
 
 <script setup>
@@ -31,8 +26,6 @@ import { computed, onMounted, ref, watch } from "vue";
 import SearchCertifications from "@/components/Certifications/SearchCertifications.vue";
 import CardCertifications from "@/components/Certifications/CardCertifications.vue";
 import { useRoute } from "vue-router";
-import OptionsBar from "@/components/static/OptionsBar.vue";
-import ChatBot from "@/components/static/ChatBot.vue";
 const route = useRoute();
 const router = useRouter();
 

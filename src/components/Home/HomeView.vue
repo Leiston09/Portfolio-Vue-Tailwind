@@ -51,5 +51,5 @@
 </template>
 
 <script setup>
-import PerfilError from "/public/img/gif/PerfilError.gif";
+import PerfilError from "/img/gif/PerfilError.gif";
 </script>

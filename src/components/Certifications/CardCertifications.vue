@@ -29,7 +29,7 @@
           <a
             :href="certification.pdf"
             download
-            class="border border-white text-white px-3 py-1 rounded-lg text-sm hover:bg-white transition"
+            class="border border-white text-white px-3 py-1 rounded-lg text-sm hover:bg-white hover:text-black transition-colors "
           >
             {{ $t("certifications.buttons.download") }}
           </a>
@@ -59,7 +59,7 @@
           <a
             :href="certification.pdf"
             download
-            class="border border-white text-white px-3 py-1 rounded-lg text-xs hover:bg-white transition"
+            class="border border-white text-white px-3 py-1 rounded-lg text-xs hover:bg-white transition hover:text-black"
           >
             {{ $t("certifications.buttons.download") }}
           </a>

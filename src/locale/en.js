@@ -1,6 +1,7 @@
 export default {
   globalOptions: {
     ViewAll: "View all →",
+    back: "Back",
   },
 
   navbar: {

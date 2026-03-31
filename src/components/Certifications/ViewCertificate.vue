@@ -87,7 +87,7 @@ const certificatedNew = computed(() => props.certificated);
 
 onMounted(() => {
   if (props.certificated) return;
-
+  console.log(props.certificated)
   try {
     const data = JSON.parse(localStorage.getItem("certificationId"));
 
