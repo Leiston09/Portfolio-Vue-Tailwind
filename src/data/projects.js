@@ -1,10 +1,9 @@
-import ProjectOne from "/img/gif/ProjectOne.gif";
 
 export const projects = [
   {
     id: 1,
     key: "portfolio",
-    image: ProjectOne,
+    image: "/img/gif/ProjectOne.gif",
     technologies: [
       "Vue 3",
       "Tailwind CSS",
