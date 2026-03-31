@@ -3,7 +3,7 @@ export const projects = [
   {
     id: 1,
     key: "portfolio",
-    image: "/public/img/gif/ProjectOne.gif",
+    image: "/img/gif/ProjectOne.gif",
     technologies: [
       "Vue 3",
       "Tailwind CSS",
@@ -18,7 +18,7 @@ export const projects = [
   {
     id: 2,
     key: "pageAlex",
-    image: "/public/img/gif/ProjectTwo.gif",
+    image: "/img/gif/ProjectTwo.gif",
     technologies: ["HTML", "CSS", "JavaScript", "PostgreSQL", "pgAdmin", "PHP"],
     github: "https://github.com/your-repo",
     demo: "https://your-demo.com",
