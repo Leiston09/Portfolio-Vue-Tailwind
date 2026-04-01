@@ -18,7 +18,7 @@
         </h2>
 
         <a
-          href="/public/pdf/Curriculum/CurriculumSistemasInformacion.pdf"
+          href="/pdf/Curriculum/CurriculumSistemasInformacion.pdf"
           download
           class="bg-green-600 hover:bg-green-700 px-6 py-2 mb-2 rounded-lg transition"
         >
@@ -38,7 +38,7 @@
         </h2>
 
         <a
-          href="/public/pdf/Curriculum/CurriculumDeveloperJunior.pdf"
+          href="/pdf/Curriculum/CurriculumDeveloperJunior.pdf"
           download
           class="bg-green-600 hover:bg-green-700 px-6 py-2 mb-2 rounded-lg transition"
         >
