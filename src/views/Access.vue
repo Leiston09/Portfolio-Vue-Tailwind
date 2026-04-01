@@ -1,7 +1,7 @@
 <template>
   <div
-    class="flex flex-col  m-5 md:flex-row w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-white/10">
-    <!-- Imagen -->
+    class="flex flex-col h-fit m-5 md:flex-row w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-white/10">
+    <!-- Imagen --> 
     <div class="hidden md:block md:w-1/2">
       <img
         src="@/assets/img/ImagenLogin.jpg"

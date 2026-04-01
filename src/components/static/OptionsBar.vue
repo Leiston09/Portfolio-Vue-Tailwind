@@ -12,7 +12,7 @@
       <div class="text-white flex flex-col rounded-lg min-w-0 ">
         <h1 class="font-bold text-sm truncate">{{ $t("navbar.guest") }}</h1>
         <span class="text-xs text-red-500/60 truncate">{{ $t("navbar.account") }}</span>
-        <span class="text-xs text-gray-400 truncate">leiston09holguin@gmail.com</span>
+        <span class="text-xs text-gray-400 truncate"></span>
       </div>
     </div>
 
@@ -21,7 +21,7 @@
         <li>
           <RouterLink :to="{ path: '/', hash: '#home' }">{{
             $t("navbar.menu.home")
-          }}</RouterLink>
+          }} </RouterLink>
         </li>
         <li>
           <RouterLink :to="{ path: '/', hash: '#projects' }">{{
@@ -46,7 +46,7 @@
       </ul>
     </div>
 
-    <div class="flex items-center gap-2 md:gap-4  px-4">
+    <div class="flex items-center gap-1 md:gap-4 px-5">
       <select
         v-model="$i18n.locale"
         class="hidden sm:flex text-xs px-2 py-1 bg-[#1E293B] border border-gray-500 text-white rounded-full"
@@ -66,7 +66,7 @@
       <button
         @click="login"
         v-if="!isLoggedIn"
-        class="shrink-0 bg-[#38BDF8] text-[#0F172A] px-2 md:px-3 py-2 rounded-lg text-xs"
+        class="shrink-0 bg-[#38BDF8] text-[#0F172A] px-2 md:px-3 py-2 rounded-lg text-xs mx-2 md:mx-0 "
       >
         {{ $t("navbar.login") }}
       </button>

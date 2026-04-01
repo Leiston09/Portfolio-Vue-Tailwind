@@ -4,7 +4,7 @@
       {{ $t("projects.title") }}
     </h1>
 
-    <button class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500" v-if="projects.length > 0">
+    <button class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500 py-1" v-if="projects.length > 0">
       {{ $t("globalOptions.ViewAll") }}
     </button>
   </div>

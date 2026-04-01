@@ -27,22 +27,20 @@ const routes = [
       {
         path: "Home",
         component: Home,
-        name: "Home"
+        name: "Home",
       },
       {
         path: "Certifications",
         name: "Certifications",
         component: Certifications,
         meta: { requiresValidation: true },
-        children: [
-          {
-            path: ":id",
-            name: "CertificationDetail",
-            component: ViewCertificate,
-            meta: { requiresValidation: true },
-            props: true,
-          },
-        ],
+      },
+      {
+        path: "/Certifications/:id",
+        name: "CertificationDetail",
+        component: ViewCertificate,
+        meta: { requiresValidation: true },
+        props: true,
       },
     ],
   },
@@ -79,10 +77,15 @@ const router = createRouter({
   routes,
   scrollBehavior(to) {
     if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: "smooth",
-      };
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            el: to.hash,
+            top: 64, // altura navbar
+            behavior: "smooth",
+          });
+        }, 300); // tiempo para que cargue el Home
+      });
     }
     return { top: 0 };
   },

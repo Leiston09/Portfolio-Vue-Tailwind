@@ -7,14 +7,14 @@
     </div>
 
     <div v-if="certifications.length > 3">
-      <RouterLink  class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500" :to="{name: 'Certifications'}" >
+      <RouterLink  class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500 py-1" :to="{name: 'Certifications'}" >
         {{ $t("globalOptions.ViewAll") }}
       </RouterLink>      
     </div>
 
   </div>
   <div>
-    <p class="text-gray-400 text-sm">
+    <p class="text-gray-400 text-sm pt-2">
       {{ $t("certifications.intro") }}
     </p>
   </div>

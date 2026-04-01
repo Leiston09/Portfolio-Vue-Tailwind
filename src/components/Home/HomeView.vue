@@ -17,10 +17,11 @@
       </p>
 
       <div class="flex flex-wrap justify-center gap-3">
-        <button
+        <RouterLink
+        :to="{path: '/', hash: '#projects'}"
           class="bg-[#38BDF8] text-black px-5 py-2 rounded-lg font-semibold hover:scale-105 transition-all">
           {{ $t("home.ViewProjects") }}
-        </button>
+        </RouterLink>
 
         <button
           class="border border-gray-500 text-white px-5 py-2 rounded-lg hover:bg-[#1E293B] hover:scale-105 transition-all"
@@ -28,11 +29,12 @@
           {{ $t("home.ViewCV") }}
         </button>
 
-        <button
+        <RouterLink
+        :to="{path: '/' , hash: '#contact'}"
           class="border border-gray-500 text-white px-5 py-2 rounded-lg hover:bg-[#1E293B] hover:scale-105 transition-all"
         >
           {{ $t("home.ViewContact") }}
-        </button>
+        </RouterLink>
       </div>
     </div>
 

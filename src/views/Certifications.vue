@@ -9,40 +9,32 @@
 
     <CardCertifications
       :filterCertificationsUser="filterCertificationsUser"
-      @validateCertificated="validateCertificated"
+      @validateCertificated="selectedCertification"
     />
 
-    <RouterView
-      :certificated="certificated"
-      @notCertificated="notNewCertificated"
-    />
+
   </div>
 </template>
 
 <script setup>
 import { getCertifications } from "@/service/api";
 import { useRouter } from "vue-router";
-import { computed, onMounted, ref, watch } from "vue";
+import { computed, onMounted, ref } from "vue";
+
 import SearchCertifications from "@/components/Certifications/SearchCertifications.vue";
 import CardCertifications from "@/components/Certifications/CardCertifications.vue";
-import { useRoute } from "vue-router";
-const route = useRoute();
+
 const router = useRouter();
 
 const certifications = ref([]);
 const searchCertifications = ref("");
 const selectedInstitution = ref("");
-const certificated = ref(null);
-const notCertificated = ref(null);
 
 function certificationsSearch(search) {
   searchCertifications.value = search;
 }
 function filterByInstitution(institution) {
   selectedInstitution.value = institution;
-}
-function notNewCertificated(id) {
-  notCertificated.value = id;
 }
 
 const filterCertificationsUser = computed(() => {
@@ -61,15 +53,13 @@ const filterCertificationsUser = computed(() => {
   return filterCertifications;
 });
 
-function validateCertificated(ids) {
+function selectedCertification(ids) {
   let validate = {
     id: ids,
     user: true,
   };
 
   localStorage.setItem("certificationId", JSON.stringify(validate));
-
-  certificated.value = certifications.value.find((c) => c.id === ids);
 
   router.push({
     name: "CertificationDetail",
@@ -81,13 +71,7 @@ onMounted(async () => {
   certifications.value = await getCertifications();
 });
 
-watch([certifications, notCertificated], () => {
-  if (!certifications.value.length || !notCertificated.value) return;
 
-  certificated.value = certifications.value.find(
-    (c) => c.id === notCertificated.value,
-  );
-});
 </script>
 
 <style lang="scss" scoped></style>
