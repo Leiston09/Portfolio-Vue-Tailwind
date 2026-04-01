@@ -46,7 +46,7 @@
       </ul>
     </div>
 
-    <div class="flex items-center gap-1 md:gap-4 px-5">
+    <div class="flex items-center gap-1 md:gap-4  ">
       <select
         v-model="$i18n.locale"
         class="hidden sm:flex text-xs px-2 py-1 bg-[#1E293B] border border-gray-500 text-white rounded-full"
@@ -66,7 +66,7 @@
       <button
         @click="login"
         v-if="!isLoggedIn"
-        class="shrink-0 bg-[#38BDF8] text-[#0F172A] px-2 md:px-3 py-2 rounded-lg text-xs mx-2 md:mx-0 "
+        class="shrink-0 bg-[#38BDF8] text-[#0F172A] px-4 md:px-6 py-2 rounded-lg text-xs mx-2 md:mx-0 "
       >
         {{ $t("navbar.login") }}
       </button>
