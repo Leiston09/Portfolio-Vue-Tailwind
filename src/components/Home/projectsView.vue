@@ -4,7 +4,7 @@
       {{ $t("projects.title") }}
     </h1>
 
-    <button class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500 py-1" v-if="projects.length > 0">
+    <button class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500 py-1" v-if="projects.length > 3">
       {{ $t("globalOptions.ViewAll") }}
     </button>
   </div>
@@ -30,10 +30,13 @@
         </div>
       </div>
 
-      <div class="p-4 flex flex-col gap-3">
+      <div class="p-4 flex flex-col gap-2 md:gap-3">
         <h1 class="text-white font-bold text-lg">
           {{ $t(`projects.items.${project.key}.title`) }}
         </h1>
+        <div class="text-white text-xs"> 
+          <h1> <span class="font-bold">{{ $t(`projects.year`) }} : </span>{{ project.year }} </h1>
+        </div>
 
         <div class="flex flex-wrap gap-2">
           <span

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-fit flex-col w-full max-w-4xl  p-5 border-2 m-10 rounded-4xl border-white/20">
+  <div class="flex h-fit flex-col w-full max-w-4xl  p-5 border-2  rounded-4xl border-white/20">
     <div class="text-center pt-5 ">
       <h1 class="text-3xl md:text-4xl font-extrabold text-white">
         Crear cuenta

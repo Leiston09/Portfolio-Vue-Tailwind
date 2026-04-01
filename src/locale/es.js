@@ -42,6 +42,7 @@ export default {
   projects: {
     title: "Proyectos Destacados",
     projectIntro: "Estos son algunos de mis proyectos recientes.",
+    year: "Año",
     items: {
       portfolio: {
         title: "Portafolio Personal",
@@ -50,18 +51,19 @@ export default {
         descriptionimg:
           "Incluye secciones de información personal, habilidades, proyectos, certificaciones y contacto con diseño responsive y navegación dinámica.",
       },
-      pageAlex: {
+      uitoky: {
         title: "Aplicación con conexión a backend",
         description:
           "Aplicación web con integración a backend, validación de datos y tienda en línea implementada.",
         descriptionimg:
           "Interfaz donde el usuario puede registrarse, iniciar sesión y validar sus datos. El sistema permite guardar la información en la base de datos y visualizar los productos disponibles en la tienda.",
       },
-      vacio: {
-        title: "Aplicación Web de Comercio Electrónico",
+      guitarra: {
+        title: "Servicio web de compra de guitarras",
         description:
-          "Plataforma de comercio electrónico con carrito de compras y gestión de productos.",
-        descriptionimg: "Interfaz de comercio electrónico con IU dinámica.",
+          "Aplicación web que permite visualizar un catálogo de guitarras con sus características, incorporando un sistema de carrito de compras interactivo.",
+        descriptionimg:
+          "El carrito permite agregar productos, modificar cantidades y eliminar productos de forma dinámica.",
       },
     },
   },
@@ -69,8 +71,6 @@ export default {
   skills: {
     title: "Habilidades Técnicas",
     frontend: "Desarrollo Frontend",
-    backend: "Desarrollo Backend",
-    databases: "Bases de Datos",
     tools: "Herramientas",
   },
 
@@ -174,5 +174,15 @@ export default {
     email: "Correo electrónico",
     location: "Ubicación",
     guayaquil: "Guayaquil, Ecuador",
+  },
+  curriculum: {
+    title: "Curriculum",
+    download: "Descargar",
+    curriculumIngeniero: {
+      title: "Estudiante de Ingeniería en Sistemas",
+    },
+    curriculumDeveloper: {
+      title: "Frontend Developer",
+    },
   },
 };

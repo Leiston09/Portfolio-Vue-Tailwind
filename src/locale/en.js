@@ -42,6 +42,7 @@ export default {
   projects: {
     title: "Featured projects",
     projectIntro: "Here are some of my recent projects.",
+    year: "Year",
     items: {
       portfolio: {
         title: "Personal Portfolio",
@@ -50,18 +51,19 @@ export default {
         descriptionimg:
           "Includes sections for personal information, skills, projects, certifications and contact with responsive design and dynamic navigation.",
       },
-      pageAlex: {
+      guitarra: {
+        title: "Guitar Shopping Web Service",
+        description:
+          "Web application that allows users to browse a guitar catalog with detailed features, including an interactive shopping cart system.",
+        descriptionimg:
+          "The cart allows users to add products, adjust quantities, and remove items dynamically.",
+      },
+      uitoky: {
         title: "Web Application with Backend Connection",
         description:
           "Web application with backend integration, data validation and implemented online store.",
         descriptionimg:
           "Interface where the user can register, log in and validate their data. The system allows you to save information in the database and view the products available in the store.",
-      },
-      vacio: {
-        title: "E-commerce Web Application",
-        description:
-          "E-commerce platform with shopping cart and product management.",
-        descriptionimg: "E-commerce interface with dynamic UI.",
       },
     },
   },
@@ -69,8 +71,6 @@ export default {
   skills: {
     title: "Technical Skills",
     frontend: "Frontend Development",
-    backend: "Backend Development",
-    databases: "Databases",
     tools: "Tools",
   },
 
@@ -171,5 +171,15 @@ export default {
     email: "Email",
     location: "Location",
     guayaquil: "Guayaquil, Ecuador",
+  },
+  curriculum: {
+    title: "Resume",
+    download: "Download",
+    curriculumIngeniero: {
+      title: "Systems Engineering Student",
+    },
+    curriculumDeveloper: {
+      title: "Frontend Developer",
+    },
   },
 };

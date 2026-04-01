@@ -2,9 +2,11 @@
   <div class="flex justify-between items-center">
     <h1 class="text-lg md:text-3xl font-bold text-white">{{ $t("skills.title") }}</h1>
 
-    <button class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500 py-1" > 
+    <RouterLink 
+    :to="{ name: 'skills'}"
+    class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500 py-1" > 
       {{ $t("globalOptions.ViewAll") }}
-    </button>
+    </RouterLink>
   </div>
 
   <div class="overflow-hidden relative w-full py-6">
@@ -33,6 +35,7 @@
 <script setup>
 import { getSkills } from "@/service/api";
 import { onMounted, ref } from "vue";
+import { RouterLink } from "vue-router";
 
 const skills = ref([]);
 

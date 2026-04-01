@@ -5,9 +5,11 @@ import AuthLayout from "@/layout/AuthLayout.vue";
 import MainLayout from "@/layout/MainLayout.vue";
 import Access from "@/views/Access.vue";
 import Certifications from "@/views/Certifications.vue";
+import Curriculum from "@/views/Curriculum.vue";
 import Home from "@/views/Home.vue";
 import RecoverPassword from "@/views/RecoverPassword.vue";
 import RegisterUser from "@/views/RegisterUser.vue";
+import Skills from "@/views/Skills.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -36,12 +38,23 @@ const routes = [
         meta: { requiresValidation: true },
       },
       {
-        path: "/Certifications/:id",
+        path: "Certifications/:id",
         name: "CertificationDetail",
         component: ViewCertificate,
         meta: { requiresValidation: true },
         props: true,
       },
+      {
+        path:'skills',
+        component: Skills,
+        name: 'skills'
+
+      },
+      {
+        path: 'Curriculum',
+        component:Curriculum,
+        name: 'Curriculum'
+      }
     ],
   },
 

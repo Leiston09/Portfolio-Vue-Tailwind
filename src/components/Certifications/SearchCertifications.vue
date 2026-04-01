@@ -12,7 +12,7 @@
       v-model="searchText"
       @input="$emit('searchCertifications', searchText)"
       type="text"
-      placeholder="Search certifications..."
+      :placeholder="$t('certifications.search') "
       class="bg-[#0B1120] border border-gray-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8]"
     />
 

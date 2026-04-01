@@ -23,11 +23,12 @@
           {{ $t("home.ViewProjects") }}
         </RouterLink>
 
-        <button
+        <RouterLink
+        :to="{name: 'Curriculum'}"
           class="border border-gray-500 text-white px-5 py-2 rounded-lg hover:bg-[#1E293B] hover:scale-105 transition-all"
         >
           {{ $t("home.ViewCV") }}
-        </button>
+        </RouterLink>
 
         <RouterLink
         :to="{path: '/' , hash: '#contact'}"

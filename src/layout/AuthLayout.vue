@@ -1,6 +1,6 @@
 <template>
   <OptionBarLogin />
-  <div class="h-screen flex  justify-center items-center pt-15">
+  <div class="flex justify-center h-screen items-center pt-18 px-2  w-full ">
     <RouterView/>
   </div>
 </template>

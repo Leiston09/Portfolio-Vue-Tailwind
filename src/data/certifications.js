@@ -5,7 +5,7 @@ export const Certifications = [
     name: "CompTIA Security+",
     institution: "Udemy",
     image: "/certificados/UnemyComTIASecurity+.jpg",
-    pdf: "/PDF/UnemyComTIASecurity+.pdf",
+    pdf: "/pdf/certificates/UnemyComTIASecurity+.pdf",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const Certifications = [
     name: "Google Cybersecurity Professional",
     institution: "Google",
     image: "/certificados/CertificadoGOOGLE_CYBERSEGURIDAD.jpg",
-    pdf: "/PDF/CertificadoGOOGLE_CYBERSEGURIDAD.pdf",
+    pdf: "/pdf/certificates/CertificadoGOOGLE_CYBERSEGURIDAD.pdf",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const Certifications = [
     name: "Primeros Pasos con Python",
     institution: "Google",
     image: "/certificados/PrimerosPasosPYTHON.jpg",
-    pdf: "/PDF/PrimerosPasosPYTHON.pdf",
+    pdf: "/pdf/certificates/PrimerosPasosPYTHON.pdf",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const Certifications = [
     name: "Detection and Response",
     institution: "Google",
     image: "/certificados/DettectionAndResponse.jpg",
-    pdf: "/PDF/DettectionAndResponse.pdf",
+    pdf: "/pdf/certificates/DettectionAndResponse.pdf",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ export const Certifications = [
     name: "Foundations of Cybersecurity",
     institution: "Google",
     image: "/certificados/FoundationsOfCybersecurity.jpg",
-    pdf: "/PDF/FoundationsOfCybersecurity.pdf",
+    pdf: "/pdf/certificates/FoundationsOfCybersecurity.pdf",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ export const Certifications = [
     name: "Manage Security Risks",
     institution: "Google",
     image: "/certificados/ManageSecurityRisks.jpg",
-    pdf: "/PDF/ManageSecurityRisks.pdf",
+    pdf: "/pdf/certificates/ManageSecurityRisks.pdf",
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ export const Certifications = [
     name: "Networks and Network Security",
     institution: "Google",
     image: "/certificados/NetworksAndNetwork.jpg",
-    pdf: "/PDF/NetworksAndNetwork.pdf",
+    pdf: "/pdf/certificates/NetworksAndNetwork.pdf",
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ export const Certifications = [
     name: "Prepare for Cybersecurity Jobs",
     institution: "Google",
     image: "/certificados/PreparateForCybersecurityJobs.jpg",
-    pdf: "/PDF/PreparateForCybersecurityJobs.pdf",
+    pdf: "/pdf/certificates/PreparateForCybersecurityJobs.pdf",
   },
   {
     id: 10,
@@ -77,7 +77,7 @@ export const Certifications = [
     name: "Threats, Vulnerabilities, and Risks",
     institution: "Google",
     image: "/certificados/TheatsAndVulnerabilities.jpg",
-    pdf: "/PDF/TheatsAndVulnerabilities.pdf",
+    pdf: "/pdf/certificates/TheatsAndVulnerabilities.pdf",
   },
   {
     id: 11,
@@ -85,6 +85,6 @@ export const Certifications = [
     name: "Automate Cybersecurity Tasks with Python",
     institution: "Google",
     image: "/certificados/AutimateCibersecurityPython.jpg",
-    pdf: "/PDF/AutimateCibersecurityPython.pdf",
+    pdf: "/pdf/certificates/AutimateCibersecurityPython.pdf",
   },
 ];
