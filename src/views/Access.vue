@@ -1,16 +1,15 @@
 <template>
   <div
-    class="flex flex-col md:flex-row w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-white/10">
-    <!-- Imagen --> 
+    class=" flex flex-col md:flex-row w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border-2 border-white/20">
     <div class="hidden md:block md:w-1/2">
       <img
         src="@/assets/img/ImagenLogin.jpg"
         alt="Login Image"
-        class="w-full h-full object-cover opacity-90"
+        class="w-full h-full object-cover"
       />
     </div>
 
-    <div class="flex-1 px-4 py-6 md:p-10 flex flex-col justify-center gap-4">
+    <div class="flex-1 px-4 py-5 md:p-10  flex flex-col justify-center gap-4">
       <div class="md:hidden flex justify-center">
         <div
           class="rounded-full overflow-hidden w-24 h-24 border border-[#38BDF8]/40"
@@ -24,7 +23,7 @@
 
       <header class="text-center">
         <h1 class="text-3xl md:text-4xl font-extrabold text-white">Login</h1>
-        <p class="text-gray-400 text-sm mt-1">Bienvenido de nuevo</p>
+        <p class="text-gray-400 text-sm mt-1">Bienvenido a mi portafolio</p>
       </header>
 
       <div class="space-y-3">

@@ -33,14 +33,16 @@
 </template>
 
 <script setup>
-import { getSkills } from "@/service/api";
-import { onMounted, ref } from "vue";
+import { dataStoreStills } from "@/stores/StoreSkills";
+import { computed, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 
-const skills = ref([]);
 
-onMounted(async () => {
-  skills.value = await getSkills();
+const storeSkills = dataStoreStills()
+const skills = computed(() => storeSkills.skills);
+
+onMounted(() => {
+  storeSkills.fetchSkills()
 });
 </script>
 

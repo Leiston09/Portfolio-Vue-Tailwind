@@ -1,5 +1,5 @@
 <template>
-  <div class="md:hidden text-white px-6">
+  <div class=" text-white px-6">
     <div class="mb-14">
       <h2 class="text-xl mb-6 border-l-4 border-blue-500 pl-4">{{ $t('skills.frontend') }}</h2>
 

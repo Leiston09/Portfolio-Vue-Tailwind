@@ -1,4 +1,4 @@
-<template> 
+<template>
   <h1 class="text-2xl md:text-4xl font-bold text-white">
     {{ $t("certifications.title") }}
   </h1>
@@ -7,12 +7,12 @@
     {{ $t("certifications.description") }}
   </p>
 
-  <div class="flex flex-wrap justify-center items-center gap-3 mt-6" > 
+  <div class="flex flex-wrap justify-center items-center gap-3 mt-6">
     <input
       v-model="searchText"
       @input="$emit('searchCertifications', searchText)"
       type="text"
-      :placeholder="$t('certifications.search') "
+      :placeholder="$t('certifications.search')"
       class="bg-[#0B1120] border border-gray-700 text-white px-3 py-2 rounded-lg focus:outline-none focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8]"
     />
 
@@ -48,12 +48,16 @@ const props = defineProps({
 });
 
 const institutions = computed(() => {
-  let uniqueInstitutions = [
-    ...new Set(props.certifications.map((i) => i.institution)),
-  ];
-  return uniqueInstitutions;
-});
+  if (props.certifications) {
+    let uniqueInstitutions = [
+      ...new Set(props.certifications.map((i) => i.institution)),
+    ];
+    return uniqueInstitutions;
 
+  }
+
+  return [];
+});
 </script>
 
 <style lang="scss" scoped></style>

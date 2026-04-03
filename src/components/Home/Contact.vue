@@ -35,12 +35,13 @@
 </template>
 
 <script setup>
-import { getProfile } from "@/service/api";
-import { onMounted, ref } from "vue";
+import { dataStoreContact } from "@/stores/StoreContacts";
+import { computed, onMounted,  } from "vue";
 
-const contacts = ref([]);
+const storeContact = dataStoreContact()
+const contacts = computed(() => storeContact.contact);
 
-onMounted(async () => {
-  contacts.value = await getProfile();
+onMounted( () => {
+  storeContact.fetchContact()
 });
 </script>

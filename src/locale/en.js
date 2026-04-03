@@ -174,7 +174,7 @@ export default {
   },
   curriculum: {
     title: "Resume",
-    download: "Download",
+    download: "Download CV",
     curriculumIngeniero: {
       title: "Systems Engineering Student",
     },

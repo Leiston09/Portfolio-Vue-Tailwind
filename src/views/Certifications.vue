@@ -1,6 +1,5 @@
 <template>
-
-  <div class="flex flex-col items-center mb-5 ">
+  <div class="flex flex-col items-center">
     <SearchCertifications
       :certifications="certifications"
       @searchCertifications="certificationsSearch"
@@ -11,24 +10,28 @@
       :filterCertificationsUser="filterCertificationsUser"
       @validateCertificated="selectedCertification"
     />
-
-
   </div>
 </template>
 
 <script setup>
-import { getCertifications } from "@/service/api";
 import { useRouter } from "vue-router";
 import { computed, onMounted, ref } from "vue";
 
 import SearchCertifications from "@/components/Certifications/SearchCertifications.vue";
 import CardCertifications from "@/components/Certifications/CardCertifications.vue";
+import { dataStoreCertification } from "@/stores/StoreCertifications";
+
 
 const router = useRouter();
+const store = dataStoreCertification()
 
-const certifications = ref([]);
+const certifications = computed(() => store.Certifications);
 const searchCertifications = ref("");
 const selectedInstitution = ref("");
+
+onMounted(() => {
+  store.fetchCertifications();
+});
 
 function certificationsSearch(search) {
   searchCertifications.value = search;
@@ -39,18 +42,19 @@ function filterByInstitution(institution) {
 
 const filterCertificationsUser = computed(() => {
   let filterCertifications = certifications.value;
-  if (selectedInstitution.value) {
-    filterCertifications = filterCertifications.filter(
-      (c) => c.institution === selectedInstitution.value,
-    );
-  }
 
-  if (searchCertifications.value) {
-    filterCertifications = filterCertifications.filter((c) =>
-      c.name.toLowerCase().includes(searchCertifications.value.toLowerCase()),
-    );
-  }
-  return filterCertifications;
+    if (selectedInstitution.value) {
+      filterCertifications = filterCertifications.filter(
+        (c) => c.institution === selectedInstitution.value,
+      );
+    }
+
+    if (searchCertifications.value) {
+      filterCertifications = filterCertifications.filter((c) =>
+        c.name.toLowerCase().includes(searchCertifications.value.toLowerCase()),
+      );
+    }
+    return filterCertifications;
 });
 
 function selectedCertification(ids) {
@@ -66,10 +70,6 @@ function selectedCertification(ids) {
     params: { id: ids },
   });
 }
-
-onMounted(async () => {
-  certifications.value = await getCertifications();
-});
 
 
 </script>

@@ -41,10 +41,11 @@
 </template>
 
 <script setup>
-import { getCertifications } from "@/service/api";
-import { computed, onMounted, ref } from "vue";
+import { dataStoreCertification } from "@/stores/StoreCertifications";
+import { computed, onMounted } from "vue";
 
-const certifications = ref([]);
+const storeCertifications = dataStoreCertification()
+const certifications = computed(() => storeCertifications.Certifications) ;
 
 const CertificationsHome = computed(() => {
 
@@ -54,7 +55,7 @@ const CertificationsHome = computed(() => {
   return certifications.value;
 });
 
-onMounted(async () => {
-  certifications.value = await getCertifications();
+onMounted(() => {
+  storeCertifications.fetchCertifications()
 });
 </script>

@@ -27,7 +27,6 @@ export default {
     ViewProjects: "Proyectos",
     ViewCV: "Ver Curriculum",
     ViewContact: "Ver Contacto",
-    DownloadCV: "Descargar CV",
     specialization: {
       webDeveloper: "Desarrollador Web",
       softwareEngineeringStudent: "Estudiante de Ingeniería en Sistemas",
@@ -177,7 +176,7 @@ export default {
   },
   curriculum: {
     title: "Curriculum",
-    download: "Descargar",
+    download: "Descargar CV",
     curriculumIngeniero: {
       title: "Estudiante de Ingeniería en Sistemas",
     },

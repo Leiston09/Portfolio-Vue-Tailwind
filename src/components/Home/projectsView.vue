@@ -75,12 +75,13 @@
 </template>
 
 <script setup>
-import { getProjects } from "@/service/api";
-import { onMounted, ref } from "vue";
+import { dataStoreProjects } from "@/stores/storeProjects";
+import { computed, onMounted } from "vue";
 
-const projects = ref([]);
+const storeProjects = dataStoreProjects()
+const projects = computed(() => storeProjects.projects) ;
 
-onMounted(async () => {
-  projects.value = await getProjects();
+onMounted(() => {
+  storeProjects.fetchProjects()
 });
 </script>

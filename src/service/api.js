@@ -1,6 +1,8 @@
 import { projects } from "@/data/projects";
 import { skills } from "@/data/skills";
 import { Certifications } from "@/data/certifications";
+import { contact } from "@/data/contact";
+import { Curriculum } from "@/data/curriculum";
 import { profile } from "@/data/profile";
 
 export const getProjects = () => {
@@ -27,10 +29,26 @@ export const getCertifications = () => {
   });
 };
 
-export const getProfile = () => {
+export const getContact = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(profile);
+      resolve(contact);
     }, 200);
   });
 };
+
+export const getCurriculum = () => {
+  return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(Curriculum)
+      }, 200);
+  })
+}
+
+export const getProfile = () => {
+  return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(profile)
+      }, 200);
+  })
+}

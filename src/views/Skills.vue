@@ -1,24 +1,27 @@
 <template>
-  <div class="text-white mb-10">
-    <h1 class="text-4xl font-bold text-center mb-10">{{ $t('skills.title') }}</h1>
-
-    <PersonalComputer :skills="skills" />
-
-    <Mobile :skills="skills" />
+  <div class="text-white">
+    <h1 class="text-4xl font-bold text-center mb-10">
+      {{ $t("skills.title") }}
+    </h1>
+    <div class="hidden lg:block">
+      <PersonalComputer :skills="skills" />
+    </div>
+    <div class="lg:hidden">
+      <Mobile :skills="skills" />
+    </div>
   </div>
 </template>
 
 <script setup>
 import Mobile from "@/components/skills/Mobile.vue";
 import PersonalComputer from "@/components/skills/PersonalComputer.vue";
-import { getSkills } from "@/service/api";
-import { onMounted, ref } from "vue";
+import { dataStoreStills } from "@/stores/StoreSkills";
+import { computed, onMounted } from "vue";
 
+const stateSkills = dataStoreStills();
+const skills = computed(() => stateSkills.skills);
 
-const skills = ref([])
-
-onMounted(async() => {
-    let result = await getSkills()
-    skills.value = result
-})
+onMounted(() => {
+  stateSkills.fetchSkills();
+});
 </script>

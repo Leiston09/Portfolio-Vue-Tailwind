@@ -13,69 +13,63 @@
 
   <div
     v-else
-    class="fixed top-0 bottom-0 left-0 right-0 bg-black/60 backdrop-blur-md z-50 overflow-y-auto"
-  > 
-    <div class="flex flex-col lg:flex-row items-center justify-center p-2 h-screen ">
+    class="flex flex-col lg:flex-row items-center justify-center"
+  >
+    <div
+      class="w-full flex flex-1 justify-center items-center bg-neutral-900 rounded-2xl overflow-hidden"
+    >
+      <img
+        :src="selectedCertification.image"
+        :alt="selectedCertification.name"
+        class="w-full h-full object-cover"
+      />
+    </div>
 
-      <div
-        class="w-full   flex flex-1 justify-center items-center bg-neutral-900 rounded-2xl overflow-hidden "
-      >
-        <img
-          :src="selectedCertification.image"
-          :alt="selectedCertification.name"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </div>
+    <div class="p-4 sm:p-6 lg:p-4 flex flex-col justify-center flex-1">
+      <div class="flex flex-col gap-3 sm:gap-4">
+        <h1
+          class="text-xl sm:text-2xl lg:text-4xl font-bold text-white text-center lg:text-left"
+        >
+          {{ selectedCertification.name }}
+        </h1>
 
-      <div class="p-4 sm:p-6 lg:p-8 flex flex-col justify-center  flex-1">
-        <div class="flex flex-col gap-3 sm:gap-4">
-          <h1
-            class="text-xl sm:text-2xl lg:text-4xl font-bold text-white text-center lg:text-left"
+        <p
+          class="text-gray-400 text-center lg:text-left font-extrabold text-sm sm:text-base lg:text-xl"
+        >
+          {{ selectedCertification.institution }}
+        </p>
+
+        <p
+          class="text-emerald-500 text-justify lg:text-left font-mono text-xs sm:text-sm lg:text-base"
+        >
+          {{ selectedCertification.description }}
+        </p>
+
+        <p
+          class="text-gray-300 text-justify lg:text-left text-sm sm:text-base lg:text-xl leading-relaxed"
+        >
+          {{
+            $t(
+              `certifications.items.${selectedCertification.key}.descriptionDetail`,
+            )
+          }}
+        </p>
+
+        <div class="flex gap-3 justify-center lg:justify-start mt-2 flex-wrap">
+          <a
+            :href="selectedCertification.pdf"
+            download
+            class="bg-sky-400 hover:bg-sky-500 px-3 sm:px-4 py-2 rounded-lg font-semibold text-center transition-all hover:scale-105 text-white text-xs sm:text-sm"
           >
-            {{ selectedCertification.name }}
-          </h1>
+            {{ $t("certifications.buttons.download") }}
+          </a>
 
-          <p
-            class="text-gray-400 text-center lg:text-left font-extrabold text-sm sm:text-base lg:text-xl"
+          <RouterLink
+            :to="{ name: 'Certifications' }"
+            class="border border-gray-400 hover:bg-gray-400 text-gray-400 hover:text-white px-3 sm:px-4 py-2 rounded-lg font-semibold text-center transition-all hover:scale-105 text-xs sm:text-sm"
           >
-            {{ selectedCertification.institution }}
-          </p>
-
-          <p
-            class="text-emerald-500 text-justify lg:text-left font-mono text-xs sm:text-sm lg:text-base"
-          >
-            {{ selectedCertification.description }}
-          </p>
-
-          <p
-            class="text-gray-300 text-justify lg:text-left text-sm sm:text-base lg:text-xl leading-relaxed"
-          >
-            {{
-              $t(
-                `certifications.items.${selectedCertification.key}.descriptionDetail`,
-              )
-            }}
-          </p>
-
-          <div
-            class="flex gap-3 justify-center lg:justify-start mt-2 flex-wrap"
-          >
-            <a
-              :href="selectedCertification.pdf"
-              download
-              class="bg-sky-400 hover:bg-sky-500 px-3 sm:px-4 py-2 rounded-lg font-semibold text-center transition-all hover:scale-105 text-white text-xs sm:text-sm"
-            >
-              {{ $t("certifications.buttons.download") }}
-            </a>
-
-            <RouterLink
-              :to="{ name: 'Certifications' }"
-              class="border border-gray-400 hover:bg-gray-400 text-gray-400 hover:text-white px-3 sm:px-4 py-2 rounded-lg font-semibold text-center transition-all hover:scale-105 text-xs sm:text-sm"
-            >
-              {{ $t("certifications.buttons.back") }}
-            </RouterLink>
-          </div>
+            {{ $t("certifications.buttons.back") }}
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -83,10 +77,12 @@
 </template>
 
 <script setup>
-import { getCertifications } from "@/service/api";
-import { computed, onMounted, ref } from "vue";
+import { dataStoreCertification } from "@/stores/StoreCertifications";
+import { computed, onMounted } from "vue";
 
-const certifications = ref([]);
+const store = dataStoreCertification()
+
+const certifications = computed(() => store.Certifications);
 
 const selectedCertification = computed(() => {
   let validate = JSON.parse(localStorage.getItem("certificationId"));
@@ -99,10 +95,10 @@ const selectedCertification = computed(() => {
   return [];
 });
 
-onMounted(async () => {
-  let result = await getCertifications();
-  certifications.value = result;
+onMounted(() => {
+  store.fetchCertifications()
 });
+
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="hidden md:grid max-w-6xl mx-auto grid-cols-3 lg:grid-cols-4 gap-10">
+    class="grid max-w-6xl mx-auto grid-cols-3 lg:grid-cols-4 gap-10">
     <div
       v-for="skill in skills"
       :key="skill.id"
