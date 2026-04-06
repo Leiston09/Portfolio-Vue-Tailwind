@@ -1,7 +1,7 @@
 import { getSkills } from "@/service/api";
 import { defineStore } from "pinia";
 
-export const dataStoreStills = defineStore("dataStills", {
+export const dataStoreSkills = defineStore("dataStills", {
   state: () => ({
     skills: [],
   }),
@@ -15,7 +15,7 @@ export const dataStoreStills = defineStore("dataStills", {
         this.skills = data;
         return;
       } catch (error) {
-        console.log(`Error en Store SKILLS: ${error}`)
+        console.log(`Error en Store SKILLS: `, error)
       }
     },
   },

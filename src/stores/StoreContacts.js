@@ -14,7 +14,7 @@ export const dataStoreContact = defineStore("storeContact", {
         let data = await getContact();
         this.contact = data
       } catch (error) {
-        console.log(`Error en el Store CONTACT: ${error}`)
+        console.log(`Error en el Store CONTACT: `, error)
       }
     },
   },

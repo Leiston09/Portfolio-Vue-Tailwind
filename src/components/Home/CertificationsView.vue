@@ -18,7 +18,7 @@
       {{ $t("certifications.intro") }}
     </p>
   </div>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-5">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 py-4">
     <div
       v-for="Certification in CertificationsHome"
       :key="Certification.id"

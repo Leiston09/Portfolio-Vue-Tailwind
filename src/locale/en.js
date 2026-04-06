@@ -6,6 +6,7 @@ export default {
 
   navbar: {
     login: "Login",
+    logOut: "log Out",
     guest: "Guest",
     account: "Session closed",
     spanish: "Spanish",
@@ -181,5 +182,16 @@ export default {
     curriculumDeveloper: {
       title: "Frontend Developer",
     },
+  },
+  login: {
+    intro: "Welcome to my portfolio",
+    emailLabel: "Email address",
+    emailPlaceholder: "example{'@'}email.com",
+    passwordLabel: "Password",
+    passwordPlaceholder: "***********",
+    forgotPassword: "Forgot your password?",
+    noAccount: "Don't have an account?",
+    registerLink: "Sign up",
+    submitButton: "Continue",
   },
 };

@@ -3,8 +3,9 @@
     <h1 class="text-lg md:text-3xl font-bold text-white">{{ $t("skills.title") }}</h1>
 
     <RouterLink 
-    :to="{ name: 'skills'}"
-    class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500 py-1" > 
+      :to="{ name: 'skills' }"
+      class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500 py-1"
+    > 
       {{ $t("globalOptions.ViewAll") }}
     </RouterLink>
   </div>
@@ -33,16 +34,15 @@
 </template>
 
 <script setup>
-import { dataStoreStills } from "@/stores/StoreSkills";
+import { dataStoreSkills } from "@/stores/StoreSkills";
 import { computed, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 
-
-const storeSkills = dataStoreStills()
+const storeSkills = dataStoreSkills();
 const skills = computed(() => storeSkills.skills);
 
 onMounted(() => {
-  storeSkills.fetchSkills()
+  storeSkills.fetchSkills();
 });
 </script>
 

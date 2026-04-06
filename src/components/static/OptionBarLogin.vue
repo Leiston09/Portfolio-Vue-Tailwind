@@ -45,10 +45,8 @@
 </template>
 
 <script setup>
-import usuarioPerfil from "/public/img/usuarioPerfil.jpg";
+import usuarioPerfil from "/img/usuarioPerfil.jpg";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-
-
 </script>

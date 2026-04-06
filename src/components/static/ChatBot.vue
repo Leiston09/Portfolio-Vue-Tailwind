@@ -12,8 +12,7 @@
 </template>
 
 <script setup>
-import ChatBot from '/public/img/ChatBotWhile.png'
-
+import ChatBot from '/img/ChatBotWhile.png'
 </script>
 
 <style lang="scss" scoped></style>

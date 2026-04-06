@@ -14,11 +14,6 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: "/:pathMatch(.*)*",
-    component: NotFuntions,
-  },
-
-  {
     path: "/",
     component: MainLayout,
     children: [
@@ -45,16 +40,15 @@ const routes = [
         props: true,
       },
       {
-        path:'skills',
+        path: "skills",
         component: Skills,
-        name: 'skills'
-
+        name: "skills",
       },
       {
-        path: 'Curriculum',
-        component:Curriculum,
-        name: 'Curriculum'
-      }
+        path: "Curriculum",
+        component: Curriculum,
+        name: "Curriculum",
+      },
     ],
   },
 
@@ -83,6 +77,10 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/:pathMatch(.*)*",
+    component: NotFuntions,
+  },
 ];
 
 const router = createRouter({
@@ -94,7 +92,7 @@ const router = createRouter({
         setTimeout(() => {
           resolve({
             el: to.hash,
-            top: 64, // altura navbar
+            top: 80, // altura navbar
             behavior: "smooth",
           });
         }, 300); // tiempo para que cargue el Home

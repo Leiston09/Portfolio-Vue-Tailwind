@@ -7,6 +7,7 @@
     <div class="grid md:grid-cols-2 gap-5 w-full max-w-4xl">
       <div
         v-for="curriculo in curriculum"
+        :key="curriculo.id"
         class="bg-[#0F172A] rounded-2xl p-2 flex flex-col items-center shadow-lg hover:scale-105 transition"
       >
         <div class="w-full h-48 overflow-hidden rounded-xl mb-4">

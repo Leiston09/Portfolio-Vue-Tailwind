@@ -6,8 +6,10 @@ export default {
 
   navbar: {
     login: "Iniciar Sesión",
+    logOut: "Cerrar sesión",
     guest: "Invitado",
-    account: "Sesión cerrada",
+    online: "Sesión iniciada",
+    offline: "Sesión cerrada",
     spanish: "Español",
     english: "Inglés",
     menu: {
@@ -183,5 +185,16 @@ export default {
     curriculumDeveloper: {
       title: "Frontend Developer",
     },
+  },
+  login: {
+    intro: "Bienvenido a mi portafolio",
+    emailLabel: "Correo electrónico",
+    emailPlaceholder: "ejemplo{'@'}correo.com",
+    passwordLabel: "Contraseña",
+    passwordPlaceholder: "***********",
+    forgotPassword: "¿Olvidaste tu contraseña?",
+    noAccount: "¿No tienes una cuenta?",
+    registerLink: "Regístrate",
+    submitButton: "Continuar",
   },
 };

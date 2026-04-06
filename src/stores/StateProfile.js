@@ -1,7 +1,7 @@
 import { getProfile } from "@/service/api";
 import { defineStore } from "pinia";
 
-export const dataStoreProfile = defineStore("dtoreProfile", {
+export const dataStoreProfile = defineStore("storeProfile", {
   state: () => ({
     profile: {},
   }),
@@ -13,7 +13,7 @@ export const dataStoreProfile = defineStore("dtoreProfile", {
         const data = await getProfile();
         this.profile = data;
       } catch (error) {
-        `Error en Store PROFILE: ${error}`
+        console.error("Error en Store Profile:", error);
       }
     },
   },

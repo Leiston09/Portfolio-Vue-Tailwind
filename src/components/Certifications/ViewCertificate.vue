@@ -79,24 +79,20 @@
 <script setup>
 import { dataStoreCertification } from "@/stores/StoreCertifications";
 import { computed, onMounted } from "vue";
+import { useRoute } from "vue-router";
 
-const store = dataStoreCertification()
+const store = dataStoreCertification();
+const route = useRoute();
 
 const certifications = computed(() => store.Certifications);
 
 const selectedCertification = computed(() => {
-  let validate = JSON.parse(localStorage.getItem("certificationId"));
-
-  if (validate) {
-    let certication = certifications.value.find((c) => c.id === validate.id);
-    return certication;
-  }
-
-  return [];
+  const id = route.params.id;
+  return certifications.value.find((c) => c.id == id) || null;
 });
 
 onMounted(() => {
-  store.fetchCertifications()
+  store.fetchCertifications();
 });
 
 </script>

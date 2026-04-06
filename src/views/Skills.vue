@@ -15,10 +15,10 @@
 <script setup>
 import Mobile from "@/components/skills/Mobile.vue";
 import PersonalComputer from "@/components/skills/PersonalComputer.vue";
-import { dataStoreStills } from "@/stores/StoreSkills";
+import { dataStoreSkills  } from "@/stores/StoreSkills";
 import { computed, onMounted } from "vue";
 
-const stateSkills = dataStoreStills();
+const stateSkills = dataStoreSkills();
 const skills = computed(() => stateSkills.skills);
 
 onMounted(() => {

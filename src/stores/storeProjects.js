@@ -14,7 +14,7 @@ export const dataStoreProjects = defineStore("storeProjects", {
         let data = await getProjects();
         this.projects = data;
       } catch (error) {
-        console.log(`Error en Store PROJECTS: ${error}`);
+        console.log(`Error en Store PROJECTS: `, error);
       }
     },
   },

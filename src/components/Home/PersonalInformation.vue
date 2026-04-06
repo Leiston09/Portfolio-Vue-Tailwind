@@ -9,7 +9,7 @@
         class="w-full h-full object-cover hover:scale-110 transition-all duration-300"
       />
     </div>
-    <div class="p-4 flex flex-col gap-3">
+    <div class="p-2 flex flex-col gap-2">
       <h1 class="font-mono text-xl text-white">{{ profile.name }}</h1>
       <ul class="flex flex-wrap gap-2 text-xs">
         <li
