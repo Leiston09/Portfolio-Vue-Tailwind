@@ -24,6 +24,9 @@ export const dataStoreUser = defineStore("storeUser", {
       this.authentication = false;
       return false;
     },
+    login(user){
+      localStorage.setItem("user", JSON.stringify(user));
+    },
 
     logout() {
       this.user = null;
