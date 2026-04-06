@@ -11,7 +11,7 @@ import RecoverPassword from "@/views/RecoverPassword.vue";
 import RegisterUser from "@/views/RegisterUser.vue";
 import Skills from "@/views/Skills.vue";
 import { createRouter, createWebHistory } from "vue-router";
-
+import { dataStoreUser } from "@/stores/User";
 const routes = [
   {
     path: "/",
@@ -30,7 +30,6 @@ const routes = [
         path: "Certifications",
         name: "Certifications",
         component: Certifications,
-        meta: { requiresValidation: true },
       },
       {
         path: "Certifications/:id",
@@ -103,19 +102,25 @@ const router = createRouter({
 });
 
 router.beforeEach((to) => {
+  const storeUser = dataStoreUser();
+
   if (to.meta.requiresValidation) {
-    console.log(to);
-    if (to.name === "CertificationDetail") {
-      let validate = localStorage.getItem("certificationId");
-      let validated = JSON.parse(validate);
+    if (!storeUser.authentication) {
+      return { name: "Certifications" }; 
+    }
+  }
 
-      if (!validate) {
-        return { name: "Certifications" };
-      }
+  if (to.name === "CertificationDetail") {
+    const validate = localStorage.getItem("certificationId");
 
-      if (validated.id !== Number(to.params.id)) {
-        return { name: "CertificationDetail", params: { id: validated.id } };
-      }
+    if (!validate) {
+      return { name: "Certifications" };
+    }
+
+    const validated = JSON.parse(validate);
+
+    if (validated.id !== Number(to.params.id)) {
+      return { name: "CertificationDetail", params: { id: validated.id } };
     }
   }
 });

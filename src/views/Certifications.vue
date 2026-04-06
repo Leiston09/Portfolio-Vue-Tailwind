@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center pb-10">
     <SearchCertifications
       :certifications="certifications"
       @searchCertifications="certificationsSearch"
@@ -7,6 +7,7 @@
     />
 
     <CardCertifications
+      :isLoggedIn="isLoggedIn"
       :filterCertificationsUser="filterCertificationsUser"
       @validateCertificated="selectedCertification"
     />
@@ -20,6 +21,7 @@ import { computed, onMounted, ref } from "vue";
 import SearchCertifications from "@/components/Certifications/SearchCertifications.vue";
 import CardCertifications from "@/components/Certifications/CardCertifications.vue";
 import { dataStoreCertification } from "@/stores/StoreCertifications";
+import { dataStoreUser } from "@/stores/User";
 
 
 const router = useRouter();
@@ -71,6 +73,9 @@ function selectedCertification(ids) {
   });
 }
 
+
+const storeUser = dataStoreUser();
+const isLoggedIn = computed(() => storeUser.authentication);
 
 </script>
 

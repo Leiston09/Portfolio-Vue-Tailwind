@@ -5,6 +5,7 @@ export default {
   },
 
   navbar: {
+    return: "devolver",
     login: "Iniciar Sesión",
     logOut: "Cerrar sesión",
     guest: "Invitado",
@@ -83,6 +84,7 @@ export default {
     search: "Buscar certificaciones...",
     all: "Todos",
     noResults: "No se encontraron certificaciones.",
+    locked: "Inicia sesión para ver los certificados.",
     buttons: {
       view: "Ver Certificación",
       download: "Descargar Certificación",
@@ -196,5 +198,15 @@ export default {
     noAccount: "¿No tienes una cuenta?",
     registerLink: "Regístrate",
     submitButton: "Continuar",
+  },
+
+  chatBot: {
+    title: "Chat inteligente en desarrollo",
+    description:
+      "Pronto podrás interactuar con una inteligencia artificial para resolver dudas, ver proyectos y obtener información sobre este sitio web.",
+    soon: "Próximamente",
+    footer: "Estamos trabajando en esta función 🚀",
+    open: "Abrir chat",
+    close: "Cerrar chat",
   },
 };

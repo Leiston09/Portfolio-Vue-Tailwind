@@ -8,21 +8,15 @@
       >
         <img :src="usuarioPerfil" class="w-full h-full object-cover" />
       </div>
-
-      <div v-if="!isLoggedIn" class="text-white flex flex-col rounded-lg min-w-0">
-        <h1 class="font-bold text-sm truncate">{{ $t("navbar.guest") }}</h1>
-        <span class="text-xs text-red-500/60 truncate">{{
-          $t("navbar.offline")
-        }}</span>
-        <span class="text-xs text-gray-400 truncate"></span>
-      </div>
-      
-      <div v-else  class="text-white flex flex-col rounded-lg min-w-0">
-        <h1 class="font-bold text-sm truncate">{{user.name}}</h1>
-        <span class="text-xs text-[#38BDF8] truncate">{{
-          $t("navbar.online")
-        }}</span>
-        <span class="text-xs text-gray-400 truncate">{{ user.email }}</span>
+      <div class="text-white flex flex-col rounded-lg min-w-0">
+        <h1 class="font-bold text-sm truncate">
+          {{ isLoggedIn ? loginUser.user.name : $t("navbar.guest") }}
+        </h1>
+        <span
+          :class="isLoggedIn ? 'text-xs text-blue-500/60 truncate' : 'text-xs text-red-500/60 truncate'">{{ isLoggedIn ? $t("navbar.online") : $t("navbar.offline") }}</span>
+        <span class="text-xs text-gray-400 truncate">
+          {{ isLoggedIn ? loginUser.user.email : "" }}
+        </span>
       </div>
     </div>
 
@@ -81,13 +75,12 @@
           {{ $t("navbar.login") }}
         </button>
       </div>
+
       <div v-else>
-        <button
-          @click="logOut"
-          class="flex-none whitespace-nowrap bg-red-500 text-[#0F172A] px-2 md:px-6 mx-2 md:mx-0 py-2 rounded-lg text-xs "
-        >
-          {{ $t("navbar.logOut") }}
-        </button>
+        <button @click="toggleMenu" class="px-3 py-2 rounded-full">⚙️</button>
+        <div v-if="toggleMenu">
+          <ConfigMenu :open="open" />
+        </div>
       </div>
     </div>
   </div>
@@ -153,20 +146,20 @@
 import usuarioPerfil from "/img/usuarioPerfil.jpg";
 import { useRouter } from "vue-router";
 import { dataStoreUser } from "@/stores/User";
-import { computed } from "vue";
+import { computed, ref } from "vue";
+import ConfigMenu from "./ConfigMenu.vue";
 
 const router = useRouter();
 const loginUser = dataStoreUser();
 
-const user =  loginUser.user
-
 const isLoggedIn = computed(() => loginUser.authentication);
 
-const logOut = () => {
-  loginUser.logout();
+const open = ref(false);
+
+const toggleMenu = () => {
+  open.value = !open.value;
 };
 
-console.log(isLoggedIn);
 const login = () => {
   router.push({
     name: "Access",

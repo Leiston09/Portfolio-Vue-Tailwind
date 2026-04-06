@@ -8,23 +8,21 @@ export const dataStoreUser = defineStore("storeUser", {
 
   actions: {
     authenticationUser(credentials) {
-      const isMatch = this.user && 
-                      this.user.email === credentials.email && 
-                      this.user.password === credentials.password;
+      const storedUser = JSON.parse(localStorage.getItem("user"));
 
-      if (isMatch) {
+      if (
+        storedUser &&
+        storedUser.email === credentials.email &&
+        storedUser.password === credentials.password
+      ) {
+        this.user = storedUser;
         this.authentication = true;
         localStorage.setItem("active_session", JSON.stringify(true));
         return true;
       }
-      
+
       this.authentication = false;
       return false;
-    },
-
-    login(user) {
-      this.user = user;
-      localStorage.setItem("user", JSON.stringify(user));
     },
 
     logout() {

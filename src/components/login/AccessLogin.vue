@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col md:flex-row w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border-2 border-white/20"
+    class="flex flex-col md:flex-row w-full max-w-4xl my-10 rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border-2 border-white/20"
   >
     <div class="hidden md:block md:w-1/2">
       <img

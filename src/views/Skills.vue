@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white">
+  <div class="text-white pb-10">
     <h1 class="text-4xl font-bold text-center mb-10">
       {{ $t("skills.title") }}
     </h1>

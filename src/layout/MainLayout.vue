@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col ">
 
     <header>
       <OptionsBar />
@@ -24,6 +24,6 @@
 
 <script setup>
 import { RouterView } from "vue-router";
-import ChatBot from "@/components/static/ChatBot.vue";
 import OptionsBar from "@/components/static/OptionsBar.vue";
+import ChatBot from "@/components/chat/ChatBot.vue";
 </script>

@@ -5,15 +5,17 @@ export default {
   },
 
   navbar: {
-    login: "Login",
-    logOut: "log Out",
+    return: "return",
+    login: "Sign In",
+    logOut: "Sign Out",
     guest: "Guest",
-    account: "Session closed",
+    online: "Online",
+    offline: "Offline",
     spanish: "Spanish",
     english: "English",
     menu: {
       home: "Home",
-      AboutMe: "About me",
+      AboutMe: "About Me",
       projects: "Projects",
       skills: "Skills",
       certifications: "Certifications",
@@ -83,6 +85,8 @@ export default {
     search: "Search certifications...",
     all: "All",
     noResults: "No certifications found.",
+    locked: "Log in to view the certificates.",
+
     buttons: {
       view: "View Certification",
       download: "Download Certification",
@@ -193,5 +197,14 @@ export default {
     noAccount: "Don't have an account?",
     registerLink: "Sign up",
     submitButton: "Continue",
+  },
+  chatBot: {
+    title: "AI Chat in development",
+    description:
+      "Soon you will be able to interact with an artificial intelligence to solve doubts, explore projects and get information about this website.",
+    soon: "Coming soon",
+    footer: "We are working on this feature 🚀",
+    open: "Open chat",
+    close: "Close chat",
   },
 };
