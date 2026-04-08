@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "^1.48.0",
     "@tailwindcss/vite": "^4.2.2",
     "pinia": "^3.0.4",
     "tailwindcss": "^4.2.2",
