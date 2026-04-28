@@ -1,9 +1,9 @@
 <template>
-  <div class=" text-white px-6">
-    <div class="mb-14">
+  <div class=" text-white flex flex-col gap-8">
+    <div >
       <h2 class="text-xl mb-6 border-l-4 border-blue-500 pl-4">{{ $t('skills.frontend') }}</h2>
 
-      <div class="space-y-4">
+      <div class="flex flex-col gap-3">
         <div
           v-for="skill in frontendSkills"
           :key="skill.id"
@@ -20,7 +20,7 @@
         {{ $t('skills.tools') }}
       </h2>
 
-      <div class="space-y-4">
+      <div class=" flex flex-col gap-3">
         <div
           v-for="skill in herramientasSkills"
           :key="skill.id"

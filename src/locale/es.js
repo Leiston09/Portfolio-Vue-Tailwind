@@ -1,7 +1,9 @@
 export default {
   globalOptions: {
-    ViewAll: "Ver todas →",
+    ViewAll: "Ver todo →",
     back: "Volver",
+    demo: "Demo",
+    code: "Codigo"
   },
 
   navbar: {
@@ -43,6 +45,7 @@ export default {
 
   projects: {
     title: "Proyectos Destacados",
+    titleInterno: "Proyectos",
     projectIntro: "Estos son algunos de mis proyectos recientes.",
     year: "Año",
     items: {
@@ -66,6 +69,20 @@ export default {
           "Aplicación web que permite visualizar un catálogo de guitarras con sus características, incorporando un sistema de carrito de compras interactivo.",
         descriptionimg:
           "El carrito permite agregar productos, modificar cantidades y eliminar productos de forma dinámica.",
+      },
+      administrar_pacientes: {
+        title: "Administrar Pacientes",
+        description:
+          "Aplicación web para gestionar pacientes, con funcionalidades de agregar, editar y eliminar registros de pacientes.",
+        descriptionimg:
+          "Interfaz intuitiva que permite a los usuarios administrar la información de los pacientes de manera eficiente, con validación de datos y diseño responsive.",
+      },
+      listado_de_usuarios: {
+        title: "Listado de Usuarios",
+        description:
+          "Aplicación web que muestra un listado de usuarios con sus detalles, utilizando datos estáticos para simular una base de datos.",
+        descriptionimg:
+          "Interfaz que presenta un listado de usuarios con información relevante, permitiendo a los usuarios visualizar y gestionar la información de manera sencilla y eficiente.",
       },
     },
   },

@@ -4,14 +4,18 @@
       {{ $t("projects.title") }}
     </h1>
 
-    <button class="text-[#38BDF8] hover:underline bg-[#1E293B] px-2 rounded-lg shadow hover:shadow-cyan-500 hover:transition-all hover:duration-500 py-1" v-if="projects.length > 3">
+    <RouterLink
+      :to="{ name: 'Projects' }"
+      class="buttonViewAll"
+      v-if="projects.length > 3"
+    >
       {{ $t("globalOptions.ViewAll") }}
-    </button>
+    </RouterLink>
   </div>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     <div
-      v-for="project in projects"
+      v-for="project in filteredProjects"
       :key="project.id"
       class="bg-[#111827] rounded-2xl overflow-hidden transition-all duration-300 border border-gray-800 group"
     >
@@ -34,8 +38,11 @@
         <h1 class="text-white font-bold text-lg">
           {{ $t(`projects.items.${project.key}.title`) }}
         </h1>
-        <div class="text-white text-xs"> 
-          <h1> <span class="font-bold">{{ $t(`projects.year`) }} : </span>{{ project.year }} </h1>
+        <div class="text-white text-xs">
+          <h1>
+            <span class="font-bold">{{ $t(`projects.year`) }} : </span
+            >{{ project.year }}
+          </h1>
         </div>
 
         <div class="flex flex-wrap gap-2">
@@ -58,14 +65,16 @@
           <a
             :href="project.github"
             target="_blank"
-            class="flex-1 text-center border border-gray-600 text-white rounded-lg py-1 hover:bg-[#1E293B] transition">
+            class="flex-1 text-center border border-gray-600 text-white rounded-lg py-1 hover:bg-[#1E293B] transition"
+          >
             GitHub
           </a>
 
           <a
             :href="project.demo"
             target="_blank"
-            class="flex-1 text-center bg-[#38BDF8]  font-semibold rounded-lg py-1 hover:scale-105 transition">
+            class="flex-1 text-center bg-[#38BDF8] font-semibold rounded-lg py-1 hover:scale-105 transition"
+          >
             Demo
           </a>
         </div>
@@ -78,10 +87,14 @@
 import { dataStoreProjects } from "@/stores/storeProjects";
 import { computed, onMounted } from "vue";
 
-const storeProjects = dataStoreProjects()
-const projects = computed(() => storeProjects.projects) ;
+const storeProjects = dataStoreProjects();
+const projects = computed(() => storeProjects.projects);
+
+const filteredProjects = computed(() => {
+  return projects.value.slice(0, 3);
+});
 
 onMounted(() => {
-  storeProjects.fetchProjects()
+  storeProjects.fetchProjects();
 });
 </script>

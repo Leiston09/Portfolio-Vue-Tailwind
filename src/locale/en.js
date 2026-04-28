@@ -2,6 +2,8 @@ export default {
   globalOptions: {
     ViewAll: "View all →",
     back: "Back",
+    demo: "Demo",
+    code: "Code",
   },
 
   navbar: {
@@ -44,6 +46,7 @@ export default {
 
   projects: {
     title: "Featured projects",
+    titleInterno: "Projects",
     projectIntro: "Here are some of my recent projects.",
     year: "Year",
     items: {
@@ -67,6 +70,20 @@ export default {
           "Web application with backend integration, data validation and implemented online store.",
         descriptionimg:
           "Interface where the user can register, log in and validate their data. The system allows you to save information in the database and view the products available in the store.",
+      },
+      administrar_pacientes: {
+        title: "Patient Management System",
+        description:
+          "Web application for managing patient information, including registration, editing and deletion of records.",
+        descriptionimg:
+          "The system allows users to efficiently manage patient data with a user-friendly interface and responsive design.",
+      },
+      listado_de_usuarios: {
+        title: "User Listing Application",
+        description:
+          "Web application that displays a list of users with their details, including name, email and registration date.",
+        descriptionimg:
+          "The application allows users to view and search through the user list with a clean and responsive design.",
       },
     },
   },

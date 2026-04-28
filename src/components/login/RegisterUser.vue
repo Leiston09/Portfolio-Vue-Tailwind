@@ -1,17 +1,17 @@
 <template>
   <div
-    class="flex h-fit flex-col w-full max-w-4xl p-5 border-2 rounded-4xl border-white/20 my-10"
+    class="flex flex-col w-full max-w-6xl border-2 rounded-4xl border-white/20 py-5" 
   >
-    <div class="text-center pt-5">
+    <div class=" grid gap-2 text-center">
       <h1 class="text-3xl md:text-4xl font-extrabold text-white">
         Crear cuenta
       </h1>
-      <p class="text-gray-400 text-sm mt-2">
+      <p class="text-gray-400 text-sm ">
         Regístrate para acceder al sistema
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 m-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 p-5">
       <div>
         <input
           v-model="user.name"
@@ -125,3 +125,9 @@ const registerUser = () => {
   }
 };
 </script>
+
+<style scoped>
+
+
+
+</style>

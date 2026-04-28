@@ -1,6 +1,6 @@
 <template>
   <div
-    class="my-10 rounded-2xl p-6 flex flex-col items-center border border-gray-800">
+    class=" rounded-2xl p-6 flex flex-col items-center border border-gray-800">
     <h1 class="text-3xl font-bold text-white">
       {{ $t("contact.title") }}
     </h1>

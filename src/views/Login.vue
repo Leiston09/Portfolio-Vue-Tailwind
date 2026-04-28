@@ -9,6 +9,7 @@ import { useRouter } from "vue-router";
 
 const authentication = dataStoreUser();
 const router = useRouter();
+
 const user = (user) => {
   const success = authentication.authenticationUser(user);
   if (success) {

@@ -50,7 +50,7 @@
         v-else
         :href="developer.download"
         download
-        class="bg-green-600 hover:bg-green-700 px-6 py-2 mb-2 rounded-lg transition"
+        class="bg-[#38BDF8] hover:bg-[#38BDF8]/50 px-6 py-2 mb-2 rounded-lg transition duration-200 text-white font-medium"
       >
         <h1 class="text-center font-bold text-white">
           {{ $t("curriculum.download") }}

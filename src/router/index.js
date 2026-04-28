@@ -1,9 +1,8 @@
 import ViewCertificate from "@/components/Certifications/ViewCertificate.vue";
-
 import NotFuntions from "@/components/NotFuntions.vue";
 import AuthLayout from "@/layout/AuthLayout.vue";
 import MainLayout from "@/layout/MainLayout.vue";
-import Access from "@/views/Access.vue";
+import Access from "@/views/Login.vue";
 import Certifications from "@/views/Certifications.vue";
 import Curriculum from "@/views/Curriculum.vue";
 import Home from "@/views/Home.vue";
@@ -12,6 +11,8 @@ import RegisterUser from "@/views/RegisterUser.vue";
 import Skills from "@/views/Skills.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import { dataStoreUser } from "@/stores/User";
+import Projects from "@/views/Projects.vue";
+
 const routes = [
   {
     path: "/",
@@ -48,6 +49,11 @@ const routes = [
         component: Curriculum,
         name: "Curriculum",
       },
+      {
+        path: "Projects",
+        component: Projects,
+        name: "Projects",
+      }
     ],
   },
 
@@ -76,6 +82,7 @@ const routes = [
       },
     ],
   },
+
   {
     path: "/:pathMatch(.*)*",
     component: NotFuntions,
@@ -106,7 +113,7 @@ router.beforeEach((to) => {
 
   if (to.meta.requiresValidation) {
     if (!storeUser.authentication) {
-      return { name: "Certifications" }; 
+      return { name: "Certifications" };
     }
   }
 

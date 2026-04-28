@@ -1,0 +1,10 @@
+import Groq from "groq-sdk";
+
+export const useGenAi = () => {
+  const groq = new Groq({
+    apiKey: import.meta.env.VITE_GROQ_API_KEY,
+    dangerouslyAllowBrowser: true
+  });
+
+  return groq;
+};

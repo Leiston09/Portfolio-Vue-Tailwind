@@ -1,7 +1,8 @@
 <template>
-  <h1 class="text-2xl md:text-4xl font-bold text-white">
+  <h1 class="titleViewAll">
     {{ $t("certifications.title") }}
   </h1>
+  <div class="w-24 h-1 bg-[#38BDF8] mx-auto rounded-full"></div>
 
   <p class="text-gray-400 mt-2 text-center max-w-xl">
     {{ $t("certifications.description") }}
@@ -53,7 +54,6 @@ const institutions = computed(() => {
       ...new Set(props.certifications.map((i) => i.institution)),
     ];
     return uniqueInstitutions;
-
   }
 
   return [];

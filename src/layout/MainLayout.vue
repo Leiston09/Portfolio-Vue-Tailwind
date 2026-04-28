@@ -5,8 +5,8 @@
       <OptionsBar />
     </header>
 
-    <main class="pt-20 pb-10 lg:pb-0 px-4 flex-1">
-      <div class="max-w-7xl mx-auto">
+    <main class=" flex flex-1 py-20 md:pt-20 md:pb-0 px-5 items-center justify-center">
+      <div class="max-w-7xl mx-auto w-full">
         <RouterView />
       </div>
     </main>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center pb-10">
+  <div class="flex flex-col items-center ">
     <SearchCertifications
       :certifications="certifications"
       @searchCertifications="certificationsSearch"

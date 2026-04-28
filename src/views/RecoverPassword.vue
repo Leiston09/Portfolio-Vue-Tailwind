@@ -1,16 +1,16 @@
 <template>
   <div
-    class="flex h-fit flex-col  md:flex-row w-full max-w-4xl rounded-2xl overflow-hidden my-10  border-2 border-white/20"
+    class="flex flex-col md:flex-row  max-w-6xl rounded-2xl overflow-hidden border-2 border-white/20"
   >
     <div class="hidden md:block md:w-1/2">
       <img
         src="@/assets/img/ImagenLogin.jpg"
         alt="Recover Image"
-        class="w-full h-full object-cover opacity-90"
+        class="w-full h-full object-cover "
       />
     </div>
 
-    <div class="flex-1 px-4 py-6 md:p-10 flex flex-col justify-center gap-4">
+    <div class="flex flex-1 px-4 py-6 md:p-10 flex-col justify-center gap-5">
       <div class="md:hidden flex justify-center">
         <div class="rounded-full overflow-hidden w-24 h-24 border border-[#38BDF8]/40">
           <img
@@ -25,11 +25,11 @@
           Recuperar contraseña
         </h1>
         <p class="text-gray-400 text-sm mt-1">
-          Ingresa tu correo para recuperar tu cuenta
+          Ingresa tu correo para recuperar tu cuenta!
         </p>
       </header>
 
-      <div class="space-y-3">
+      <div>
         <input
           type="email"
           placeholder="Correo electrónico"
@@ -49,5 +49,4 @@
 </template>
 
 <script setup>
-import { RouterLink } from "vue-router";
 </script>

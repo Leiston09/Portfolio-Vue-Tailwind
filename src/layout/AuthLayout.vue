@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-screen w-full">
+  <div class="min-h-screen flex flex-col">
     <OptionBarLogin />
 
-    <div class="mx-4 flex justify-center">
+    <div class="flex flex-1 items-center justify-center px-4 ">
       <RouterView />
     </div>
   </div>

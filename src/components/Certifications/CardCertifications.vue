@@ -10,11 +10,16 @@
       v-for="certification in filterCertificationsUser"
       :key="certification.id"
       class="relative bg-[#0B1120] rounded-2xl overflow-hidden border border-gray-800 transition-all duration-300 group"
-      :class="isLoggedIn ? 'hover:border-[#38BDF8] hover:shadow-lg hover:shadow-[#38BDF8]/10' : ''"
+      :class="
+        isLoggedIn
+          ? 'hover:border-[#38BDF8] hover:shadow-lg hover:shadow-[#38BDF8]/10'
+          : ''
+      "
     >
       <!-- CONTENIDO (SE DESENFOCA SI NO ESTÁ LOGUEADO) -->
-      <div :class="!isLoggedIn ? 'blur-[2px] pointer-events-none select-none' : ''">
-        
+      <div
+        :class="!isLoggedIn ? 'blur-[2px] pointer-events-none select-none' : ''"
+      >
         <div class="relative">
           <img
             :src="certification.image"
@@ -23,6 +28,7 @@
 
           <!-- BOTONES HOVER DESKTOP -->
           <div
+            v-if="certification.key !== 'ingenieriaSistemas'"
             class="hidden lg:flex md:opacity-0 md:group-hover:opacity-100 absolute inset-0 bg-black/50 items-center justify-center transition-all duration-300 gap-5"
           >
             <button
@@ -66,7 +72,10 @@
           </p>
 
           <!-- BOTONES MOBILE -->
-          <div class="lg:hidden flex justify-between items-center mt-2 gap-5">
+          <div
+            v-if="certification.key !== 'ingenieriaSistemas'"
+            class="lg:hidden flex justify-between items-center mt-2 gap-5"
+          >
             <button
               @click="$emit('validateCertificated', certification.id)"
               :disabled="!isLoggedIn"
@@ -97,7 +106,7 @@
       <!-- CAPA DE BLOQUEO -->
       <div
         v-if="!isLoggedIn"
-        class="absolute inset-0 bg-black/60 flex items-center justify-center "
+        class="absolute inset-0 bg-black/60 flex items-center justify-center"
       >
         <p class="text-white text-sm font-semibold text-center px-4">
           {{ $t("certifications.locked") }}
@@ -122,5 +131,4 @@ const props = defineProps({
 });
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
