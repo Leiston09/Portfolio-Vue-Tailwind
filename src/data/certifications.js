@@ -31,8 +31,24 @@ export const Certifications = [
     image: "/certificados/UG.jpg",
     pdf: "",
   },
-  {
+    {
     id: 5,
+    key: "ExploracionRedes",
+    name: "Exploración de Redes con Cisco Packet Tracer",
+    institution: "Cisco Packet Tracer",
+    image: "/certificados/Exploring_Networking_with_Cisco_Packet_Tracer.jpg",
+    pdf: "/pdf/certificates/Exploring_Networking_with_Cisco_Packet_Tracer.pdf",
+  },
+  {
+    id: 6,
+    key: "IntroduccionCiscoPacketTracer",
+    name: "Introducción a Cisco Packet Tracer",
+    institution: "Cisco Packet Tracer",
+    image: "/certificados/Getting_Started_with_Cisco_Packet_Tracer.jpg",
+    pdf: "/pdf/certificates/Getting_Started_with_Cisco_Packet_Tracer.pdf",
+  },
+  {
+    id: 7,
     key: "detectionAndResponse",
     name: "Detection and Response",
     institution: "Google",
@@ -40,7 +56,7 @@ export const Certifications = [
     pdf: "/pdf/certificates/DettectionAndResponse.pdf",
   },
   {
-    id: 6,
+    id: 8,
     key: "foundationsOfCybersecurity",
     name: "Foundations of Cybersecurity",
     institution: "Google",
@@ -48,7 +64,7 @@ export const Certifications = [
     pdf: "/pdf/certificates/FoundationsOfCybersecurity.pdf",
   },
   {
-    id: 7,
+    id: 9,
     key: "manageSecurityRisks",
     name: "Manage Security Risks",
     institution: "Google",
@@ -56,7 +72,7 @@ export const Certifications = [
     pdf: "/pdf/certificates/ManageSecurityRisks.pdf",
   },
   {
-    id: 8,
+    id: 10,
     key: "networksAndNetwork",
     name: "Networks and Network Security",
     institution: "Google",
@@ -64,7 +80,7 @@ export const Certifications = [
     pdf: "/pdf/certificates/NetworksAndNetwork.pdf",
   },
   {
-    id: 9,
+    id: 11,
     key: "prepareForCybersecurityJobs",
     name: "Prepare for Cybersecurity Jobs",
     institution: "Google",
@@ -72,7 +88,7 @@ export const Certifications = [
     pdf: "/pdf/certificates/PreparateForCybersecurityJobs.pdf",
   },
   {
-    id: 10,
+    id: 12,
     key: "threatsAndVulnerabilities",
     name: "Threats, Vulnerabilities, and Risks",
     institution: "Google",
@@ -80,7 +96,7 @@ export const Certifications = [
     pdf: "/pdf/certificates/TheatsAndVulnerabilities.pdf",
   },
   {
-    id: 11,
+    id: 13,
     key: "automateCibersecurity",
     name: "Automate Cybersecurity Tasks with Python",
     institution: "Google",
@@ -88,11 +104,12 @@ export const Certifications = [
     pdf: "/pdf/certificates/AutimateCibersecurityPython.pdf",
   },
   {
-    id: 12,
+    id: 14,
     key: "primerosPasosPYTHON",
     name: "Primeros Pasos con Python",
     institution: "Google",
     image: "/certificados/PrimerosPasosPYTHON.jpg",
     pdf: "/pdf/certificates/PrimerosPasosPYTHON.pdf",
   },
+
 ];

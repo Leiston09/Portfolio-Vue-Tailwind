@@ -129,6 +129,21 @@ export default {
         descriptionDetail:
           "Dominio avanzado de Vue.js 3 utilizando la Composition API y Pinia para la gestión de estados. El curso se enfoca en el desarrollo full-stack bajo el stack MEVN (MongoDB, Express, Vue, Node.js), cubriendo la creación de 10 aplicaciones del mundo real, despliegue de soluciones escalables y optimización con Vite.",
       },
+      ExploracionRedes: {
+        name: "Exploración de Redes con Cisco Packet Tracer",
+        institution: "Cisco Packet Tracer",
+        description:
+          "Curso práctico de simulación de redes con Cisco Packet Tracer.",
+        descriptionDetail:
+          "Aprende a diseñar, configurar y solucionar problemas de redes usando el simulador oficial de Cisco. Incluye fundamentos de routing, switching, VLANs y troubleshooting.",
+      },
+      IntroduccionCiscoPacketTracer: {
+        name: "Introducción a Cisco Packet Tracer",
+        institution: "Cisco Packet Tracer",
+        description: "Primeros pasos en el simulador de redes de Cisco.",
+        descriptionDetail:
+          "Curso introductorio que cubre la interfaz, dispositivos básicos, conexiones y simulación de redes pequeñas. Ideal para comenzar en el mundo de la simulación de redes.",
+      },
       primerosPasosPYTHON: {
         name: "Primeros Pasos con Python",
         description:
