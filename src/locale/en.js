@@ -123,6 +123,13 @@ export default {
           "Professional program covering SQL, Python, networking and incident management.",
         descriptionDetail:
           "Professional program covering SQL, Python, networking and incident management. This program offers comprehensive training in cybersecurity, addressing topics such as data protection, threat detection, incident response, and implementation of effective security measures.",
+      },     
+      vue3_js: {
+        name: "Vue.js 3 - The Complete Guide - Composition, Pinia, MEVN, 10 Apps",
+        description:
+          "Mastery of the Vue.js 3 framework and the MEVN ecosystem for modern applications.",
+        descriptionDetail:
+          "Advanced mastery of Vue.js 3 using the Composition API and Pinia for state management. The course focuses on full-stack development using the MEVN stack (MongoDB, Express, Vue, Node.js), covering the creation of 10 real-world applications, deployment of scalable solutions, and optimization with Vite.",
       },
       primerosPasosPYTHON: {
         name: "First Steps with Python",

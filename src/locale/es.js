@@ -3,7 +3,7 @@ export default {
     ViewAll: "Ver todo →",
     back: "Volver",
     demo: "Demo",
-    code: "Codigo"
+    code: "Codigo",
   },
 
   navbar: {
@@ -121,6 +121,13 @@ export default {
           "Programa profesional que cubre SQL, Python, redes y gestión de incidentes.",
         descriptionDetail:
           "Programa profesional que cubre SQL, Python, redes y gestión de incidentes. Este programa ofrece una formación integral en ciberseguridad, abordando temas como la protección de datos, la detección de amenazas, la respuesta a incidentes y la implementación de medidas de seguridad efectivas.",
+      },
+      vue3_js: {
+        name: "Vue.js 3 - La Guía Completa - Composition Pinia MEVN 10 Apps",
+        description:
+          "Dominio del framework Vue.js 3 y el ecosistema MEVN para aplicaciones modernas.",
+        descriptionDetail:
+          "Dominio avanzado de Vue.js 3 utilizando la Composition API y Pinia para la gestión de estados. El curso se enfoca en el desarrollo full-stack bajo el stack MEVN (MongoDB, Express, Vue, Node.js), cubriendo la creación de 10 aplicaciones del mundo real, despliegue de soluciones escalables y optimización con Vite.",
       },
       primerosPasosPYTHON: {
         name: "Primeros Pasos con Python",

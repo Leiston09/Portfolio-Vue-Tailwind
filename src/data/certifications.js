@@ -17,11 +17,11 @@ export const Certifications = [
   },
   {
     id: 3,
-    key: "primerosPasosPYTHON",
-    name: "Primeros Pasos con Python",
-    institution: "Google",
-    image: "/certificados/PrimerosPasosPYTHON.jpg",
-    pdf: "/pdf/certificates/PrimerosPasosPYTHON.pdf",
+    key: "vue3_js",
+    name: `Vue.js 3 - La Guía Completa - Composition Pinia MEVN 10 Apps`,
+    institution: "Udemy",
+    image: "/certificados/VuejsGuíaCompleta.jpg",
+    pdf: "/pdf/certificates/VuejsGuíaCompleta.pdf",
   },
   {
     id: 4,
@@ -86,5 +86,13 @@ export const Certifications = [
     institution: "Google",
     image: "/certificados/AutimateCibersecurityPython.jpg",
     pdf: "/pdf/certificates/AutimateCibersecurityPython.pdf",
+  },
+  {
+    id: 12,
+    key: "primerosPasosPYTHON",
+    name: "Primeros Pasos con Python",
+    institution: "Google",
+    image: "/certificados/PrimerosPasosPYTHON.jpg",
+    pdf: "/pdf/certificates/PrimerosPasosPYTHON.pdf",
   },
 ];

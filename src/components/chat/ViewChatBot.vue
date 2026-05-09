@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-24 right-4 z-50 animate-fadeIn">
+  <div class="fixed bottom-22 right-3 md:right-10 z-50">
     <div
       class="w-72 sm:w-[320px] bg-[#0F172A] border border-gray-700 rounded-2xl shadow-2xl overflow-hidden"
     >
@@ -8,7 +8,7 @@
       >
         <div class="flex items-center gap-2">
           <img src="/img/ChatBotWhile.png" class="w-6 h-6 animate-pulse" />
-          <h2 class="text-white text-sm font-semibold">Chat IA</h2>
+          <h2 class="text-white text-sm font-semibold">Chat IA (Beta)🧑‍🎓</h2>
         </div>
         <button
           @click="$emit('close', false)"
@@ -18,7 +18,7 @@
         </button>
       </div>
 
-      <div class="h-80 overflow-y-auto p-3 space-y-2">
+      <div ref="chatContainer" class="h-80 overflow-y-auto p-3 space-y-2">
         <div
           v-for="msg in messages"
           :key="msg.id"
@@ -79,7 +79,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, nextTick } from "vue";
+import { nextTick, onMounted, ref } from "vue";
 import { useGetGenerativeModelGP } from "@/service/useGetGenerativeModelGP.js";
 
 const emit = defineEmits(["close"]);
@@ -87,12 +87,7 @@ const emit = defineEmits(["close"]);
 const loading = ref(false);
 const inputMessage = ref("");
 const messages = ref([]);
-
-const scrollToBottom = async () => {
-  await nextTick();
-  const container = document.querySelector(".overflow-y-auto");
-  if (container) container.scrollTop = container.scrollHeight;
-};
+const chatContainer = ref(null);
 
 const fetchAnswer = async () => {
   if (!inputMessage.value.trim() || loading.value) return;
@@ -105,9 +100,8 @@ const fetchAnswer = async () => {
     content: inputMessage.value,
   });
 
-  const pregunta = inputMessage.value;
   inputMessage.value = "";
-  await scrollToBottom();
+  await scrollToBottom(); // 👈 scroll después de mensaje usuario
 
   try {
     const respuesta = await useGetGenerativeModelGP(messages.value);
@@ -117,43 +111,37 @@ const fetchAnswer = async () => {
       role: "assistant",
       content: respuesta,
     });
-    await scrollToBottom();
+
+    await scrollToBottom(); // 👈 scroll después de respuesta
+
   } catch (error) {
-    console.log({ error });
     messages.value.push({
       id: Date.now() + 1,
       role: "assistant",
       content: "Error. Intenta de nuevo.",
     });
-    await scrollToBottom();
+
   } finally {
     loading.value = false;
   }
 };
 
-onMounted(() => {
+// Función que hace scroll al último mensaje
+const scrollToBottom = async () => {
+  await nextTick(); // Espera a que Vue actualice el DOM
+  if (chatContainer.value) {
+    chatContainer.value.scrollTop = chatContainer.value.scrollHeight;
+  }
+};
+
+onMounted(async () => {
   messages.value.push({
     id: Date.now(),
     role: "assistant",
-    content:
-      "Bienvenido al portafolio de Leiston Holguín. ¿Qué te gustaría conocer? Este asistente se encuentra en fase beta.",
+    content: "Bienvenido al portafolio. ¿Qué te gustaría conocer?",
   });
+  await scrollToBottom();
 });
 </script>
 
-<style scoped>
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.3s ease;
-}
-</style>
+<style scoped></style>
