@@ -1,20 +1,29 @@
 import { getContact } from "@/service/api";
 import { defineStore } from "pinia";
 
+type ContactType = {
+  id: number;
+  name: string;
+  url: string;
+  icon: string;
+  color: string;
+  download?: boolean;
+};
+
 export const dataStoreContact = defineStore("storeContact", {
   state: () => ({
-    contact: [],
+    contact: [] as ContactType[],
   }),
 
   actions: {
     async fetchContact() {
       if (this.contact.length > 0) return;
-      
+
       try {
-        let data = await getContact();
-        this.contact = data
+        const data = await getContact();
+        this.contact = data;
       } catch (error) {
-        console.log(`Error en el Store CONTACT: `, error)
+        console.error("Error en Store Contact:", error);
       }
     },
   },

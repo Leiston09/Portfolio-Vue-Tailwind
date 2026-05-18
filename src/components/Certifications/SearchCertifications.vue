@@ -34,30 +34,32 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed, ref } from "vue";
 
-const emit = defineEmits(["searchCertifications", "filterByInstitution"]);
-const searchText = ref("");
-const selectedInstitution = ref("");
+type CertificationsType = {
+  id: number;
+  special: boolean;
+  key: string;
+  name: string;
+  institution: string;
+  image: string;
+  pdf: string;
+};
 
-const props = defineProps({
-  certifications: {
-    type: Array,
-    required: true,
-  },
-});
+const emit = defineEmits<{
+  (e: "searchCertifications", value: string): void;
+  (e: "filterByInstitution", value: string): void;
+}>();
 
-const institutions = computed(() => {
-  if (props.certifications) {
-    let uniqueInstitutions = [
-      ...new Set(props.certifications.map((i) => i.institution)),
-    ];
-    return uniqueInstitutions;
-  }
+const searchText = ref<string>("");
+const selectedInstitution = ref<string>("");
 
-  return [];
+const props = defineProps<{
+  certifications: CertificationsType[];
+}>();
+
+const institutions = computed<string[]>(() => {
+  return [...new Set(props.certifications.map((i) => i.institution))];
 });
 </script>
-
-<style lang="scss" scoped></style>

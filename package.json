@@ -9,8 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@google/genai": "^1.48.0",
-    "@google/generative-ai": "^0.24.1",
     "@tailwindcss/vite": "^4.2.2",
     "groq-sdk": "^1.1.2",
     "pinia": "^3.0.4",
@@ -22,6 +20,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.4",
     "sass-embedded": "^1.99.0",
+    "typescript": "^6.0.3",
     "vite": "^7.3.1",
     "vite-plugin-vue-devtools": "^8.0.6"
   },

@@ -1,9 +1,17 @@
 import { getCurriculum } from "@/service/api";
 import { defineStore } from "pinia";
 
+type curriculumType = {
+  id: number;
+  asset: boolean;
+  name: string;
+  image: string;
+  download: string;
+};
+
 export const dataStoreCurriculum = defineStore("storeCurriculum", {
   state: () => ({
-    curriculum: [],
+    curriculum: [] as curriculumType[] ,
   }),
   actions: {
     async fetchCurriculum() {

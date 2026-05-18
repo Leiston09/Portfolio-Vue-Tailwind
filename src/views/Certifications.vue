@@ -14,8 +14,8 @@
   </div>
 </template>
 
-<script setup>
-import { useRouter } from "vue-router";
+<script setup lang="ts">
+import { useRoute, useRouter } from "vue-router";
 import { computed, onMounted, ref } from "vue";
 
 import SearchCertifications from "@/components/Certifications/SearchCertifications.vue";
@@ -24,10 +24,23 @@ import { dataStoreCertification } from "@/stores/StoreCertifications";
 import { dataStoreUser } from "@/stores/User";
 
 
+type CertificationsType =   {
+    id: number,
+    special: boolean,
+    key: string,
+    name: string,
+    institution: string,
+    image: string,
+    pdf: string,
+}
+
+
 const router = useRouter();
+const route = useRoute();
+
 const store = dataStoreCertification()
 
-const certifications = computed(() => store.Certifications);
+const certifications = computed<CertificationsType[]>(() => store.certifications);
 const searchCertifications = ref("");
 const selectedInstitution = ref("");
 
@@ -42,7 +55,7 @@ function filterByInstitution(institution) {
   selectedInstitution.value = institution;
 }
 
-const filterCertificationsUser = computed(() => {
+const filterCertificationsUser = computed<CertificationsType[]>(() => {
   let filterCertifications = certifications.value;
 
     if (selectedInstitution.value) {
@@ -59,17 +72,13 @@ const filterCertificationsUser = computed(() => {
     return filterCertifications;
 });
 
-function selectedCertification(ids) {
-  let validate = {
-    id: ids,
-    user: true,
-  };
-
-  localStorage.setItem("certificationId", JSON.stringify(validate));
-
+function selectedCertification(idSelect : number) {
   router.push({
     name: "CertificationDetail",
-    params: { id: ids },
+    params: { id: idSelect },
+    query: {
+      from: route.fullPath,
+    },
   });
 }
 

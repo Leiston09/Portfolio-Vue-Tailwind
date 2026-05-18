@@ -4,9 +4,23 @@ export default {
     back: "Volver",
     demo: "Demo",
     code: "Codigo",
+    loading: "Cargando CV...",
+    Featured: "⭐ Destacado",
+    GitHub: "GitHub",
+    Demo: "Demo",
+    webPortfolio: "Portafolio web",
+  },
+
+  notFounds: {
+    notFound: "página no encontrada",
+    notDescription:
+      "Lo sentimos, la página que estás buscando no se encuentra disponible en este momento.",
+    notHome: "Regresar al inicio",
   },
 
   navbar: {
+    configuration: "Configuración",
+    configurationDescription: "Inicia sesión con otra cuenta o cierra sesión",
     return: "devolver",
     login: "Iniciar Sesión",
     logOut: "Cerrar sesión",
@@ -28,7 +42,7 @@ export default {
   home: {
     portfolioTitle: "Portafolio Personal",
     welcomeMessage:
-      "Desarrollador web full-stack especializado en la creación de aplicaciones web modernas con Vue 3, Node.js y bases de datos, con conocimientos adicionales de ciberseguridad y redes.",
+      "Soy un desarrollador web full-stack de Ecuador enfocado en la creación de aplicaciones web modernas utilizando Vue 3, Node.js y bases de datos. Me especializo en desarrollar interfaces dinámicas, sistemas escalables y soluciones eficientes, complementando mi perfil con conocimientos en ciberseguridad y redes.",
     ViewProjects: "Proyectos",
     ViewCV: "Ver Curriculum",
     ViewContact: "Ver Contacto",
@@ -40,7 +54,7 @@ export default {
       networksKnowledge: "Redes ",
     },
     personalMessage:
-      "Experiencia en frontend con Vue 3, Tailwind CSS, JavaScript y backend con Node.js, También tengo conocimientos de ciberseguridad y fundamentos de redes.",
+      "Apasionado por el desarrollo web y el aprendizaje constante, enfocado en crear aplicaciones modernas, funcionales y escalables mientras continúo fortaleciendo mis conocimientos en nuevas tecnologías.",
   },
 
   projects: {
@@ -48,6 +62,7 @@ export default {
     titleInterno: "Proyectos",
     projectIntro: "Estos son algunos de mis proyectos recientes.",
     year: "Año",
+    SeeMoreDetails: "Ver más detalles",
     items: {
       portfolio: {
         title: "Portafolio Personal",
@@ -89,12 +104,19 @@ export default {
 
   skills: {
     title: "Habilidades Técnicas",
-    frontend: "Desarrollo Frontend",
-    tools: "Herramientas",
+    categories: {
+      Frontend: "Frontend",
+      Backend: "Backend",
+      Database: "Base de Datos",
+      Design: "Diseño",
+      Tools: "Herramientas",
+      accessories: "Complementos",
+    },
   },
 
   certifications: {
     title: "Certificaciones",
+    institution: "institución",
     intro: "Estas son algunas de mis certificaciones y cursos.",
     description:
       "Certificaciones en ciberseguridad, programación y fundamentos de redes.",
@@ -227,6 +249,7 @@ export default {
       title: "Frontend Developer",
     },
   },
+
   login: {
     intro: "Bienvenido a mi portafolio",
     emailLabel: "Correo electrónico",

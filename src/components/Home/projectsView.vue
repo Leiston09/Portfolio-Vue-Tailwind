@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between items-center py-5">
-    <h1 class="text-lg md:text-3xl font-bold text-white  ">
+    <h1 class="titleOptions">
       {{ $t("projects.title") }}
     </h1>
 
@@ -25,25 +25,36 @@
           class="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
         />
 
-        <div
-          class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4"
-        >
+        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4">
           <p class="text-gray-200 text-sm text-center">
             {{ $t(`projects.items.${project.key}.descriptionimg`) }}
           </p>
         </div>
       </div>
 
-      <div class="p-4 flex flex-col gap-2 md:gap-3">
-        <h1 class="text-white font-bold text-lg">
+      <div class="p-4 flex flex-col gap-2 md:gap-3">          
+        <h1
+          class="text-white font-extrabold text-lg text-center tracking-wide leading-tight group-hover:text-celeste/80 transition-all duration-300"
+        >
           {{ $t(`projects.items.${project.key}.title`) }}
         </h1>
-        <div class="text-white text-xs">
-          <h1>
-            <span class="font-bold">{{ $t(`projects.year`) }} : </span
-            >{{ project.year }}
-          </h1>
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <span class="text-celeste text-sm">●</span>
+
+            <h1 class="font-semibold text-gray-300 text-sm tracking-wide">
+              {{ $t(`projects.year`) }}
+              <span class="text-white font-bold">
+                {{ project.year }}
+              </span>
+            </h1>
+          </div>
+          <span class="star">
+          {{ $t ("globalOptions.Featured") }}
+          </span>
         </div>
+
+
 
         <div class="flex flex-wrap gap-2">
           <span
@@ -56,7 +67,7 @@
         </div>
 
         <div>
-          <p class="text-white">
+          <p class="text-white text-justify">
             {{ $t(`projects.items.${project.key}.description`) }}
           </p>
         </div>
@@ -65,17 +76,17 @@
           <a
             :href="project.github"
             target="_blank"
-            class="flex-1 text-center border border-gray-600 text-white rounded-lg py-1 hover:bg-[#1E293B] transition"
+            class="buttonDark"
           >
-            GitHub
+            {{ $t("globalOptions.GitHub") }}
           </a>
 
           <a
             :href="project.demo"
             target="_blank"
-            class="flex-1 text-center bg-[#38BDF8] font-semibold rounded-lg py-1 hover:scale-105 transition"
+            class="buttonBlue"
           >
-            Demo
+            {{ $t("globalOptions.Demo") }}
           </a>
         </div>
       </div>
@@ -83,15 +94,27 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { dataStoreProjects } from "@/stores/storeProjects";
 import { computed, onMounted } from "vue";
 
-const storeProjects = dataStoreProjects();
-const projects = computed(() => storeProjects.projects);
+type ProjectsType = {
+    id: number,
+    special: boolean,
+    key: string,
+    year: number,
+    image: string,
+    technologies: string[]
+    github: string,
+    demo: string
+}
 
-const filteredProjects = computed(() => {
-  return projects.value.slice(0, 3);
+
+const storeProjects = dataStoreProjects();
+const projects = computed<ProjectsType[]>(() => storeProjects.projects);
+
+const filteredProjects = computed<ProjectsType[]>(() => {
+  return projects.value.filter((e) => e.special);
 });
 
 onMounted(() => {
