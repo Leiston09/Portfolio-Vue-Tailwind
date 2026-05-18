@@ -1,9 +1,18 @@
 import { getSkills } from "@/service/api";
 import { defineStore } from "pinia";
 
+type SkillsTypes = {
+  id: number;
+  categoria: string;
+  nombre: string;
+  icono: string;
+};
+
+
+
 export const dataStoreSkills = defineStore("dataStills", {
   state: () => ({
-    skills: [],
+    skills: [] as SkillsTypes[],
   }),
 
   actions: {

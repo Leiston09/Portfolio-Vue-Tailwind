@@ -4,9 +4,22 @@ export default {
     back: "Back",
     demo: "Demo",
     code: "Code",
+    loading: "Loading CV...",
+    Featured: "⭐ Featured",
+    GitHub: "GitHub",
+    Demo: "Demo",
+    webPortfolio: "web Portfolio",
   },
 
+  notFounds: {
+    notFound: "Page not found",
+    notDescription:
+      "Sorry, the page you are looking for is not available at the moment.",
+    notHome: "Go back to home",
+  },
   navbar: {
+    configuration: "Settings",
+    configurationDescription: "Sign in with another account or log out",
     return: "return",
     login: "Sign In",
     logOut: "Sign Out",
@@ -28,7 +41,7 @@ export default {
   home: {
     portfolioTitle: "Personal Portfolio",
     welcomeMessage:
-      "Full-stack web developer specializing in the creation of modern web applications with Vue 3, Node.js and databases, with additional knowledge of cybersecurity and networks.",
+      "I am a full-stack web developer from Ecuador focused on building modern web applications using Vue 3, Node.js, and databases. I specialize in developing dynamic interfaces, scalable systems, and efficient solutions, complementing my profile with knowledge of cybersecurity and networking.",
     ViewProjects: "Projects",
     ViewCV: "View Curriculum",
     ViewContact: "View Contact",
@@ -41,7 +54,7 @@ export default {
       networksKnowledge: "Networking",
     },
     personalMessage:
-      "Experience in frontend development with Vue 3, Tailwind CSS, JavaScript and backend with Node.js. I also have knowledge of cybersecurity and networking fundamentals.",
+      "Passionate about web development and continuous learning, focused on building modern, functional, and scalable applications while continuously strengthening my knowledge of new technologies.",
   },
 
   projects: {
@@ -49,6 +62,8 @@ export default {
     titleInterno: "Projects",
     projectIntro: "Here are some of my recent projects.",
     year: "Year",
+    SeeMoreDetails: "See more details",
+
     items: {
       portfolio: {
         title: "Personal Portfolio",
@@ -90,12 +105,19 @@ export default {
 
   skills: {
     title: "Technical Skills",
-    frontend: "Frontend Development",
-    tools: "Tools",
+    categories: {
+      Frontend: "Frontend",
+      Backend: "Backend",
+      Database: "Database",
+      Design: "Design",
+      Tools: "Tools",
+      accessories: "Accessories",
+    },
   },
 
   certifications: {
     title: "Certifications",
+    institution: "institution",
     intro: "These are some of my certifications and courses.",
     description:
       "Certifications in cybersecurity, programming and networking fundamentals.",

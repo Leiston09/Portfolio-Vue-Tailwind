@@ -1,44 +1,84 @@
 <template>
-  <div class="flex justify-between items-center">
-    <h1 class="text-lg md:text-3xl font-bold text-white ">
-      {{ $t("skills.title") }}
-    </h1>
+  <div class="flex justify-between items-center ">
+    <div>
+      <h1 class="titleOptions">
+        {{ $t("skills.title") }}
+      </h1>
+    </div>
 
-    <RouterLink :to="{ name: 'skills' }" class="buttonViewAll">
+    <RouterLink :to="{ name: 'Skills' }" class="buttonViewAll">
       {{ $t("globalOptions.ViewAll") }}
     </RouterLink>
   </div>
 
-  <div class="overflow-hidden relative w-full py-6">
-    <div class="flex gap-12 animate-scroll whitespace-nowrap">
+  <div class="overflow-hidden py-4 px-1 ">
+    <div class="flex gap-4 animate-scroll">
+      <!-- Skills originales -->
       <div
         v-for="skill in skills"
-        :key="'scroll1-' + skill.id"
-        class="flex items-center gap-2 text-gray-300"
-      >
-        <i :class="skill.icono" class="text-4xl"></i>
-        <span class="text-sm">{{ skill.nombre }}</span>
+        :key="skill.id"
+class="min-w-45 bg-[#111827]/80 border border-gray-800 rounded-2xl p-5 flex flex-col items-center justify-center gap-3 backdrop-blur-md hover:border-celeste hover:-translate-y-2 hover:shadow-xl hover:shadow-celeste/20 transition-all duration-300 group shrink-0">
+        <div
+          class="w-16 h-16 rounded-2xl bg-[#1E293B] flex items-center justify-center group-hover:bg-celeste/10 transition-all duration-300">
+          <i
+            :class="skill.icono"
+            class="text-4xl group-hover:scale-110 transition-all duration-300">
+          </i>
+        </div>
+
+        <div class="text-center">
+          <h1 class="text-white font-semibold text-sm">
+            {{ skill.nombre }}
+          </h1>
+
+          <p class="text-xs text-gray-400 mt-1">
+            {{ $t(`skills.categories.${ skill.categoria }`) }}
+          </p>
+        </div>
       </div>
 
+      <!-- Los mismos skills duplicados para que sea infinito -->
       <div
         v-for="skill in skills"
-        :key="'scroll2-' + skill.id"
-        class="flex items-center gap-2 text-gray-300"
-      >
-        <i :class="skill.icono" class="text-4xl"></i>
-        <span class="text-sm">{{ skill.nombre }}</span>
+        :key="`dup-${skill.id}`"
+        class="min-w-45 bg-[#111827]/80 border border-gray-800 rounded-2xl p-5 flex flex-col items-center justify-center gap-3 backdrop-blur-md hover:border-cebg-celeste/40 hover:-translate-y-2 hover:shadow-xl hover:shadow-cebg-celeste/10 transition-all duration-300 group shrink-0">
+        <div
+          class="w-16 h-16 rounded-2xl bg-[#1E293B] flex items-center justify-center group-hover:bg-celeste/10 transition-all duration-300">
+          <i
+            :class="skill.icono"
+            class="text-4xl group-hover:scale-110 transition-all duration-300">
+          </i>
+        </div>
+
+        <div class="text-center">
+          <h1 class="text-white font-semibold text-sm">
+            {{ skill.nombre }}
+          </h1>
+
+          <p class="text-xs text-gray-400 mt-1">
+            {{ skill.categoria }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { dataStoreSkills } from "@/stores/StoreSkills";
 import { computed, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 
+type SkillsTypes = {
+  id: number;
+  categoria: string;
+  nombre: string;
+  icono: string;
+};
+
 const storeSkills = dataStoreSkills();
-const skills = computed(() => storeSkills.skills);
+
+const skills = computed<SkillsTypes[]>(() => storeSkills.skills);
 
 onMounted(() => {
   storeSkills.fetchSkills();
@@ -46,20 +86,23 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
 }
 
-.animate-scroll {
-  animation: scroll 25s linear infinite;
-  width: max-content;
-}
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 </style>

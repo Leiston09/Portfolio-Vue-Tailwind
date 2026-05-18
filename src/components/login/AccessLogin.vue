@@ -67,6 +67,7 @@
         </div>
       </div>
 
+      <!-- 
       <div class="flex justify-end">
         <RouterLink
           :to="{ name: 'RecoverPassword' }"
@@ -74,6 +75,15 @@
         >
           {{ $t("login.forgotPassword") }}
         </RouterLink>
+      </div>
+      -->
+
+      <div class="flex justify-end">
+        <a
+          class="text-[#38BDF8] hover:text-[#0EA5E9] text-sm font-semibold transition-colors"
+        >
+          {{ $t("login.forgotPassword") }}
+        </a>
       </div>
 
       <button
@@ -85,6 +95,7 @@
 
       <div class="text-center text-sm text-gray-400">
         {{ $t("login.noAccount") }}
+
         <RouterLink
           :to="{ name: 'RegisterUser' }"
           class="text-[#38BDF8] hover:underline font-bold ml-1"

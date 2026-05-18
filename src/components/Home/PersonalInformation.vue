@@ -10,47 +10,29 @@
       />
     </div>
     <div class="p-2 flex flex-col gap-2">
-      <h1 class="font-mono text-xl text-white">{{ profile.name }}</h1>
-      <ul class="flex flex-wrap gap-2 text-xs">
+      <h1 class="font-mono text-lg text-white text-center">{{ profile.firstName }} {{ profile.lastName }}</h1>
+      <ul class="flex flex-wrap gap-2 text-xs justify-center items-center">
         <li
+          v-for="specialty in specialtys"
+          :key="specialty.name"
           class="bg-[#1E293B] px-2 py-1 rounded-lg text-gray-300 hover:scale-105 transition-all duration-200"
         >
-          {{ $t("home.specialization.webDeveloper") }}
+          {{ $t(specialty.name) }}
         </li>
 
-        <li
-          class="bg-[#1E293B] px-2 py-1 rounded-lg text-gray-300 hover:scale-105 transition-all duration-200"
-        >
-          {{ $t("home.specialization.databaseKnowledge") }}
-        </li>
-        <li
-          class="bg-[#1E293B] px-2 py-1 rounded-lg text-gray-300 hover:scale-105 transition-all duration-200"
-        >
-          {{ $t("home.specialization.Cybersecurityknowledge") }}
-        </li>
-        <li
-          class="bg-[#1E293B] px-2 py-1 rounded-lg text-gray-300 hover:scale-105 transition-all duration-200"
-        >
-          {{ $t("home.specialization.networksKnowledge") }}
-        </li>
-        <li
-          class="bg-[#1E293B] px-2 py-1 rounded-lg text-gray-300 hover:scale-105 transition-all duration-200"
-        >
-          {{ $t("home.specialization.softwareEngineeringStudent") }}
-        </li>
       </ul>
 
       <p class="text-gray-400 text-sm text-justify">
         {{ $t("home.personalMessage") }}
       </p>
 
-      <div v-if="!developer" class="text-white">Cargando CV...</div>
+      <div v-if="!developer" class="text-white">{{ $t("globalOptions.loading") }}</div>
 
       <a
         v-else
-        :href="developer.download"
+        :href="developer?.download"
         download
-        class="bg-[#38BDF8] hover:bg-[#38BDF8]/50 px-6 py-2 mb-2 rounded-lg transition duration-200 text-white font-medium"
+        class="bg-celeste hover:bg-celeste/50 px-6 py-2 mb-2 rounded-lg transition duration-200 text-white font-medium"
       >
         <h1 class="text-center font-bold text-white">
           {{ $t("curriculum.download") }}
@@ -60,19 +42,46 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { dataStoreCurriculum } from "@/stores/StateCurriculum";
 import { dataStoreProfile } from "@/stores/StateProfile";
 import { computed, onMounted } from "vue";
 
+type ProfileType = {
+    firstName: string,
+    lastName: string,    
+    age: number,
+    image: string,
+}
+
+type curriculumType = {
+  id: number;
+  asset: boolean;
+  name: string;
+  image: string;
+  download: string;
+};
+
+type SpecialtyType = {
+  name:string
+}
+
+const specialtys: SpecialtyType[]   = [
+  { name : "home.specialization.webDeveloper" },
+  { name : "home.specialization.databaseKnowledge"},
+  { name : "home.specialization.Cybersecurityknowledge"},
+  { name : "home.specialization.softwareEngineeringStudent"},
+  { name : "home.specialization.networksKnowledge"},
+]
+
 const storeProfile = dataStoreProfile();
 const storeCurriculum = dataStoreCurriculum();
 
-const profile = computed(() => storeProfile.profile);
-const curriculum = computed(() => storeCurriculum.curriculum);
+const profile = computed<ProfileType>(() => storeProfile.profile);
+const curriculum = computed<curriculumType[]>(() => storeCurriculum.curriculum);
 
-const developer = computed(() => {
-  return curriculum.value.find((c) => c.name === profile.value?.viewCurriculo);
+const developer = computed<curriculumType | undefined>(() => {
+  return curriculum.value.find((c) => c.name === 'curriculumDeveloper');
 });
 
 onMounted(() => {

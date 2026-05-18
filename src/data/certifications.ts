@@ -1,6 +1,17 @@
-export const Certifications = [
+type CertificationsType = {
+  id: number;
+  special: boolean;
+  key: string;
+  name: string;
+  institution: string;
+  image: string;
+  pdf: string;
+};
+
+export const Certifications : CertificationsType[] = [
   {
     id: 1,
+    special: true,
     key: "unemyComTIASecurity",
     name: "CompTIA Security+",
     institution: "Udemy",
@@ -9,6 +20,7 @@ export const Certifications = [
   },
   {
     id: 2,
+    special: true,
     key: "googleCyber",
     name: "Google Cybersecurity Professional",
     institution: "Google",
@@ -17,6 +29,7 @@ export const Certifications = [
   },
   {
     id: 3,
+    special: true,
     key: "vue3_js",
     name: `Vue.js 3 - La Guía Completa - Composition Pinia MEVN 10 Apps`,
     institution: "Udemy",
@@ -25,14 +38,16 @@ export const Certifications = [
   },
   {
     id: 4,
+    special: false,
     key: "ingenieriaSistemas",
     name: "Estudiante de Ingeniería en Sistemas",
     institution: "Universidad de Guayaquil",
     image: "/certificados/UG.jpg",
     pdf: "",
   },
-    {
+  {
     id: 5,
+    special: false,
     key: "ExploracionRedes",
     name: "Exploración de Redes con Cisco Packet Tracer",
     institution: "Cisco Packet Tracer",
@@ -41,6 +56,7 @@ export const Certifications = [
   },
   {
     id: 6,
+    special: false,
     key: "IntroduccionCiscoPacketTracer",
     name: "Introducción a Cisco Packet Tracer",
     institution: "Cisco Packet Tracer",
@@ -49,6 +65,7 @@ export const Certifications = [
   },
   {
     id: 7,
+    special: false,
     key: "detectionAndResponse",
     name: "Detection and Response",
     institution: "Google",
@@ -57,6 +74,7 @@ export const Certifications = [
   },
   {
     id: 8,
+    special: false,
     key: "foundationsOfCybersecurity",
     name: "Foundations of Cybersecurity",
     institution: "Google",
@@ -65,6 +83,7 @@ export const Certifications = [
   },
   {
     id: 9,
+    special: false,
     key: "manageSecurityRisks",
     name: "Manage Security Risks",
     institution: "Google",
@@ -73,6 +92,7 @@ export const Certifications = [
   },
   {
     id: 10,
+    special: false,
     key: "networksAndNetwork",
     name: "Networks and Network Security",
     institution: "Google",
@@ -81,6 +101,7 @@ export const Certifications = [
   },
   {
     id: 11,
+    special: false,
     key: "prepareForCybersecurityJobs",
     name: "Prepare for Cybersecurity Jobs",
     institution: "Google",
@@ -89,6 +110,7 @@ export const Certifications = [
   },
   {
     id: 12,
+    special: false,
     key: "threatsAndVulnerabilities",
     name: "Threats, Vulnerabilities, and Risks",
     institution: "Google",
@@ -97,6 +119,7 @@ export const Certifications = [
   },
   {
     id: 13,
+    special: false,
     key: "automateCibersecurity",
     name: "Automate Cybersecurity Tasks with Python",
     institution: "Google",
@@ -105,11 +128,11 @@ export const Certifications = [
   },
   {
     id: 14,
+    special: false,
     key: "primerosPasosPYTHON",
     name: "Primeros Pasos con Python",
     institution: "Google",
     image: "/certificados/PrimerosPasosPYTHON.jpg",
     pdf: "/pdf/certificates/PrimerosPasosPYTHON.pdf",
   },
-
 ];

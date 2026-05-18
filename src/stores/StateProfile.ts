@@ -1,9 +1,18 @@
 import { getProfile } from "@/service/api";
 import { defineStore } from "pinia";
 
+
+type profileType = {
+  firstName: string;
+  lastName: string;
+  age: number;
+  image: string;
+};
+
 export const dataStoreProfile = defineStore("storeProfile", {
+
   state: () => ({
-    profile: {},
+    profile: {} as profileType,
   }),
 
   actions: {
