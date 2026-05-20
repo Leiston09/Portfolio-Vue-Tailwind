@@ -16,7 +16,7 @@
           class="bg-[#0F172A] border border-gray-800/40 p-5 rounded-2xl flex items-center gap-4 active:scale-95 transition-transform duration-200"
         >
           <i :class="skill.icono + ' text-3xl'"></i>
-          <span class="text-lg text-gray-200">{{ skill.nombre }}</span>
+          <span class="text-lg text-gray-200">{{ $t(`skills.name.${skill.nombre}`) }}</span>
         </div>
       </div>
     </div>

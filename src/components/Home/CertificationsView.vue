@@ -1,13 +1,10 @@
 <template>
   <div>
-    <div class="flex justify-between items-center">
+    <div class="titleOptionsAll">
       <div>
         <h1 class="titleOptions">
           {{ $t("certifications.title") }}
         </h1>
-        <p class="text-gray-400 text-sm mt-1">
-          {{ $t("certifications.intro") }}
-        </p>
       </div>
       <div v-if="certifications.length > 3">
         <RouterLink :to="{ name: 'Certifications' }" class="buttonViewAll">
@@ -15,11 +12,12 @@
         </RouterLink>
       </div>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 py-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 py-5">
       <div v-for="certification in certificationsHome" :key="certification.id" class="bg-[#111827] border border-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
         <div class="relative w-full h-52 overflow-hidden">
           <img :src="certification.image" :alt="$t(`certifications.items.${certification.key}.name`)" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500" />
-<div v-if="certification.special" class="absolute top-4 right-4 z-10">
+<div v-if="certification.special" class="absolute top-4 right-4  ">
+  
             <span class="star">
               {{ $t("globalOptions.Featured") }}
             </span>

@@ -9,12 +9,13 @@
         class="w-full h-full object-cover hover:scale-110 transition-all duration-300"
       />
     </div>
-    <div class="p-2 flex flex-col gap-2">
-      <h1 class="font-mono text-lg text-white text-center">{{ profile.firstName }} {{ profile.lastName }}</h1>
+    <div class="p-2 flex flex-col gap-3">
+      <h1 class="font-mono text-sm md:text-lg text-white text-center">{{ profile.firstName }} {{ profile.lastName }}</h1>
       <ul class="flex flex-wrap gap-2 text-xs justify-center items-center">
         <li
           v-for="specialty in specialtys"
           :key="specialty.name"
+          :class="specialty.name === 'home.specialization.softwareEngineeringStudent' ? 'truncate w-45 md:w-auto' : 'w-auto'"
           class="bg-[#1E293B] px-2 py-1 rounded-lg text-gray-300 hover:scale-105 transition-all duration-200"
         >
           {{ $t(specialty.name) }}
@@ -69,9 +70,9 @@ type SpecialtyType = {
 const specialtys: SpecialtyType[]   = [
   { name : "home.specialization.webDeveloper" },
   { name : "home.specialization.databaseKnowledge"},
+  { name : "home.specialization.networksKnowledge"},
   { name : "home.specialization.Cybersecurityknowledge"},
   { name : "home.specialization.softwareEngineeringStudent"},
-  { name : "home.specialization.networksKnowledge"},
 ]
 
 const storeProfile = dataStoreProfile();

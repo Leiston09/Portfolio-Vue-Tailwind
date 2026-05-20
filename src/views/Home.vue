@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col gap-7" >  
-    <div class="flex flex-col md:flex-row items-center justify-center gap-5 ">
+  <div class="flex flex-col gap-5" >  
+    <div class="flex flex-col md:flex-row items-center justify-center gap-10 ">
       <div class="flex-1" id="home">
         <HomeView />
       </div>

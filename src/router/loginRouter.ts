@@ -1,9 +1,9 @@
 import { RouteRecordRaw } from "vue-router";
 
 import AuthLayout from "@/layout/AuthLayout.vue";
-import RecoverPassword from "@/views/RecoverPassword.vue";
 import RegisterUser from "@/views/RegisterUser.vue";
 import Access from "@/views/Login.vue";
+import RecoveryPassword from "@/views/RecoveryPassword.vue";
 
 export const routesLogin : RouteRecordRaw = {
   path: "/Login",
@@ -21,7 +21,7 @@ export const routesLogin : RouteRecordRaw = {
     {
       path: "Recover-Password",
       name: "RecoverPassword",
-      component: RecoverPassword,
+      component: RecoveryPassword,
     },
     {
       path: "Register-User",

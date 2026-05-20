@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-0 left-0 right-0 flex justify-between items-center px-7 py-2 bg-[#0F172A] z-50 border-b border-gray-800"
+    class="fixed top-0 left-0 right-0 flex justify-between items-center px-3 py-2 bg-[#0F172A] z-50 border-b border-gray-800"
   >
     <PersonalInformation
       :usuarioPerfil="usuarioPerfil"
@@ -8,21 +8,26 @@
       :userLogin="userLogin"
     />
 
-    <div class="hidden lg:block">
+    <div v-if="!positionLogin" class="hidden lg:block">
       <OptionBarPC />
     </div>
 
-    <OptionBarSelect :isLoggedIn="isLoggedIn" @login="login" />
+    <span >
+            <OptionBarSelect 
+            :positionLogin="positionLogin"
+            :isLoggedIn="isLoggedIn" @login="login" />
+    </span>
+
   </div>
 
-  <div class="lg:hidden">
+  <div v-if="!positionLogin"  class="lg:hidden">
     <OptionBarMovile :isLoggedIn="isLoggedIn" />
   </div>
 </template>
 <script setup lang="ts">
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { dataStoreUser } from "@/stores/User";
-import { computed } from "vue";
+import { computed, onMounted, ref } from "vue";
 
 import PersonalInformation from "./PersonalInformation.vue";
 import OptionBarMovile from "./OptionBarMovile.vue";
@@ -32,6 +37,7 @@ import OptionBarSelect from "./OptionBarSelect.vue";
 const usuarioPerfil = "/img/usuarioPerfil.jpg";
 
 const router = useRouter();
+const route = useRoute();
 
 const loginUser = dataStoreUser();
 
@@ -39,9 +45,28 @@ const isLoggedIn = computed<boolean>(() => loginUser.authentication);
 
 const userLogin = computed(() => loginUser.user);
 
+const positionLogin = ref<boolean>(false);
+
+
+
 const login = (): void => {
   router.push({
     name: "Access",
   });
 };
+
+const positionLoginCheck = (): void => {
+  if (route.name === "Access" || route.name === "RegisterUser" || route.name === "RecoverPassword") {
+    positionLogin.value = true;
+  } else {
+    positionLogin.value = false;
+  }
+};
+
+
+onMounted(() => {
+  positionLoginCheck();
+});
+
+
 </script>

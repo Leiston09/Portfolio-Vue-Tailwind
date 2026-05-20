@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center py-5">
+  <div class="titleOptionsAll">
     <h1 class="titleOptions">
       {{ $t("projects.title") }}
     </h1>
@@ -13,7 +13,7 @@
     </RouterLink>
   </div>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 py-5 gap-6">
     <div
       v-for="project in filteredProjects"
       :key="project.id"
