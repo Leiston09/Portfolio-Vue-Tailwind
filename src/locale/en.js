@@ -41,20 +41,19 @@ export default {
   home: {
     portfolioTitle: "Personal Portfolio",
     welcomeMessage:
-      "I am a full-stack web developer from Ecuador focused on building modern web applications using Vue 3, Node.js, and databases. I specialize in developing dynamic interfaces, scalable systems, and efficient solutions, complementing my profile with knowledge of cybersecurity and networking.",
-    ViewProjects: "Projects",
-    ViewCV: "View Curriculum",
+      "Frontend developer from Ecuador, specialized in Vue 3 and TypeScript. Currently expanding my knowledge towards the full-stack stack with Node.js and databases, also integrating training in cybersecurity and networking for more complete development.",
+    ViewProjects: "View Projects",
+    ViewCV: "View Resume",
     ViewContact: "View Contact",
-    DownloadCV: "Download CV",
     specialization: {
-      webDeveloper: "Web Developer",
+      webDeveloper: "Frontend Developer",
       softwareEngineeringStudent: "Systems Engineering Student",
       databaseKnowledge: "Databases",
       Cybersecurityknowledge: "Cybersecurity",
       networksKnowledge: "Networking",
     },
     personalMessage:
-      "Passionate about web development and continuous learning, focused on building modern, functional, and scalable applications while continuously strengthening my knowledge of new technologies.",
+      "Passionate about web development and continuous learning. I am dedicated to building modern, functional, and scalable interfaces, while continuing to strengthen my skills in new technologies to provide high-value solutions.",
   },
 
   projects: {
@@ -112,6 +111,29 @@ export default {
       Design: "Design",
       Tools: "Tools",
       accessories: "Accessories",
+    },
+    name: {
+      html: "HTML",
+      css: "CSS",
+      javascript: "JavaScript",
+      typescript: "TypeScript",
+      vue: "Vue.js",
+      tailwind: "Tailwind CSS",
+      node: "Node.js",
+      python: "Python",
+      mongodb: "MongoDB",
+      mysql: "MySQL",
+      postgresql: "PostgreSQL",
+      figma: "Figma",
+      git: "Git",
+      github: "GitHub",
+      vscode: "VS Code",
+      cursor: "Cursor",
+      xampp: "XAMPP",
+      netlify: "Netlify",
+      cybersecurity: "Cybersecurity",
+      networking: "Networking",
+      linux: "Linux",
     },
   },
 
@@ -230,6 +252,7 @@ export default {
       },
     },
   },
+
   contact: {
     title: "Contact",
     contactIntro:
@@ -238,6 +261,7 @@ export default {
     location: "Location",
     guayaquil: "Guayaquil, Ecuador",
   },
+
   curriculum: {
     title: "Resume",
     download: "Download CV",
@@ -248,24 +272,38 @@ export default {
       title: "Frontend Developer",
     },
   },
+
   login: {
-    intro: "Welcome to my portfolio",
-    emailLabel: "Email address",
-    emailPlaceholder: "example{'@'}email.com",
-    passwordLabel: "Password",
-    passwordPlaceholder: "***********",
-    forgotPassword: "Forgot your password?",
-    noAccount: "Don't have an account?",
-    registerLink: "Sign up",
-    submitButton: "Continue",
+    access: {
+      intro: "Welcome to my portfolio",
+      emailLabel: "Email address",
+      emailPlaceholder: "example{'@'}email.com",
+      passwordLabel: "Password",
+      passwordPlaceholder: "***********",
+      forgotPassword: "Forgot your password?",
+      noAccount: "Don't have an account?",
+      registerLink: "Sign up",
+      submitButton: "Continue",
+    },
+    register: {
+      title: "Create account",
+      intro: "Register to access the system",
+      namePlaceholder: "First name",
+      lastNamePlaceholder: "Last name",
+      emailPlaceholder: "example{'@'}email.com",
+      passwordPlaceholder: "Password",
+      confirmPasswordPlaceholder: "Confirm password",
+      submitButton: "Register",
+    },
+    recoverPassword: {
+      title: "Recover password",
+      description: "Enter your email to recover your account",
+      emailPlaceholder: "Email address",
+      button: "Send link",
+    },
   },
+
   chatBot: {
-    title: "AI Chat in development",
-    description:
-      "Soon you will be able to interact with an artificial intelligence to solve doubts, explore projects and get information about this website.",
-    soon: "Coming soon",
-    footer: "We are working on this feature 🚀",
-    open: "Open chat",
-    close: "Close chat",
+    Welcome: "Welcome to the portfolio. What would you like to know?",
   },
 };

@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 declare module "*.css";
 
 declare module "*.vue" {
@@ -5,4 +7,9 @@ declare module "*.vue" {
 
   const component: DefineComponent<{}, {}, any>;
   export default component;
+}
+
+declare module "*.txt?raw" {
+  const content: string;
+  export default content;
 }

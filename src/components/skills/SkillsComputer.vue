@@ -20,7 +20,7 @@
         >
           <i :class="skill.icono + ' text-5xl mb-4'"></i>
           <h2 class="text-lg font-semibold text-center text-gray-200">
-            {{ skill.nombre }}
+            {{ $t(`skills.name.${skill.nombre}`) }}
           </h2>
           <div class="mt-4 w-full h-1 bg-gradient-to-r from-transparent via-celeste to-transparent"></div>
         </div>

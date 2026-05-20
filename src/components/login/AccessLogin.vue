@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col w-full md:flex-row  max-w-6xl  rounded-2xl  overflow-hidden shadow-2xl shadow-black/50 border-2 border-white/20"
+    class="flex flex-col w-full md:flex-row max-w-6xl rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border-2 border-white/20"
   >
     <div class="hidden md:block md:w-1/2">
       <img
@@ -23,19 +23,21 @@
       </div>
 
       <header class="text-center">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-white">
+        <h1 class="titleViewAll">
           {{ $t("navbar.login") }}
         </h1>
-        <p class="text-gray-400 text-sm mt-1">{{ $t("login.intro") }}</p>
+        <p class="text-gray-400 text-sm mt-1">{{ $t("login.access.intro") }}</p>
       </header>
 
       <div class="space-y-1">
         <div>
-          <h1 class="text-gray-400 text-sm">{{ $t("login.emailLabel") }}</h1>
+          <h1 class="text-gray-400 text-sm">
+            {{ $t("login.access.emailLabel") }}
+          </h1>
           <input
             v-model="login.email"
             type="email"
-            :placeholder="$t('login.emailPlaceholder')"
+            :placeholder="$t('login.access.emailPlaceholder')"
             class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none transition-all"
           />
           <p v-if="submit && errors.email" class="text-red-500 text-xs mt-1">
@@ -44,11 +46,13 @@
         </div>
 
         <div>
-          <h1 class="text-gray-400 text-sm">{{ $t("login.passwordLabel") }}</h1>
+          <h1 class="text-gray-400 text-sm">
+            {{ $t("login.access.passwordLabel") }}
+          </h1>
           <div class="relative">
             <input
               :type="showPassword ? 'text' : 'password'"
-              :placeholder="$t('login.passwordPlaceholder')"
+              :placeholder="$t('login.access.passwordPlaceholder')"
               class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none transition-all"
               v-model="login.password"
             />
@@ -67,40 +71,30 @@
         </div>
       </div>
 
-      <!-- 
       <div class="flex justify-end">
         <RouterLink
           :to="{ name: 'RecoverPassword' }"
           class="text-[#38BDF8] hover:text-[#0EA5E9] text-sm font-semibold transition-colors"
         >
-          {{ $t("login.forgotPassword") }}
+          {{ $t("login.access.forgotPassword") }}
         </RouterLink>
-      </div>
-      -->
-
-      <div class="flex justify-end">
-        <a
-          class="text-[#38BDF8] hover:text-[#0EA5E9] text-sm font-semibold transition-colors"
-        >
-          {{ $t("login.forgotPassword") }}
-        </a>
       </div>
 
       <button
         @click="validateLogin"
         class="w-full bg-[#38BDF8] text-black py-2 md:py-3 rounded-lg text-lg font-bold hover:bg-[#0EA5E9] active:scale-95 transition-all shadow-lg shadow-[#38BDF8]/20"
       >
-        {{ $t("login.submitButton") }}
+        {{ $t("login.access.submitButton") }}
       </button>
 
       <div class="text-center text-sm text-gray-400">
-        {{ $t("login.noAccount") }}
+        {{ $t("login.access.noAccount") }}
 
         <RouterLink
           :to="{ name: 'RegisterUser' }"
           class="text-[#38BDF8] hover:underline font-bold ml-1"
         >
-          {{ $t("login.registerLink") }}
+          {{ $t("login.access.registerLink") }}
         </RouterLink>
       </div>
     </div>
@@ -119,6 +113,7 @@ const login = reactive({
   email: "",
   password: "",
 });
+
 const showPassword = ref(false);
 const submit = ref(false);
 

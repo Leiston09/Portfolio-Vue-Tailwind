@@ -1,15 +1,12 @@
 <template>
-  <div class="fixed bottom-22 right-3 md:right-10 z-50">
-    <div
-      class="w-72 sm:w-[320px] bg-[#0F172A] border border-gray-700 rounded-2xl shadow-2xl overflow-hidden"
-    >
-      <div
-        class="flex justify-between items-center px-4 py-3 border-b border-gray-700"
-      >
+  <div class="fixed bottom-28 md:bottom-18 right-3 md:right-15 z-50">
+    <div class="w-72 sm:w-[320px] bg-[#0F172A] border border-gray-700 rounded-2xl shadow-2xl overflow-hidden">
+      <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
         <div class="flex items-center gap-2">
           <img src="/img/ChatBotWhile.png" class="w-6 h-6 animate-pulse" />
           <h2 class="text-white text-sm font-semibold">Chat IA (Beta)🧑‍🎓</h2>
         </div>
+
         <button
           @click="$emit('close', false)"
           class="text-gray-400 hover:text-white transition"
@@ -22,9 +19,7 @@
         <div
           v-for="msg in messages"
           :key="msg.id"
-          :class="
-            msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'
-          "
+          :class="msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'"
         >
           <div
             :class="
@@ -78,18 +73,48 @@
   </div>
 </template>
 
-<script setup>
-import { nextTick, onMounted, ref } from "vue";
-import { useGetGenerativeModelGP } from "@/service/useGetGenerativeModelGP.js";
+<script setup lang="ts">
+import { computed, nextTick, ref, watch } from "vue";
+import { useI18n } from "vue-i18n";
+import { useGetApiIA } from "@/service/useGetApiIA";
 
-const emit = defineEmits(["close"]);
+type MessageType = {
+  id: number;
+  role: "system" | "user" | "assistant";
+  content: string;
+};
 
-const loading = ref(false);
-const inputMessage = ref("");
-const messages = ref([]);
-const chatContainer = ref(null);
+defineEmits<{
+  close: [value: boolean];
+}>();
 
-const fetchAnswer = async () => {
+const { t } = useI18n();
+
+const loading = ref<boolean>(false);
+const inputMessage = ref<string>("");
+const chatContainer = ref<HTMLDivElement | null>(null);
+
+const welcomeMessage = computed<MessageType>(() => ({
+  id: 1,
+  role: "assistant",
+  content: t("chatBot.Welcome"),
+}));
+
+const messages = ref<MessageType[]>([welcomeMessage.value]);
+
+watch(welcomeMessage, (newMessage) => {
+  messages.value[0] = newMessage;
+});
+
+const scrollToBottom = async (): Promise<void> => {
+  await nextTick();
+
+  if (chatContainer.value) {
+    chatContainer.value.scrollTop = chatContainer.value.scrollHeight;
+  }
+};
+
+const fetchAnswer = async (): Promise<void> => {
   if (!inputMessage.value.trim() || loading.value) return;
 
   loading.value = true;
@@ -101,47 +126,28 @@ const fetchAnswer = async () => {
   });
 
   inputMessage.value = "";
-  await scrollToBottom(); // 👈 scroll después de mensaje usuario
+
+  await scrollToBottom();
 
   try {
-    const respuesta = await useGetGenerativeModelGP(messages.value);
+    const response = await useGetApiIA(messages.value);
 
     messages.value.push({
       id: Date.now() + 1,
       role: "assistant",
-      content: respuesta,
+      content: response,
     });
-
-    await scrollToBottom(); // 👈 scroll después de respuesta
-
-  } catch (error) {
+  } catch {
     messages.value.push({
       id: Date.now() + 1,
       role: "assistant",
-      content: "Error. Intenta de nuevo.",
+      content: t("chatBot.Error"),
     });
-
-  } finally {
-    loading.value = false;
   }
-};
 
-// Función que hace scroll al último mensaje
-const scrollToBottom = async () => {
-  await nextTick(); // Espera a que Vue actualice el DOM
-  if (chatContainer.value) {
-    chatContainer.value.scrollTop = chatContainer.value.scrollHeight;
-  }
-};
+  loading.value = false;
 
-onMounted(async () => {
-  messages.value.push({
-    id: Date.now(),
-    role: "assistant",
-    content: "Bienvenido al portafolio. ¿Qué te gustaría conocer?",
-  });
   await scrollToBottom();
-});
-</script>
+};
 
-<style scoped></style>
+</script>

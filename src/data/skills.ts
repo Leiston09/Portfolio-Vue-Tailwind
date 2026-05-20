@@ -10,37 +10,37 @@ export const skills: SkillsTypes[] = [
   {
     id: 1,
     categoria: "Frontend",
-    nombre: "HTML",
+    nombre: "html",
     icono: "devicon-html5-plain colored",
   },
   {
     id: 2,
     categoria: "Frontend",
-    nombre: "CSS",
+    nombre: "css",
     icono: "devicon-css3-plain colored",
   },
   {
     id: 3,
     categoria: "Frontend",
-    nombre: "JavaScript",
+    nombre: "javascript",
     icono: "devicon-javascript-plain colored",
   },
   {
     id: 4,
     categoria: "Frontend",
-    nombre: "Vue.js",
+    nombre: "vue",
     icono: "devicon-vuejs-plain colored",
   },
   {
     id: 5,
     categoria: "Frontend",
-    nombre: "Tailwind CSS",
+    nombre: "tailwind",
     icono: "devicon-tailwindcss-plain colored",
   },
   {
     id: 6,
     categoria: "Frontend",
-    nombre: "TypeScript",
+    nombre: "typescript",
     icono: "devicon-typescript-plain colored",
   },
 
@@ -48,13 +48,13 @@ export const skills: SkillsTypes[] = [
   {
     id: 7,
     categoria: "Backend",
-    nombre: "Node.js",
+    nombre: "node",
     icono: "devicon-nodejs-plain colored",
   },
   {
     id: 8,
     categoria: "Backend",
-    nombre: "Python",
+    nombre: "python",
     icono: "devicon-python-plain colored",
   },
 
@@ -62,26 +62,26 @@ export const skills: SkillsTypes[] = [
   {
     id: 9,
     categoria: "Database",
-    nombre: "MongoDB",
+    nombre: "mongodb",
     icono: "devicon-mongodb-plain colored",
   },
   {
     id: 10,
     categoria: "Database",
-    nombre: "MySQL",
+    nombre: "mysql",
     icono: "devicon-mysql-plain colored",
   },
   {
     id: 11,
     categoria: "Database",
-    nombre: "PostgreSQL",
+    nombre: "postgresql",
     icono: "devicon-postgresql-plain colored",
   },
   // Diseño
   {
     id: 12,
     categoria: "Design",
-    nombre: "Figma",
+    nombre: "figma",
     icono: "devicon-figma-plain colored",
   },
 
@@ -89,37 +89,37 @@ export const skills: SkillsTypes[] = [
   {
     id: 13,
     categoria: "Tools",
-    nombre: "Git",
+    nombre: "git",
     icono: "devicon-git-plain colored",
   },
   {
     id: 14,
     categoria: "Tools",
-    nombre: "GitHub",
+    nombre: "github",
     icono: "devicon-github-original colored",
   },
   {
     id: 15,
     categoria: "Tools",
-    nombre: "Visual Studio Code",
+    nombre: "vscode",
     icono: "devicon-vscode-plain colored",
   },
   {
     id: 16,
     categoria: "Tools",
-    nombre: "Cursor",
+    nombre: "cursor",
     icono: "devicon-codepen-plain colored",
   },
   {
     id: 17,
     categoria: "Tools",
-    nombre: "XAMPP",
+    nombre: "xampp",
     icono: "devicon-apache-plain colored",
   },
   {
     id: 18,
     categoria: "Tools",
-    nombre: "Netlify",
+    nombre: "netlify",
     icono: "devicon-netlify-plain colored",
   },
   
@@ -127,7 +127,7 @@ export const skills: SkillsTypes[] = [
   {
     id: 19,
     categoria: "Tools",
-    nombre: "Vercel",
+    nombre: "vercel",
     icono: "devicon-vercel-original",
   },
   */
@@ -136,7 +136,7 @@ export const skills: SkillsTypes[] = [
   {
     id: 20,
     categoria: "accessories",
-    nombre: "Cybersecurity",
+    nombre: "cybersecurity",
     icono: "devicon-ssh-original",
   },
 
@@ -144,7 +144,7 @@ export const skills: SkillsTypes[] = [
   {
     id: 21,
     categoria: "accessories",
-    nombre: "Networking",
+    nombre: "networking",
     icono: "devicon-googlecloud-plain colored",
   },
 
@@ -152,7 +152,7 @@ export const skills: SkillsTypes[] = [
   {
     id: 22,
     categoria: "accessories",
-    nombre: "Linux",
+    nombre: "linux",
     icono: "devicon-linux-plain colored",
   },
 ];

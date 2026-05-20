@@ -8,27 +8,27 @@
       />
     </button>
   </div>
+
   <div v-if="chatView">
-    <ViewChatBot
-    @close="close"
-    />
+    <ViewChatBot @close="close" />
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
-import ChatBot from "/img/ChatBotWhile.png";
 import ViewChatBot from "./ViewChatBot.vue";
 
-const chatView = ref(false)
+const ChatBot = "/img/ChatBotWhile.png";
 
-const chatBotIA = () => {
-  chatView.value = chatView.value === false ? true : false
-}
+const chatView = ref<boolean>(false);
 
-function close(close){
-  chatView.value = close
-}
+const chatBotIA = (): void => {
+  chatView.value = !chatView.value;
+};
+
+const close = (close: boolean): void => {
+  chatView.value = close;
+};
 </script>
 
 <style lang="scss" scoped></style>

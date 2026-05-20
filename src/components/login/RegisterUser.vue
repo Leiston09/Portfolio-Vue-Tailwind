@@ -1,13 +1,12 @@
 <template>
-  <div
-    class="flex flex-col w-full max-w-6xl border-2 rounded-4xl border-white/20 py-5" 
-  >
-    <div class=" grid gap-2 text-center">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-white">
-        Crear cuenta
+  <div class="flex flex-col w-full max-w-6xl border-2 rounded-4xl border-white/20 py-5">
+    <div class="grid gap-2 text-center">
+      <h1 class="titleViewAll">
+        {{ $t("login.register.title") }}
       </h1>
-      <p class="text-gray-400 text-sm ">
-        Regístrate para acceder al sistema
+
+      <p class="text-gray-400 text-sm">
+        {{ $t("login.register.intro") }}
       </p>
     </div>
 
@@ -16,9 +15,10 @@
         <input
           v-model="user.name"
           type="text"
-          placeholder="Nombre"
-          class="px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none w-full"
+          :placeholder="$t('login.register.namePlaceholder')"
+          class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
+
         <p v-if="submit && errors.name" class="text-red-500 text-sm mt-1">
           {{ errors.name }}
         </p>
@@ -28,9 +28,10 @@
         <input
           v-model="user.lastName"
           type="text"
-          placeholder="Apellido"
-          class="px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none w-full"
+          :placeholder="$t('login.register.lastNamePlaceholder')"
+          class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
+
         <p v-if="submit && errors.lastName" class="text-red-500 text-sm mt-1">
           {{ errors.lastName }}
         </p>
@@ -40,9 +41,10 @@
         <input
           v-model="user.email"
           type="email"
-          placeholder="Correo electrónico"
+          :placeholder="$t('login.register.emailPlaceholder')"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
+
         <p v-if="submit && errors.email" class="text-red-500 text-sm mt-1">
           {{ errors.email }}
         </p>
@@ -52,8 +54,10 @@
         <input
           v-model="user.date"
           type="date"
+          max="2008-12-31"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
+
         <p v-if="submit && errors.date" class="text-red-500 text-sm mt-1">
           {{ errors.date }}
         </p>
@@ -63,9 +67,10 @@
         <input
           v-model="user.password"
           type="password"
-          placeholder="Contraseña"
+          :placeholder="$t('login.register.passwordPlaceholder')"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
+
         <p v-if="submit && errors.password" class="text-red-500 text-sm mt-1">
           {{ errors.password }}
         </p>
@@ -75,9 +80,10 @@
         <input
           v-model="user.confirmPassword"
           type="password"
-          placeholder="Verificar contraseña"
+          :placeholder="$t('login.register.confirmPasswordPlaceholder')"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
+
         <p
           v-if="submit && errors.confirmPassword"
           class="text-red-500 text-sm mt-1"
@@ -92,17 +98,32 @@
         @click="registerUser"
         class="w-fit px-4 bg-[#38BDF8] text-black py-2 md:py-3 rounded-lg text-lg font-bold hover:bg-[#0EA5E9] active:scale-95 transition-all shadow-lg shadow-[#38BDF8]/20"
       >
-        Registrarse
+        {{ $t("login.register.submitButton") }}
       </button>
     </div>
   </div>
 </template>
 
-<script setup>
-import { useUserValidation } from "@/composable/userValidation";
+<script setup lang="ts">
 import { reactive, ref } from "vue";
+import { useUserValidation } from "@/composable/userValidation";
 
-const user = reactive({
+type UserType = {
+  name: string;
+  lastName: string;
+  email: string;
+  date: string;
+  password: string;
+  confirmPassword: string;
+};
+
+const emit = defineEmits<{
+  (e: "users", user: UserType): void;
+}>();
+
+const submit = ref<boolean>(false);
+
+const user = reactive<UserType>({
   name: "",
   lastName: "",
   email: "",
@@ -111,12 +132,9 @@ const user = reactive({
   confirmPassword: "",
 });
 
-const emit = defineEmits(["users"]);
-const submit = ref(false);
-
 const { errors, validateUser } = useUserValidation();
 
-const registerUser = () => {
+const registerUser = (): void => {
   submit.value = true;
 
   if (validateUser(user)) {
@@ -125,9 +143,3 @@ const registerUser = () => {
   }
 };
 </script>
-
-<style scoped>
-
-
-
-</style>
