@@ -49,7 +49,7 @@ router.beforeEach(async (to) => {
       return { name: "Certifications" };
     }
 
-    if (!targetCert.special && !storeUser.authentication) {
+    if (!targetCert.featured && !storeUser.authentication) {
       return { name: "Certifications" };
     }
   }

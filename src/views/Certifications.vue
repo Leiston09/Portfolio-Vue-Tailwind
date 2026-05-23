@@ -23,16 +23,19 @@ import CardCertifications from "@/components/Certifications/CardCertifications.v
 import { dataStoreCertification } from "@/stores/StoreCertifications";
 import { dataStoreUser } from "@/stores/User";
 
+import { useI18n } from 'vue-i18n';
 
-type CertificationsType =   {
-    id: number,
-    special: boolean,
-    key: string,
-    name: string,
-    institution: string,
-    image: string,
-    pdf: string,
-}
+
+type CertificationsType = {
+  id: number;
+  featured: boolean;
+  key: string;
+  institution: string;
+  image: string;
+  certificate: string;
+  downloadable?: boolean;
+};
+
 
 
 const router = useRouter();
@@ -44,14 +47,17 @@ const certifications = computed<CertificationsType[]>(() => store.certifications
 const searchCertifications = ref("");
 const selectedInstitution = ref("");
 
+const { t, locale } = useI18n();
+
+
 onMounted(() => {
   store.fetchCertifications();
 });
 
-function certificationsSearch(search) {
+function certificationsSearch(search : string) {
   searchCertifications.value = search;
 }
-function filterByInstitution(institution) {
+function filterByInstitution(institution : string) {
   selectedInstitution.value = institution;
 }
 
@@ -65,9 +71,14 @@ const filterCertificationsUser = computed<CertificationsType[]>(() => {
     }
 
     if (searchCertifications.value) {
-      filterCertifications = filterCertifications.filter((c) =>
-        c.name.toLowerCase().includes(searchCertifications.value.toLowerCase()),
-      );
+      filterCertifications = filterCertifications.filter((c) => {
+        const nameKey : string = `certifications.items.${c.key}.name`;
+        const name : string = t(nameKey).toLowerCase();
+        const searchLower = searchCertifications.value.toLowerCase();
+
+        return name.includes(searchLower) 
+      }
+    );
     }
     return filterCertifications;
 });

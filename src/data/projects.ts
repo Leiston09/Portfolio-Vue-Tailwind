@@ -15,7 +15,7 @@ export const projects: ProjectsType[] = [
     special: true,
     key: "portfolio",
     year: 2026,
-    image: "/img/gif/Projects/ProjectOne.gif",
+    image: "/img/gif/Projects/portafolio.gif",
     technologies: [
       "Vue 3",
       "Tailwind CSS",
@@ -24,6 +24,9 @@ export const projects: ProjectsType[] = [
       "i18n",
       "Pinia",
       "IA",
+      "GitHub",
+      "API",
+
     ],
     github: "https://github.com/Leiston09/Portfolio-Vue-Tailwind.git",
     demo: "https://ephemeral-cajeta-33ad99.netlify.app/",
@@ -34,15 +37,15 @@ export const projects: ProjectsType[] = [
     special: true,
     key: "guitarra",
     year: 2026,
-    image: "/img/gif/Projects/ProjectThree.gif",
-    technologies: ["Vue 3", "Tailwind CSS", "JavaScript", "CSS", "HTML"],
+    image: "/img/gif/Projects/guitarras.gif",
+    technologies: ["Vue 3", "Tailwind CSS", "JavaScript", "CSS", "HTML", "GitHub"],
     github: "https://github.com/Leiston09/Guitarra-Carrito-Compras-en-Vue.git",
     demo: "https://guitarras-carrito.netlify.app/",
   },
   {
     id: 3,
-    special: true,
-    key: "administrar_pacientes",
+    special: false,
+    key: "administrarPacientes",
     year: 2025,
     image: "/img/gif/Projects/ProjectFour.png",
     technologies: ["HTML", "CSS", "JavaScript", "VUE 3", "Tailwind CSS"],
@@ -52,7 +55,7 @@ export const projects: ProjectsType[] = [
   {
     id: 4,
     special: false,
-    key: "listado_de_usuarios",
+    key: "listadoUsuarios",
     year: 2025,
     image: "/img/gif/Projects/ProjectFive.png",
     technologies: ["HTML", "CSS", "JavaScript", "VUE 3", "Tailwind CSS"],
@@ -61,7 +64,7 @@ export const projects: ProjectsType[] = [
   },
   {
     id: 5,
-    special: false,
+    special: true,
     key: "uitoky",
     year: 2024,
     image: "/img/gif/Projects/ProjectTwo.gif",
@@ -72,9 +75,9 @@ export const projects: ProjectsType[] = [
       "PostgreSQL",
       "pgAdmin",
       "PHP",
-      "IA",
+      "IA"
     ],
-    github: "https://uitoky-project.netlify.app/",
+    github: "",
     demo: "https://uitoky-project.netlify.app/",
   },
 ];

@@ -1,10 +1,11 @@
+
 import { getCurriculum } from "@/service/api";
 import { defineStore } from "pinia";
 
 type curriculumType = {
   id: number;
   asset: boolean;
-  name: string;
+  key: string;
   image: string;
   download: string;
 };

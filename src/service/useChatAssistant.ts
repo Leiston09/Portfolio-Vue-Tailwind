@@ -5,41 +5,25 @@ type MessageType = {
 
 const systemPrompt = `
     ${import.meta.env.VITE_IA_ROLE}
-
     ${import.meta.env.VITE_IA_PORTFOLIO}
-
     ${import.meta.env.VITE_IA_RULES}
-
     ${import.meta.env.VITE_IA_STYLE}
-
     ${import.meta.env.VITE_IA_UNKNOWN}
-
     ${import.meta.env.VITE_IA_GENERAL}
-
     ${import.meta.env.VITE_IA_PROFILE}
-
     ${import.meta.env.VITE_IA_OBJECTIVE}
-
     ${import.meta.env.VITE_IA_EXPERIENCE}
-
     ${import.meta.env.VITE_IA_PROJECTS}
-
     ${import.meta.env.VITE_IA_SKILLS}
-
     ${import.meta.env.VITE_IA_CERTIFICATIONS}
-
     ${import.meta.env.VITE_IA_CERTIFICATIONS_GOOGLE}
-
     ${import.meta.env.VITE_IA_WORK}
-
     ${import.meta.env.VITE_IA_CONTACT}
-    
     ${import.meta.env.VITE_IA_CV}
 `;
 
-export const useGetApiIA = async (messages: MessageType[]): Promise<string> => {
+export const useChatAssistant = async (messages: MessageType[]): Promise<string> => {
   try {
-    // LLAMADA SEGURA: Le enviamos los datos a la Netlify Function en lugar de usar Groq en el cliente
     const response = await fetch("/.netlify/functions/chat-assistant", {
       method: "POST",
       headers: {
@@ -61,6 +45,6 @@ export const useGetApiIA = async (messages: MessageType[]): Promise<string> => {
 
   } catch (error) {
     console.error("Error al conectar con el asistente de IA:", error);
-    return "Esa información aún no está disponible en el sistema.";
+    return "IA EN MANTENIMIENTO: Estamos haciendo mejoras. Inténtalo un poco más tarde.";
   }
 };

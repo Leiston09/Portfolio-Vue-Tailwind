@@ -34,6 +34,16 @@ import OptionBarMovile from "./OptionBarMovile.vue";
 import OptionBarPC from "./OptionBarPC.vue";
 import OptionBarSelect from "./OptionBarSelect.vue";
 
+
+type UserType = {
+  name: string;
+  lastName: string;
+  email: string;
+  date: string;
+  password: string;
+  confirmPassword: string;
+};
+
 const usuarioPerfil = "/img/usuarioPerfil.jpg";
 
 const router = useRouter();
@@ -43,7 +53,7 @@ const loginUser = dataStoreUser();
 
 const isLoggedIn = computed<boolean>(() => loginUser.authentication);
 
-const userLogin = computed(() => loginUser.user);
+const userLogin = computed<UserType | null>(() => loginUser.user);
 
 const positionLogin = ref<boolean>(false);
 

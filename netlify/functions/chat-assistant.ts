@@ -10,7 +10,6 @@ interface RequestBody {
 }
 
 export const handler: Handler = async (event) => {
-  // Bloquear cualquier petición que no sea POST
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -25,7 +24,6 @@ export const handler: Handler = async (event) => {
 
     const { systemPrompt, userMessages } = JSON.parse(event.body) as RequestBody;
 
-    // Inicialización segura usando la variable de entorno del servidor de Netlify
     const groq = new Groq({
       apiKey: process.env.GROQ_API_KEY,
     });

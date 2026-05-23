@@ -8,7 +8,7 @@
       </div>
       <div v-if="certifications.length > 3">
         <RouterLink :to="{ name: 'Certifications' }" class="buttonViewAll">
-          {{ $t("globalOptions.ViewAll") }}
+          {{ $t("global.viewAll") }}
         </RouterLink>
       </div>
     </div>
@@ -16,14 +16,12 @@
       <div v-for="certification in certificationsHome" :key="certification.id" class="bg-[#111827] border border-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
         <div class="relative w-full h-52 overflow-hidden">
           <img :src="certification.image" :alt="$t(`certifications.items.${certification.key}.name`)" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500" />
-<div v-if="certification.special" class="absolute top-4 right-4  ">
+<div v-if="certification.featured" class="absolute top-4 right-4  ">
   
             <span class="star">
-              {{ $t("globalOptions.Featured") }}
+              {{ $t("global.featured") }}
             </span>
           </div>
-          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-
         </div>
         <div class="p-5 flex flex-col gap-3">
           <h2 class="text-white font-bold text-lg leading-tight  transition-all duration-300">
@@ -45,7 +43,7 @@
             <button @click="selectedCertification(certification.id)" class="buttonBlue w-full">
               {{ $t("certifications.buttons.view") }}
             </button>
-            <a :href="certification.pdf" download class="buttonDark w-full text-center">
+            <a :href="certification.certificate" download class="buttonDark w-full text-center">
               {{ $t("certifications.buttons.download") }}
             </a>
           </div>
@@ -62,13 +60,14 @@ import { useRouter } from "vue-router";
 
 type CertificationsType = {
   id: number;
-  special: boolean;
+  featured: boolean;
   key: string;
-  name: string;
   institution: string;
   image: string;
-  pdf: string;
+  certificate: string;
+  downloadable?: boolean;
 };
+
 
 const router = useRouter();
 const storeCertifications = dataStoreCertification();
@@ -78,7 +77,7 @@ const certifications = computed<CertificationsType[]>(
 );
 
 const certificationsHome = computed<CertificationsType[]>(() => {
-  return certifications.value.filter((e) => e.special);
+  return certifications.value.filter((e) => e.featured);
 });
 
 function selectedCertification(idSelect: number) {

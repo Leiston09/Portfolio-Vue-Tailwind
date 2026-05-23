@@ -9,7 +9,7 @@
       class="buttonViewAll"
       v-if="projects.length > 3"
     >
-      {{ $t("globalOptions.ViewAll") }}
+      {{ $t("global.viewAll") }}
     </RouterLink>
   </div>
 
@@ -27,7 +27,7 @@
 
         <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4">
           <p class="text-gray-200 text-sm text-center">
-            {{ $t(`projects.items.${project.key}.descriptionimg`) }}
+            {{ $t(`projects.items.${project.key}.imageDescription`) }}
           </p>
         </div>
       </div>
@@ -43,20 +43,22 @@
             <span class="text-celeste text-sm">●</span>
 
             <h1 class="font-semibold text-gray-300 text-sm tracking-wide">
-              {{ $t(`projects.year`) }}
+              {{ $t(`projects.labels.year`) }} :
               <span class="text-white font-bold">
                 {{ project.year }}
               </span>
             </h1>
           </div>
           <span class="star">
-          {{ $t ("globalOptions.Featured") }}
+          {{ $t ("global.featured") }}
           </span>
         </div>
 
 
-
-        <div class="flex flex-wrap gap-2">
+        <h1 class="font-bold text-gray-300 text-sm tracking-wide text-center">
+          {{ $t(`projects.labels.technologies`) }} 
+        </h1>
+        <div class="flex flex-wrap gap-2 justify-center">
           <span
             v-for="tech in project.technologies"
             :key="tech"
@@ -78,7 +80,7 @@
             target="_blank"
             class="buttonDark"
           >
-            {{ $t("globalOptions.GitHub") }}
+            {{ $t("global.github") }}
           </a>
 
           <a
@@ -86,7 +88,7 @@
             target="_blank"
             class="buttonBlue"
           >
-            {{ $t("globalOptions.Demo") }}
+            {{ $t("global.demo") }}
           </a>
         </div>
       </div>

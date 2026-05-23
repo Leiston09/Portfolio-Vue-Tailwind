@@ -4,7 +4,7 @@
       <span
         class="text-xs border border-celeste text-celeste px-3 py-1 rounded-full"
       >
-        {{ $t("home.portfolioTitle") }}
+        {{ $t("home.title") }}
       </span>
 
       <h1
@@ -20,18 +20,18 @@
 
       <div class="flex flex-wrap justify-center items-center gap-3">
         <RouterLink :to="{ path: '/', hash: '#projects' }" class="buttonBlue">
-          {{ $t("home.ViewProjects") }}
+          {{ $t("home.buttons.projects") }}
         </RouterLink>
 
         <RouterLink :to="{ name: 'Curriculum' }" class="buttonDark">
-          {{ $t("home.ViewCV") }}
+          {{ $t("home.buttons.curriculum") }}
         </RouterLink>
 
         <RouterLink
           :to="{ path: '/', hash: '#contact' }"
           class="hidden lg:block buttonDark"
         >
-          {{ $t("home.ViewContact") }}
+          {{ $t("home.buttons.contact") }}
         </RouterLink>
       </div>
     </div>

@@ -8,7 +8,7 @@
       >
         <span>🌐</span>
         <span class="font-medium">{{
-          $i18n.locale === "es" ? $t("navbar.spanish") : $t("navbar.english")
+          $i18n.locale === "es" ? $t("navbar.language.spanish") : $t("navbar.language.english")
         }}</span>
         <span
           class="text-[10px] text-gray-500 transition-transform duration-200"
@@ -29,7 +29,7 @@
           "
           class="w-full text-left text-xs px-3 py-2 rounded-lg transition-all duration-150"
         >
-          {{ $t("navbar.spanish") }}
+          {{ $t("navbar.language.spanish") }}
         </button>
         <button
           @click="changeLang('en')"
@@ -40,7 +40,7 @@
           "
           class="w-full text-left text-xs px-3 py-2 rounded-lg transition-all duration-150"
         >
-          {{ $t("navbar.english") }}
+          {{ $t("navbar.language.english") }}
         </button>
       </div>
     </div>
@@ -71,7 +71,7 @@
           "
           class="w-full text-center text-xs py-2 rounded-lg"
         >
-          {{ $t("navbar.spanish") }}
+          {{ $t("navbar.language.spanish") }}
         </button>
         <button
           @click="changeLang('en')"
@@ -82,7 +82,7 @@
           "
           class="w-full text-center text-xs py-2 rounded-lg"
         >
-          {{ $t("navbar.english") }}
+          {{ $t("navbar.language.english") }}
         </button>
       </div>
     </div>
@@ -92,7 +92,7 @@
         @click="routeButton"
         class="shrink-0 bg-[#38BDF8] text-[#0F172A] px-4 md:px-6 py-2 rounded-lg text-xs mx-2 md:mx-0"
       >
-        {{ $t("globalOptions.back") }}
+        {{ $t("global.back") }}
       </button>
     </div>
     <div v-else-if="!isLoggedIn">

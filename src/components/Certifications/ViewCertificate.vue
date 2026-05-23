@@ -2,7 +2,7 @@
   <div v-if="!selectedCertification" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
     <div class="text-center">
       <div class="w-12 h-12 border-4 border-white/30 border-t-sky-400 rounded-full animate-spin mx-auto mb-4"></div>
-      <p class="text-white font-medium">Cargando....</p>
+      <p class="text-white font-medium">{{ $t("global.loadingMessage") }}</p>
     </div>
   </div>
 
@@ -18,7 +18,7 @@
         </h1>
 
         <p class="text-gray-400 text-center lg:text-left font-extrabold text-sm sm:text-base lg:text-xl">
-          {{ selectedCertification.institution }}
+           {{ $t(`certifications.institution`) }} : <span class="text-white">{{ $t(`certifications.institutions.${selectedCertification.institution}`) }}</span>
         </p>
 
         <p class="text-gray-300 text-justify lg:text-left text-sm sm:text-base lg:text-xl leading-relaxed">
@@ -26,12 +26,12 @@
         </p>
 
         <div class="flex gap-3 justify-center lg:justify-start mt-2 flex-wrap">
-          <a :href="selectedCertification.pdf" download class="bg-sky-400 hover:bg-sky-500 px-3 sm:px-4 py-2 rounded-lg font-semibold text-center transition-all hover:scale-105 text-white text-xs sm:text-sm">
+          <a :href="selectedCertification.certificate" download class="bg-sky-400 hover:bg-sky-500 px-3 sm:px-4 py-2 rounded-lg font-semibold text-center transition-all hover:scale-105 text-white text-xs sm:text-sm">
             {{ $t("certifications.buttons.download") }}
           </a>
 
           <RouterLink :to="backRoute" class="border border-gray-400 hover:bg-gray-400 text-gray-400 hover:text-white px-3 sm:px-4 py-2 rounded-lg font-semibold text-center transition-all hover:scale-105 text-xs sm:text-sm">
-            {{ $t("globalOptions.back") }}
+            {{ $t("global.back") }}
           </RouterLink>
         </div>
       </div>
@@ -46,13 +46,14 @@ import { useRoute } from "vue-router";
 
 type CertificationsType = {
   id: number;
-  special: boolean;
+  featured: boolean;
   key: string;
-  name: string;
   institution: string;
   image: string;
-  pdf: string;
+  certificate: string;
+  downloadable?: boolean;
 };
+
 
 const store = dataStoreCertification();
 const route = useRoute();
