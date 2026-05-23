@@ -20,7 +20,7 @@ import ViewChatBot from "./ViewChatBot.vue";
 
 const ChatBot = "/img/ChatBotWhile.jpg";
 
-const chatView = ref<boolean>(true);
+const chatView = ref<boolean>(false);
 
 const chatBotIA = (): void => {
   chatView.value = !chatView.value;
