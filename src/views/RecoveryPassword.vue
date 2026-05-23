@@ -25,6 +25,6 @@ const email = (email: string): void => {
     return;
   }
 
-  //alert("El correo no existe");
+  alert("El correo electrónico no coincide con el registrado.");
 };
 </script>

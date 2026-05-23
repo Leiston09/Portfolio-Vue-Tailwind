@@ -5,7 +5,7 @@
     <div class="w-full h-55 overflow-hidden">
       <img
         :src="profile.image"
-        alt="Leiston Holguin Aguirre"
+        :alt="`${profile.firstName} ${profile.lastName}`"
         class="w-full h-full object-cover hover:scale-110 transition-all duration-300"
       />
     </div>
@@ -15,19 +15,17 @@
         <li
           v-for="specialty in specialtys"
           :key="specialty.name"
-          :class="specialty.name === 'home.specialization.softwareEngineeringStudent' ? 'truncate w-45 md:w-auto' : 'w-auto'"
-          class="bg-[#1E293B] px-2 py-1 rounded-lg text-gray-300 hover:scale-105 transition-all duration-200"
-        >
+          class="bg-[#1E293B] px-1 py-1 rounded-lg text-gray-300 hover:scale-105 transition-all duration-200">
           {{ $t(specialty.name) }}
         </li>
-
       </ul>
 
       <p class="text-gray-400 text-sm text-justify">
-        {{ $t("home.personalMessage") }}
+        {{ $t("home.personalMessage") }}   
+      <span class="text-celeste font-bold">{{ $t("home.availability") }}</span>
       </p>
 
-      <div v-if="!developer" class="text-white">{{ $t("globalOptions.loading") }}</div>
+      <div v-if="!developer" class="bg-celeste text-center font-bold text-white hover:bg-celeste/50 px-6 py-2 mb-2 rounded-lg transition duration-200">{{ $t("global.loading") }}</div>
 
       <a
         v-else
@@ -58,7 +56,7 @@ type ProfileType = {
 type curriculumType = {
   id: number;
   asset: boolean;
-  name: string;
+  key: string;
   image: string;
   download: string;
 };
@@ -68,11 +66,13 @@ type SpecialtyType = {
 }
 
 const specialtys: SpecialtyType[]   = [
-  { name : "home.specialization.webDeveloper" },
-  { name : "home.specialization.databaseKnowledge"},
-  { name : "home.specialization.networksKnowledge"},
-  { name : "home.specialization.Cybersecurityknowledge"},
-  { name : "home.specialization.softwareEngineeringStudent"},
+
+  { name : "home.specializations.frontendDeveloper" },  
+  { name : "home.specializations.databases"},
+  { name : "home.specializations.networking"},
+  { name : "home.specializations.softwareEngineeringStudent"},
+  { name : "home.specializations.cybersecurity"},
+  
 ]
 
 const storeProfile = dataStoreProfile();
@@ -82,7 +82,7 @@ const profile = computed<ProfileType>(() => storeProfile.profile);
 const curriculum = computed<curriculumType[]>(() => storeCurriculum.curriculum);
 
 const developer = computed<curriculumType | undefined>(() => {
-  return curriculum.value.find((c) => c.name === 'curriculumDeveloper');
+  return curriculum.value.find((c) => c.asset);
 });
 
 onMounted(() => {

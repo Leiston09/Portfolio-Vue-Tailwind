@@ -7,7 +7,7 @@
     </div>
 
     <RouterLink :to="{ name: 'Skills' }" class="buttonViewAll">
-      {{ $t("globalOptions.ViewAll") }}
+      {{ $t("global.viewAll") }}
     </RouterLink>
   </div>
 
@@ -28,7 +28,7 @@ class="min-w-20 md:min-w-30 bg-[#111827]/80 border border-gray-800 rounded-2xl p
 
         <div class="text-center">
           <h1 class="text-white font-semibold text-sm">
-            {{ $t(`skills.name.${ skill.nombre }`) }}
+            {{ $t(`skills.technologies.${ skill.nombre }`) }}
           </h1>
 
           <p class="text-xs text-gray-400 mt-1">
@@ -52,7 +52,7 @@ class="min-w-20 md:min-w-30 bg-[#111827]/80 border border-gray-800 rounded-2xl p
 
         <div class="text-center">
           <h1 class="text-white font-semibold text-sm">
-            {{ $t(`skills.name.${ skill.nombre }`) }}
+            {{ $t(`skills.technologies.${ skill.nombre }`) }}
           </h1>
 
           <p class="text-xs text-gray-400 mt-1">

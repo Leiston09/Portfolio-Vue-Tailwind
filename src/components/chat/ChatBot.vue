@@ -18,7 +18,7 @@
 import { ref } from "vue";
 import ViewChatBot from "./ViewChatBot.vue";
 
-const ChatBot = "/img/ChatBotWhile.png";
+const ChatBot = "/img/ChatBotWhile.jpg";
 
 const chatView = ref<boolean>(false);
 

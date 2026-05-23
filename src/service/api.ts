@@ -1,9 +1,9 @@
 import { projects } from "@/data/projects";
 import { skills } from "@/data/skills";
-import { Certifications } from "@/data/certifications";
 import { contact } from "@/data/contact";
 import { Curriculum } from "@/data/curriculum";
 import { profile } from "@/data/profile";
+import { certifications } from "@/data/certifications";
 
 type ProjectsType = {
   id: number;
@@ -18,12 +18,12 @@ type ProjectsType = {
 
 type CertificationsType = {
   id: number;
-  special: boolean;
+  featured: boolean;
   key: string;
-  name: string;
   institution: string;
   image: string;
-  pdf: string;
+  certificate: string;
+  downloadable?: boolean;
 };
 
 type ContactType = {
@@ -38,7 +38,7 @@ type ContactType = {
 type curriculumType = {
   id: number;
   asset: boolean;
-  name: string;
+  key: string;
   image: string;
   download: string;
 };
@@ -75,7 +75,7 @@ export const getSkills = (): Promise<SkillsTypes[]> => {
 export const getCertifications = (): Promise<CertificationsType[]> => {
   return new Promise<CertificationsType[]>((resolve) => {
     setTimeout(() => {
-      resolve(Certifications);
+      resolve(certifications);
     }, 200);
   });
 };

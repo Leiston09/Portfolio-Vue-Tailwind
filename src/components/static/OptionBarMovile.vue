@@ -10,7 +10,7 @@
       <li>
         <RouterLink :to="{ path: '/', hash: '#about' }" :class="currentHash === '#about' ? 'text-[#38BDF8] font-bold bg-[#38BDF8]/10 border border-[#38BDF8]' : 'border-transparent hover:text-[#38BDF8]'" class="flex flex-col items-center p-2 border rounded-xl transition-all duration-200">
           <i class="fas fa-user"></i>
-          <span>{{ $t("navbar.menu.AboutMe") }}</span>
+          <span>{{ $t("navbar.menu.about") }}</span>
         </RouterLink>
       </li>
       <li>

@@ -17,7 +17,7 @@
           </RouterLink>
           <button @click="logOut" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-red-500/20 text-red-400 hover:bg-red-500 hover:text-white transition-all duration-200">
             <span>🚪</span>
-            <span>{{ $t("navbar.logOut") }}</span>
+            <span>{{ $t("navbar.logout") }}</span>
           </button>
         </div>
       </div>

@@ -2,11 +2,11 @@
   <div class="flex flex-col w-full max-w-6xl border-2 rounded-4xl border-white/20 py-5">
     <div class="grid gap-2 text-center">
       <h1 class="titleViewAll">
-        {{ $t("login.register.title") }}
+        {{ $t("auth.register.title") }}
       </h1>
 
       <p class="text-gray-400 text-sm">
-        {{ $t("login.register.intro") }}
+        {{ $t("auth.register.subtitle") }}
       </p>
     </div>
 
@@ -15,7 +15,7 @@
         <input
           v-model="user.name"
           type="text"
-          :placeholder="$t('login.register.namePlaceholder')"
+          :placeholder="$t('auth.register.placeholders.name')"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
 
@@ -28,7 +28,7 @@
         <input
           v-model="user.lastName"
           type="text"
-          :placeholder="$t('login.register.lastNamePlaceholder')"
+          :placeholder="$t('auth.register.placeholders.lastName')"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
 
@@ -41,7 +41,7 @@
         <input
           v-model="user.email"
           type="email"
-          :placeholder="$t('login.register.emailPlaceholder')"
+          :placeholder="$t('auth.register.placeholders.email')"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
 
@@ -55,6 +55,7 @@
           v-model="user.date"
           type="date"
           max="2008-12-31"
+          :placeholder="$t('auth.register.placeholders.date')"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
 
@@ -67,7 +68,7 @@
         <input
           v-model="user.password"
           type="password"
-          :placeholder="$t('login.register.passwordPlaceholder')"
+          :placeholder="$t('auth.register.placeholders.password')"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
 
@@ -80,7 +81,7 @@
         <input
           v-model="user.confirmPassword"
           type="password"
-          :placeholder="$t('login.register.confirmPasswordPlaceholder')"
+          :placeholder="$t('auth.register.placeholders.confirmPassword')"
           class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none"
         />
 
@@ -98,7 +99,7 @@
         @click="registerUser"
         class="w-fit px-4 bg-[#38BDF8] text-black py-2 md:py-3 rounded-lg text-lg font-bold hover:bg-[#0EA5E9] active:scale-95 transition-all shadow-lg shadow-[#38BDF8]/20"
       >
-        {{ $t("login.register.submitButton") }}
+        {{ $t("auth.register.submit") }}
       </button>
     </div>
   </div>

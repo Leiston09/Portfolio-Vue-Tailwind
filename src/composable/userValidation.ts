@@ -1,4 +1,5 @@
 import { reactive } from "vue";
+import { useI18n } from "vue-i18n";
 
 type UserType = {
   name: string;
@@ -19,6 +20,8 @@ type ErrorsType = {
 };
 
 export function useUserValidation() {
+  const { t } = useI18n();
+
   const errors = reactive<ErrorsType>({
     name: "",
     lastName: "",
@@ -29,13 +32,21 @@ export function useUserValidation() {
   });
 
   const validateName = (name: string): boolean => {
-    errors.name = name.trim() === "" ? "El nombre es obligatorio" : "";
+    errors.name =
+      name.trim() === ""
+        ? t("validation.nameRequired")
+        : "";
+
     return !errors.name;
   };
 
-  const validateLastName = (lastName: string): boolean => {
+  const validateLastName = (
+    lastName: string,
+  ): boolean => {
     errors.lastName =
-      lastName.trim() === "" ? "El apellido es obligatorio" : "";
+      lastName.trim() === ""
+        ? t("validation.lastNameRequired")
+        : "";
 
     return !errors.lastName;
   };
@@ -43,14 +54,20 @@ export function useUserValidation() {
   const validateEmail = (email: string): boolean => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    errors.email = !regex.test(email) ? "Correo no válido" : "";
+    errors.email = !regex.test(email)
+      ? t("validation.invalidEmail")
+      : "";
 
     return !errors.email;
   };
 
-  const validatePassword = (password: string): boolean => {
+  const validatePassword = (
+    password: string,
+  ): boolean => {
     errors.password =
-      password.length < 6 ? "Contraseña muy corta" : "";
+      password.length < 6
+        ? t("validation.shortPassword")
+        : "";
 
     return !errors.password;
   };
@@ -61,22 +78,29 @@ export function useUserValidation() {
   ): boolean => {
     errors.confirmPassword =
       password !== confirmPassword
-        ? "Las contraseñas no coinciden"
+        ? t("validation.passwordMismatch")
         : "";
 
     return !errors.confirmPassword;
   };
 
-  const validateDate = (dateString: string): boolean => {
+  const validateDate = (
+    dateString: string,
+  ): boolean => {
     if (!dateString) {
-      errors.date = "La fecha de nacimiento es obligatoria";
+      errors.date = t(
+        "validation.birthDateRequired",
+      );
+
       return false;
     }
 
     const birthDate = new Date(dateString);
     const today = new Date();
 
-    let age = today.getFullYear() - birthDate.getFullYear();
+    let age =
+      today.getFullYear() -
+      birthDate.getFullYear();
 
     const monthDiff =
       today.getMonth() - birthDate.getMonth();
@@ -89,11 +113,14 @@ export function useUserValidation() {
       age--;
     }
 
-    if (age < 18) {
-      errors.date = "Debes ser mayor de 18 años";
+    if (age < 15) {
+      errors.date = t(
+        "validation.minimumAge",
+      );
     } else if (age > 100) {
-      errors.date =
-        "La edad no puede ser mayor a 100 años";
+      errors.date = t(
+        "validation.maximumAge",
+      );
     } else {
       errors.date = "";
     }
@@ -101,31 +128,42 @@ export function useUserValidation() {
     return !errors.date;
   };
 
-  const validateUser = (user: UserType): boolean => {
+  const validateUser = (
+    user: UserType,
+  ): boolean => {
     const okName = validateName(user.name);
-    const okLast = validateLastName(user.lastName);
-    const okEmail = validateEmail(user.email);
-    const okPass = validatePassword(user.password);
 
-    const okConfirm = validateConfirmPassword(
-      user.password,
-      user.confirmPassword,
+    const okLastName = validateLastName(
+      user.lastName,
     );
+
+    const okEmail = validateEmail(user.email);
+
+    const okPassword = validatePassword(
+      user.password,
+    );
+
+    const okConfirmPassword =
+      validateConfirmPassword(
+        user.password,
+        user.confirmPassword,
+      );
 
     const okDate = validateDate(user.date);
 
     return (
       okName &&
-      okLast &&
+      okLastName &&
       okEmail &&
-      okPass &&
-      okConfirm &&
+      okPassword &&
+      okConfirmPassword &&
       okDate
     );
   };
 
   return {
     errors,
+
     validateName,
     validateLastName,
     validateEmail,

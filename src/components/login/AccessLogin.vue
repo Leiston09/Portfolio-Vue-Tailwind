@@ -4,8 +4,8 @@
   >
     <div class="hidden md:block md:w-1/2">
       <img
-        src="@/assets/img/ImagenLogin.jpg"
-        alt="Login Image"
+        :src="foto"
+        :about="$t('auth.login.title')"
         class="w-full h-full object-cover"
       />
     </div>
@@ -16,7 +16,8 @@
           class="rounded-full overflow-hidden w-24 h-24 border border-[#38BDF8]/40"
         >
           <img
-            src="@/assets/img/ImagenLogin.jpg"
+            :src="foto"
+            :about="$t('auth.login.title')"
             class="w-full h-full object-cover"
           />
         </div>
@@ -26,18 +27,18 @@
         <h1 class="titleViewAll">
           {{ $t("navbar.login") }}
         </h1>
-        <p class="text-gray-400 text-sm mt-1">{{ $t("login.access.intro") }}</p>
+        <p class="text-gray-400 text-sm mt-1">{{ $t("auth.login.title") }}</p>
       </header>
 
       <div class="space-y-1">
         <div>
           <h1 class="text-gray-400 text-sm">
-            {{ $t("login.access.emailLabel") }}
+            {{ $t("auth.login.labels.email") }}
           </h1>
           <input
             v-model="login.email"
             type="email"
-            :placeholder="$t('login.access.emailPlaceholder')"
+            :placeholder="$t('auth.login.placeholders.email')"
             class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none transition-all"
           />
           <p v-if="submit && errors.email" class="text-red-500 text-xs mt-1">
@@ -47,12 +48,12 @@
 
         <div>
           <h1 class="text-gray-400 text-sm">
-            {{ $t("login.access.passwordLabel") }}
+            {{ $t("auth.login.labels.password") }}
           </h1>
           <div class="relative">
             <input
               :type="showPassword ? 'text' : 'password'"
-              :placeholder="$t('login.access.passwordPlaceholder')"
+              :placeholder="$t('auth.login.placeholders.password')"
               class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none transition-all"
               v-model="login.password"
             />
@@ -76,7 +77,7 @@
           :to="{ name: 'RecoverPassword' }"
           class="text-[#38BDF8] hover:text-[#0EA5E9] text-sm font-semibold transition-colors"
         >
-          {{ $t("login.access.forgotPassword") }}
+          {{ $t("auth.login.actions.forgotPassword") }}
         </RouterLink>
       </div>
 
@@ -84,17 +85,17 @@
         @click="validateLogin"
         class="w-full bg-[#38BDF8] text-black py-2 md:py-3 rounded-lg text-lg font-bold hover:bg-[#0EA5E9] active:scale-95 transition-all shadow-lg shadow-[#38BDF8]/20"
       >
-        {{ $t("login.access.submitButton") }}
+        {{ $t("auth.login.actions.continue") }}
       </button>
 
       <div class="text-center text-sm text-gray-400">
-        {{ $t("login.access.noAccount") }}
+        {{ $t("auth.login.actions.noAccount") }}
 
         <RouterLink
           :to="{ name: 'RegisterUser' }"
           class="text-[#38BDF8] hover:underline font-bold ml-1"
         >
-          {{ $t("login.access.registerLink") }}
+          {{ $t("auth.login.actions.register") }}
         </RouterLink>
       </div>
     </div>
@@ -106,6 +107,7 @@ import { RouterLink } from "vue-router";
 import { reactive, ref } from "vue";
 import { useUserValidation } from "@/composable/userValidation";
 
+const foto = '/img/authIMG.jpg'
 const emit = defineEmits(["user"]);
 const { errors, validateEmail, validatePassword } = useUserValidation();
 

@@ -3,13 +3,14 @@ import { defineStore } from "pinia";
 
 type CertificationsType = {
   id: number;
-  special: boolean;
+  featured: boolean;
   key: string;
-  name: string;
   institution: string;
   image: string;
-  pdf: string;
+  certificate: string;
+  downloadable?: boolean;
 };
+
 
 
 export const dataStoreCertification = defineStore("DataPortafolio", {

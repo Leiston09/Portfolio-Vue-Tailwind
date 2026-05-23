@@ -6,7 +6,7 @@
     </h1>
 
     <p class="text-gray-400 text-center mt-2 max-w-xl">
-      {{ $t("contact.contactIntro") }}
+      {{ $t("contact.intro") }}
     </p>
 
     <div

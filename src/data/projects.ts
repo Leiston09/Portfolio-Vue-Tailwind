@@ -15,7 +15,7 @@ export const projects: ProjectsType[] = [
     special: true,
     key: "portfolio",
     year: 2026,
-    image: "/img/gif/Projects/ProjectOne.gif",
+    image: "/img/gif/Projects/portafolio.gif",
     technologies: [
       "Vue 3",
       "Tailwind CSS",
@@ -42,7 +42,7 @@ export const projects: ProjectsType[] = [
   {
     id: 3,
     special: true,
-    key: "administrar_pacientes",
+    key: "administrarPacientes",
     year: 2025,
     image: "/img/gif/Projects/ProjectFour.png",
     technologies: ["HTML", "CSS", "JavaScript", "VUE 3", "Tailwind CSS"],
@@ -52,7 +52,7 @@ export const projects: ProjectsType[] = [
   {
     id: 4,
     special: false,
-    key: "listado_de_usuarios",
+    key: "listadoUsuarios",
     year: 2025,
     image: "/img/gif/Projects/ProjectFive.png",
     technologies: ["HTML", "CSS", "JavaScript", "VUE 3", "Tailwind CSS"],
@@ -74,7 +74,7 @@ export const projects: ProjectsType[] = [
       "PHP",
       "IA",
     ],
-    github: "https://uitoky-project.netlify.app/",
+    github: "",
     demo: "https://uitoky-project.netlify.app/",
   },
 ];

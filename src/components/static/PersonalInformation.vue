@@ -7,7 +7,7 @@
     </div>
     <div class="text-white flex flex-col rounded-lg min-w-0">
       <h1 class="font-bold text-sm truncate">
-        {{ isLoggedIn ? userLogin.name : $t("navbar.guest") }}
+        {{ isLoggedIn ? userLogin?.name : $t("navbar.status.guest") }}
       </h1>
       <span
         :class="
@@ -15,10 +15,10 @@
             ? 'text-xs text-celeste truncate'
             : 'text-xs text-red-500 truncate'
         "
-        >{{ isLoggedIn ? $t("navbar.online") : $t("navbar.offline") }}</span
+        >{{ isLoggedIn ? $t("navbar.status.online") : $t("navbar.status.offline") }}</span
       >
       <span class="text-xs text-gray-400 truncate">
-        {{ isLoggedIn ? userLogin.email : "" }}
+        {{ isLoggedIn ? userLogin?.email : "" }}
       </span>
     </div>
   </div>
@@ -32,8 +32,12 @@ type Props = {
 
   userLogin: {
     name: string;
+    lastName: string;
     email: string;
-  };
+    date: string;
+    password: string;
+    confirmPassword: string;
+  } | null;
 };
 
 const props = defineProps<Props>();
