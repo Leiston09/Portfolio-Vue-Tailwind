@@ -15,7 +15,7 @@
       <h1>© 2026 Leiston Holguin - {{ $t("global.webPortfolio") }}</h1>
     </footer>
 
-    <div class="fixed bottom-15 right-5 lg:bottom-2 lg:right-5">
+    <div class="fixed bottom-15 right-2 lg:bottom-2 lg:right-5">
       <ChatBot />
     </div>
 

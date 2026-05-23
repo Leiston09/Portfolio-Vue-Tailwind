@@ -1,6 +1,6 @@
 <template>
-  <div class="fixed bottom-28 md:bottom-18 right-3 md:right-15 z-50">
-    <div class="w-72 sm:w-[320px] bg-[#0F172A] border border-gray-700 rounded-2xl shadow-2xl overflow-hidden">
+  <div class="fixed bottom-28 right-3 md:bottom-18  md:right-15 z-50">
+    <div class="w-72 sm:w-96 bg-[#0F172A] border border-gray-700 rounded-2xl shadow-2xl overflow-hidden">
       <ChatbotTitle @close="$emit('close', false)" />
 
       <ChatbotContainer
