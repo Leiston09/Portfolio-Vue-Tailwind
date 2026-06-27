@@ -1,155 +1,133 @@
 import { reactive } from "vue";
 import { useI18n } from "vue-i18n";
+import { MessageErrorsType } from "@/types";
 
-type UserType = {
-  name: string;
-  lastName: string;
-  email: string;
-  date: string;
-  password: string;
-  confirmPassword: string;
-};
-
-type ErrorsType = {
-  name: string;
-  lastName: string;
-  email: string;
-  date: string;
-  password: string;
-  confirmPassword: string;
-};
 
 export function useUserValidation() {
+  
   const { t } = useI18n();
 
-  const errors = reactive<ErrorsType>({
-    name: "",
-    lastName: "",
-    email: "",
-    date: "",
-    password: "",
-    confirmPassword: "",
+  const MessageErrors = reactive<MessageErrorsType>({
+    name: '',
+    lastName: '',
+    email: '',
+    birthDate: '',
+    password: '',
+    confirmPassword: '',
   });
 
-  const validateName = (name: string): boolean => {
-    errors.name =
-      name.trim() === ""
-        ? t("validation.nameRequired")
-        : "";
+  const textOnly = (texts : string , parameter: keyof typeof MessageErrors )  => {
+    if(/\d/.test(texts)) {
+      MessageErrors[parameter] = t("validation.nameInvalid");
+    }
+  }
 
-    return !errors.name;
+  const validateFirstName = (name: string): boolean => {
+    let validate = name.trim() === ""
+    MessageErrors.name = validate ? t("validation.nameRequired") : "";
+
+    if (!validate) {
+      textOnly(name, "name");
+    }    
+    return !MessageErrors.name;
   };
 
-  const validateLastName = (
-    lastName: string,
-  ): boolean => {
-    errors.lastName =
-      lastName.trim() === ""
-        ? t("validation.lastNameRequired")
-        : "";
 
-    return !errors.lastName;
+  const validateLastName = (lastName: string): boolean => {
+    let validate = lastName.trim() === ""
+    MessageErrors.lastName = validate ? t("validation.lastNameRequired") : "";
+
+    if (!validate) {
+      textOnly(lastName, "lastName");
+    }    
+
+    return !MessageErrors.lastName;
   };
+
 
   const validateEmail = (email: string): boolean => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    errors.email = !regex.test(email)
-      ? t("validation.invalidEmail")
-      : "";
-
-    return !errors.email;
+    MessageErrors.email = !regex.test(email) ? t("validation.invalidEmail") : "";
+    return !MessageErrors.email;
   };
 
-  const validatePassword = (
-    password: string,
-  ): boolean => {
-    errors.password =
-      password.length < 6
-        ? t("validation.shortPassword")
-        : "";
 
-    return !errors.password;
+  const validatePassword = (password: string): boolean => {
+    let validate = password.length < 6
+    MessageErrors.password = validate ? t("validation.shortPassword") : "";
+    return !MessageErrors.password;
   };
 
-  const validateConfirmPassword = (
-    password: string,
-    confirmPassword: string,
-  ): boolean => {
-    errors.confirmPassword =
-      password !== confirmPassword
-        ? t("validation.passwordMismatch")
-        : "";
 
-    return !errors.confirmPassword;
+  const validateConfirmPassword = ( password: string, confirmPassword: string ): boolean => {
+    let validate = password !== confirmPassword
+    MessageErrors.confirmPassword = validate ? t("validation.passwordMismatch") : "";
+    return !MessageErrors.confirmPassword;
   };
 
-  const validateDate = (
-    dateString: string,
-  ): boolean => {
+
+  const validateDate = (dateString: string) : boolean => {
+
     if (!dateString) {
-      errors.date = t(
-        "validation.birthDateRequired",
-      );
-
+      MessageErrors.birthDate = t("validation.birthDateRequired");
       return false;
     }
 
-    const birthDate = new Date(dateString);
-    const today = new Date();
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
 
-    let age =
-      today.getFullYear() -
-      birthDate.getFullYear();
-
-    const monthDiff =
-      today.getMonth() - birthDate.getMonth();
-
-    if (
-      monthDiff < 0 ||
-      (monthDiff === 0 &&
-        today.getDate() < birthDate.getDate())
-    ) {
-      age--;
+    if (!regex.test(dateString)) {
+      MessageErrors.birthDate = t("validation.birthDateTextInvalidate");
+      return false;
     }
-
-    if (age < 15) {
-      errors.date = t(
-        "validation.minimumAge",
-      );
-    } else if (age > 100) {
-      errors.date = t(
-        "validation.maximumAge",
-      );
-    } else {
-      errors.date = "";
-    }
-
-    return !errors.date;
+        
+    return validateDateBirthdate(dateString)
   };
 
-  const validateUser = (
-    user: UserType,
-  ): boolean => {
-    const okName = validateName(user.name);
 
-    const okLastName = validateLastName(
-      user.lastName,
-    );
+
+  const validateDateBirthdate = (dateString: string) : boolean => {
+
+    let minimumAge : number = 15
+    let maximumAge : number = 100
+
+    const birthDate = new Date(dateString);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if ( monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    if (age < minimumAge) {
+      MessageErrors.birthDate = t("validation.minimumAge");
+    } 
+    
+    else if (age > maximumAge) {
+      MessageErrors.birthDate = t("validation.maximumAge");
+    } 
+    
+    else {
+      MessageErrors.birthDate = "";
+    }
+
+    return !MessageErrors.birthDate;
+
+  }
+
+
+  const validateUser = (user : MessageErrorsType ): boolean => {
+    const okName = validateFirstName(user.name);
+
+    const okLastName = validateLastName(user.lastName);
 
     const okEmail = validateEmail(user.email);
 
-    const okPassword = validatePassword(
-      user.password,
-    );
+    const okDate = validateDate(user.birthDate);
 
-    const okConfirmPassword =
-      validateConfirmPassword(
-        user.password,
-        user.confirmPassword,
-      );
+    const okPassword = validatePassword(user.password);
 
-    const okDate = validateDate(user.date);
+    const okConfirmPassword = validateConfirmPassword( user.password, user.confirmPassword);
 
     return (
       okName &&
@@ -161,15 +139,17 @@ export function useUserValidation() {
     );
   };
 
-  return {
-    errors,
 
-    validateName,
+  return {
+    MessageErrors,
+    validateUser,
+
+    validateFirstName,
     validateLastName,
     validateEmail,
     validatePassword,
     validateConfirmPassword,
     validateDate,
-    validateUser,
+ 
   };
 }

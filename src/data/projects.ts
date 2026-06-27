@@ -1,11 +1,11 @@
-type ProjectsType = {
+export type ProjectsType = {
   id: number;
   special: boolean;
   key: string;
   year: number;
   image: string;
   technologies: string[];
-  github: string;
+  github?: string;
   demo: string;
 };
 
@@ -26,7 +26,6 @@ export const projects: ProjectsType[] = [
       "IA",
       "GitHub",
       "API",
-
     ],
     github: "https://github.com/Leiston09/Portfolio-Vue-Tailwind.git",
     demo: "https://ephemeral-cajeta-33ad99.netlify.app/",
@@ -38,7 +37,14 @@ export const projects: ProjectsType[] = [
     key: "guitarra",
     year: 2026,
     image: "/img/gif/Projects/guitarras.gif",
-    technologies: ["Vue 3", "Tailwind CSS", "JavaScript", "CSS", "HTML", "GitHub"],
+    technologies: [
+      "Vue 3",
+      "Tailwind CSS",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "GitHub",
+    ],
     github: "https://github.com/Leiston09/Guitarra-Carrito-Compras-en-Vue.git",
     demo: "https://guitarras-carrito.netlify.app/",
   },
@@ -49,7 +55,6 @@ export const projects: ProjectsType[] = [
     year: 2025,
     image: "/img/gif/Projects/ProjectFour.png",
     technologies: ["HTML", "CSS", "JavaScript", "VUE 3", "Tailwind CSS"],
-    github: "",
     demo: "https://administrar-pacientes-lh.netlify.app/",
   },
   {
@@ -59,7 +64,6 @@ export const projects: ProjectsType[] = [
     year: 2025,
     image: "/img/gif/Projects/ProjectFive.png",
     technologies: ["HTML", "CSS", "JavaScript", "VUE 3", "Tailwind CSS"],
-    github: "",
     demo: "https://listado-de-usuarios.netlify.app/",
   },
   {
@@ -75,9 +79,8 @@ export const projects: ProjectsType[] = [
       "PostgreSQL",
       "pgAdmin",
       "PHP",
-      "IA"
+      "IA",
     ],
-    github: "",
     demo: "https://uitoky-project.netlify.app/",
   },
 ];

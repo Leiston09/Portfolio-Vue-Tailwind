@@ -36,18 +36,11 @@
 
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import { CertificationType } from "@/data/certifications";
 
-type CertificationsType = {
-  id: number;
-  featured: boolean;
-  key: string;
-  institution: string;
-  image: string;
-  certificate: string;
-  downloadable?: boolean;
-};
-
-
+const props = defineProps<{
+  certifications: CertificationType[];
+}>();
 
 const emit = defineEmits<{
   (e: "searchCertifications", value: string): void;
@@ -56,10 +49,6 @@ const emit = defineEmits<{
 
 const searchText = ref<string>("");
 const selectedInstitution = ref<string>("");
-
-const props = defineProps<{
-  certifications: CertificationsType[];
-}>();
 
 const institutions = computed<string[]>(() => {
   return [...new Set(props.certifications.map((i) => i.institution))];

@@ -1,37 +1,33 @@
 <template>
-    <div :class="alert" v-if="alert !== ''">
-        <p>{{ props.message }}</p>
-    </div>
+  <div
+    v-if="alertStore.visible"
+    :class="alertClass"
+    class="fixed top-20 right-5 z-50"
+  >
+    {{ alertStore.message }}
+  </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { computed } from "vue";
+import { useAlertStore } from "@/stores/useAlertStore";
 
-const props = defineProps({
+const alertStore = useAlertStore();
 
-    type: {
-        type: String,
-        default: "",
-    },
-    message: {
-        type: String,
-        default: "",
-    },
+const alertClass = computed(() => {
+  switch (alertStore.type) {
+    case "success":
+      return "alert-success";
+    case "error":
+      return "alert-error";
+    case "warning":
+      return "alert-warning";
+    default:
+      return "";
+  }
 });
-
-const alert = computed(() => {
-    switch (props.type) {
-        case "success":
-            return "alert-success";
-        case "error":
-            return "alert-error";
-        case "warning":
-            return "alert-warning";
-        default:
-            return "";
-    }
-});
-
 </script>
+
 
 <style lang="scss" scoped>
 

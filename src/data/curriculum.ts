@@ -1,6 +1,6 @@
-type curriculumType = {
+export type curriculumType = {
   id: number;
-  asset: boolean;
+  asset: boolean; //*activo
   key: string;
   image: string;
   download: string;

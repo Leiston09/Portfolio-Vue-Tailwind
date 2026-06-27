@@ -42,43 +42,26 @@
 </template>
 
 <script setup lang="ts">
-import { dataStoreCurriculum } from "@/stores/StateCurriculum";
-import { dataStoreProfile } from "@/stores/StateProfile";
+import { SpecialtyType } from "@/types";
+import { curriculumType } from "@/data/curriculum";
+import { profileType } from "@/data/profile";
+import { useCurriculumStore } from "@/stores/useCurriculumStore";
+import { useProfileStore } from "@/stores/useProfileStore";
 import { computed, onMounted } from "vue";
 
-type ProfileType = {
-    firstName: string,
-    lastName: string,    
-    age: number,
-    image: string,
-}
-
-type curriculumType = {
-  id: number;
-  asset: boolean;
-  key: string;
-  image: string;
-  download: string;
-};
-
-type SpecialtyType = {
-  name:string
-}
 
 const specialtys: SpecialtyType[]   = [
-
   { name : "home.specializations.frontendDeveloper" },  
   { name : "home.specializations.databases"},
   { name : "home.specializations.networking"},
   { name : "home.specializations.softwareEngineeringStudent"},
   { name : "home.specializations.cybersecurity"},
-  
 ]
 
-const storeProfile = dataStoreProfile();
-const storeCurriculum = dataStoreCurriculum();
+const storeProfile = useProfileStore();
+const storeCurriculum = useCurriculumStore();
 
-const profile = computed<ProfileType>(() => storeProfile.profile);
+const profile = computed<profileType>(() => storeProfile.profile);
 const curriculum = computed<curriculumType[]>(() => storeCurriculum.curriculum);
 
 const developer = computed<curriculumType | undefined>(() => {

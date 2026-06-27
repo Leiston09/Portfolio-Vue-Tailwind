@@ -6,11 +6,11 @@
 
 <script setup lang="ts">
 import Recovery from "@/components/login/Recovery.vue";
-import { dataStoreUser } from "@/stores/User";
+import { useUserStore } from "@/stores/useUserStore";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const storeUser = dataStoreUser();
+const storeUser = useUserStore();
 
 const email = (email: string): void => {
   const user = storeUser.user;

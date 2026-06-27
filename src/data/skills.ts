@@ -1,4 +1,4 @@
-type SkillsTypes = {
+export type SkillsTypes = {
   id: number;
   categoria: string;
   nombre: string;
@@ -104,12 +104,13 @@ export const skills: SkillsTypes[] = [
     nombre: "vscode",
     icono: "devicon-vscode-plain colored",
   },
+  /*
   {
     id: 16,
     categoria: "tools",
     nombre: "cursor",
     icono: "devicon-codepen-plain colored",
-  },
+  },*/
   {
     id: 17,
     categoria: "tools",

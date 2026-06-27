@@ -13,7 +13,7 @@
         <div
           v-for="skill in skillsFiltradas(categoria)"
           :key="skill.id"
-          class="bg-[#0F172A] border border-gray-800/40 p-5 rounded-2xl flex items-center gap-4 active:scale-95 transition-transform duration-200"
+          class="bg-[#0F172A] border border-celeste/15 p-5 rounded-2xl flex items-center gap-4 active:scale-95 transition-transform duration-200"
         >
           <i :class="skill.icono + ' text-3xl'"></i>
           <span class="text-lg text-gray-200">{{ $t(`skills.technologies.${skill.nombre}`) }}</span>
@@ -24,12 +24,8 @@
 </template>
 
 <script setup lang="ts">
-type SkillsTypes = {
-  id: number;
-  categoria: string;
-  nombre: string;
-  icono: string;
-};
+import { SkillsTypes } from "@/data/skills";
+
 
 const props = defineProps<{
   skills: SkillsTypes[];

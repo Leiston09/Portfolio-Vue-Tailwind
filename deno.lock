@@ -11,19 +11,20 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
-        "npm:@netlify/functions@^5.2.2",
-        "npm:@tailwindcss/vite@^4.2.2",
-        "npm:@vitejs/plugin-vue@^6.0.4",
-        "npm:groq-sdk@^1.1.2",
-        "npm:pinia@^3.0.4",
-        "npm:sass-embedded@^1.99.0",
-        "npm:tailwindcss@^4.2.2",
-        "npm:typescript@^6.0.3",
-        "npm:vite-plugin-vue-devtools@^8.0.6",
-        "npm:vite@^7.3.1",
-        "npm:vue-i18n@^11.3.0",
-        "npm:vue-router@^5.0.3",
-        "npm:vue@^3.5.29"
+        "npm:@netlify/functions@3",
+        "npm:@tailwindcss/vite@^4.0.12",
+        "npm:@vitejs/plugin-vue@^5.2.1",
+        "npm:groq-sdk@0.5",
+        "npm:netlify-cli@^26.1.0",
+        "npm:pinia@^2.3.1",
+        "npm:sass-embedded@^1.85.1",
+        "npm:tailwindcss@^4.0.12",
+        "npm:typescript@^5.8.3",
+        "npm:vite-plugin-vue-devtools@^8.0.1",
+        "npm:vite@^6.2.3",
+        "npm:vue-i18n@^11.1.2",
+        "npm:vue-router@^4.5.0",
+        "npm:vue@^3.5.13"
       ]
     }
   }

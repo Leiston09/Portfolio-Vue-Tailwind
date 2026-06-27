@@ -8,12 +8,13 @@
 
     <RouterLink :to="{ name: 'Skills' }" class="buttonViewAll">
       {{ $t("global.viewAll") }}
+      <i class="fas fa-arrow-right ml-2"></i>
+
     </RouterLink>
   </div>
 
   <div class="overflow-hidden py-5 ">
     <div class="flex gap-4 animate-scroll">
-      <!-- Skills originales -->
       <div
         v-for="skill in skills"
         :key="skill.id"
@@ -37,7 +38,6 @@ class="min-w-20 md:min-w-30 bg-[#111827]/80 border border-gray-800 rounded-2xl p
         </div>
       </div>
 
-      <!-- Los mismos skills duplicados para que sea infinito -->
       <div
         v-for="skill in skills"
         :key="`dup-${skill.id}`"
@@ -65,18 +65,14 @@ class="min-w-20 md:min-w-30 bg-[#111827]/80 border border-gray-800 rounded-2xl p
 </template>
 
 <script setup lang="ts">
-import { dataStoreSkills } from "@/stores/StoreSkills";
+import { SkillsTypes } from "@/data/skills";
+import { useSkillsStore } from "@/stores/useSkillsStore";
 import { computed, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 
-type SkillsTypes = {
-  id: number;
-  categoria: string;
-  nombre: string;
-  icono: string;
-};
 
-const storeSkills = dataStoreSkills();
+
+const storeSkills = useSkillsStore();
 
 const skills = computed<SkillsTypes[]>(() => storeSkills.skills);
 

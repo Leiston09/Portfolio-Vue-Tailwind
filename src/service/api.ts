@@ -1,61 +1,9 @@
-import { projects } from "@/data/projects";
-import { skills } from "@/data/skills";
-import { contact } from "@/data/contact";
-import { Curriculum } from "@/data/curriculum";
-import { profile } from "@/data/profile";
-import { certifications } from "@/data/certifications";
-
-type ProjectsType = {
-  id: number;
-  special: boolean;
-  key: string;
-  year: number;
-  image: string;
-  technologies: string[];
-  github: string;
-  demo: string;
-};
-
-type CertificationsType = {
-  id: number;
-  featured: boolean;
-  key: string;
-  institution: string;
-  image: string;
-  certificate: string;
-  downloadable?: boolean;
-};
-
-type ContactType = {
-  id: number;
-  name: string;
-  url: string;
-  icon: string;
-  color: string;
-  download?: boolean;
-};
-
-type curriculumType = {
-  id: number;
-  asset: boolean;
-  key: string;
-  image: string;
-  download: string;
-};
-
-type profileType = {
-  firstName: string;
-  lastName: string;
-  age: number;
-  image: string;
-};
-
-type SkillsTypes = {
-  id: number;
-  categoria: string;
-  nombre: string;
-  icono: string;
-};
+import { projects, ProjectsType } from "@/data/projects";
+import { skills, SkillsTypes } from "@/data/skills";
+import { contact, ContactType } from "@/data/contact";
+import { Curriculum, curriculumType } from "@/data/curriculum";
+import { profile, profileType } from "@/data/profile";
+import { certifications, CertificationType } from "@/data/certifications";
 
 export const getProjects = (): Promise<ProjectsType[]> => {
   return new Promise<ProjectsType[]>((resolve) => {
@@ -64,6 +12,7 @@ export const getProjects = (): Promise<ProjectsType[]> => {
     }, 200);
   });
 };
+
 export const getSkills = (): Promise<SkillsTypes[]> => {
   return new Promise<SkillsTypes[]>((resolve) => {
     setTimeout(() => {
@@ -72,8 +21,8 @@ export const getSkills = (): Promise<SkillsTypes[]> => {
   });
 };
 
-export const getCertifications = (): Promise<CertificationsType[]> => {
-  return new Promise<CertificationsType[]>((resolve) => {
+export const getCertifications = (): Promise<CertificationType[]> => {
+  return new Promise<CertificationType[]>((resolve) => {
     setTimeout(() => {
       resolve(certifications);
     }, 200);

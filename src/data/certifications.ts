@@ -5,16 +5,16 @@ export const Institutions = {
   UNIVERSITY: "university",
 } as const;
 
-type CertificationType = {
+export type CertificationType = {
   id: number;
   featured: boolean;
   key: string;
   institution: (typeof Institutions)[keyof typeof Institutions];
 
   image: string;
-  certificate: string;
+  certificate?: string;
 
-  downloadable?: boolean;
+  downloadable: boolean;
 };
 
 export const certifications: CertificationType[] = [
@@ -48,7 +48,7 @@ export const certifications: CertificationType[] = [
   },
   {
     id: 4,
-    featured: false,
+    featured: true,
     key: "typescriptGuide",
     institution: Institutions.UDEMY,
     image: "/img/certificates/typescript-guide.jpg",
@@ -61,7 +61,6 @@ export const certifications: CertificationType[] = [
     key: "systemsEngineering",
     institution: Institutions.UNIVERSITY,
     image: "/img/certificates/systems-engineering.jpg",
-    certificate: "",
     downloadable: false,
   },
   {

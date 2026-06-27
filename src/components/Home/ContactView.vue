@@ -1,16 +1,14 @@
 <template>
   <div
-    class=" rounded-2xl p-6 flex flex-col items-center border border-gray-800">
+    class=" rounded-2xl p-6 flex flex-col items-center gap-2 border border-gray-800">
     <h1 class="titleOptions">
       {{ $t("contact.title") }}
     </h1>
 
-    <p class="text-gray-400 text-center mt-2 max-w-xl">
-      {{ $t("contact.intro") }}
-    </p>
+    <span class="text-celeste/70 font-bold">{{ $t("home.availability") }}</span>
 
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-8 w-full"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 w-full"
     >
       <a
         v-for="contact in contacts"
@@ -37,39 +35,28 @@
 </template>
 
 <script setup lang="ts">
-import { dataStoreCurriculum } from '@/stores/StateCurriculum';
-import { dataStoreContact } from '@/stores/StoreContacts';
+import { curriculumType } from '@/data/curriculum';
+import { ContactType } from '@/data/contact';
+import { useCurriculumStore } from '@/stores/useCurriculumStore';
+import { useContectStore } from '@/stores/useContectStore';
 import { computed, onMounted } from "vue";
 
-type ContactType = {
-  id: number;
-  name: string;
-  url: string;
-  icon: string;
-  color: string;
-  download?: boolean;
-};
 
-type curriculumType = {
-  id: number;
-  asset: boolean;
-  name: string;
-  image: string;
-  download: string;
-};
-
-const storeContact = dataStoreContact();
-const storeCurriculo = dataStoreCurriculum();
+const storeContact = useContectStore();
+const storeCurriculo = useCurriculumStore();
 
 
-const curriculo = computed<curriculumType[]>(() => storeCurriculo.curriculum);
+const curriculum = computed<curriculumType[]>(() => storeCurriculo.curriculum);
 
 const contacts = computed<ContactType[]>(() => {
-  const curriculumDownload = curriculo.value.find(
-    (c) => c.name === "curriculumDeveloper"
+  const curriculumDownload = curriculum.value.find(
+    (c) => c.asset
   );
 
   return storeContact.contact.map((contact) => {
+
+    
+
     if (
       contact.name === "Curriculum" &&
       curriculumDownload

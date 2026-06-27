@@ -12,7 +12,7 @@
     </main>
 
     <footer class=" hidden lg:flex text-gray-500 text-xs  justify-center py-4">
-      <h1>© 2026 Leiston Holguin - {{ $t("global.webPortfolio") }}</h1>
+      <h1>© {{ new Date().getFullYear() }} | {{ profile.firstName }} {{ profile.lastName }} | {{ $t("global.webPortfolio") }}</h1>
     </footer>
 
     <div class="fixed bottom-15 right-2 lg:bottom-2 lg:right-5">
@@ -26,4 +26,16 @@
 import { RouterView } from "vue-router";
 import OptionsBar from "@/components/static/OptionsBar.vue";
 import ChatBot from "@/components/chat/ChatBot.vue";
+import { computed, onMounted } from "vue";
+import { useProfileStore } from "@/stores/useProfileStore";
+import { profileType } from "@/data/profile";
+
+const storeProfile = useProfileStore();
+
+const profile = computed<profileType>(() => storeProfile.profile);
+
+onMounted(() => {
+  storeProfile.fetchProfile();
+});
+
 </script>

@@ -1,6 +1,6 @@
 export default {
   global: {
-    viewAll: "Ver todo →",
+    viewAll: "Ver más",
     back: "Volver",
     demo: "Demo",
     code: "Código",
@@ -11,6 +11,7 @@ export default {
     readMore: "Leer más", // Nuevo
     close: "Cerrar", // Nuevo
     loadingMessage: "Cargando contenido, por favor espera...",
+    delete: "Borrar",
   },
 
   notFound: {
@@ -199,8 +200,8 @@ export default {
     },
 
     buttons: {
-      view: "Ver certificación",
-      download: "Descargar certificado",
+      view: "Visualizar",
+      download: "Descargar",
       back: "Volver a certificaciones",
     },
 
@@ -439,6 +440,7 @@ export default {
         email: "ejemplo{'@'}correo.com",
         password: "Contraseña",
         confirmPassword: "Confirmar contraseña",
+        date: "DD/MM/AAAA - Fecha de nacimiento",
       },
 
       submit: "Registrarse",
@@ -458,7 +460,8 @@ export default {
 
   chatbot: {
     title: "Chatbot de Portafolio 🧑‍🎓",
-    welcome: "Bienvenido a mi portafolio. ¿Qué te gustaría conocer?",
+    welcome:
+      "Hola, soy el asistente del portafolio de Leiston Holguín. ¿En qué puedo ayudarte?",
     placeholder: "Escribe tu pregunta aquí...",
     error:
       "Lo siento, ocurrió un error al procesar tu solicitud. Por favor, inténtalo de nuevo.",
@@ -466,14 +469,21 @@ export default {
 
   validation: {
     required: "Este campo es obligatorio.",
-
+    nameInvalid: "No puede contener números.",
     nameRequired: "Por favor, ingresa tu nombre.",
     lastNameRequired: "Por favor, ingresa tu apellido.",
     invalidEmail: "Por favor, ingresa un correo electrónico válido.",
     shortPassword: "La contraseña debe tener al menos 6 caracteres.",
     passwordMismatch: "Las contraseñas no coinciden.",
     birthDateRequired: "Por favor, ingresa una fecha válida.",
+    birthDateTextInvalidate: "Formato inválido",
     minimumAge: "Debes ser mayor de 15 años",
     maximumAge: "La edad no puede ser mayor a 100 años",
+  },
+
+  alerts: {
+    success: "Inicio de sesión exitoso.",
+    failed: "Usuario o contraseña incorrectos",
+    LoginRecord :'Usuario registrado correctamente'
   },
 };

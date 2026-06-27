@@ -67,7 +67,7 @@ const bloqueo = ref<boolean>(true);
 const email = ref<string>("");
 const submit = ref<boolean>(false);
 
-const { errors, validateEmail } = useUserValidation();
+const { MessageErrors, validateEmail } = useUserValidation();
 
 const recoverAccount = (): void => {
   submit.value = true;

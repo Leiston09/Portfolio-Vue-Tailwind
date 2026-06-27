@@ -1,16 +1,9 @@
+import type { ContactType } from "@/data/contact";
+
 import { getContact } from "@/service/api";
 import { defineStore } from "pinia";
 
-type ContactType = {
-  id: number;
-  name: string;
-  url: string;
-  icon: string;
-  color: string;
-  download?: boolean;
-};
-
-export const dataStoreContact = defineStore("storeContact", {
+export const useContectStore = defineStore("storeContact", {
   state: () => ({
     contact: [] as ContactType[],
   }),

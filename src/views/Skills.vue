@@ -23,19 +23,14 @@
 </template>
 
 <script setup lang="ts">
+import { SkillsTypes } from "@/data/skills";
 import Mobile from "@/components/skills/Mobile.vue";
 import SkillsComputer from "@/components/skills/SkillsComputer.vue";
-import { dataStoreSkills } from "@/stores/StoreSkills";
+import { useSkillsStore } from "@/stores/useSkillsStore";
 import { computed, onMounted } from "vue";
 
-type SkillsTypes = {
-  id: number;
-  categoria: string;
-  nombre: string;
-  icono: string;
-};
 
-const stateSkills = dataStoreSkills();
+const stateSkills = useSkillsStore();
 const skills = computed<SkillsTypes[]>(() => stateSkills.skills);
 
 const categorias = computed(() => {

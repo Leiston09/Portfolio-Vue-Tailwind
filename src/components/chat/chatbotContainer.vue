@@ -10,7 +10,7 @@
     >
       <div
         :class="messageBubbleClass(message.role)"
-        class="max-w-[80%] rounded-2xl px-3 py-2 text-sm"
+        class="max-w-[80%] rounded-2xl px-3 py-2 text-sm whitespace-pre-wrap"
       >
         {{ message.content }}
       </div>
@@ -29,45 +29,40 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick } from "vue";
-
-type MessageRole = "system" | "user" | "assistant";
-
-type Message = {
-  id: string;
-  role: MessageRole;
-  content: string;
-};
+import { ref, watch, nextTick, onMounted } from "vue";
+import { Message } from "@/types";
 
 const props = defineProps<{
   messages: Message[];
   loading: boolean;
 }>();
 
-const chatContainer = ref<HTMLDivElement | null>(null);
+const chatContainer = ref<HTMLElement | null>(null);
 
-const scrollToBottom = async () => {
+const scrollToBottom = async (): Promise<void> => {
   await nextTick();
+
   if (chatContainer.value) {
     chatContainer.value.scrollTop = chatContainer.value.scrollHeight;
   }
 };
 
-watch(
-  () => [props.messages.length, props.loading],
-  () => {
-    scrollToBottom();
-  },
-  { deep: true }
-);
+watch(() => props.messages.length, scrollToBottom);
 
-const messageContainerClass = (role: MessageRole): string => {
+watch(() => props.loading, scrollToBottom);
+
+const messageContainerClass = (role: Message["role"]): string => {
   return role === "user" ? "flex justify-end" : "flex justify-start";
 };
 
-const messageBubbleClass = (role: MessageRole): string => {
+const messageBubbleClass = (role: Message["role"]): string => {
   return role === "user"
     ? "bg-sky-400 text-slate-900"
     : "bg-slate-700 text-white";
 };
+
+onMounted(() => {
+  scrollToBottom();
+});
+
 </script>

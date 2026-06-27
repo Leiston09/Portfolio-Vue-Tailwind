@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center ">
+  <div class="flex flex-col items-center">
     <SearchCertifications
       :certifications="certifications"
       @searchCertifications="certificationsSearch"
@@ -8,7 +8,7 @@
 
     <CardCertifications
       :isLoggedIn="isLoggedIn"
-      :filterCertificationsUser="filterCertificationsUser"
+      :filteredCertifications="filteredCertifications"
       @validateCertificated="selectedCertification"
     />
   </div>
@@ -18,85 +18,74 @@
 import { useRoute, useRouter } from "vue-router";
 import { computed, onMounted, ref } from "vue";
 
+import { CertificationType } from "@/data/certifications";
+
 import SearchCertifications from "@/components/Certifications/SearchCertifications.vue";
 import CardCertifications from "@/components/Certifications/CardCertifications.vue";
-import { dataStoreCertification } from "@/stores/StoreCertifications";
-import { dataStoreUser } from "@/stores/User";
+import { useCertificationsStore } from "@/stores/useCertificationsStore";
+import { useUserStore } from "@/stores/useUserStore";
 
-import { useI18n } from 'vue-i18n';
-
-
-type CertificationsType = {
-  id: number;
-  featured: boolean;
-  key: string;
-  institution: string;
-  image: string;
-  certificate: string;
-  downloadable?: boolean;
-};
+import { useI18n } from "vue-i18n";
 
 
 
 const router = useRouter();
 const route = useRoute();
 
-const store = dataStoreCertification()
+const store = useCertificationsStore();
 
-const certifications = computed<CertificationsType[]>(() => store.certifications);
+const certifications = computed<CertificationType[]>(
+  () => store.certifications,
+);
 const searchCertifications = ref("");
 const selectedInstitution = ref("");
 
-const { t, locale } = useI18n();
-
+const { t } = useI18n();
 
 onMounted(() => {
   store.fetchCertifications();
 });
 
-function certificationsSearch(search : string) {
+function certificationsSearch(search: string) {
   searchCertifications.value = search;
 }
-function filterByInstitution(institution : string) {
+function filterByInstitution(institution: string) {
   selectedInstitution.value = institution;
 }
 
-const filterCertificationsUser = computed<CertificationsType[]>(() => {
+const filteredCertifications  = computed<CertificationType[]>(() => {
   let filterCertifications = certifications.value;
 
-    if (selectedInstitution.value) {
-      filterCertifications = filterCertifications.filter(
-        (c) => c.institution === selectedInstitution.value,
-      );
-    }
-
-    if (searchCertifications.value) {
-      filterCertifications = filterCertifications.filter((c) => {
-        const nameKey : string = `certifications.items.${c.key}.name`;
-        const name : string = t(nameKey).toLowerCase();
-        const searchLower = searchCertifications.value.toLowerCase();
-
-        return name.includes(searchLower) 
-      }
+  if (selectedInstitution.value) {
+    filterCertifications = filterCertifications.filter(
+      (c) => c.institution === selectedInstitution.value,
     );
-    }
-    return filterCertifications;
+  }
+
+  if (searchCertifications.value) {
+    filterCertifications = filterCertifications.filter((c) => {
+      const nameKey: string = `certifications.items.${c.key}.name`;
+      const name: string = t(nameKey).toLowerCase();
+      const searchLower = searchCertifications.value.toLowerCase();
+
+      return name.includes(searchLower);
+    });
+  }
+  return filterCertifications;
 });
 
-function selectedCertification(idSelect : number) {
+function selectedCertification(idSelect: number) {
   router.push({
     name: "CertificationDetail",
     params: { id: idSelect },
     query: {
-      from: route.fullPath,
+      from: route.path,
     },
   });
 }
 
-
-const storeUser = dataStoreUser();
+const storeUser = useUserStore();
 const isLoggedIn = computed(() => storeUser.authentication);
-
 </script>
 
 <style lang="scss" scoped></style>

@@ -3,11 +3,11 @@
     <div
       class="w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-full border-2 border-[#38BDF8] flex-none"
     >
-      <img :src="usuarioPerfil" class="w-full h-full object-cover" />
+      <img :src="fotoPerfil" class="w-full h-full object-cover" />
     </div>
     <div class="text-white flex flex-col rounded-lg min-w-0">
       <h1 class="font-bold text-sm truncate">
-        {{ isLoggedIn ? userLogin?.name : $t("navbar.status.guest") }}
+        {{ isLoggedIn ? userData?.name : $t("navbar.status.guest") }}
       </h1>
       <span
         :class="
@@ -18,25 +18,20 @@
         >{{ isLoggedIn ? $t("navbar.status.online") : $t("navbar.status.offline") }}</span
       >
       <span class="text-xs text-gray-400 truncate">
-        {{ isLoggedIn ? userLogin?.email : "" }}
+        {{ isLoggedIn ? userData?.email : "" }}
       </span>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
 type Props = {
-  usuarioPerfil: string;
-
+  fotoPerfil: string;
   isLoggedIn: boolean;
-
-  userLogin: {
+  userData: {
     name: string;
-    lastName: string;
     email: string;
-    date: string;
-    password: string;
-    confirmPassword: string;
   } | null;
 };
 

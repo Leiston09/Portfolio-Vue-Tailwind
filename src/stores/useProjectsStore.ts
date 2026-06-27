@@ -1,19 +1,10 @@
+import type { ProjectsType } from "@/data/projects";
+
 import { getProjects } from "@/service/api";
 import { defineStore } from "pinia";
 
-type ProjectsType = {
-  id: number;
-  special: boolean;
-  key: string;
-  year: number;
-  image: string;
-  technologies: string[];
-  github: string;
-  demo: string;
-};
 
-
-export const dataStoreProjects = defineStore("storeProjects", {
+export const useProjectsStore = defineStore("storeProjects", {
   state: () => ({
     projects: [] as ProjectsType[],
   }),

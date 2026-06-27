@@ -1,6 +1,9 @@
 <template>
   <div class="w-fit">
-    <button class="overflow-hidden rounded-full shadow-lg active:scale-90 transition" @click="chatBotIA">
+    <button
+      class="overflow-hidden rounded-full shadow-lg active:scale-90 transition"
+      @click="chatBotIA"
+    >
       <img
         :src="ChatBot"
         alt="ChatBot"
@@ -10,7 +13,7 @@
   </div>
 
   <div v-if="chatView">
-    <ViewChatBot @close="close" />
+    <ViewChatBot @close="closeView" />
   </div>
 </template>
 
@@ -26,9 +29,13 @@ const chatBotIA = (): void => {
   chatView.value = !chatView.value;
 };
 
-const close = (close: boolean): void => {
+
+
+
+
+const closeView = (close: boolean): void => {
   chatView.value = close;
 };
+
 </script>
 
-<style lang="scss" scoped></style>

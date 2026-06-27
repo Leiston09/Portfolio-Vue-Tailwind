@@ -16,9 +16,16 @@
 
     <button
       type="button"
+      @click="deleteChats"
+      class="text-slate-400 transition hover:text-white"
+    >
+      {{$t('global.delete')}}
+    </button>
+
+    <button
+      type="button"
       @click="closeChat"
       class="text-slate-400 transition hover:text-white"
-      aria-label="Close chatbot"
     >
       ✕
     </button>
@@ -26,14 +33,22 @@
 </template>
 
 <script setup lang="ts">
-
 const chatbot = "/img/ChatBotWhile.jpg";
 
 const emit = defineEmits<{
-  close: [value: boolean];
+  (e: "close", value: boolean): void;
+  (e: "deleteChat"): void;
+
 }>();
 
 const closeChat = (): void => {
   emit("close", false);
 };
+
+let deleteChats = () : void => {
+    emit("deleteChat");
+
+}
+
+
 </script>

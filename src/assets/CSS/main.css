@@ -22,7 +22,7 @@
 }
 
 .star {
-  @apply flex items-center gap-1 text-xs bg-yellow-400/20 text-yellow-300 px-2 py-1 rounded-full border border-yellow-400/40;
+  @apply flex items-center gap-1 text-xs bg-yellow-400/20 text-yellow-600 px-2 py-1 rounded-full border border-yellow-400/80;
 }
 
 .lineTitle {
@@ -37,3 +37,6 @@
   @apply flex-1 text-center bg-celeste font-semibold rounded-lg py-2 px-1 hover:scale-105 transition;
 }
 
+.error {
+  @apply text-red-600 text-sm mt-1 font-bold;
+}

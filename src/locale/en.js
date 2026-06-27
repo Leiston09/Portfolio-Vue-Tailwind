@@ -1,6 +1,6 @@
 export default {
   global: {
-    viewAll: "View all →",
+    viewAll: "View all",
     back: "Back",
     demo: "Demo",
     code: "Code",
@@ -11,6 +11,8 @@ export default {
     readMore: "Read more", // New
     close: "Close", // New
     loadingMessage: "Loading content, please wait...",
+    delete: 'Delete'
+
   },
 
   notFound: {
@@ -199,8 +201,8 @@ export default {
     },
 
     buttons: {
-      view: "View certification",
-      download: "Download certificate",
+      view: "Visualize",
+      download: "Download",
       back: "Back to certifications",
     },
 
@@ -433,6 +435,7 @@ export default {
         email: "example{'@'}email.com",
         password: "Password",
         confirmPassword: "Confirm password",
+        date: 'DD/MM/YYYY - Date of birth'
       },
 
       submit: "Register",
@@ -452,7 +455,7 @@ export default {
 
   chatbot: {
     title: "Portfolio Chatbot 🧑‍🎓",
-    welcome: "Welcome to my portfolio. What would you like to know?",
+    welcome: "Hello, I'm Leiston Holguín's portfolio assistant. How can I help you?",
     placeholder: "Type your question here...",
     error:
       "Sorry, an error occurred while processing your request. Please try again.",
@@ -460,14 +463,21 @@ export default {
 
   validation: {
     required: "This field is required.",
-
+    nameInvalid: "It cannot contain numbers.",
     nameRequired: "Name is required.",
     lastNameRequired: "Last name is required.",
     invalidEmail: "Please enter a valid email address.",
     birthDateRequired: "Birth date is required.",
     shortPassword: "Password must be at least 6 characters long.",
+    birthDateTextInvalidate: "Invalid format",
     passwordMismatch: "Passwords do not match.",
     minimumAge: "You must be at least 15 years old.",
     maximumAge: "Age cannot be greater than 100 years.",
+  },
+
+  alerts: {
+    success: "Login successful.",
+    failed: "Incorrect username or password.",
+    LoginRecord: 'User successfully registered'
   },
 };

@@ -6,25 +6,25 @@ import Access from "@/views/Login.vue";
 import RecoveryPassword from "@/views/RecoveryPassword.vue";
 
 export const routesLogin : RouteRecordRaw = {
-  path: "/Login",
+  path: "/login",
   component: AuthLayout,
   children: [
     {
       path: "",
-      redirect: { name: "Access" },
+      redirect: "/login/access",
     },
     {
-      path: "Access",
+      path: "access",
       name: "Access",
       component: Access,
     },
     {
-      path: "Recover-Password",
+      path: "recover-password",
       name: "RecoverPassword",
       component: RecoveryPassword,
     },
     {
-      path: "Register-User",
+      path: "register-user",
       component: RegisterUser,
       name: "RegisterUser",
     },

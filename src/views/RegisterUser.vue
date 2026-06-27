@@ -1,30 +1,32 @@
 <template>
-  <RegisterUser @users="register" />
+  <RegisterUser @NewUserRegister="NewUser" />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { RegisterType } from "@/types";
 import RegisterUser from "@/components/login/RegisterUser.vue";
-import { dataStoreUser } from "@/stores/User";
+import { useUserStore } from "@/stores/useUserStore";
 import { useRouter } from "vue-router";
+import { useAlertStore } from "@/stores/useAlertStore";
+import { useI18n } from "vue-i18n";
 
-
+const alertStore = useAlertStore();
 const router = useRouter();
-const storeUser = dataStoreUser();
+const storeUser = useUserStore();
+const { t } = useI18n();
 
-function register(user) {
+function NewUser(user: RegisterType): void {
 
   const dataUser = {
     name: user.name,
     lastName: user.lastName,
     email: user.email,
-    date: user.date,
+    birthDate: user.birthDate,
     password: user.password,
   };
 
-  storeUser.login(dataUser)
-
-  setTimeout(() => router.push({ name: "Access" }), 1000);
+  storeUser.login(dataUser);
+  alertStore.show("success", t('alerts.LoginRecord'));
+  setTimeout(() => router.push({ name: "Access" }), 2000);
 }
-
-
 </script>

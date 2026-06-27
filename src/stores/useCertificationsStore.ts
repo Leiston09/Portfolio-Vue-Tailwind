@@ -1,21 +1,14 @@
+import type { CertificationType } from "@/data/certifications";
+
 import { getCertifications } from "@/service/api";
 import { defineStore } from "pinia";
 
-type CertificationsType = {
-  id: number;
-  featured: boolean;
-  key: string;
-  institution: string;
-  image: string;
-  certificate: string;
-  downloadable?: boolean;
-};
 
 
 
-export const dataStoreCertification = defineStore("DataPortafolio", {
+export const useCertificationsStore = defineStore("DataPortafolio", {
   state: () => ({
-    certifications: [] as CertificationsType[],
+    certifications: [] as CertificationType[],
   }),
 
   actions: {

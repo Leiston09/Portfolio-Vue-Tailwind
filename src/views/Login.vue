@@ -1,21 +1,29 @@
 <template>
-  <AccessLogin @user="user" />
+  <AccessLogin @user="handleLogin" />
 </template>
 
 <script setup>
 import AccessLogin from "@/components/login/AccessLogin.vue";
-import { dataStoreUser } from "@/stores/User";
+import { useUserStore } from "@/stores/useUserStore";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
+import { useAlertStore } from "@/stores/useAlertStore";
+import { useI18n } from "vue-i18n";
 
-const authentication = dataStoreUser();
+const authentication = useUserStore();
 const router = useRouter();
+const alertStore = useAlertStore();
 
-const user = (user) => {
-  const success = authentication.authenticationUser(user);
+const { t } = useI18n();
+
+const handleLogin = (credentials) => {
+  const success = authentication.authenticate(credentials);
+
   if (success) {
+    alertStore.show("success", t('alerts.success'));
     router.push({ name: "Home" });
   } else {
-    alert("Usuario o contraseña incorrectos");
+    alertStore.show("error", t('alerts.failed'));
   }
 };
 </script>

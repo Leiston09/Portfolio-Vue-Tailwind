@@ -27,12 +27,12 @@
         <h1 class="titleViewAll">
           {{ $t("navbar.login") }}
         </h1>
-        <p class="text-gray-400 text-sm mt-1">{{ $t("auth.login.title") }}</p>
+        <p class="text-gray-200 text-sm mt-1">{{ $t("auth.login.title") }}</p>
       </header>
 
       <div class="space-y-1">
         <div>
-          <h1 class="text-gray-400 text-sm">
+          <h1 class="text-gray-200 text-sm">
             {{ $t("auth.login.labels.email") }}
           </h1>
           <input
@@ -41,13 +41,13 @@
             :placeholder="$t('auth.login.placeholders.email')"
             class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none transition-all"
           />
-          <p v-if="submit && errors.email" class="text-red-500 text-xs mt-1">
-            {{ errors.email }}
+          <p v-if="submit && MessageErrors.email" class="text-red-500 text-xs mt-1">
+            {{ MessageErrors.email }}
           </p>
         </div>
 
         <div>
-          <h1 class="text-gray-400 text-sm">
+          <h1 class="text-gray-200 text-sm">
             {{ $t("auth.login.labels.password") }}
           </h1>
           <div class="relative">
@@ -66,8 +66,8 @@
               <span v-else>🔒</span>
             </button>
           </div>
-          <p v-if="submit && errors.password" class="text-red-500 text-xs mt-1">
-            {{ errors.password }}
+          <p v-if="submit && MessageErrors.password" class="text-red-500 text-xs mt-1">
+            {{ MessageErrors.password }}
           </p>
         </div>
       </div>
@@ -107,9 +107,9 @@ import { RouterLink } from "vue-router";
 import { reactive, ref } from "vue";
 import { useUserValidation } from "@/composable/userValidation";
 
-const foto = '/img/authIMG.jpg'
+const foto = '/img/imagenLogin.jpg'
 const emit = defineEmits(["user"]);
-const { errors, validateEmail, validatePassword } = useUserValidation();
+const { MessageErrors, validateEmail, validatePassword } = useUserValidation();
 
 const login = reactive({
   email: "",
@@ -130,5 +130,3 @@ function validateLogin() {
   }
 }
 </script>
-
-<style lang="scss" scoped></style>
