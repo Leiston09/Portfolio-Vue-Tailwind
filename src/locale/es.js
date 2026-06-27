@@ -484,6 +484,10 @@ export default {
   alerts: {
     success: "Inicio de sesión exitoso.",
     failed: "Usuario o contraseña incorrectos",
-    LoginRecord :'Usuario registrado correctamente'
+    LoginRecord :'Usuario registrado correctamente',
+    development:'Página en desarrollo/mantenimiento!',
+    unregistered: 'El correo electrónico no está registrado',
+    codeSent: 'Código enviado a tu correo'
+
   },
 };

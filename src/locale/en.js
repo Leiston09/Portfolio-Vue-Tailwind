@@ -478,6 +478,9 @@ export default {
   alerts: {
     success: "Login successful.",
     failed: "Incorrect username or password.",
-    LoginRecord: 'User successfully registered'
+    LoginRecord: 'User successfully registered',
+    development:'Page under development/maintenance!',    
+    unregistered: 'The email address is not registered',
+    codeSent: 'Code sent to your email'
   },
 };

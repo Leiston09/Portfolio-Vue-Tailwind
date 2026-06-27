@@ -5,7 +5,7 @@
       {{ $t("contact.title") }}
     </h1>
 
-    <span class="text-celeste/70 font-bold">{{ $t("home.availability") }}</span>
+    <span class="text-celeste/70 font-bold text-center">{{ $t("home.availability") }}</span>
 
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 w-full"

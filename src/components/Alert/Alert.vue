@@ -1,11 +1,13 @@
 <template>
-  <div
-    v-if="alertStore.visible"
-    :class="alertClass"
-    class="fixed top-20 right-5 z-50"
-  >
-    {{ alertStore.message }}
-  </div>
+  <Transition name="toast">
+    <div
+      v-if="alertStore.visible"
+      :class="alertClass"
+      class="fixed top-15 md:top-20 right-3 z-50"
+    >
+      {{ alertStore.message }}
+    </div>
+  </Transition>
 </template>
 
 <script setup lang="ts">
@@ -51,6 +53,30 @@ const alertClass = computed(() => {
     border: 1px solid #ffeeba;
     padding: 10px;
     border-radius: 5px;
+}
+.toast-enter-active,
+.toast-leave-active {
+  transition: all 0.3s ease;
+}
+
+.toast-enter-from {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.toast-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast-leave-to {
+  opacity: 0;
+  transform: translateX(50px);
 }
 
 </style>

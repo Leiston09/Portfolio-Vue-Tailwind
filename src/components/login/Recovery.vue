@@ -1,22 +1,22 @@
 <template>
   <div
-    class="flex flex-col md:flex-row max-w-6xl rounded-2xl overflow-hidden border-2 border-white/20"
+    class="flex flex-col max-w-6xl rounded-2xl overflow-hidde justify-center"
   >
-    <div class="hidden md:block md:w-1/2">
+    <div class="hidden md:flex justify-center  w-full">
       <img
-        :src="foto"
+        :src="fotos.url1"
         alt="Recover Image"
-        class="w-full h-full object-cover"
+        class="w-52 h-full object-cover"
       />
     </div>
 
     <div class="flex flex-1 px-4 py-6 md:p-10 flex-col justify-center gap-5">
       <div class="md:hidden flex justify-center">
         <div
-          class="rounded-full overflow-hidden w-24 h-24 border border-[#38BDF8]/40"
+          class=" overflow-hidden w-36 h-36"
         >
           <img
-            :src="foto"
+            :src="fotos.url1"
             class="w-full h-full object-cover"
           />
         </div>
@@ -27,7 +27,7 @@
           {{ $t("auth.recoverPassword.title") }}
         </h1>
 
-        <p class="text-gray-400 text-sm mt-1">
+        <p class="text-gray-300 text-sm mt-1">
           {{ $t("auth.recoverPassword.description") }}
         </p>
       </header>
@@ -37,11 +37,11 @@
           v-model="email"
           type="email"
           :placeholder="$t('auth.recoverPassword.placeholder')"
-          class="w-full px-4 py-2 rounded-lg bg-[#0F172A] border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none transition-all"
+          class="w-full px-4 py-2 rounded-lg bg-[#0F172A] placeholder:text-center border border-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-[#38BDF8] outline-none transition-all"
         />
 
-        <p v-if="submit && errors.email" class="text-red-500 text-sm mt-1">
-          {{ errors.email }}
+        <p v-if="submit && MessageErrors.email" class="text-red-500 text-sm mt-1">
+          {{ MessageErrors.email }}
         </p>
       </div>
 
@@ -60,10 +60,9 @@
 import { ref } from "vue";
 import { useUserValidation } from "@/composable/userValidation";
 
-const foto = "/img/authIMG.jpg"
 
 const emit = defineEmits(["user"]);
-const bloqueo = ref<boolean>(true);
+const bloqueo = ref<boolean>(false);
 const email = ref<string>("");
 const submit = ref<boolean>(false);
 
@@ -77,4 +76,13 @@ const recoverAccount = (): void => {
     submit.value = false;
   }
 };
+
+
+const fotos = {
+   url1: "/img/recovery/contrasena.jpg",
+   url2: "/img/recovery/codigo.jpg",
+   url3: "/img/recovery/correo.jpg",
+}
+
+
 </script>
