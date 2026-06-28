@@ -1,8 +1,8 @@
 import { Handler } from "@netlify/functions";
 import { Groq } from "groq-sdk";
+import { SYSTEM_PROMPT } from "./config/systemPrompt";
 
 interface RequestBody {
-  systemPrompt: string;
   userMessages: Array<{
     role: "user" | "assistant" | "system";
     content: string;
@@ -19,24 +19,27 @@ export const handler: Handler = async (event) => {
 
   try {
     if (!event.body) {
-      return { statusCode: 400, body: JSON.stringify({ error: "Cuerpo de petición vacío" }) };
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Cuerpo de petición vacío" }),
+      };
     }
 
-    const { systemPrompt, userMessages } = JSON.parse(event.body) as RequestBody;
+    const { userMessages } = JSON.parse(event.body) as RequestBody;
 
     const groq = new Groq({
       apiKey: process.env.GROQ_API_KEY,
     });
 
     const response = await groq.chat.completions.create({
+      model: "llama-3.1-8b-instant",
       messages: [
         {
           role: "system",
-          content: systemPrompt,
+          content: SYSTEM_PROMPT,
         },
         ...userMessages,
       ],
-      model: "llama-3.1-8b-instant",
     });
 
     return {
