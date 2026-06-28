@@ -454,7 +454,7 @@ export default {
   },
 
   chatbot: {
-    title: "Portfolio Chatbot 🧑‍🎓",
+    title: "Chatbot 🧑‍🎓",
     welcome: "Hello, I'm Leiston Holguín's portfolio assistant. How can I help you?",
     placeholder: "Type your question here...",
     error:

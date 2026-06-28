@@ -459,7 +459,7 @@ export default {
   },
 
   chatbot: {
-    title: "Chatbot de Portafolio 🧑‍🎓",
+    title: "Chatbot 🧑‍🎓",
     welcome:
       "Hola, soy el asistente del portafolio de Leiston Holguín. ¿En qué puedo ayudarte?",
     placeholder: "Escribe tu pregunta aquí...",
