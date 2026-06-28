@@ -15,6 +15,7 @@
     </div>
 
     <button
+      v-if="props.buttoDelete"
       type="button"
       @click="deleteChats"
       class="text-slate-400 transition hover:text-white"
@@ -33,11 +34,18 @@
 </template>
 
 <script setup lang="ts">
+
+
 const chatbot = "/img/ChatBotWhile.jpg";
+
+const props = defineProps<{
+  buttoDelete: boolean;
+}>();
+
 
 const emit = defineEmits<{
   (e: "close", value: boolean): void;
-  (e: "deleteChat"): void;
+  (e: "deleteChat", value: boolean ): void;
 
 }>();
 
@@ -46,7 +54,7 @@ const closeChat = (): void => {
 };
 
 let deleteChats = () : void => {
-    emit("deleteChat");
+    emit("deleteChat", false);
 
 }
 

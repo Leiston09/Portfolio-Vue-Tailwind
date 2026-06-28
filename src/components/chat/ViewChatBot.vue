@@ -4,6 +4,7 @@
       class="w-72 sm:w-96 bg-[#0F172A] border border-gray-700 rounded-2xl shadow-2xl overflow-hidden"
     >
       <ChatbotTitle 
+      :buttoDelete="buttoDelete"
       @close="closeView"
       @deleteChat="deleteChat"
       />
@@ -44,6 +45,10 @@ const { t } = useI18n();
 const loading = ref(false);
 const inputMessage = ref("");
 const deleteChatComplete = ref<boolean>(false)
+let buttoDelete = ref<boolean>(false)
+
+
+
 const emit = defineEmits<{
   (e: "close", value: boolean): void;
 }>();
@@ -94,6 +99,8 @@ const fetchAnswer = async () => {
   inputMessage.value = "";
   loading.value = true;
 
+  buttoDelete.value = true 
+
   try {
 
     const response = await useChatAssistant(messages.value);
@@ -112,13 +119,14 @@ const fetchAnswer = async () => {
   }
 };
 
-const deleteChat = () => {
+const deleteChat = (value: boolean) => {
   limpiarConversacion()
   messages.value = [{
           id: crypto.randomUUID(),
           role: "assistant",
           content: t("chatbot.welcome"),
         }]
+  buttoDelete.value = value
 }
 
 </script>
