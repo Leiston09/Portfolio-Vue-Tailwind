@@ -92,7 +92,7 @@ export default {
         title: "Portafolio Personal",
 
         description:
-          "Portafolio web moderno diseñado para presentar mi perfil profesional, proyectos y habilidades técnicas.",
+          "Portafolio para presentar mi perfil profesional, proyectos y habilidades técnicas, con integración de IA, autenticación y diseño responsive.",
 
         imageDescription:
           "Incluye secciones de presentación personal, habilidades, proyectos, certificaciones y contacto, con diseño responsive y navegación dinámica.",
@@ -102,7 +102,7 @@ export default {
         title: "Aplicación con conexión a Backend",
 
         description:
-          "Aplicación web con autenticación, validación de datos y conexión a base de datos.",
+          "Aplicación web con autenticación de usuarios, validación de datos y conexión a base de datos relacional.",
 
         imageDescription:
           "Permite registrar usuarios, iniciar sesión y gestionar información almacenada en la base de datos mediante una interfaz moderna e interactiva.",
@@ -484,10 +484,9 @@ export default {
   alerts: {
     success: "Inicio de sesión exitoso.",
     failed: "Usuario o contraseña incorrectos",
-    LoginRecord :'Usuario registrado correctamente',
-    development:'Página en desarrollo/mantenimiento!',
-    unregistered: 'El correo electrónico no está registrado',
-    codeSent: 'Código enviado a tu correo'
-
+    LoginRecord: "Usuario registrado correctamente",
+    development: "Página en desarrollo/mantenimiento!",
+    unregistered: "El correo electrónico no está registrado",
+    codeSent: "Código enviado a tu correo",
   },
 };

@@ -28,7 +28,7 @@
           />
 
           <!-- Badge destacado -->
-          <div v-if="certification.featured" class="absolute top-4 right-4 z-10">
+          <div v-if="certification.featured" class="absolute top-4 right-4 z-0">
             <span class="star">
               {{ $t("global.featured") }}
             </span>
