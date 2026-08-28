@@ -25,7 +25,7 @@
     </div>
 
     <div id="projects">
-      <ProjectsView />
+      <ProjectsHome />
     </div>
 
     <div id="skills">
@@ -47,8 +47,8 @@ import HomeView from "@/components/Home/HomeView.vue";
 import PersonalInformation from "@/components/Home/PersonalInformation.vue";
 import Testimonial from "@/components/Home/Testimonial.vue";
 import Experience from "@/components/Home/Experience.vue";
-import ProjectsView from "@/components/Home/ProjectsView.vue";
 import SkillsView from "@/components/Home/SkillsView.vue";
 import CertificationsView from "@/components/Home/CertificationsView.vue";
 import ContactView from "@/components/Home/ContactView.vue";
+import ProjectsHome from "@/components/Home/ProjectsHome.vue";
 </script>
