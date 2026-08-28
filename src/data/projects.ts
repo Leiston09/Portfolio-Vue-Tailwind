@@ -5,8 +5,9 @@ export type ProjectsType = {
   year: number;
   image: string;
   technologies: string[];
+  showDetails?: boolean;
   github?: string;
-  demo: string;
+  demo?: string;
 };
 
 export const projects: ProjectsType[] = [
@@ -15,7 +16,7 @@ export const projects: ProjectsType[] = [
     special: true,
     key: "portfolio",
     year: 2026,
-    image: "/img/gif/Projects/portafolio.gif",
+    image: "/img/Projects/image.png",
     technologies: [
       "Vue 3",
       "TypeScript",
@@ -25,55 +26,99 @@ export const projects: ProjectsType[] = [
       "Vue Router",
       "Vue I18n",
       "Groq API",
-      "Netlify",
+      "Netlify Functions",
       "Git",
       "GitHub",
+      "IA"
     ],
+    showDetails: false,
     github: "https://github.com/Leiston09/Portfolio-Vue-Tailwind.git",
     demo: "https://ephemeral-cajeta-33ad99.netlify.app/",
   },
-
   {
     id: 2,
     special: true,
+    key: "sistemaPeluqueria",
+    year: 2026,
+    image: "/img/Projects/peluqueria.png",
+    technologies: [
+      "Vue 3",
+      "Tailwind CSS",
+      "Pinia",
+      "Vue Router",
+      "Node.js",
+      "Express",
+      "Postman",
+      "MongoDB",
+      "JWT",
+      "REST API",
+      "Nodemailer",
+    ],
+    showDetails: false,
+    github: "https://github.com/Leiston09/Barber-shop-platform.git",
+    demo: "https://peluqueriajh.netlify.app//",
+  },
+  {
+    id: 3,
+    special: false,
+    key: "portafolioPsicologia",
+    year: 2026,
+    image: "/img/Projects/portafolioaquiles.gif",
+    technologies: [
+      "Vue 3",
+      "Tailwind CSS",
+      "TypeScript",
+      "CSS",
+      "Pinia",
+      "Vue Router",
+      "Vue I18n",
+    ],
+    showDetails: false,
+    demo: "https://aquilesarrieta.com/",
+  },
+  {
+    id: 4,
+    special: false,
     key: "guitarra",
     year: 2026,
-    image: "/img/gif/Projects/guitarras.gif",
+    image: "/img/Projects/guitarras.gif",
     technologies: [
       "Vue 3",
       "Tailwind CSS",
       "JavaScript",
       "CSS",
-      "HTML",
       "GitHub",
     ],
+    showDetails: false,
     github: "https://github.com/Leiston09/Guitarra-Carrito-Compras-en-Vue.git",
     demo: "https://guitarras-carrito.netlify.app/",
   },
   {
-    id: 3,
+    id: 5,
     special: false,
     key: "administrarPacientes",
     year: 2025,
-    image: "/img/gif/Projects/ProjectFour.png",
-    technologies: ["HTML", "CSS", "JavaScript", "VUE 3", "Tailwind CSS"],
+    image: "/img/Projects/ProjectFour.png",
+    technologies: [ "CSS", "JavaScript", "VUE 3", "Tailwind CSS"],
+    showDetails: false,
     demo: "https://administrar-pacientes-lh.netlify.app/",
   },
   {
-    id: 4,
+    id: 6,
     special: false,
     key: "listadoUsuarios",
     year: 2025,
-    image: "/img/gif/Projects/ProjectFive.png",
+    image: "/img/Projects/ProjectFive.png",
     technologies: ["HTML", "CSS", "JavaScript", "VUE 3", "Tailwind CSS"],
+    showDetails: false,
     demo: "https://listado-de-usuarios.netlify.app/",
   },
   {
-    id: 5,
+    id: 7,
     special: true,
     key: "uitoky",
     year: 2024,
-    image: "/img/gif/Projects/ProjectTwo.gif",
+    image: "/img/Projects/ProjectTwo.gif",
     technologies: [
       "HTML",
       "CSS",
@@ -83,6 +128,7 @@ export const projects: ProjectsType[] = [
       "PHP",
       "IA",
     ],
+    showDetails: false,
     demo: "https://uitoky-project.netlify.app/",
   },
 ];

@@ -1,4 +1,8 @@
-import { Message } from "@/types";
+type Message = {
+  id: string;
+  role: "system" | "user" | "assistant";
+  content: string;
+};
 
 const STORAGE_KEY = "chat_conversation";
 

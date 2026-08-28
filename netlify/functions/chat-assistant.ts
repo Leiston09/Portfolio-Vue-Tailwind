@@ -1,5 +1,6 @@
+
 import { Handler } from "@netlify/functions";
-import { Groq } from "groq-sdk";
+import Groq from "groq-sdk";
 import { SYSTEM_PROMPT } from "./config/systemPrompt";
 
 interface RequestBody {
@@ -27,12 +28,19 @@ export const handler: Handler = async (event) => {
 
     const { userMessages } = JSON.parse(event.body) as RequestBody;
 
+    if (!process.env.GROQ_API_KEY) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: "GROQ_API_KEY no configurada" }),
+      };
+    }
+
     const groq = new Groq({
       apiKey: process.env.GROQ_API_KEY,
     });
 
     const response = await groq.chat.completions.create({
-      model: "llama-3.1-8b-instant",
+      model: "openai/gpt-oss-20b",
       messages: [
         {
           role: "system",

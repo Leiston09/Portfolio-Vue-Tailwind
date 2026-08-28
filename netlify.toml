@@ -1,6 +1,10 @@
 [build]
   command = "npm run build"
-  publish = "dist" # O "build" dependiendo de cómo compile tu Vite
+  publish = "dist"
+  functions = "netlify/functions"
 
-[functions]
-  directory = "netlify/functions"
+[dev]
+  command = "vite"
+  targetPort = 5173
+  port = 8888
+  functions = "netlify/functions"

@@ -1,4 +1,8 @@
-import { Message } from "@/types";
+type Message = {
+  id: string;
+  role: "system" | "user" | "assistant";
+  content: string;
+};
 
 type ChatResponse = {
   content: string;
@@ -6,6 +10,7 @@ type ChatResponse = {
 
 export const useChatAssistant = async (
   messages: Message[],
+  t: (key: string) => string
 ): Promise<string> => {
   try {
     const response = await fetch("/.netlify/functions/chat-assistant", {
@@ -13,7 +18,6 @@ export const useChatAssistant = async (
       headers: {
         "Content-Type": "application/json",
       },
-
       body: JSON.stringify({
         userMessages: messages.map(({ role, content }) => ({
           role,
@@ -35,7 +39,6 @@ export const useChatAssistant = async (
     return data.content;
   } catch (error) {
     console.error("Error al conectar con el asistente:", error);
-
-    return "IA EN MANTENIMIENTO: Estamos realizando mejoras. Inténtalo nuevamente más tarde.";
+    return t("chatbot.error");
   }
 };

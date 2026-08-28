@@ -13,18 +13,17 @@
       "dependencies": [
         "npm:@netlify/functions@3",
         "npm:@tailwindcss/vite@^4.0.12",
-        "npm:@vitejs/plugin-vue@^5.2.1",
-        "npm:groq-sdk@0.5",
-        "npm:netlify-cli@^26.1.0",
+        "npm:@types/node@^26.4.0",
+        "npm:@vitejs/plugin-vue@^5.2.4",
+        "npm:groq-sdk@^1.6.0",
+        "npm:lottie-web@^5.13.0",
+        "npm:netlify-cli@^27.4.0",
         "npm:pinia@^2.3.1",
-        "npm:sass-embedded@^1.85.1",
-        "npm:tailwindcss@^4.0.12",
-        "npm:typescript@^5.8.3",
-        "npm:vite-plugin-vue-devtools@^8.0.1",
-        "npm:vite@^6.2.3",
-        "npm:vue-i18n@^11.1.2",
-        "npm:vue-router@^4.5.0",
-        "npm:vue@^3.5.13"
+        "npm:typescript@^5.9.3",
+        "npm:vite@^6.4.3",
+        "npm:vue-i18n@^11.4.8",
+        "npm:vue-router@^4.6.4",
+        "npm:vue@^3.5.41"
       ]
     }
   }

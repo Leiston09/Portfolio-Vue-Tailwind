@@ -1,17 +1,20 @@
 export default {
   global: {
-    viewAll: "Ver más",
-    back: "Volver",
-    demo: "Demo",
-    code: "Código",
-    loading: "Cargando CV...",
-    featured: "⭐ Destacado",
-    github: "GitHub",
-    webPortfolio: "Portafolio Web",
-    readMore: "Leer más", // Nuevo
-    close: "Cerrar", // Nuevo
-    loadingMessage: "Cargando contenido, por favor espera...",
-    delete: "Borrar",
+    buttons: {
+      details: "Ver Detalles",
+      github: "GitHub",
+      demo: "Demo",
+      downloadCv: "Descargar CV",
+      contact: "CONTACTAR",
+      download: "Descargar",
+    },
+    labels: {
+      featured: "★ Destacado",
+      titlefeatured: "Destacado",
+      institution: "Institución",
+      back: "Regresar",
+    },
+    allRightsreserved: "Reservados todos los derechos",
   },
 
   notFound: {
@@ -22,471 +25,403 @@ export default {
   },
 
   navbar: {
-    configuration: "Configuración",
-    configurationDescription:
-      "Inicia sesión con otra cuenta o cierra tu sesión actual.",
-
-    login: "Iniciar sesión",
-    logout: "Cerrar sesión",
-
-    status: {
-      guest: "Invitado",
-      online: "Sesión iniciada",
-      offline: "Sesión cerrada",
-    },
-
-    language: {
-      spanish: "Español",
-      english: "Inglés",
-    },
-
-    menu: {
+    status: "Disponible",
+    navigation: {
       home: "Inicio",
       about: "Sobre mí",
+      experience: "Experiencia",
       projects: "Proyectos",
       skills: "Habilidades",
       certifications: "Certificaciones",
       contact: "Contacto",
     },
+    language: {
+      spanish: "Español",
+      english: "English",
+    },
+    theme: {
+      dark: "Oscuro",
+      light: "Claro",
+    },
   },
 
   home: {
-    title: "Portafolio Personal",
-
-    welcomeMessage:
-      "Desarrollador Frontend de Ecuador especializado en Vue 3 y TypeScript. Actualmente expandiendo mis conocimientos hacia el desarrollo Full Stack con Node.js, bases de datos y fundamentos de ciberseguridad y redes.",
-
+    hero: {
+      greeting: "HOLA, Yo soy",
+      role: "Estudiante de Ingeniería en Sistemas",
+      subtitle: "Desarrollador Full Stack",
+    },
+    status: {
+      available: "Disponible para proyectos.",
+      experience: "+2 años experiencia.",
+    },
+    about: {
+      part1:
+        "Futuro Ingeniero en Sistemas y Desarrollador Full Stack en Ecuador, enfocado en transformar requerimientos en ",
+      highlight1: "soluciones de software eficientes",
+      part2:
+        ", aportando versatilidad técnica y rápida capacidad de adaptación para generar ",
+      highlight2: "valor inmediato en cualquier equipo",
+    },
     buttons: {
       projects: "Ver proyectos",
-      curriculum: "Ver currículum",
-      contact: "Ver contacto",
+      resume: "Ver Curriculum",
+      contact: "Ver Contacto",
     },
+  },
 
-    specializations: {
+  resume: {
+    title: "Currículum",
+    roles: {
+      systemsEngineeringStudent: "Estudiante de Ingeniería en Sistemas",
       frontendDeveloper: "Desarrollador Frontend",
-      softwareEngineeringStudent: "Estudiante de Ingeniería en Sistemas",
-      databases: "Bases de datos",
-      cybersecurity: "Ciberseguridad",
-      networking: "Redes",
     },
+    loading: "Cargando currículum...",
+  },
 
-    personalMessage:
-      "Apasionado por el desarrollo web y el aprendizaje continuo. Me enfoco en crear interfaces modernas, funcionales y escalables mientras fortalezco constantemente mis habilidades técnicas.",
+  about: {
+    title: "Sobre mí",
+    subtitle: "Información personal",
+    interests: {
+      title: "Áreas de interés",
+      frontend: "Desarrollo Frontend",
+      backend: "Desarrollo Backend",
+      databases: "Bases de datos",
+      apis: "APIs",
+      networks: "Redes",
+      cybersecurity: "Ciberseguridad",
+    },
+    workflow: {
+      title: "Mi forma de trabajar",
+      learning: {
+        title: "Aprendizaje",
+        description: "Aprendo nuevas tecnologías rápidamente.",
+      },
+      resolution: {
+        title: "Resolución",
+        description: "Busco soluciones prácticas y escalables.",
+      },
+      communication: {
+        title: "Comunicación",
+        description: "Trabajo de forma clara y colaborativa.",
+      },
+    },
+  },
 
-    availability: "Disponible para proyectos y oportunidades.", // Nuevo
+  testimonials: {
+    sectionTitle: "Lo que dicen de mí",
+    quote:
+      "Muchas gracias, Leiston. Fue un gusto haber estado contigo en este proyecto. Destaco mucho tu compromiso, creatividad y atención a cada detalle. El resultado superó mis expectativas y sin duda recomendaría tu trabajo.",
+    actions: {
+      viewImage: "Ver imagen",
+      viewLinkedin: "Ver publicación en LinkedIn",
+    },
+  },
+
+  experience: {
+    tag: "Mi trayectoria",
+    title: "Experiencia",
+    titleHighlight: "Profesional",
+    status: "Actualidad",
+    jobs: {
+      peluqueria: {
+        role: "Desarrollador Full Stack (Proyecto Comercial)",
+        client: "Cliente · Sistema de Gestión para Salón de Belleza (Ecuador)",
+        description:
+          "Diseño y desarrollo integral de plataforma web para gestión de turnos y servicios. Implementación de arquitectura backend con Node.js y Express, base de datos en MongoDB, autenticación segura con JWT, control de roles (Admin/Cliente) y automatización de notificaciones con Email.",
+      },
+      psicologia: {
+        role: "Desarrollador Frontend & UI/UX",
+        client: "Cliente · Portafolio Profesional (Colombia)",
+        description:
+          "Desarrollo a medida del portafolio digital para un especialista en Psicología Organizacional. Maquetación optimizada con Vue 3, TypeScript y Tailwind CSS, garantizando diseño responsive, experiencia de usuario fluida, despliegue con dominio personalizado y SSL.",
+      },
+      logistica: {
+        role: "Desarrollador Frontend Junior (Freelance)",
+        client: "Colaboración Remota · Empresa de Logística",
+        description:
+          "Construcción y mantenimiento de componentes modulares con Vue 3 y TypeScript. Implementación de interfaces adaptables con Tailwind CSS, gestión de flujos de trabajo con Git (ramas develop), validaciones complejas de datos y soporte para internacionalización (i18n) en colaboración directa con desarrolladores Senior.",
+      },
+    },
   },
 
   projects: {
-    title: "Proyectos Destacados",
-    internalTitle: "Proyectos",
-    subtitle: "Estos son algunos de mis proyectos recientes.",
-
-    labels: {
-      year: "Año",
-      technologies: "Tecnologías", // Nuevo
-      details: "Ver más detalles",
+    tag: "Mi portafolio",
+    title: "Proyectos",
+    titleHighlight: "Destacados",
+    subtitle: {
+      tag: "Mis Proyectos",
+      title: "Mis",
+      titleHighlight: "Proyectos",
     },
-
+    description:
+      "Explora los proyectos que he desarrollado durante mi formación y experiencia, aplicando tecnologías, diseño y soluciones orientadas a resolver problemas reales.",
+    viewAll: "Ver todos los Proyectos",
+    defaultDescription:
+      "Proyectos desarrollados con tecnologías modernas enfocado en la optimización y rendimiento.",
     items: {
       portfolio: {
         title: "Portafolio Personal",
-
         description:
           "Portafolio para presentar mi perfil profesional, proyectos y habilidades técnicas, con integración de IA, autenticación y diseño responsive.",
-
         imageDescription:
           "Incluye secciones de presentación personal, habilidades, proyectos, certificaciones y contacto, con diseño responsive y navegación dinámica.",
       },
-
       uitoky: {
         title: "Aplicación con conexión a Backend",
-
         description:
           "Aplicación web con autenticación de usuarios, validación de datos y conexión a base de datos relacional.",
-
         imageDescription:
           "Permite registrar usuarios, iniciar sesión y gestionar información almacenada en la base de datos mediante una interfaz moderna e interactiva.",
       },
-
       guitarra: {
         title: "Tienda Web de Guitarras",
-
         description:
           "Aplicación web para visualizar un catálogo de guitarras con carrito de compras interactivo.",
-
         imageDescription:
           "El sistema permite agregar productos, modificar cantidades y eliminar elementos dinámicamente.",
       },
-
       administrarPacientes: {
         title: "Administrador de Pacientes",
-
         description:
           "Aplicación web para gestionar pacientes mediante operaciones CRUD.",
-
         imageDescription:
           "Permite agregar, editar y eliminar registros con validación de formularios y diseño responsive.",
       },
-
       listadoUsuarios: {
         title: "Listado de Usuarios",
-
         description:
           "Aplicación web que muestra un listado dinámico de usuarios utilizando datos simulados.",
-
         imageDescription:
           "La interfaz permite visualizar información organizada de usuarios de manera sencilla y eficiente.",
+      },
+      sistemaPeluqueria: {
+        title: "Sistema de Gestión para Peluquería",
+        description:
+          "Desarrollo completo de un sistema de gestión para una peluquería. Incluye autenticación con login y tokens JWT, administración de usuarios con roles (admin/clientes), gestión de citas, servicios, y envío de correos electrónicos.",
+      },
+      portafolioPsicologia: {
+        title: "Portafolio Psicología",
+        description:
+          "Diseño y desarrollo de portafolio web para un cliente profesional del área de psicología organizacional.",
       },
     },
   },
 
   skills: {
-    title: "Habilidades Técnicas",
-
+    tag: "Tecnologías",
+    title: "Habilidades",
+    titleHighlight: "Técnicas",
+    subtitle:
+      "Tecnologías y conocimientos que forman parte de mi perfil como estudiante de Ingeniería en Sistemas.",
+    viewAll: "Ver todas completas",
+    subtitles: {
+      tag: "Habilidades",
+      title: "Mis",
+      titleHighlight: "Habilidades",
+    },
+    stackTitle: "Tecnologías",
+    stackSubtitle: "Mi stack actual",
+    groupDescription: "Tecnologías que forman parte de este grupo.",
     categories: {
       frontend: "Frontend",
       backend: "Backend",
-      database: "Bases de Datos",
+      databases: "Bases de Datos",
       design: "Diseño",
       tools: "Herramientas",
       additional: "Complementos",
     },
-
-    technologies: {
+    items: {
       html: "HTML",
       css: "CSS",
       javascript: "JavaScript",
+      vuejs: "Vue.js",
+      tailwindcss: "Tailwind CSS",
       typescript: "TypeScript",
-      vue: "Vue.js",
-      tailwind: "Tailwind CSS",
-
-      node: "Node.js",
+      nodejs: "Node.js",
+      express: "Express",
       python: "Python",
-
+      restApi: "REST API",
       mongodb: "MongoDB",
       mysql: "MySQL",
       postgresql: "PostgreSQL",
-
       figma: "Figma",
-
       git: "Git",
       github: "GitHub",
       vscode: "VS Code",
-      cursor: "Cursor",
+      postman: "Postman",
       xampp: "XAMPP",
       netlify: "Netlify",
-
       cybersecurity: "Ciberseguridad",
-      networking: "Redes",
+      networks: "Redes",
       linux: "Linux",
     },
   },
 
   certifications: {
+    tag: "Logros",
     title: "Certificaciones",
-
-    subtitle:
-      "Cursos y certificaciones enfocados en desarrollo web, redes y ciberseguridad.",
-
+    titleHighlight: "Relevantes",
+    viewAll: "Ver todas las Certificaciones",
+    subtitle: {
+      tag: "Certificaciones",
+      title: "Mis",
+      titleHighlight: "Certificaciones",
+    },
+    description:
+      "Certificaciones y conocimientos adquiridos durante mi formación académica y profesional.",
+    allInstitutions: "Todas las instituciones",
+    results: "Resultados",
+    allCertifications: "Todas mis certificaciones",
+    certificationsfound: "Certificaciones encontradas",
+    certificationsCount: "certificaciones",
+    certificationCount: "certificación",
     searchPlaceholder: "Buscar certificaciones...",
-
-    filters: {
-      all: "Todos",
-    },
-
-    messages: {
-      noResults: "No se encontraron certificaciones.",
-      locked: "Inicia sesión para visualizar los certificados.",
-    },
-
-    buttons: {
-      view: "Visualizar",
-      download: "Descargar",
-      back: "Volver a certificaciones",
-    },
-
-    institution: "Institución ",
-    description: "Descripción ", // Nuevo
-    descriptionDetail: "Descripción detallada ", // Nuevo
-
+    institution: "institución",
     institutions: {
       udemy: "Udemy",
       google: "Google",
-      cisco: "Cisco packet tracer",
-      university: "Universidad de Guayaquil",
+      university: "Universidad",
+      cisco: "Cisco",
     },
-
     items: {
       udemyCompTIAsecurity: {
         name: "CompTIA Security+",
-
         description:
-          "Certificación enfocada en ciberseguridad y análisis de vulnerabilidades.",
-
+          "Certificación enfocada en fundamentos de ciberseguridad, gestión de riesgos y protección de sistemas.",
         descriptionDetail:
-          "Certificación integral de ciberseguridad que valida habilidades fundamentales e intermedias utilizadas en entornos modernos de TI. El curso cubre temas como análisis de amenazas, gestión de vulnerabilidades, criptografía, control de acceso, mitigación de riesgos, seguridad de redes y principios de arquitectura segura. También introduce estrategias de respuesta a incidentes, operaciones de seguridad y buenas prácticas utilizadas por profesionales para proteger sistemas e infraestructuras organizacionales.",
+          "Certificación integral orientada al desarrollo de conocimientos fundamentales en ciberseguridad y protección de infraestructuras de TI. Abarca análisis de amenazas, gestión de vulnerabilidades, criptografía, control de acceso, seguridad de redes, gestión de riesgos y principios de arquitectura segura. También incluye conceptos relacionados con respuesta ante incidentes, operaciones de seguridad y buenas prácticas para identificar, prevenir y mitigar amenazas en entornos tecnológicos.",
       },
-
       googleCybersecurity: {
         name: "Google Cybersecurity Professional",
-
         description:
-          "Programa profesional enfocado en SQL, Python, redes y gestión de incidentes.",
-
+          "Programa profesional enfocado en ciberseguridad, análisis de datos, redes y respuesta ante incidentes.",
         descriptionDetail:
-          "Programa profesional de ciberseguridad diseñado para desarrollar habilidades prácticas orientadas a roles iniciales del área de seguridad informática. El curso cubre fundamentos de redes, Linux, SQL, scripting con Python, herramientas de seguridad, detección de incidentes, análisis de amenazas y gestión de riesgos. Además, trabaja escenarios reales relacionados con vulnerabilidades, actividades sospechosas, manejo de incidentes y estrategias defensivas utilizadas en organizaciones modernas.",
+          "Programa profesional diseñado para desarrollar habilidades prácticas orientadas a roles iniciales en ciberseguridad. Incluye fundamentos de redes, Linux, SQL, Python, análisis de amenazas, identificación de vulnerabilidades, detección y respuesta ante incidentes y gestión de riesgos. También aborda herramientas y metodologías utilizadas para analizar actividades sospechosas, investigar incidentes y aplicar medidas defensivas en entornos organizacionales.",
       },
-
       vue3Mevn: {
         name: "Vue.js 3 - Guía Completa - Composition API, Pinia y MEVN",
-
         description:
-          "Dominio de Vue.js 3 y del ecosistema MEVN para aplicaciones modernas.",
-
+          "Formación avanzada en Vue.js 3, desarrollo frontend y arquitectura Full Stack con el stack MEVN.",
         descriptionDetail:
-          "Curso avanzado de Vue.js 3 enfocado en el desarrollo frontend y full stack utilizando el stack MEVN (MongoDB, Express, Vue y Node.js). Incluye Composition API, gestión de estado con Pinia, componentes reutilizables, rutas, autenticación, integración con APIs, comunicación con backend y despliegue de aplicaciones. También desarrolla proyectos reales para fortalecer arquitecturas escalables, buenas prácticas y flujos modernos de desarrollo utilizando Vite y soporte con TypeScript.",
+          "Curso avanzado enfocado en el desarrollo de aplicaciones modernas utilizando Vue.js 3 y el stack MEVN (MongoDB, Express, Vue y Node.js). Incluye Composition API, gestión de estado con Pinia, componentes reutilizables, Vue Router, autenticación, integración con APIs y comunicación con servicios backend. También aborda Vite, TypeScript, despliegue y buenas prácticas para construir aplicaciones escalables, mantenibles y orientadas a una arquitectura Full Stack.",
       },
-
       typescriptGuide: {
         name: "TypeScript: Guía Completa",
-
         description:
-          "Aprende TypeScript desde cero para crear aplicaciones escalables y seguras.",
-
+          "Formación en TypeScript para desarrollar aplicaciones modernas, mantenibles y escalables.",
         descriptionDetail:
-          "Curso completo de TypeScript diseñado para fortalecer el desarrollo en JavaScript mediante tipado estático y prácticas modernas de programación. Incluye tipos de datos, interfaces, clases, genéricos, módulos, decoradores, funciones y conceptos de programación orientada a objetos. También enseña integración con frameworks modernos como Vue, React, Angular y Node.js, permitiendo desarrollar aplicaciones más mantenibles, seguras y escalables mientras se reducen errores comunes en proyectos JavaScript.",
+          "Curso completo enfocado en fortalecer el desarrollo con JavaScript mediante el uso de tipado estático y herramientas modernas de programación. Incluye tipos, interfaces, clases, genéricos, módulos, funciones, decoradores y programación orientada a objetos. También aborda la integración de TypeScript con tecnologías como Vue, React, Angular y Node.js, aplicando buenas prácticas para mejorar la organización del código, reducir errores y facilitar el mantenimiento de aplicaciones.",
       },
-
       networkExploration: {
         name: "Exploración de Redes con Cisco Packet Tracer",
-
         description:
-          "Curso práctico enfocado en simulación y configuración de redes.",
-
+          "Curso práctico de simulación, configuración y resolución de problemas en redes informáticas.",
         descriptionDetail:
-          "Curso práctico de redes utilizando Cisco Packet Tracer para simular y configurar entornos de red reales. Incluye routing, switching, VLANs, direccionamiento IP, diseño de topologías y resolución de problemas de conectividad. El objetivo es desarrollar habilidades prácticas de redes mediante simulaciones utilizadas frecuentemente en entornos académicos y profesionales relacionados con Cisco.",
+          "Curso práctico orientado al diseño y configuración de redes mediante Cisco Packet Tracer. Incluye conceptos de routing, switching, VLANs, direccionamiento IP, diseño de topologías y resolución de problemas de conectividad. Permite desarrollar experiencia mediante la simulación de diferentes escenarios de red, reforzando conocimientos utilizados en entornos académicos y profesionales relacionados con infraestructura y tecnologías Cisco.",
       },
-
       introCiscoPacketTracer: {
         name: "Introducción a Cisco Packet Tracer",
-
         description:
-          "Primeros pasos en simulación de redes con herramientas Cisco.",
-
+          "Introducción a la simulación de redes y configuración de dispositivos utilizando Cisco Packet Tracer.",
         descriptionDetail:
-          "Curso introductorio enfocado en aprender los fundamentos de Cisco Packet Tracer y la simulación de redes. Incluye el uso de la interfaz, dispositivos básicos de red, conexiones, creación de redes pequeñas, visualización del flujo de paquetes y conceptos iniciales de troubleshooting. Ideal para principiantes que desean iniciar en redes y tecnologías Cisco.",
+          "Curso introductorio enfocado en comprender el funcionamiento de Cisco Packet Tracer y los fundamentos de la simulación de redes. Incluye el uso de la interfaz, configuración de dispositivos básicos, conexiones, creación de pequeñas topologías, direccionamiento y visualización del flujo de paquetes. También introduce conceptos iniciales de diagnóstico y resolución de problemas de conectividad.",
       },
-
       pythonBasics: {
         name: "Primeros Pasos con Python",
-
         description:
-          "Fundamentos de programación en Python aplicados a la ciberseguridad.",
-
+          "Formación en fundamentos de Python y automatización aplicada a entornos técnicos y de ciberseguridad.",
         descriptionDetail:
-          "Curso introductorio de Python enfocado en fundamentos de programación y conceptos de automatización orientados a la ciberseguridad. Incluye variables, ciclos, funciones, manejo de archivos, condicionales y scripting básico. También introduce aplicaciones prácticas como automatización de tareas repetitivas, análisis de logs y desarrollo de scripts simples utilizados en entornos técnicos y de seguridad informática.",
+          "Curso introductorio orientado al aprendizaje de los fundamentos de programación con Python. Incluye variables, estructuras condicionales, ciclos, funciones, manejo de archivos y scripting básico. También presenta aplicaciones prácticas relacionadas con la automatización de tareas, análisis de registros y creación de scripts para resolver procesos repetitivos en entornos tecnológicos y de seguridad informática.",
       },
-
       systemsEngineering: {
         name: "Estudiante de Ingeniería en Sistemas",
-
         description:
-          "Formación académica profesional en Ingeniería en Sistemas.",
-
+          "Formación académica en Ingeniería en Sistemas con enfoque en desarrollo, bases de datos, redes y tecnología.",
         descriptionDetail:
-          "Formación académica orientada a principios de ingeniería de software, programación, bases de datos, redes, sistemas operativos y fundamentos de seguridad informática. Incluye conocimientos prácticos y teóricos sobre metodologías de desarrollo, resolución de problemas, análisis de sistemas, diseño de aplicaciones e integración de tecnologías utilizadas en entornos modernos de computación.",
+          "Formación académica orientada al desarrollo de conocimientos en ingeniería de software, programación, bases de datos, redes, sistemas operativos y fundamentos de ciberseguridad. Incluye aprendizaje teórico y práctico sobre análisis y diseño de sistemas, resolución de problemas, metodologías de desarrollo, arquitectura de aplicaciones e integración de diferentes tecnologías utilizadas en entornos informáticos modernos.",
       },
-
       detectionResponse: {
         name: "Detección y Respuesta ante Incidentes",
-
         description:
-          "Estrategias de monitoreo y respuesta frente a amenazas de seguridad.",
-
+          "Formación en identificación, análisis y respuesta ante incidentes y amenazas de seguridad.",
         descriptionDetail:
-          "Curso de ciberseguridad enfocado en la detección, análisis y respuesta ante incidentes de seguridad en entornos organizacionales. Incluye monitoreo continuo, análisis de logs, plataformas SIEM, técnicas de detección de amenazas, procedimientos de respuesta, fundamentos forenses, estrategias de contención y recuperación posterior a incidentes utilizados en operaciones modernas de seguridad.",
+          "Curso enfocado en los procesos de detección, análisis y respuesta ante incidentes de ciberseguridad. Incluye monitoreo de eventos, análisis de logs, fundamentos de herramientas SIEM, identificación de amenazas, procedimientos de respuesta y estrategias de contención. También aborda conceptos básicos de análisis forense, recuperación y documentación de incidentes dentro de operaciones modernas de seguridad.",
       },
-
       cybersecurityFoundations: {
         name: "Fundamentos de Ciberseguridad",
-
         description:
-          "Principios esenciales de ciberseguridad y protección de datos.",
-
+          "Formación en principios fundamentales de ciberseguridad, amenazas y protección de la información.",
         descriptionDetail:
-          "Curso introductorio de ciberseguridad que enseña conceptos fundamentales de seguridad informática, amenazas comunes y prácticas de protección digital. Incluye principios de confidencialidad, integridad y disponibilidad (CIA), riesgos de ingeniería social, malware, autenticación y mejores prácticas para proteger información personal y organizacional.",
+          "Curso introductorio que aborda los conceptos esenciales de la seguridad informática y la protección de información. Incluye los principios de confidencialidad, integridad y disponibilidad (CIA), amenazas comunes, malware, ingeniería social, autenticación y prácticas de seguridad. Su enfoque permite comprender los principales riesgos digitales y las medidas necesarias para proteger sistemas, datos y usuarios.",
       },
-
       securityRiskManagement: {
         name: "Gestión de Riesgos de Seguridad",
-
         description:
-          "Identificación, evaluación y mitigación de riesgos de seguridad.",
-
+          "Formación en identificación, evaluación y mitigación de riesgos de ciberseguridad.",
         descriptionDetail:
-          "Curso especializado en la identificación, evaluación y mitigación de riesgos de ciberseguridad dentro de organizaciones. Incluye marcos de análisis de riesgos, conceptos de cumplimiento, análisis de impacto empresarial, políticas de seguridad, estrategias de gobernanza e implementación de controles para proteger infraestructuras críticas y reducir vulnerabilidades.",
+          "Curso especializado en la gestión de riesgos de seguridad dentro de organizaciones. Incluye identificación y evaluación de amenazas, análisis de impacto, priorización de riesgos, controles de seguridad, políticas, cumplimiento y estrategias de mitigación. También aborda fundamentos de gobernanza y toma de decisiones orientadas a reducir vulnerabilidades y proteger los activos tecnológicos de una organización.",
       },
-
       networkSecurity: {
         name: "Redes y Seguridad de Redes",
-
-        description: "Fundamentos de redes y protección de infraestructuras.",
-
+        description:
+          "Formación en redes informáticas y protección de infraestructuras frente a amenazas de seguridad.",
         descriptionDetail:
-          "Curso integral sobre redes informáticas y seguridad de infraestructura. Incluye protocolos de red, arquitecturas, dispositivos y prácticas defensivas modernas. También aborda firewalls, VPNs, sistemas de detección de intrusiones, métodos de comunicación segura, segmentación y protección frente a amenazas internas y externas presentes en redes empresariales.",
+          "Curso integral que combina fundamentos de redes con conceptos de seguridad de infraestructura. Incluye protocolos, arquitecturas, dispositivos de red, segmentación y mecanismos de comunicación segura. También aborda firewalls, VPNs, sistemas de detección de intrusiones y estrategias defensivas para proteger redes empresariales frente a amenazas internas y externas.",
       },
-
       cybersecurityJobs: {
         name: "Preparación para Empleos en Ciberseguridad",
-
         description:
-          "Preparación profesional para el mercado laboral en ciberseguridad.",
-
+          "Preparación profesional para iniciar una carrera en el área de ciberseguridad.",
         descriptionDetail:
-          "Curso orientado al desarrollo profesional en ciberseguridad y preparación para roles iniciales del sector. Incluye preparación de currículum y portafolio, conceptos para entrevistas técnicas, habilidades blandas, certificaciones relevantes y responsabilidades asociadas a puestos como analista SOC, analista de seguridad y especialista en respuesta a incidentes.",
+          "Curso orientado al desarrollo profesional y preparación para oportunidades laborales en ciberseguridad. Incluye elaboración de currículum y portafolio, preparación para entrevistas técnicas, desarrollo de habilidades profesionales y conocimiento de certificaciones relevantes. También presenta las funciones y responsabilidades de roles iniciales como analista SOC, analista de seguridad y especialista en respuesta ante incidentes.",
       },
-
       threatsVulnerabilities: {
         name: "Amenazas, Vulnerabilidades y Riesgos",
-
         description:
-          "Análisis y clasificación de amenazas en sistemas informáticos.",
-
+          "Formación en identificación y análisis de amenazas, vulnerabilidades y riesgos de seguridad.",
         descriptionDetail:
-          "Curso enfocado en comprender amenazas de ciberseguridad, vulnerabilidades y procesos de análisis de riesgos. Incluye tipos de malware, vectores de ataque, técnicas de explotación, análisis de vulnerabilidades, fundamentos de pruebas de penetración y estrategias de priorización utilizadas para identificar y mitigar debilidades en sistemas y redes.",
+          "Curso enfocado en comprender cómo identificar, analizar y evaluar amenazas y vulnerabilidades en sistemas y redes. Incluye tipos de malware, vectores de ataque, técnicas de explotación, análisis de vulnerabilidades, fundamentos de pruebas de penetración y evaluación de riesgos. También aborda criterios para priorizar vulnerabilidades y aplicar medidas orientadas a reducir la exposición de los sistemas.",
       },
-
       automateCybersecurity: {
         name: "Automatización de Ciberseguridad con Python",
-
-        description: "Automatización de tareas de seguridad utilizando Python.",
-
+        description:
+          "Aplicación de Python para automatizar tareas y procesos relacionados con la ciberseguridad.",
         descriptionDetail:
-          "Curso práctico enfocado en automatizar tareas de ciberseguridad mediante programación en Python. Incluye scripting para análisis de logs, monitoreo automatizado, detección de amenazas, procesamiento de archivos y automatización de operaciones repetitivas de seguridad. También introduce el desarrollo de scripts personalizados para optimizar flujos de trabajo y procesos de respuesta a incidentes.",
+          "Curso práctico enfocado en el uso de Python para automatizar tareas de seguridad y optimizar procesos técnicos. Incluye análisis automatizado de logs, procesamiento de archivos, monitoreo, detección de actividades sospechosas y automatización de tareas repetitivas. También introduce el desarrollo de scripts personalizados para mejorar la eficiencia de los flujos de trabajo y apoyar procesos de análisis y respuesta ante incidentes.",
       },
-
       linuxSqlTools: {
         name: "Herramientas Linux y SQL para Ciberseguridad",
-
         description:
-          "Uso de herramientas Linux y SQL para análisis de seguridad.",
-
+          "Formación en Linux y SQL aplicados al análisis, administración y seguridad de sistemas.",
         descriptionDetail:
-          "Curso técnico enfocado en herramientas de línea de comandos Linux y fundamentos de SQL utilizados en entornos de ciberseguridad. Incluye navegación del sistema de archivos, permisos, administración de procesos, comandos de shell, consultas SQL, filtrado y análisis de información, además del uso de herramientas basadas en Linux aplicadas en análisis de seguridad, administración de sistemas e investigaciones de incidentes.",
+          "Curso técnico enfocado en el uso de herramientas Linux y consultas SQL dentro de entornos de ciberseguridad. Incluye navegación por sistemas de archivos, permisos, procesos, comandos de terminal y fundamentos de shell, además de consultas, filtrado y análisis de información mediante SQL. También aborda el uso de estas herramientas para investigaciones de seguridad, análisis de datos, administración de sistemas y revisión de incidentes.",
       },
     },
   },
 
   contact: {
-    title: "Contacto",
-
-    intro:
-      "Si deseas contactarme para proyectos, colaboraciones u oportunidades laborales, puedes escribirme.",
-
-    labels: {
-      // Nuevo
-      email: "Correo electrónico",
-      location: "Ubicación",
-    },
-
-    city: "Guayaquil, Ecuador", // Nuevo
-
-    availability: "Disponible para trabajo remoto.", // Nuevo
-  },
-
-  curriculum: {
-    title: "Currículum",
-
-    download: "Descargar CV",
-
-    roles: {
-      systemsEngineeringStudent: "Estudiante de Ingeniería en Sistemas",
-
-      frontendDeveloper: "Desarrollador Frontend",
-    },
-  },
-
-  auth: {
-    login: {
-      title: "Bienvenido a mi portafolio",
-
-      labels: {
-        email: "Correo electrónico",
-        password: "Contraseña",
-      },
-
-      placeholders: {
-        email: "ejemplo{'@'}correo.com",
-        password: "********",
-      },
-
-      actions: {
-        forgotPassword: "¿Olvidaste tu contraseña?",
-        noAccount: "¿No tienes una cuenta?",
-        register: "Regístrate",
-        continue: "Continuar",
-      },
-    },
-
-    register: {
-      title: "Crear cuenta",
-
-      subtitle:
-        "Regístrate para acceder al sistema y visualizar contenido privado.",
-
-      placeholders: {
-        name: "Nombre",
-        lastName: "Apellido",
-        email: "ejemplo{'@'}correo.com",
-        password: "Contraseña",
-        confirmPassword: "Confirmar contraseña",
-        date: "DD/MM/AAAA - Fecha de nacimiento",
-      },
-
-      submit: "Registrarse",
-    },
-
-    recoverPassword: {
-      title: "Recuperar contraseña",
-
-      description:
-        "Ingresa tu correo electrónico para recuperar el acceso a tu cuenta.",
-
-      placeholder: "Correo electrónico",
-
-      submit: "Enviar enlace",
+    tag: "Contacto",
+    title: "¿Tienes un proyecto",
+    titleHighlight: "o buscas talento?",
+    sectionTitle: "Contáctame",
+    description:
+      "Hablemos. Cuéntame qué necesitas y te mostraré cómo puedo aportar.",
+    channels: {
+      github: "GitHub",
+      linkedin: "LinkedIn",
+      whatsapp: "WhatsApp",
+      email: "Email",
+      resume: "Curriculum",
     },
   },
 
   chatbot: {
-    title: "Chatbot 🧑‍🎓",
-    welcome:
-      "Hola, soy el asistente del portafolio de Leiston Holguín. ¿En qué puedo ayudarte?",
-    placeholder: "Escribe tu pregunta aquí...",
+    title: "Chatbot",
+    welcome: "Hola, soy el asistente del portafolio. ¿En qué puedo ayudarte?",
+    inputPlaceholder: "Escribe tu pregunta aquí...",
     error:
       "Lo siento, ocurrió un error al procesar tu solicitud. Por favor, inténtalo de nuevo.",
-  },
-
-  validation: {
-    required: "Este campo es obligatorio.",
-    nameInvalid: "No puede contener números.",
-    nameRequired: "Por favor, ingresa tu nombre.",
-    lastNameRequired: "Por favor, ingresa tu apellido.",
-    invalidEmail: "Por favor, ingresa un correo electrónico válido.",
-    shortPassword: "La contraseña debe tener al menos 6 caracteres.",
-    passwordMismatch: "Las contraseñas no coinciden.",
-    birthDateRequired: "Por favor, ingresa una fecha válida.",
-    birthDateTextInvalidate: "Formato inválido",
-    minimumAge: "Debes ser mayor de 15 años",
-    maximumAge: "La edad no puede ser mayor a 100 años",
-  },
-
-  alerts: {
-    success: "Inicio de sesión exitoso.",
-    failed: "Usuario o contraseña incorrectos",
-    LoginRecord: "Usuario registrado correctamente",
-    development: "Página en desarrollo/mantenimiento!",
-    unregistered: "El correo electrónico no está registrado",
-    codeSent: "Código enviado a tu correo",
+    send: "Enviar",
   },
 };

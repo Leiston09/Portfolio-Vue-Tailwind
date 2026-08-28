@@ -1,27 +1,36 @@
 <template>
-  <div class="text-center mb-5">
-    <h2 class="titleViewAll">
-      {{ $t("projects.internalTitle") }}
-    </h2>
-    <div class="lineTitle"></div>
-    <p class="text-gray-300 mt-4 text-lg max-w-2xl mx-auto">
-      {{ $t("projects.subtitle") }}
-    </p>
+  <HeaderSpecialized
+    :data="{
+      tag: $t('projects.subtitle.tag'),
+      title: $t('projects.subtitle.title'),
+      titleHighlight: $t('projects.subtitle.titleHighlight'),
+      description: $t('projects.description'),
+    }"
+  />
+  <SkeletonProjects v-if="isLoading" :count="6" />
+  <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+    <ProjectsCard v-for="project in projects" :key="project.id" :project="project" />
   </div>
-  
-  <Containers :projectsList="projectsList" />
 </template>
 
 <script setup lang="ts">
-import Containers from "@/components/projects/containers.vue";
+import { ref, onMounted } from "vue";
+import { getProjects } from "@/service/api";
 import type { ProjectsType } from "@/data/projects";
-import { useProjectsStore } from "@/stores/useProjectsStore";
-import { computed, onMounted } from "vue";
+import SkeletonProjects from "@/components/ui/Skeleton/SkeletonProjects.vue";
+import ProjectsCard from "@/components/shared/ProjectsCard.vue";
+import HeaderSpecialized from "@/components/shared/HeaderSpecialized.vue";
 
-const storeProjects = useProjectsStore();
-const projectsList = computed<ProjectsType[]>(() => storeProjects.projects);
+const isLoading = ref(true);
+const projects = ref<ProjectsType[]>([]);
 
-onMounted(() => {
-  storeProjects.fetchProjects();
+onMounted(async () => {
+  try {
+    projects.value = await getProjects();
+  } catch (error) {
+    console.error("Error al cargar los proyectos:", error);
+  } finally {
+    isLoading.value = false;
+  }
 });
 </script>

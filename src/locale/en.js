@@ -1,486 +1,429 @@
 export default {
   global: {
-    viewAll: "View all",
-    back: "Back",
-    demo: "Demo",
-    code: "Code",
-    loading: "Loading CV...",
-    featured: "⭐ Featured",
-    github: "GitHub",
-    webPortfolio: "Web Portfolio",
-    readMore: "Read more", // New
-    close: "Close", // New
-    loadingMessage: "Loading content, please wait...",
-    delete: 'Delete'
+    buttons: {
+      details: "View Details",
+      github: "GitHub",
+      demo: "Demo",
+      downloadCv: "Download CV",
+      contact: "CONTACT",
+      download: "Download",
+    },
+    labels: {
+      featured: "★ Featured",
+      titlefeatured: "Featured",
 
+      institution: "Institution",
+      back: "Back",
+    },
+    allRightsreserved: "All rights reserved",
   },
 
   notFound: {
     title: "Page not found",
     description:
       "Sorry, the page you are looking for is currently unavailable.",
-    backHome: "Return to home",
+    backHome: "Back to home",
   },
 
   navbar: {
-    configuration: "Settings",
-    configurationDescription:
-      "Sign in with another account or close your current session.",
-
-    login: "Sign in",
-    logout: "Sign out",
-
-    status: {
-      guest: "Guest",
-      online: "Session started",
-      offline: "Session closed",
-    },
-
-    language: {
-      spanish: "Spanish",
-      english: "English",
-    },
-
-    menu: {
+    status: "Available",
+    navigation: {
       home: "Home",
-      about: "About me",
+      about: "About Me",
+      experience: "Experience",
       projects: "Projects",
       skills: "Skills",
       certifications: "Certifications",
       contact: "Contact",
     },
+    language: {
+      spanish: "Spanish",
+      english: "English",
+    },
+    theme: {
+      dark: "Dark",
+      light: "Light",
+    },
   },
 
   home: {
-    title: "Personal Portfolio",
-
-    welcomeMessage:
-      "Frontend Developer from Ecuador specialized in Vue 3 and TypeScript. Currently expanding my knowledge toward Full Stack development with Node.js, databases, and cybersecurity and networking fundamentals.",
-
+    hero: {
+      greeting: "HELLO, I am",
+      role: "Systems Engineering Student",
+      subtitle: "Full Stack Developer",
+    },
+    status: {
+      available: "Available for projects.",
+      experience: "+2 years experience.",
+    },
+    about: {
+      part1:
+        "Future Systems Engineer and Full Stack Developer in Ecuador, focused on turning requirements into ",
+      highlight1: "efficient software solutions",
+      part2:
+        ", providing technical versatility and rapid adaptability to generate ",
+      highlight2: "immediate value in any team",
+    },
     buttons: {
       projects: "View projects",
-      curriculum: "View resume",
-      contact: "View contact",
+      resume: "View Resume",
+      contact: "View Contact",
     },
+  },
 
-    specializations: {
+  resume: {
+    title: "Resume",
+    roles: {
+      systemsEngineeringStudent: "Systems Engineering Student",
       frontendDeveloper: "Frontend Developer",
-      softwareEngineeringStudent: "Software Engineering Student",
-      databases: "Databases",
-      cybersecurity: "Cybersecurity",
-      networking: "Networking",
     },
+    loading: "Loading resume...",
+  },
 
-    personalMessage:
-      "Passionate about web development and continuous learning. I focus on building modern, functional, and scalable interfaces while constantly improving my technical skills.",
+  about: {
+    title: "About Me",
+    subtitle: "Personal Information",
+    interests: {
+      title: "Areas of Interest",
+      frontend: "Frontend Development",
+      backend: "Backend Development",
+      databases: "Databases",
+      apis: "APIs",
+      networks: "Networking",
+      cybersecurity: "Cybersecurity",
+    },
+    workflow: {
+      title: "My Way of Working",
+      learning: {
+        title: "Learning",
+        description: "I learn new technologies quickly.",
+      },
+      resolution: {
+        title: "Problem Solving",
+        description: "I look for practical and scalable solutions.",
+      },
+      communication: {
+        title: "Communication",
+        description: "I work in a clear and collaborative way.",
+      },
+    },
+  },
 
-    availability: "Available for projects and opportunities.", // New
+  testimonials: {
+    sectionTitle: "What People Say About Me",
+    quote:
+      "Thank you very much, Leiston. It was a pleasure to have worked with you on this project. I highly value your commitment, creativity, and attention to every detail. The result exceeded my expectations, and I would definitely recommend your work.",
+    actions: {
+      viewImage: "View image",
+      viewLinkedin: "View post on LinkedIn",
+    },
+  },
+
+  experience: {
+    tag: "My Journey",
+    title: "Professional",
+    titleHighlight: "Experience",
+    status: "Present",
+    jobs: {
+      peluqueria: {
+        role: "Full Stack Developer (Commercial Project)",
+        client: "Client · Beauty Salon Management System (Ecuador)",
+        description:
+          "Comprehensive design and development of a web platform for appointment and service management. Implementation of backend architecture with Node.js and Express, MongoDB database, secure authentication with JWT, role-based access control (Admin/Client), and automated email notifications.",
+      },
+      psicologia: {
+        role: "Frontend & UI/UX Developer",
+        client: "Client · Professional Portfolio (Colombia)",
+        description:
+          "Custom development of a digital portfolio for an Organizational Psychology specialist. Optimized layout with Vue 3, TypeScript, and Tailwind CSS, ensuring a responsive design, seamless user experience, and deployment with a custom domain and SSL.",
+      },
+      logistica: {
+        role: "Junior Frontend Developer (Freelance)",
+        client: "Remote Collaboration · Logistics Company",
+        description:
+          "Building and maintaining modular components with Vue 3 and TypeScript. Implementation of responsive interfaces with Tailwind CSS, Git workflow management (develop branches), complex data validation, and internationalization (i18n) support in direct collaboration with Senior developers.",
+      },
+    },
   },
 
   projects: {
-    title: "Featured Projects",
-    internalTitle: "Projects",
-    subtitle: "These are some of my recent projects.",
-
-    labels: {
-      year: "Year",
-      technologies: "Technologies", // New
-      details: "View more details",
+    tag: "My Portfolio",
+    title: "Featured",
+    titleHighlight: "Projects",
+    subtitle: {
+      tag: "My Projects",
+      title: "My",
+      titleHighlight: "Projects",
     },
-
+    description:
+      "Explore the projects I have developed during my education and experience, applying technologies, design, and solutions focused on solving real-world problems.",
+    viewAll: "View All Projects",
+    defaultDescription:
+      "Projects developed with modern technologies focused on optimization and performance.",
     items: {
       portfolio: {
         title: "Personal Portfolio",
-
         description:
-          "Modern web portfolio designed to showcase my professional profile, projects, and technical skills.",
-
+          "Portfolio to showcase my professional profile, projects, and technical skills, with AI integration, authentication, and responsive design.",
         imageDescription:
-          "Includes sections for personal presentation, skills, projects, certifications, and contact with a responsive design and dynamic navigation.",
+          "Includes sections for personal introduction, skills, projects, certifications, and contact, with responsive design and dynamic navigation.",
       },
-
       uitoky: {
         title: "Application with Backend Connection",
-
         description:
-          "Web application with authentication, data validation, and database integration.",
-
+          "Web application with user authentication, data validation, and connection to a relational database.",
         imageDescription:
-          "Allows users to register, log in, and manage stored information through a modern and interactive interface.",
+          "Allows users to register, log in, and manage information stored in the database through a modern and interactive interface.",
       },
-
       guitarra: {
         title: "Guitar Web Store",
-
         description:
           "Web application for displaying a guitar catalog with an interactive shopping cart.",
-
         imageDescription:
-          "The system allows adding products, modifying quantities, and removing items dynamically.",
+          "The system allows users to add products, modify quantities, and dynamically remove items.",
       },
-
       administrarPacientes: {
-        title: "Patient Management System",
-
+        title: "Patient Manager",
         description:
           "Web application for managing patients through CRUD operations.",
-
         imageDescription:
-          "Allows adding, editing, and deleting records with form validation and responsive design.",
+          "Allows users to add, edit, and delete records with form validation and responsive design.",
       },
-
       listadoUsuarios: {
         title: "User List",
-
         description:
-          "Web application that displays a dynamic list of users using mock data.",
-
+          "Web application that displays a dynamic list of users using simulated data.",
         imageDescription:
-          "The interface allows viewing organized user information in a simple and efficient way.",
+          "The interface allows users to view organized user information in a simple and efficient way.",
+      },
+      sistemaPeluqueria: {
+        title: "Hair Salon Management System",
+        description:
+          "Complete development of a management system for a hair salon. Includes authentication with login and JWT tokens, user management with roles (admin/clients), appointment management, services, and email delivery.",
+      },
+      portafolioPsicologia: {
+        title: "Psychology Portfolio",
+        description:
+          "Design and development of a web portfolio for a professional client in the field of organizational psychology.",
       },
     },
   },
 
   skills: {
-    title: "Technical Skills",
-
+    tag: "Technologies",
+    title: "Technical",
+    titleHighlight: "Skills",
+    subtitle:
+      "Technologies and knowledge that are part of my profile as a Systems Engineering student.",
+    viewAll: "View All",
+    subtitles: {
+      tag: "Skills",
+      title: "My",
+      titleHighlight: "Skills",
+    },
+    stackTitle: "Technologies",
+    stackSubtitle: "My Current Stack",
+    groupDescription: "Technologies that are part of this group.",
     categories: {
       frontend: "Frontend",
       backend: "Backend",
-      database: "Databases",
+      databases: "Databases",
       design: "Design",
       tools: "Tools",
       additional: "Additional",
     },
-
-    technologies: {
+    items: {
       html: "HTML",
       css: "CSS",
       javascript: "JavaScript",
+      vuejs: "Vue.js",
+      tailwindcss: "Tailwind CSS",
       typescript: "TypeScript",
-      vue: "Vue.js",
-      tailwind: "Tailwind CSS",
-
-      node: "Node.js",
+      nodejs: "Node.js",
+      express: "Express",
       python: "Python",
-
+      restApi: "REST API",
       mongodb: "MongoDB",
       mysql: "MySQL",
       postgresql: "PostgreSQL",
-
       figma: "Figma",
-
       git: "Git",
       github: "GitHub",
       vscode: "VS Code",
-      cursor: "Cursor",
+      postman: "Postman",
       xampp: "XAMPP",
       netlify: "Netlify",
-
       cybersecurity: "Cybersecurity",
-      networking: "Networking",
+      networks: "Networking",
       linux: "Linux",
     },
   },
 
   certifications: {
-    title: "Certifications",
-
-    subtitle:
-      "Courses and certifications focused on web development, networking, and cybersecurity.",
-
+    tag: "Achievements",
+    title: "Relevant",
+    titleHighlight: "Certifications",
+    viewAll: "View All Certifications",
+    subtitle: {
+      tag: "Certifications",
+      title: "My",
+      titleHighlight: "Certifications",
+    },
+    description:
+      "Certifications and knowledge acquired during my academic and professional training.",
+    allInstitutions: "All institutions",
+    featured: "Featured",
+    results: "Results",
+    allCertifications: "All my certifications",
+    certificationsfound: "Certifications found",
+    certificationsCount: "certifications",
+    certificationCount: "certification",
     searchPlaceholder: "Search certifications...",
-
-    filters: {
-      all: "All",
-    },
-
-    messages: {
-      noResults: "No certifications found.",
-      locked: "Sign in to view certificates.",
-    },
-
-    buttons: {
-      view: "Visualize",
-      download: "Download",
-      back: "Back to certifications",
-    },
-
-    institution: "Institution",
-    description: "Description",
-    descriptionDetail: "Detailed description",
-
+    institution: "institution",
     institutions: {
       udemy: "Udemy",
       google: "Google",
-      cisco: "Cisco Packet Tracer",
-      university: "University of Guayaquil",
+      university: "University",
+      cisco: "Cisco",
     },
-
     items: {
       udemyCompTIAsecurity: {
         name: "CompTIA Security+",
-
         description:
-          "Certification focused on cybersecurity and vulnerability analysis.",
-
+          "Certification focused on cybersecurity fundamentals, risk management and systems protection.",
         descriptionDetail:
-          "Comprehensive cybersecurity certification that validates foundational and intermediate security skills used in modern IT environments. The course covers topics such as threat analysis, vulnerability management, cryptography, identity and access management, risk mitigation, network security, and secure architecture principles. It also introduces incident response strategies, security operations, and best practices used by cybersecurity professionals to protect systems and organizational infrastructures.",
+          "Comprehensive certification aimed at developing foundational knowledge in cybersecurity and IT infrastructure protection. Covers threat analysis, vulnerability management, cryptography, access control, network security, risk management and secure architecture principles. Also includes concepts related to incident response, security operations and best practices for identifying, preventing and mitigating threats in technological environments.",
       },
-
       googleCybersecurity: {
         name: "Google Cybersecurity Professional",
-
         description:
-          "Professional program focused on SQL, Python, networking, and incident management.",
-
+          "Professional program focused on cybersecurity, data analysis, networking and incident response.",
         descriptionDetail:
-          "Professional cybersecurity program designed to build practical skills for entry-level security roles. The course covers networking fundamentals, Linux, SQL, Python scripting, security tools, incident detection, threat analysis, and risk management. It also focuses on real-world security scenarios, including identifying vulnerabilities, analyzing suspicious activity, handling incidents, and applying defensive security strategies commonly used in modern organizations.",
+          "Professional program designed to develop practical skills for entry-level cybersecurity roles. Includes networking fundamentals, Linux, SQL, Python, threat analysis, vulnerability identification, detection and incident response, and risk management. Also covers tools and methodologies used to analyze suspicious activities, investigate incidents and apply defensive measures in organizational environments.",
       },
-
       vue3Mevn: {
         name: "Vue.js 3 - Complete Guide - Composition API, Pinia and MEVN",
-
         description:
-          "Mastery of Vue.js 3 and the MEVN ecosystem for modern applications.",
-
+          "Advanced training in Vue.js 3, frontend development and Full Stack architecture with the MEVN stack.",
         descriptionDetail:
-          "Advanced Vue.js 3 course focused on modern frontend and full-stack application development using the MEVN stack (MongoDB, Express, Vue, and Node.js). Covers Composition API, state management with Pinia, reusable components, routing, authentication, API integration, backend communication, and deployment practices. Includes multiple real-world projects designed to strengthen scalable architecture, clean code practices, and modern development workflows with Vite and TypeScript support.",
+          "Advanced course focused on building modern applications using Vue.js 3 and the MEVN stack (MongoDB, Express, Vue and Node.js). Includes Composition API, state management with Pinia, reusable components, Vue Router, authentication, API integration and backend services communication. Also covers Vite, TypeScript, deployment and best practices for building scalable, maintainable Full Stack applications.",
       },
-
       typescriptGuide: {
         name: "TypeScript: Complete Guide",
-
         description:
-          "Learn TypeScript from scratch to build scalable and secure applications.",
-
+          "Training in TypeScript for building modern, maintainable and scalable applications.",
         descriptionDetail:
-          "Complete TypeScript course designed to strengthen JavaScript development through static typing and modern programming practices. Covers data types, interfaces, classes, generics, modules, decorators, functions, and object-oriented programming concepts. The course also demonstrates integration with frameworks such as Vue, React, Angular, and Node.js, helping developers create scalable, maintainable, and safer applications while reducing common runtime errors in JavaScript projects.",
+          "Complete course focused on strengthening JavaScript development through static typing and modern programming tools. Includes types, interfaces, classes, generics, modules, functions, decorators and object-oriented programming. Also covers TypeScript integration with technologies like Vue, React, Angular and Node.js, applying best practices to improve code organization, reduce errors and facilitate application maintenance.",
       },
-
       networkExploration: {
         name: "Network Exploration with Cisco Packet Tracer",
-
         description:
-          "Practical course focused on network simulation and configuration.",
-
+          "Practical course on simulation, configuration and troubleshooting in computer networks.",
         descriptionDetail:
-          "Hands-on networking course using Cisco Packet Tracer to simulate and configure real network environments. Covers routing, switching, VLANs, IP addressing, network topology design, troubleshooting, and communication between devices. The course helps develop practical networking skills through simulations commonly used in academic and professional Cisco networking environments.",
+          "Practical course focused on network design and configuration using Cisco Packet Tracer. Includes routing, switching, VLANs, IP addressing, topology design and connectivity troubleshooting. Enables hands-on experience through simulation of different network scenarios, reinforcing skills used in academic and professional environments related to infrastructure and Cisco technologies.",
       },
-
       introCiscoPacketTracer: {
         name: "Introduction to Cisco Packet Tracer",
-
-        description: "First steps in network simulation with Cisco tools.",
-
+        description:
+          "Introduction to network simulation and device configuration using Cisco Packet Tracer.",
         descriptionDetail:
-          "Introductory course focused on learning the fundamentals of Cisco Packet Tracer and network simulation. Covers the interface, basic networking devices, cable connections, small network creation, packet flow visualization, and introductory troubleshooting concepts. Ideal for beginners starting in networking and Cisco technologies.",
+          "Introductory course focused on understanding how Cisco Packet Tracer works and network simulation fundamentals. Includes interface usage, basic device configuration, connections, creating small topologies, addressing and packet flow visualization. Also introduces initial concepts of diagnostics and connectivity troubleshooting.",
       },
-
       pythonBasics: {
-        name: "Getting Started with Python",
-
+        name: "Python Basics",
         description:
-          "Python programming fundamentals applied to cybersecurity.",
-
+          "Training in Python fundamentals and automation applied to technical and cybersecurity environments.",
         descriptionDetail:
-          "Beginner-friendly Python course focused on programming fundamentals and automation concepts related to cybersecurity. Covers variables, loops, functions, file handling, conditionals, and basic scripting techniques. Also introduces practical applications such as automation of repetitive tasks, log analysis, simple security scripts, and data handling used in technical environments.",
+          "Introductory course focused on learning Python programming fundamentals. Includes variables, conditionals, loops, functions, file handling and basic scripting. Also presents practical applications related to task automation, log analysis and script creation to solve repetitive processes in technological and information security environments.",
       },
-
       systemsEngineering: {
-        name: "Software Engineering Student",
-
-        description: "Professional academic training in Software Engineering.",
-
-        descriptionDetail:
-          "Academic training focused on software engineering principles, programming, databases, networking, operating systems, and information security fundamentals. Includes practical and theoretical knowledge in software development methodologies, problem-solving, system analysis, application design, and technology integration used in modern computing environments.",
-      },
-
-      detectionResponse: {
-        name: "Incident Detection and Response",
-
+        name: "Systems Engineering Student",
         description:
-          "Monitoring and response strategies against security threats.",
-
+          "Academic training in Systems Engineering focused on development, databases, networking and technology.",
         descriptionDetail:
-          "Cybersecurity course focused on detecting, analyzing, and responding to security incidents in organizational environments. Covers continuous monitoring, log analysis, SIEM platforms, threat detection techniques, incident response procedures, forensic fundamentals, containment strategies, and post-incident recovery processes used in modern security operations.",
+          "Academic training oriented toward developing knowledge in software engineering, programming, databases, networking, operating systems and cybersecurity fundamentals. Includes theoretical and practical learning on system analysis and design, problem solving, development methodologies, application architecture and integration of different technologies used in modern computing environments.",
       },
-
+      detectionResponse: {
+        name: "Detection and Incident Response",
+        description:
+          "Training in identification, analysis and response to security incidents and threats.",
+        descriptionDetail:
+          "Course focused on the processes of detection, analysis and response to cybersecurity incidents. Includes event monitoring, log analysis, SIEM tools fundamentals, threat identification, response procedures and containment strategies. Also covers basic concepts of forensic analysis, recovery and incident documentation within modern security operations.",
+      },
       cybersecurityFoundations: {
         name: "Cybersecurity Foundations",
-
-        description: "Core principles of cybersecurity and data protection.",
-
+        description:
+          "Training in fundamental principles of cybersecurity, threats and information protection.",
         descriptionDetail:
-          "Foundational cybersecurity course introducing essential security concepts, common cyber threats, digital protection practices, and ethical responsibilities in technology environments. Covers confidentiality, integrity, and availability (CIA principles), social engineering risks, malware, authentication systems, and best practices for protecting personal and organizational information.",
+          "Introductory course covering essential concepts of information security and data protection. Includes the principles of confidentiality, integrity and availability (CIA), common threats, malware, social engineering, authentication and security practices. Its approach enables understanding of main digital risks and the necessary measures to protect systems, data and users.",
       },
-
       securityRiskManagement: {
         name: "Security Risk Management",
-
         description:
-          "Identification, assessment, and mitigation of security risks.",
-
+          "Training in identification, assessment and mitigation of cybersecurity risks.",
         descriptionDetail:
-          "Course specialized in identifying, evaluating, and mitigating cybersecurity risks within organizations. Covers risk analysis frameworks, compliance concepts, business impact assessments, security policies, governance strategies, and implementation of security controls designed to reduce vulnerabilities and protect critical infrastructures.",
+          "Specialized course in security risk management within organizations. Includes threat identification and assessment, impact analysis, risk prioritization, security controls, policies, compliance and mitigation strategies. Also covers governance fundamentals and decision-making aimed at reducing vulnerabilities and protecting an organization's technological assets.",
       },
-
       networkSecurity: {
         name: "Networking and Network Security",
-
-        description: "Networking fundamentals and infrastructure protection.",
-
+        description:
+          "Training in computer networking and infrastructure protection against security threats.",
         descriptionDetail:
-          "Comprehensive networking and security course covering network protocols, architectures, devices, and defensive security practices. Includes firewalls, VPNs, intrusion detection systems, secure communication methods, segmentation, and protection against external and internal network threats commonly faced in enterprise infrastructures.",
+          "Comprehensive course combining networking fundamentals with infrastructure security concepts. Includes protocols, architectures, network devices, segmentation and secure communication mechanisms. Also covers firewalls, VPNs, intrusion detection systems and defensive strategies to protect enterprise networks against internal and external threats.",
       },
-
       cybersecurityJobs: {
-        name: "Preparing for Cybersecurity Jobs",
-
+        name: "Preparation for Cybersecurity Jobs",
         description:
-          "Professional preparation for the cybersecurity job market.",
-
+          "Professional preparation to start a career in the cybersecurity field.",
         descriptionDetail:
-          "Career-oriented cybersecurity course designed to prepare students for entry-level security roles. Covers resume and portfolio preparation, technical interview concepts, professional communication skills, industry certifications, career paths, and the responsibilities associated with positions such as security analyst, SOC analyst, and incident response specialist.",
+          "Course focused on professional development and preparation for job opportunities in cybersecurity. Includes resume and portfolio building, technical interview preparation, professional skills development and knowledge of relevant certifications. Also presents the functions and responsibilities of entry-level roles such as SOC analyst, security analyst and incident response specialist.",
       },
-
       threatsVulnerabilities: {
-        name: "Threats, Vulnerabilities, and Risks",
-
+        name: "Threats, Vulnerabilities and Risks",
         description:
-          "Analysis and classification of threats in computer systems.",
-
+          "Training in identification and analysis of threats, vulnerabilities and security risks.",
         descriptionDetail:
-          "Course focused on understanding cybersecurity threats, vulnerabilities, and risk assessment processes. Covers malware types, attack vectors, exploitation techniques, vulnerability scanning, penetration testing concepts, and prioritization strategies used to identify and mitigate weaknesses in systems and networks.",
+          "Course focused on understanding how to identify, analyze and assess threats and vulnerabilities in systems and networks. Includes types of malware, attack vectors, exploitation techniques, vulnerability analysis, penetration testing fundamentals and risk assessment. Also covers criteria for prioritizing vulnerabilities and applying measures aimed at reducing system exposure.",
       },
-
       automateCybersecurity: {
         name: "Cybersecurity Automation with Python",
-
-        description: "Automation of security tasks using Python.",
-
+        description:
+          "Application of Python to automate tasks and processes related to cybersecurity.",
         descriptionDetail:
-          "Practical course focused on automating cybersecurity tasks using Python programming. Covers scripting for log analysis, automated monitoring, threat detection, file processing, and repetitive security operations. Also introduces the development of custom scripts to improve efficiency in security workflows and incident response activities.",
+          "Practical course focused on using Python to automate security tasks and optimize technical processes. Includes automated log analysis, file processing, monitoring, detection of suspicious activities and automation of repetitive tasks. Also introduces the development of custom scripts to improve workflow efficiency and support analysis and incident response processes.",
       },
-
       linuxSqlTools: {
         name: "Linux and SQL Tools for Cybersecurity",
-
-        description: "Use of Linux and SQL tools for security analysis.",
-
+        description:
+          "Training in Linux and SQL applied to system analysis, administration and security.",
         descriptionDetail:
-          "Technical course focused on Linux command-line tools and SQL fundamentals used in cybersecurity environments. Covers file system navigation, permissions, process management, shell commands, database queries, filtering and analyzing information, and the use of Linux-based tools commonly applied in security analysis, system administration, and incident investigations.",
+          "Technical course focused on using Linux tools and SQL queries within cybersecurity environments. Includes file system navigation, permissions, processes, terminal commands and shell fundamentals, as well as queries, filtering and data analysis using SQL. Also covers the use of these tools for security investigations, data analysis, system administration and incident review.",
       },
     },
   },
 
   contact: {
-    title: "Contact",
-
-    intro:
-      "If you would like to contact me for projects, collaborations, or job opportunities, feel free to reach out.",
-
-    labels: {
+    tag: "Contact",
+    title: "Do you have a project",
+    titleHighlight: "or are you looking for talent?",
+    sectionTitle: "Contact Me",
+    description:
+      "Let's talk. Tell me what you need and I'll show you how I can contribute.",
+    channels: {
+      github: "GitHub",
+      linkedin: "LinkedIn",
+      whatsapp: "WhatsApp",
       email: "Email",
-      location: "Location",
-    },
-
-    city: "Guayaquil, Ecuador",
-
-    availability: "Available for remote work.", // New
-  },
-
-  curriculum: {
-    title: "Resume",
-
-    download: "Download CV",
-
-    roles: {
-      systemsEngineeringStudent: "Software Engineering Student",
-
-      frontendDeveloper: "Frontend Developer",
-    },
-  },
-
-  auth: {
-    login: {
-      title: "Welcome to my portfolio",
-
-      labels: {
-        email: "Email",
-        password: "Password",
-      },
-
-      placeholders: {
-        email: "example{'@'}email.com",
-        password: "********",
-      },
-
-      actions: {
-        forgotPassword: "Forgot your password?",
-        noAccount: "Don't have an account?",
-        register: "Sign up",
-        continue: "Continue",
-      },
-    },
-
-    register: {
-      title: "Create account",
-
-      subtitle: "Sign up to access the system and view private content.",
-
-      placeholders: {
-        name: "First name",
-        lastName: "Last name",
-        email: "example{'@'}email.com",
-        password: "Password",
-        confirmPassword: "Confirm password",
-        date: 'DD/MM/YYYY - Date of birth'
-      },
-
-      submit: "Register",
-    },
-
-    recoverPassword: {
-      title: "Recover password",
-
-      description:
-        "Enter your email address to recover access to your account.",
-
-      placeholder: "Email address",
-
-      submit: "Send link",
+      resume: "Resume",
     },
   },
 
   chatbot: {
-    title: "Chatbot 🧑‍🎓",
-    welcome: "Hello, I'm Leiston Holguín's portfolio assistant. How can I help you?",
-    placeholder: "Type your question here...",
+    title: "Chatbot",
+    welcome: "Hello, I am the portfolio assistant. How can I help you?",
+    inputPlaceholder: "Type your question here...",
     error:
       "Sorry, an error occurred while processing your request. Please try again.",
-  },
-
-  validation: {
-    required: "This field is required.",
-    nameInvalid: "It cannot contain numbers.",
-    nameRequired: "Name is required.",
-    lastNameRequired: "Last name is required.",
-    invalidEmail: "Please enter a valid email address.",
-    birthDateRequired: "Birth date is required.",
-    shortPassword: "Password must be at least 6 characters long.",
-    birthDateTextInvalidate: "Invalid format",
-    passwordMismatch: "Passwords do not match.",
-    minimumAge: "You must be at least 15 years old.",
-    maximumAge: "Age cannot be greater than 100 years.",
-  },
-
-  alerts: {
-    success: "Login successful.",
-    failed: "Incorrect username or password.",
-    LoginRecord: 'User successfully registered',
-    development:'Page under development/maintenance!',    
-    unregistered: 'The email address is not registered',
-    codeSent: 'Code sent to your email'
+    send: "Send",
   },
 };

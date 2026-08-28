@@ -4,30 +4,25 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
-    "netlify": "netlify dev",
+    "dev": "netlify dev",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.12",
-    "groq-sdk": "^0.5.0",
+    "groq-sdk": "^1.6.0",
+    "lottie-web": "^5.13.0",
+    "netlify-cli": "^27.4.0",
     "pinia": "^2.3.1",
-    "tailwindcss": "^4.0.12",
-    "vue": "^3.5.13",
-    "vue-i18n": "^11.1.2",
-    "vue-router": "^4.5.0"
+    "vue": "^3.5.41",
+    "vue-i18n": "^11.4.8",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@netlify/functions": "^3.0.0",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "netlify-cli": "^26.1.0",
-    "sass-embedded": "^1.85.1",
-    "typescript": "^5.8.3",
-    "vite": "^6.2.3",
-    "vite-plugin-vue-devtools": "^8.0.1"
-  },
-  "engines": {
-    "node": ">=20.0.0"
+    "@tailwindcss/vite": "^4.0.12",
+    "@types/node": "^26.4.0",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.3"
   }
 }

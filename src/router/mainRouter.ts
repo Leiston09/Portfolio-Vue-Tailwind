@@ -1,56 +1,39 @@
 import type { RouteRecordRaw } from "vue-router";
 
-import ViewCertificate from "@/components/Certifications/ViewCertificate.vue";
-
-import MainLayout from "@/layout/MainLayout.vue";
-
-import Certifications from "@/views/Certifications.vue";
-import Curriculum from "@/views/Curriculum.vue";
-import Home from "@/views/Home.vue";
-import Projects from "@/views/Projects.vue";
-import Skills from "@/views/Skills.vue";
-
 export const routesMain: RouteRecordRaw = {
   path: "/",
-  component: MainLayout,
-
+  component: () => import("@/layout/MainLayout.vue"),
   children: [
     {
       path: "",
       name: "Home",
-      component: Home,
+      component: () => import("@/views/Home.vue"),
     },
-
     {
       path: "certifications",
       name: "Certifications",
-      component: Certifications,
+      component: () => import("@/views/Certifications.vue"),
     },
-
     {
       path: "certifications/:id",
       name: "CertificationDetail",
-      component: ViewCertificate,
-      meta: { requiresValidation: true },
+      component: () => import("@/components/Certifications/ViewCertificate.vue"),
       props: true,
     },
-
     {
       path: "skills",
       name: "Skills",
-      component: Skills,
+      component: () => import("@/views/Skills.vue"),
     },
-
     {
-      path: "curriculum",
-      name: "Curriculum",
-      component: Curriculum,
+      path: "resume",
+      name: "Resume",
+      component: () => import("@/views/Resume.vue"),
     },
-
     {
       path: "projects",
       name: "Projects",
-      component: Projects,
+      component: () => import("@/views/Projects.vue"),
     },
   ],
 };

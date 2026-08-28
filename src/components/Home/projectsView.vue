@@ -1,42 +1,53 @@
 <template>
+  <section>
+    <Header
+      :data="{
+        tag: $t('projects.tag'),
+        title: $t('projects.title'),
+        titleHighlight: $t('projects.titleHighlight'),
+        description: $t('projects.defaultDescription'),
+        link: '/projects',
+        button:  $t('projects.viewAll'),
+      }"
+    />
 
-  <div class="titleOptionsAll pb-5">
-    <h1 class="titleOptions">
-      {{ $t("projects.title") }}
-    </h1>
+    <SkeletonProjects v-if="isLoading" :count="3" />
 
-    <RouterLink
-      :to="{ name: 'Projects' }"
-      class="buttonViewAll"
-      v-if="projects.length > 3"
+    <div
+      v-else
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
     >
-      {{ $t("global.viewAll") }}
-      <i class="fas fa-arrow-right ml-2"></i>
-
-    </RouterLink>
-  </div>
-
-  <Containers
-    :projectsList="filteredProjects"
-  />
-
+      <ProjectsCard
+        v-for="project in projects"
+        :key="project.id"
+        :project="project"
+      />
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { ProjectsType } from "@/data/projects";
-import { useProjectsStore } from "@/stores/useProjectsStore";
-import { computed, onMounted } from "vue";
-import Containers from "../projects/containers.vue";
+import { ref, onMounted } from "vue";
+import { getProjects } from "@/service/api";
+import type { ProjectsType } from "@/data/projects";
 
+import Header from "../shared/Header.vue";
+import SkeletonProjects from "../ui/Skeleton/SkeletonProjects.vue";
+import ProjectsCard from "../shared/ProjectsCard.vue";
 
-const storeProjects = useProjectsStore();
-const projects = computed<ProjectsType[]>(() => storeProjects.projects);
+const isLoading = ref(true);
 
-const filteredProjects = computed<ProjectsType[]>(() => {
-  return projects.value.filter((e) => e.special);
-});
+const projects = ref<ProjectsType[]>([]);
 
-onMounted(() => {
-  storeProjects.fetchProjects();
+onMounted(async () => {
+  try {
+    const allProjects = await getProjects();
+
+    projects.value = allProjects
+      .filter((project) => project.special === true)
+      .slice(0, 3);
+  } finally {
+    isLoading.value = false;
+  }
 });
 </script>

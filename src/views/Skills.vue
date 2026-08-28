@@ -1,43 +1,42 @@
 <template>
   <div class="text-white">
-    <h1 class="titleViewAll">
-      {{ $t("skills.title") }}
-    </h1>
-    <div class="lineTitle"></div>
+    <HeaderSpecialized
+      :data="{
+        tag: $t('skills.subtitles.tag'),
+        title: $t('skills.subtitles.title'),
+        titleHighlight: $t('skills.subtitles.titleHighlight'),
+        description: $t('skills.subtitle'),
+      }"
+    />
 
-    <div class="pt-5">
-      <div class="hidden lg:block">
-        <SkillsComputer 
-          :skills="skills" 
-          :categorias="categorias"
-        />
-      </div>
-      <div class="lg:hidden">
-        <Mobile 
-          :skills="skills" 
-          :categorias="categorias"
-        />
-      </div>
-    </div>
+    <SkeletonSkillsSpecialized v-if="isLoading" />
+
+    <SkillsCard v-else :skills="skills" :categorias="categorias" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { SkillsTypes } from "@/data/skills";
-import Mobile from "@/components/skills/Mobile.vue";
-import SkillsComputer from "@/components/skills/SkillsComputer.vue";
-import { useSkillsStore } from "@/stores/useSkillsStore";
-import { computed, onMounted } from "vue";
+import { computed, onMounted, ref } from "vue";
+import type { SkillsTypes } from "@/data/skills";
+import HeaderSpecialized from "@/components/shared/HeaderSpecialized.vue";
+import SkillsCard from "@/components/shared/SkillsCard.vue";
+import SkeletonSkillsSpecialized from "@/components/ui/Skeleton/SkeletonSkillsSpecialized.vue";
+import { getSkills } from "@/service/api";
 
+const isLoading = ref(true);
+const skills = ref<SkillsTypes[]>([]);
 
-const stateSkills = useSkillsStore();
-const skills = computed<SkillsTypes[]>(() => stateSkills.skills);
+const categorias = computed(() => [
+  ...new Set(skills.value.map((skill) => skill.categoria)),
+]);
 
-const categorias = computed(() => {
-  return [...new Set(skills.value.map(skill => skill.categoria))];
-});
-
-onMounted(() => {
-  stateSkills.fetchSkills();
+onMounted(async () => {
+  try {
+    skills.value = await getSkills();
+  } catch (error) {
+    console.error("Error al cargar las habilidades:", error);
+  } finally {
+    isLoading.value = false;
+  }
 });
 </script>
