@@ -49,7 +49,7 @@ export default {
     hero: {
       greeting: "HOLA, Yo soy",
       role: "Estudiante de Ingeniería en Sistemas",
-      subtitle: "Desarrollador Full Stack",
+      subtitle: "Desarrollador de Software",
     },
     status: {
       available: "Disponible para proyectos.",
@@ -57,7 +57,7 @@ export default {
     },
     about: {
       part1:
-        "Futuro Ingeniero en Sistemas y Desarrollador Full Stack en Ecuador, enfocado en transformar requerimientos en ",
+        "Futuro Ingeniero en Sistemas y Desarrollador de Software en Ecuador, enfocado en transformar requerimientos en ",
       highlight1: "soluciones de software eficientes",
       part2:
         ", aportando versatilidad técnica y rápida capacidad de adaptación para generar ",
@@ -74,7 +74,7 @@ export default {
     title: "Currículum",
     roles: {
       systemsEngineeringStudent: "Estudiante de Ingeniería en Sistemas",
-      frontendDeveloper: "Desarrollador Frontend",
+      frontendDeveloper: "Desarrollador de Software",
     },
     loading: "Cargando currículum...",
   },
@@ -125,7 +125,7 @@ export default {
     status: "Actualidad",
     jobs: {
       peluqueria: {
-        role: "Desarrollador Full Stack (Proyecto Comercial)",
+        role: "Desarrollador de Software - Proyecto Freelance",
         client: "Cliente · Sistema de Gestión para Salón de Belleza (Ecuador)",
         description:
           "Diseño y desarrollo integral de plataforma web para gestión de turnos y servicios. Implementación de arquitectura backend con Node.js y Express, base de datos en MongoDB, autenticación segura con JWT, control de roles (Admin/Cliente) y automatización de notificaciones con Email.",

@@ -50,7 +50,7 @@ export default {
     hero: {
       greeting: "HELLO, I am",
       role: "Systems Engineering Student",
-      subtitle: "Full Stack Developer",
+      subtitle: "Software Developer",
     },
     status: {
       available: "Available for projects.",
@@ -58,7 +58,7 @@ export default {
     },
     about: {
       part1:
-        "Future Systems Engineer and Full Stack Developer in Ecuador, focused on turning requirements into ",
+        "Future Systems Engineer and Software Developer in Ecuador, focused on turning requirements into ",
       highlight1: "efficient software solutions",
       part2:
         ", providing technical versatility and rapid adaptability to generate ",
@@ -75,7 +75,7 @@ export default {
     title: "Resume",
     roles: {
       systemsEngineeringStudent: "Systems Engineering Student",
-      frontendDeveloper: "Frontend Developer",
+      frontendDeveloper: "Software Developer",
     },
     loading: "Loading resume...",
   },
@@ -126,7 +126,7 @@ export default {
     status: "Present",
     jobs: {
       peluqueria: {
-        role: "Full Stack Developer (Commercial Project)",
+        role: "Software Developer - Project Freelance",
         client: "Client · Beauty Salon Management System (Ecuador)",
         description:
           "Comprehensive design and development of a web platform for appointment and service management. Implementation of backend architecture with Node.js and Express, MongoDB database, secure authentication with JWT, role-based access control (Admin/Client), and automated email notifications.",
