@@ -91,7 +91,7 @@ export const projects: ProjectsType[] = [
     ],
     showDetails: false,
     github: "https://github.com/Leiston09/Guitarra-Carrito-Compras-en-Vue.git",
-    demo: "https://guitarras-carrito.netlify.app/",
+    demo: "https://leiston-holguin.com/",
   },
   {
     id: 5,
