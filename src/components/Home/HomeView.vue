@@ -26,9 +26,9 @@
       </h1>
     </div>
     <div class="space-y-2 sm:space-y-3">
-      <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+      <div class="flex flex-wrap items-center gap-1 sm:gap-3">
         <span
-          class="text-lg sm:text-lg lg:text-xl text-text-light-secondary dark:text-text-primary font-serif font-light italic"
+          class="text-lg sm:text-lg lg:text-lg text-text-light-secondary dark:text-text-primary font-serif font-light italic"
           >{{ $t("home.hero.role") }}</span
         >
         <span
