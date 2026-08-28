@@ -71,9 +71,14 @@
 
       <div
         class="grid gap-2 mt-auto pt-5 border-t border-border-light dark:border-border-secondary"
-        :class="project.github ? 'grid-cols-3' : 'grid-cols-2'"
+        :class="{
+          'grid-cols-3': totalButtons === 3,
+          'grid-cols-2': totalButtons === 2,
+          'grid-cols-1': totalButtons === 1
+        }"
       >
         <a
+          v-if="project.showDetails !== false"
           :href="`/projects/${project.id}`"
           class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-border-light dark:border-border-secondary py-2 text-[10px] sm:text-xs font-semibold text-text-light-secondary dark:text-text-secondary hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
         >
@@ -108,9 +113,18 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import type { ProjectsType } from "@/data/projects";
 
-defineProps<{
+const props = defineProps<{
   project: ProjectsType;
 }>();
+
+const totalButtons = computed(() => {
+  let count = 0;
+  if (props.project.showDetails !== false) count++;
+  if (props.project.github) count++;
+  if (props.project.demo) count++;
+  return count;
+});
 </script>
