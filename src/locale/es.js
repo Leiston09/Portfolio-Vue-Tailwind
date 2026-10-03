@@ -2,6 +2,7 @@ export default {
   global: {
     buttons: {
       details: "Ver Detalles",
+      verifyOn: "Ver en",
       github: "GitHub",
       demo: "Demo",
       downloadCv: "Descargar CV",
@@ -47,17 +48,17 @@ export default {
 
   home: {
     hero: {
-      greeting: "HOLA, Yo soy",
+      greeting: "HOLA, YO SOY",
       role: "Estudiante de Ingeniería en Sistemas",
       subtitle: "Desarrollador de Software",
     },
     status: {
       available: "Disponible para proyectos.",
-      experience: "+2 años experiencia.",
+      experience: "+1 año de experiencia.",
     },
     about: {
       part1:
-        "Futuro Ingeniero en Sistemas y Desarrollador de Software en Ecuador, enfocado en transformar requerimientos en ",
+        "Estudiante de Ingeniería en Sistemas y Desarrollador de Software en Ecuador, enfocado en transformar requerimientos en ",
       highlight1: "soluciones de software eficientes",
       part2:
         ", aportando versatilidad técnica y rápida capacidad de adaptación para generar ",
@@ -65,8 +66,8 @@ export default {
     },
     buttons: {
       projects: "Ver proyectos",
-      resume: "Ver Curriculum",
-      contact: "Ver Contacto",
+      resume: "Ver CV",
+      contact: "Ver contacto",
     },
   },
 
@@ -124,89 +125,110 @@ export default {
     titleHighlight: "Profesional",
     status: "Actualidad",
     jobs: {
-      peluqueria: {
-        role: "Desarrollador de Software - Proyecto Freelance",
-        client: "Cliente · Sistema de Gestión para Salón de Belleza (Ecuador)",
-        description:
-          "Diseño y desarrollo integral de plataforma web para gestión de turnos y servicios. Implementación de arquitectura backend con Node.js y Express, base de datos en MongoDB, autenticación segura con JWT, control de roles (Admin/Cliente) y automatización de notificaciones con Email.",
-      },
       psicologia: {
-        role: "Desarrollador Frontend & UI/UX",
+        role: "Desarrollador Frontend",
         client: "Cliente · Portafolio Profesional (Colombia)",
+        date: "Mayo 2026 - Julio 2026",
         description:
           "Desarrollo a medida del portafolio digital para un especialista en Psicología Organizacional. Maquetación optimizada con Vue 3, TypeScript y Tailwind CSS, garantizando diseño responsive, experiencia de usuario fluida, despliegue con dominio personalizado y SSL.",
       },
       logistica: {
-        role: "Desarrollador Frontend Junior (Freelance)",
-        client: "Colaboración Remota · Empresa de Logística",
+        role: "Desarrollador Frontend Junior",
+        client: "Colaboración Remota · Proyecto Privado",
+        date: "Agosto 2025 - Marzo 2026",
         description:
           "Construcción y mantenimiento de componentes modulares con Vue 3 y TypeScript. Implementación de interfaces adaptables con Tailwind CSS, gestión de flujos de trabajo con Git (ramas develop), validaciones complejas de datos y soporte para internacionalización (i18n) en colaboración directa con desarrolladores Senior.",
       },
     },
   },
 
-  projects: {
-    tag: "Mi portafolio",
-    title: "Proyectos",
-    titleHighlight: "Destacados",
-    subtitle: {
-      tag: "Mis Proyectos",
-      title: "Mis",
-      titleHighlight: "Proyectos",
+projects: {
+  tag: "Mi portafolio",
+  title: "Proyectos",
+  titleHighlight: "Destacados",
+  subtitle: {
+    tag: "Mis Proyectos",
+    title: "Mis",
+    titleHighlight: "Proyectos",
+  },
+  description:
+    "Explora los proyectos que he desarrollado durante mi formación y experiencia, aplicando tecnologías, diseño y soluciones orientadas a resolver problemas reales.",
+  viewAll: "Ver todos los Proyectos",
+  defaultDescription:
+    "Proyectos desarrollados con tecnologías modernas enfocados en optimización y rendimiento.",
+  items: {
+    sistemaPeluqueria: {
+      title: "Sistema de Gestión para Peluquería",
+      description:
+        "Sistema full stack de reservas con validación de disponibilidad en tiempo real, control de roles, gestión de horarios y notificaciones automáticas por correo.",
+      imageDescription:
+        "Reserva guiada en 3 pasos que respeta horarios, pausas y días bloqueados de cada barbero, con panel administrativo y estadísticas del salón.",
     },
-    description:
-      "Explora los proyectos que he desarrollado durante mi formación y experiencia, aplicando tecnologías, diseño y soluciones orientadas a resolver problemas reales.",
-    viewAll: "Ver todos los Proyectos",
-    defaultDescription:
-      "Proyectos desarrollados con tecnologías modernas enfocado en la optimización y rendimiento.",
-    items: {
-      portfolio: {
-        title: "Portafolio Personal",
-        description:
-          "Portafolio para presentar mi perfil profesional, proyectos y habilidades técnicas, con integración de IA, autenticación y diseño responsive.",
-        imageDescription:
-          "Incluye secciones de presentación personal, habilidades, proyectos, certificaciones y contacto, con diseño responsive y navegación dinámica.",
-      },
-      uitoky: {
-        title: "Aplicación con conexión a Backend",
-        description:
-          "Aplicación web con autenticación de usuarios, validación de datos y conexión a base de datos relacional.",
-        imageDescription:
-          "Permite registrar usuarios, iniciar sesión y gestionar información almacenada en la base de datos mediante una interfaz moderna e interactiva.",
-      },
-      guitarra: {
-        title: "Tienda Web de Guitarras",
-        description:
-          "Aplicación web para visualizar un catálogo de guitarras con carrito de compras interactivo.",
-        imageDescription:
-          "El sistema permite agregar productos, modificar cantidades y eliminar elementos dinámicamente.",
-      },
-      administrarPacientes: {
-        title: "Administrador de Pacientes",
-        description:
-          "Aplicación web para gestionar pacientes mediante operaciones CRUD.",
-        imageDescription:
-          "Permite agregar, editar y eliminar registros con validación de formularios y diseño responsive.",
-      },
-      listadoUsuarios: {
-        title: "Listado de Usuarios",
-        description:
-          "Aplicación web que muestra un listado dinámico de usuarios utilizando datos simulados.",
-        imageDescription:
-          "La interfaz permite visualizar información organizada de usuarios de manera sencilla y eficiente.",
-      },
-      sistemaPeluqueria: {
-        title: "Sistema de Gestión para Peluquería",
-        description:
-          "Desarrollo completo de un sistema de gestión para una peluquería. Incluye autenticación con login y tokens JWT, administración de usuarios con roles (admin/clientes), gestión de citas, servicios, y envío de correos electrónicos.",
-      },
-      portafolioPsicologia: {
-        title: "Portafolio Psicología",
-        description:
-          "Diseño y desarrollo de portafolio web para un cliente profesional del área de psicología organizacional.",
-      },
+    portfolio: {
+      title: "Portafolio Personal",
+      description:
+        "Más que un portafolio, una experiencia interactiva con multi-idioma, animaciones fluidas, diseño cuidado al detalle e IA integrada. Pregúntale en vez de leer.",
+      imageDescription:
+        "Explora mi perfil de una forma diferente: navegación intuitiva, modo claro/oscuro y un asistente que responde cualquier pregunta sobre mí en tiempo real.",
+    },
+    clienteColombia: {
+      title: "Portafolio Profesional - Cliente de Colombia",
+      description:
+        "Desarrollo freelance a medida para un especialista en Psicología Organizacional, coordinando requerimientos y entregas directamente con el cliente.",
+      imageDescription:
+        "Diseño personalizado con slider interactivo, multi-idioma y despliegue en producción con dominio propio y SSL.",
+    },
+    guitarra: {
+      title: "Tienda Web de Guitarras",
+      description:
+        "Catálogo interactivo con carrito de compras funcional: agregar productos, modificar cantidades y eliminar elementos en tiempo real.",
+      imageDescription:
+        "Estado del carrito gestionado en el navegador con persistencia durante la sesión.",
+    },
+    pedidos: {
+      title: "Sistema de Gestión de Pedidos",
+      description:
+        "Sistema de pedidos bajo arquitectura MVC con PHP, MySQL y PDO: login, registro de clientes, carrito, métodos de pago y control de stock.",
+      imageDescription:
+        "Estructura profesional separando Controller, Model y View, con Service Layer para la lógica de negocio y validaciones por capas.",
+    },
+    dashboardCsv: {
+      title: "Dashboard de Análisis de Datos CSV",
+      description:
+        "Herramienta de análisis que procesa archivos CSV y Excel con Pandas y NumPy, generando estadísticas y gráficas dinámicas por columna.",
+      imageDescription:
+        "Detecta tipos de datos automáticamente, calcula cuartiles, outliers, sesgo y curtosis, y exporta resultados. Desplegado en Fly.io con Gunicorn y tests automatizados.",
+    },
+    administrarPacientes: {
+      title: "Administrador de Pacientes",
+      description:
+        "CRUD completo para gestión de pacientes con validación de formularios y persistencia local.",
+      imageDescription:
+        "Permite agregar, editar y eliminar registros con feedback visual en cada acción.",
+    },
+    listadoUsuarios: {
+      title: "Listado de Usuarios con Filtros",
+      description:
+        "Listado dinámico de usuarios con búsqueda y filtrado en tiempo real sobre datos simulados.",
+      imageDescription:
+        "Filtros reactivos que actualizan la tabla sin recargar la página.",
+    },
+    controlGastos: {
+      title: "Control de Gastos Personales",
+      description:
+        "Registro de ingresos y gastos con categorías, presupuesto y balance calculado automáticamente.",
+      imageDescription:
+        "Resumen visual del balance y desglose por categoría en cada transacción.",
+    },
+    uitoky: {
+      title: "Tienda Uitoky",
+      description:
+        "E-commerce con autenticación, recuperación de contraseña por código, sistema de opiniones y envío de correos con PHPMailer.",
+      imageDescription:
+        "Backend en PHP con PostgreSQL y PDO, gestión de usuarios y persistencia de datos relacionales.",
     },
   },
+},
 
   skills: {
     tag: "Tecnologías",
@@ -227,34 +249,48 @@ export default {
       frontend: "Frontend",
       backend: "Backend",
       databases: "Bases de Datos",
+      services: "Servicios y APIs",
       design: "Diseño",
       tools: "Herramientas",
       additional: "Complementos",
+      systems: "Sistemas",
     },
     items: {
       html: "HTML",
       css: "CSS",
       javascript: "JavaScript",
+      typescript: "TypeScript",
       vuejs: "Vue.js",
       tailwindcss: "Tailwind CSS",
-      typescript: "TypeScript",
+      vite: "Vite",
+      axios: "Axios",
+      gsap: "GSAP",
+      vuerouter: "Vue Router",
+      pinia: "Pinia",
+      vuei18n: "Vue I18n",
       nodejs: "Node.js",
       express: "Express",
       python: "Python",
+      mongoose: "Mongoose",
+      jwt: "JWT",
+      bcrypt: "bcrypt",
       restApi: "REST API",
       mongodb: "MongoDB",
-      mysql: "MySQL",
       postgresql: "PostgreSQL",
-      figma: "Figma",
+      mysql: "MySQL",
+      groq: "Groq SDK",
+      brevo: "Brevo",
+      netlifyfunctions: "Netlify Functions",
+      postman: "Postman",
       git: "Git",
       github: "GitHub",
-      vscode: "VS Code",
-      postman: "Postman",
-      xampp: "XAMPP",
       netlify: "Netlify",
+      render: "Render",
+      figma: "Figma",
+      linux: "Linux",
+      windows: "Windows",
       cybersecurity: "Ciberseguridad",
       networks: "Redes",
-      linux: "Linux",
     },
   },
 

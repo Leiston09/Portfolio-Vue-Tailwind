@@ -7,17 +7,13 @@ export type TypeExperience = {
 
 export const experiences: TypeExperience[] = [
   {
-    status: true,
-    key: "peluqueria",
-    period: "2026",
-    image: "/img/experience/peluqueria.png",
-  },
-  {
+    status: false,
     key: "psicologia",
     period: "2026",
     image: "/img/experience/portafolio.png",
   },
   {
+    status: false,
     key: "logistica",
     period: "2025",
     image: "/img/experience/remote.png",

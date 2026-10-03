@@ -23,12 +23,10 @@
           <div
             class="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary/10 dark:bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-all duration-300"
           >
-            <i
-              :class="[
-                skill.icono,
-                'text-3xl md:text-4xl text-primary group-hover:scale-110 transition-all duration-300',
-              ]"
-            ></i>
+            <Icon
+              :icon="skill.icono"
+              class="text-3xl md:text-4xl text-primary group-hover:scale-110 transition-all duration-300"
+            />
           </div>
 
           <div class="text-center">
@@ -56,6 +54,7 @@ import Header from "../shared/Header.vue";
 import SkeletonSkills from "../ui/Skeleton/SkeletonSkills.vue";
 import { getSkills } from "@/service/api.js";
 import type { SkillsTypes } from "@/data/skills";
+import { Icon } from '@iconify/vue'
 
 const isLoading = ref(true);
 

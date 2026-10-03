@@ -67,9 +67,7 @@
                   {{ String(index + 1).padStart(2, "0") }}
                 </span>
 
-                <span
-                  class="text-[11px] sm:text-xs font-semibold whitespace-nowrap"
-                >
+                <span class="text-[11px] sm:text-xs font-semibold whitespace-nowrap">
                   {{ $t(`skills.categories.${categoria}`) }}
                 </span>
               </div>
@@ -116,42 +114,44 @@
           </div>
 
           <div class="p-4 sm:p-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+            <TransitionGroup
+              tag="div"
+              name="skills"
+              class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"
+            >
               <div
                 v-for="skill in skillsActivas"
                 :key="skill.id"
-                class="group relative flex items-center gap-3 px-4 py-3.5 rounded-xl border border-border-light dark:border-border-secondary bg-white/30 dark:bg-white/[0.02] hover:bg-primary/5 dark:hover:bg-primary/5 hover:border-primary/30 transition-all duration-300"
+                class="group relative flex flex-col items-center justify-center gap-3 py-6 px-3 rounded-2xl border border-border-light dark:border-border-secondary bg-white/30 dark:bg-white/[0.02] hover:bg-primary/5 dark:hover:bg-primary/5 hover:border-primary/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 cursor-default"
               >
                 <div
-                  class="absolute left-0 top-3 bottom-3 w-0.5 rounded-full bg-primary scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center"
+                  class="absolute top-0 left-1/2 -translate-x-1/2 h-0.5 w-0 group-hover:w-10 rounded-full bg-primary transition-all duration-300"
                 ></div>
 
                 <div
-                  class="w-9 h-9 shrink-0 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300"
+                  class="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center rounded-2xl bg-primary/10 dark:bg-primary/10 group-hover:bg-primary/20 group-hover:scale-105 transition-all duration-300"
                 >
-                  <i
-                    :class="[
-                      skill.icono,
-                      'text-xl transition-transform duration-300 group-hover:scale-110',
-                    ]"
-                  ></i>
+                  <Icon
+                    :icon="skill.icono"
+                    class="text-2xl sm:text-3xl transition-transform duration-300 group-hover:scale-110"
+                  />
                 </div>
 
-                <div class="min-w-0 flex-1">
+                <div class="text-center min-w-0 w-full">
                   <p
-                    class="text-xs sm:text-sm font-semibold text-text-light-primary dark:text-text-primary truncate"
+                    class="text-[11px] sm:text-xs font-semibold text-text-light-primary dark:text-text-primary truncate group-hover:text-primary transition-colors duration-300"
                   >
                     {{ $t(`skills.items.${skill.nombre}`) }}
                   </p>
 
                   <p
-                    class="mt-0.5 text-[9px] uppercase tracking-wider text-text-light-secondary dark:text-text-secondary"
+                    class="mt-0.5 text-[9px] uppercase tracking-wider text-text-light-secondary dark:text-text-secondary truncate"
                   >
                     {{ $t(`skills.categories.${skill.categoria}`) }}
                   </p>
                 </div>
               </div>
-            </div>
+            </TransitionGroup>
           </div>
         </main>
       </div>
@@ -160,6 +160,7 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from "@iconify/vue";
 import { computed, ref } from "vue";
 import type { SkillsTypes } from "@/data/skills";
 
@@ -187,5 +188,25 @@ const skillsActivas = computed(() =>
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Transiciones al cambiar de categoría */
+.skills-enter-active,
+.skills-leave-active {
+  transition: all 0.3s ease;
+}
+
+.skills-enter-from {
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+}
+
+.skills-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.skills-leave-active {
+  position: absolute;
 }
 </style>

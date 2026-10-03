@@ -76,7 +76,7 @@
         {{ $t("home.about.part2") }}
         <span
           class="text-text-light-primary dark:text-text-primary/80 font-medium"
-          >{{ $t("home.about.highlight2") }}.</span
+          >{{ $t("home.about.highlight2") }}</span
         >.
       </p>
     </div>

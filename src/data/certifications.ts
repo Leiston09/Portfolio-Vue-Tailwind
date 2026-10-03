@@ -10,7 +10,8 @@ export type Certification = {
   key: string;
   institution: (typeof Institutions)[keyof typeof Institutions];
   image: string;
-  certificate?: string;
+  verify?: string;      // Link externo para validar el certificado
+  certificate?: string; // PDF local para descargar
   featured: boolean;
 };
 
@@ -20,6 +21,7 @@ export const certifications: Certification[] = [
     key: "vue3Mevn",
     institution: Institutions.UDEMY,
     image: "/img/certificates/vue3-mevn.jpg",
+    verify: "https://www.udemy.com/certificate/xxxxxxxx",
     certificate: "/pdf/certificates/vue3-mevn.pdf",
     featured: true,
   },

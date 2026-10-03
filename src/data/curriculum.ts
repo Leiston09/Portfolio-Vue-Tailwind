@@ -18,11 +18,4 @@ export const Curriculum: curriculumType[] = [
     ],
     download: "/pdf/Curriculum/Leiston-Holguin-CV.pdf",
   },
-  {
-    id: 2,
-    asset: false,
-    key: "systemsEngineeringStudent",
-    image: ["/img/curriculum/CurrículumIng.jpg"],
-    download: "/pdf/Curriculum/CurriculumSistemasInformacion.pdf",
-  },
 ];

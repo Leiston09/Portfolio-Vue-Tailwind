@@ -2,6 +2,7 @@ export default {
   global: {
     buttons: {
       details: "View Details",
+      verifyOn: "View on",
       github: "GitHub",
       demo: "Demo",
       downloadCv: "Download CV",
@@ -48,26 +49,26 @@ export default {
 
   home: {
     hero: {
-      greeting: "HELLO, I am",
+      greeting: "HELLO, I'M",
       role: "Systems Engineering Student",
       subtitle: "Software Developer",
     },
     status: {
       available: "Available for projects.",
-      experience: "+2 years experience.",
+      experience: "+1 year of experience.",
     },
     about: {
       part1:
-        "Future Systems Engineer and Software Developer in Ecuador, focused on turning requirements into ",
+        "Systems Engineering student and Software Developer based in Ecuador, focused on turning requirements into ",
       highlight1: "efficient software solutions",
       part2:
-        ", providing technical versatility and rapid adaptability to generate ",
+        ", bringing technical versatility and fast adaptability to deliver ",
       highlight2: "immediate value in any team",
     },
     buttons: {
       projects: "View projects",
-      resume: "View Resume",
-      contact: "View Contact",
+      resume: "View CV",
+      contact: "Contact me",
     },
   },
 
@@ -120,94 +121,115 @@ export default {
   },
 
   experience: {
-    tag: "My Journey",
-    title: "Professional",
+    tag: "My journey",
+    title: "Work",
     titleHighlight: "Experience",
     status: "Present",
     jobs: {
-      peluqueria: {
-        role: "Software Developer - Project Freelance",
-        client: "Client · Beauty Salon Management System (Ecuador)",
-        description:
-          "Comprehensive design and development of a web platform for appointment and service management. Implementation of backend architecture with Node.js and Express, MongoDB database, secure authentication with JWT, role-based access control (Admin/Client), and automated email notifications.",
-      },
       psicologia: {
-        role: "Frontend & UI/UX Developer",
+        role: "Frontend Developer",
         client: "Client · Professional Portfolio (Colombia)",
+        date: "May 2026 - July 2026",
         description:
-          "Custom development of a digital portfolio for an Organizational Psychology specialist. Optimized layout with Vue 3, TypeScript, and Tailwind CSS, ensuring a responsive design, seamless user experience, and deployment with a custom domain and SSL.",
+          "Custom development of a digital portfolio for an Organizational Psychology specialist. Optimized layout with Vue 3, TypeScript and Tailwind CSS, ensuring responsive design, smooth user experience, deployment with custom domain and SSL.",
       },
       logistica: {
-        role: "Junior Frontend Developer (Freelance)",
-        client: "Remote Collaboration · Logistics Company",
+        role: "Junior Frontend Developer",
+        client: "Remote Collaboration · Private Project",
+        date: "August 2025 - March 2026",
         description:
-          "Building and maintaining modular components with Vue 3 and TypeScript. Implementation of responsive interfaces with Tailwind CSS, Git workflow management (develop branches), complex data validation, and internationalization (i18n) support in direct collaboration with Senior developers.",
+          "Building and maintaining modular components with Vue 3 and TypeScript. Implementation of adaptable interfaces with Tailwind CSS, workflow management with Git (develop branches), complex data validations and internationalization (i18n) support in direct collaboration with Senior developers.",
       },
     },
   },
 
-  projects: {
-    tag: "My Portfolio",
-    title: "Featured",
+projects: {
+  tag: "My portfolio",
+  title: "Featured",
+  titleHighlight: "Projects",
+  subtitle: {
+    tag: "My Projects",
+    title: "My",
     titleHighlight: "Projects",
-    subtitle: {
-      tag: "My Projects",
-      title: "My",
-      titleHighlight: "Projects",
+  },
+  description:
+    "Explore the projects I've developed throughout my training and experience, applying technologies, design and solutions aimed at solving real problems.",
+  viewAll: "View all Projects",
+  defaultDescription:
+    "Projects built with modern technologies focused on optimization and performance.",
+  items: {
+    sistemaPeluqueria: {
+      title: "Barbershop Management System",
+      description:
+        "Full stack booking system with real-time availability validation, role-based access, schedule management and automated email notifications.",
+      imageDescription:
+        "3-step guided booking that respects each barber's working hours, breaks and blocked days, with an admin panel and salon statistics.",
     },
-    description:
-      "Explore the projects I have developed during my education and experience, applying technologies, design, and solutions focused on solving real-world problems.",
-    viewAll: "View All Projects",
-    defaultDescription:
-      "Projects developed with modern technologies focused on optimization and performance.",
-    items: {
-      portfolio: {
-        title: "Personal Portfolio",
-        description:
-          "Portfolio to showcase my professional profile, projects, and technical skills, with AI integration, authentication, and responsive design.",
-        imageDescription:
-          "Includes sections for personal introduction, skills, projects, certifications, and contact, with responsive design and dynamic navigation.",
-      },
-      uitoky: {
-        title: "Application with Backend Connection",
-        description:
-          "Web application with user authentication, data validation, and connection to a relational database.",
-        imageDescription:
-          "Allows users to register, log in, and manage information stored in the database through a modern and interactive interface.",
-      },
-      guitarra: {
-        title: "Guitar Web Store",
-        description:
-          "Web application for displaying a guitar catalog with an interactive shopping cart.",
-        imageDescription:
-          "The system allows users to add products, modify quantities, and dynamically remove items.",
-      },
-      administrarPacientes: {
-        title: "Patient Manager",
-        description:
-          "Web application for managing patients through CRUD operations.",
-        imageDescription:
-          "Allows users to add, edit, and delete records with form validation and responsive design.",
-      },
-      listadoUsuarios: {
-        title: "User List",
-        description:
-          "Web application that displays a dynamic list of users using simulated data.",
-        imageDescription:
-          "The interface allows users to view organized user information in a simple and efficient way.",
-      },
-      sistemaPeluqueria: {
-        title: "Hair Salon Management System",
-        description:
-          "Complete development of a management system for a hair salon. Includes authentication with login and JWT tokens, user management with roles (admin/clients), appointment management, services, and email delivery.",
-      },
-      portafolioPsicologia: {
-        title: "Psychology Portfolio",
-        description:
-          "Design and development of a web portfolio for a professional client in the field of organizational psychology.",
-      },
+    portfolio: {
+      title: "Personal Portfolio",
+      description:
+        "More than a portfolio, an interactive experience with multi-language support, smooth animations, design crafted to the last detail and integrated AI. Ask it instead of reading.",
+      imageDescription:
+        "Explore my profile in a different way: intuitive navigation, light/dark mode and an assistant that answers any question about me in real time.",
+    },
+    clienteColombia: {
+      title: "Professional Portfolio - Client from Colombia",
+      description:
+        "Custom freelance development for an Organizational Psychology specialist, coordinating requirements and deliveries directly with the client.",
+      imageDescription:
+        "Custom design with interactive slider, multi-language support and production deployment with custom domain and SSL.",
+    },
+    guitarra: {
+      title: "Guitar E-commerce Store",
+      description:
+        "Interactive catalog with a functional shopping cart: add products, update quantities and remove items in real time.",
+      imageDescription:
+        "Cart state managed in the browser with session persistence.",
+    },
+    pedidos: {
+      title: "Order Management System",
+      description:
+        "Order system built with MVC architecture, PHP, MySQL and PDO: login, customer registration, cart, payment methods and stock control.",
+      imageDescription:
+        "Professional structure separating Controller, Model and View, with a Service Layer for business logic and layered validations.",
+    },
+    dashboardCsv: {
+      title: "CSV Data Analysis Dashboard",
+      description:
+        "Analysis tool that processes CSV and Excel files with Pandas and NumPy, generating per-column statistics and dynamic charts.",
+      imageDescription:
+        "Auto-detects data types, calculates quartiles, outliers, skewness and kurtosis, and exports results. Deployed on Fly.io with Gunicorn and automated tests.",
+    },
+    administrarPacientes: {
+      title: "Patient Management System",
+      description:
+        "Full CRUD for patient management with form validation and local persistence.",
+      imageDescription:
+        "Allows adding, editing and deleting records with visual feedback on every action.",
+    },
+    listadoUsuarios: {
+      title: "User Listing with Filters",
+      description:
+        "Dynamic user listing with real-time search and filtering over simulated data.",
+      imageDescription:
+        "Reactive filters that update the table without reloading the page.",
+    },
+    controlGastos: {
+      title: "Personal Expense Tracker",
+      description:
+        "Income and expense tracker with categories, budget and automatically calculated balance.",
+      imageDescription:
+        "Visual balance summary and per-category breakdown for each transaction.",
+    },
+    uitoky: {
+      title: "Uitoky Store",
+      description:
+        "E-commerce with authentication, password recovery via code, review system and email delivery with PHPMailer.",
+      imageDescription:
+        "PHP backend with PostgreSQL and PDO, user management and relational data persistence.",
     },
   },
+},
 
   skills: {
     tag: "Technologies",
@@ -228,9 +250,11 @@ export default {
       frontend: "Frontend",
       backend: "Backend",
       databases: "Databases",
+      services: "Services & APIs",
       design: "Design",
       tools: "Tools",
       additional: "Additional",
+      systems: "Systems",
     },
     items: {
       html: "HTML",

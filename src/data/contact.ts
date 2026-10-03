@@ -113,7 +113,7 @@ export const contact: ContactType[] = [
   {
     id: 5,
     name: "resume",
-    filename: "CV-Leiston-Holguin.pdf",
+    filename: "Leiston-Holguin-CV.pdf",
     icon: "doodle-color-194-approve-checked-simple",
     colors: {
       card: `

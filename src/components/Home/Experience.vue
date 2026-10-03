@@ -56,7 +56,9 @@
               <span
                 class="text-[8px] sm:text-[9px] lg:text-[10px] bg-primary/10 text-primary px-1.5 sm:px-2 py-0.5 rounded-full font-medium tracking-wide whitespace-nowrap border border-primary/20"
               >
-                {{ exp.period }}
+                {{ $t(`experience.jobs.${exp.key}.date`) }}
+
+
                 {{ exp.status ? `- ${$t("experience.status")}` : "" }}
               </span>
             </div>
